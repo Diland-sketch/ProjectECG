@@ -1,0 +1,138 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "BLL/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DAL": "1.0.0",
+          "ENTITY": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BLL.dll": {}
+        }
+      },
+      "DAL/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "ENTITY": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "ENTITY/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ENTITY.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ENTITY.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BLL/1.0.0": {
+      "type": "project",
+      "path": "../BLL/BLL.csproj",
+      "msbuildProject": "../BLL/BLL.csproj"
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
+    },
+    "ENTITY/1.0.0": {
+      "type": "project",
+      "path": "../ENTITY/ENTITY.csproj",
+      "msbuildProject": "../ENTITY/ENTITY.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "BLL >= 1.0.0",
+      "ENTITY >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\dilan\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\GUI\\GUI.csproj",
+      "projectName": "GUI",
+      "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\GUI\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\BLL\\BLL.csproj"
+            },
+            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\ENTITY\\ENTITY.csproj": {
+              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\ENTITY\\ENTITY.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
