@@ -9,5 +9,10 @@ namespace ENTITY
     public class Medico : Usuario
     {
         public string IdMedico { get; set; }
+
+        public override string ToString()
+        {
+            return IdMedico + this.Nombre;
+        }
     }
 }
