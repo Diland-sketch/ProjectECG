@@ -109,11 +109,11 @@
 
                 <StackPanel Width="300" Orientation="Vertical" Background="Transparent">
 
-                    <Image Source="C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\Images\logo-removebg-preview.png"
+                    <Image Source="\Images\logo-removebg-preview.png"
                            Width="200" Height="150" Margin="20"/>
 
                     <TextBlock Text="Username"
-                               Foreground="DarkGray"
+                               Foreground="Azure"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Arial"
@@ -134,7 +134,7 @@
                              Padding="25,0,0,0">
 
                         <TextBox.Background>
-                            <ImageBrush ImageSource="C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\Images\user (1).png"
+                            <ImageBrush ImageSource="/Images/user(1).png"
                                         Stretch="None"
                                         AlignmentX="Left"
                                         />
@@ -143,7 +143,7 @@
                     </TextBox>
 
                     <TextBlock Text="Password"
-                               Foreground="DarkGray"
+                               Foreground="Azure"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Arial"
@@ -164,7 +164,7 @@
                                  Padding="25,0,0,0">
 
                         <PasswordBox.Background>
-                            <ImageBrush ImageSource="C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\Images\lock.png"
+                            <ImageBrush ImageSource="\Images\lock.png"
                                         Stretch="Uniform"
                                         AlignmentX="Left"/>
                         </PasswordBox.Background>

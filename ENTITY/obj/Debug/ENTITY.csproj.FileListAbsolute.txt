@@ -4,3 +4,9 @@ C:\Users\dilan\source\repos\Proyecto_P3-ECG\ENTITY\obj\Debug\ENTITY.csproj.Assem
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\ENTITY\obj\Debug\ENTITY.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\ENTITY\obj\Debug\ENTITY.pdb
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\bin\Debug\ENTITY.dll
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\bin\Debug\ENTITY.pdb
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY.dll
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY.pdb
