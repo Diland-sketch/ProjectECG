@@ -113,7 +113,7 @@
                            Width="200" Height="150" Margin="20"/>
 
                     <TextBlock Text="Username"
-                               Foreground="DarkGray"
+                               Foreground="Azure"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Arial"
@@ -143,7 +143,7 @@
                     </TextBox>
 
                     <TextBlock Text="Password"
-                               Foreground="DarkGray"
+                               Foreground="Azure"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Arial"
