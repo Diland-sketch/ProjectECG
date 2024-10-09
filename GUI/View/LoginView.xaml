@@ -173,7 +173,7 @@
 
                     <Button x:Name="btnLogin"
                             BorderThickness="0"
-                            Content="Iniciar Sesion"
+                            Content="Iniciar Sesión"
                             Foreground="White"
                             FontSize="13"
                             FontFamily="Arial"
