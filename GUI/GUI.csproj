@@ -9,12 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\lock.png" />
+    <None Remove="Images\logo-removebg-preview.png" />
+    <None Remove="Images\user%281%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
     <ProjectReference Include="..\ENTITY\ENTITY.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\lock.png" />
+    <Resource Include="Images\logo-removebg-preview.png" />
+    <Resource Include="Images\user(1).png" />
   </ItemGroup>
 
 </Project>
