@@ -13,6 +13,9 @@
     <Compile Update="View\ViewGraficaECG.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ViewPaciente.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -22,6 +25,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewGraficaECG.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewPaciente.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

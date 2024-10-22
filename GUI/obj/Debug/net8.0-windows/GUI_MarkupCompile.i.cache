@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\App.xaml
-3-141621769
+4733406776
 
-81459893231
+9987713690
 204329193449
-MainWindow.xaml;View\LoginView.xaml;View\ViewGraficaECG.xaml;
+MainWindow.xaml;View\LoginView.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
 
-False
+True
 
