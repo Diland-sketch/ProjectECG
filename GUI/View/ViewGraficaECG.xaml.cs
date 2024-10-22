@@ -35,7 +35,7 @@ namespace GUI.View
             _serviceEcg = new ServiceECG("COM4", 9600);
             _serviceEcg.DatoRecibido += OnDatoRecibido;
             //_serviceEcg.IniciarLectura();
-
+            
             EcgSeries = new SeriesCollection()
 {
                 new LineSeries
@@ -44,6 +44,7 @@ namespace GUI.View
                     PointGeometry = null,
                     StrokeThickness = 2
                 }   
+
             };
 
             if (ecgChart.Series.Count == 0)
