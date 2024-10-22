@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\
 GUI
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\App.xaml
-3-141621769
+C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\App.xaml
+4733406776
 
-81459893231
-204-259666340
-MainWindow.xaml;View\LoginView.xaml;View\ViewGraficaECG.xaml;
+9987713690
+204329193449
+MainWindow.xaml;View\LoginView.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
 
-False
+True
 

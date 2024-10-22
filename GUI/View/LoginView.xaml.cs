@@ -69,5 +69,11 @@ namespace GUI.View
             txtUser.Text = "";
             txtPassword.Password = "";
         }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ViewPaciente viewPaciente = new ViewPaciente();
+            viewPaciente.Show();
+        }
     }
 }
