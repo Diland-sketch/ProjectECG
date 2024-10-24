@@ -8,11 +8,12 @@ namespace ENTITY
 {
     public class Medico : Usuario
     {
-        public string IdMedico { get; set; }
-
-        public override string ToString()
+        public List<Paciente> pacientes;
+        public Medico(string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, 
+            string identificacion, DateTime fechaNacmiento, char sexo, string nombreUsuario, string contrasenha, Rol rol) 
+            : base(primerNombre, segundoNombre, primerApellido, segundoApellido, identificacion, fechaNacmiento, sexo, nombreUsuario, contrasenha, rol)
         {
-            return IdMedico + this.Nombre;
+            pacientes = new List<Paciente>();
         }
     }
 }

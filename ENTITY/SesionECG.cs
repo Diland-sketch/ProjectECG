@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENTITY
 {
-    public class HistorialMedico
+    public class SesionECG
     {
-
     }
 }

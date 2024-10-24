@@ -9,12 +9,13 @@ namespace ENTITY
     public class DatoECG
     {
         public double Valor { get; set; }
-        public DateTime Timestamp { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFinalizacion { get; set; }
 
         public DatoECG(double valor)
         {
             Valor = valor;
-            Timestamp = DateTime.Now;
+            FechaInicio = DateTime.Now;
         }
     }
 }

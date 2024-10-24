@@ -10,21 +10,18 @@ namespace ENTITY
     {
 
         public string NombreUsuario { get; set; }
-
         public string contrasenha;
         public Rol Rol { get; private set; }
 
-        public Usuario(string nombre, string apellido, string documento, DateTime fechaNacmiento, char sexo, string nombreUsuario, string contrasenha, Rol rol) :
-            base(nombre, apellido, documento, fechaNacmiento, sexo)
+        public Usuario(string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, 
+            string identificacion, DateTime fechaNacmiento, char sexo, string nombreUsuario, string contrasenha, Rol rol) :
+            base(primerNombre, segundoNombre, primerApellido, segundoApellido, identificacion, fechaNacmiento, sexo)
         {
             NombreUsuario = nombreUsuario;
             this.contrasenha = contrasenha;
             Rol = rol;
         }
-        public Usuario()
-        {
-            
-        }
+
         public bool ValidarCredenciales(string nombreUsuario, string contrasenha)
         {
             return NombreUsuario.Equals(nombreUsuario) && this.contrasenha.Equals(contrasenha);
