@@ -86,3 +86,5 @@ C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-wi
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewGraficaECG.baml
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.g.cs
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.baml
+C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.g.cs
+C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.baml

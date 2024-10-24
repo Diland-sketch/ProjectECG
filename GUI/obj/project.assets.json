@@ -354,19 +354,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\dilan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\Proyecto_P3-ECG\\ProjectECG\\GUI\\GUI.csproj",
+      "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\Users\\Usuario\\source\\repos\\Proyecto_P3-ECG\\ProjectECG\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\source\\repos\\Proyecto_P3-ECG\\ProjectECG\\GUI\\obj\\",
+      "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\GUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -381,11 +381,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Usuario\\source\\repos\\Proyecto_P3-ECG\\ProjectECG\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\source\\repos\\Proyecto_P3-ECG\\ProjectECG\\BLL\\BLL.csproj"
+            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\Usuario\\source\\repos\\Proyecto_P3-ECG\\ProjectECG\\ENTITY\\ENTITY.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\source\\repos\\Proyecto_P3-ECG\\ProjectECG\\ENTITY\\ENTITY.csproj"
+            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\ENTITY\\ENTITY.csproj": {
+              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\ENTITY\\ENTITY.csproj"
             }
           }
         }
@@ -433,7 +433,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

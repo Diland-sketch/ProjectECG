@@ -8,26 +8,46 @@ namespace ENTITY
 {
     public class Persona
     {
-        public string Documento { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        private string nombre;
+        private string apellido;
+        private string documento;
+
+        public string Identificacion { get; set; }
+        public string PrimerNombre { get; set; }
+        public string SegundoNombre { get; set; }
+        public string PrimerApellido { get; set; }
+        public string SegundoApellido { get; set; }
         public DateTime FechaNacmiento { get; set; }
         public char Sexo { get; set; }
-        protected Persona(string nombre, string apellido, string documento, DateTime fechaNacmiento, char sexo)
+
+        public Persona(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, DateTime fechaNacmiento, char sexo)
         {
-            Nombre = nombre;
-            Apellido = apellido;
-            Documento = documento;
+            Identificacion = documento;
+            PrimerNombre = primerNombre;
+            SegundoNombre = segundoNombre;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
             FechaNacmiento = fechaNacmiento;
             Sexo = sexo;
         }
+
         public Persona()
         {
             
         }
+
+        public Persona(string nombre, string apellido, string documento, DateTime fechaNacmiento, char sexo)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.documento = documento;
+            FechaNacmiento = fechaNacmiento;
+            Sexo = sexo;
+        }
+
         public string ObtenerNombreCompleto()
         {
-            return $"{Nombre} {Apellido}";
+            return $"{PrimerNombre} {SegundoNombre} {PrimerApellido} {SegundoApellido}";
         }
         public int CalcularEdad()
         {
@@ -38,7 +58,7 @@ namespace ENTITY
         }
         public override string ToString()
         {
-            return $"{ObtenerNombreCompleto()} - Documento: {Documento}, Edad: {CalcularEdad()} años";
+            return $"- Identificacion: {Identificacion}, {ObtenerNombreCompleto()}, Edad: {CalcularEdad()} años";
         }
     }
 }
