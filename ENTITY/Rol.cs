@@ -8,18 +8,18 @@ namespace ENTITY
 {
     public class Rol
     {
-        public string Id { get; set; }
+        public string IdRol { get; set; }
         public string NombreRol { get; set; }
 
         public Rol(string id, string nombreRol)
         {
-            Id = id;
+            IdRol = id;
             NombreRol = nombreRol;
         }
 
         public override string ToString() 
         {
-            return Id + "; " + NombreRol;
+            return IdRol + "; " + NombreRol;
         }
     }
 }

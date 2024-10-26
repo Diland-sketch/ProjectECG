@@ -8,14 +8,13 @@ namespace ENTITY
 {
     public class DatoECG
     {
-        public double Valor { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFinalizacion { get; set; }
+        public string IdDatoECG { get; set; }
+        public string RutaArchivoDatos { get; set; }
 
-        public DatoECG(double valor)
+        public DatoECG(string idDatoECG, string rutaArchivoDatos)
         {
-            Valor = valor;
-            FechaInicio = DateTime.Now;
+            IdDatoECG = idDatoECG;
+            RutaArchivoDatos = rutaArchivoDatos;
         }
     }
 }

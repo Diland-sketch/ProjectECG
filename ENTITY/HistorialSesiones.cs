@@ -19,5 +19,10 @@ namespace ENTITY
             Medico = medico;
             Descripcion = descripcion;
         }
+
+        public override string ToString() 
+        {
+            return $"";
+        }
     }
 }
