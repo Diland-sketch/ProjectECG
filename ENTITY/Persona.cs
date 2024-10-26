@@ -8,10 +8,6 @@ namespace ENTITY
 {
     public class Persona
     {
-        private string nombre;
-        private string apellido;
-        private string documento;
-
         public string Identificacion { get; set; }
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
@@ -27,20 +23,6 @@ namespace ENTITY
             SegundoNombre = segundoNombre;
             PrimerApellido = primerApellido;
             SegundoApellido = segundoApellido;
-            FechaNacmiento = fechaNacmiento;
-            Sexo = sexo;
-        }
-
-        public Persona()
-        {
-            
-        }
-
-        public Persona(string nombre, string apellido, string documento, DateTime fechaNacmiento, char sexo)
-        {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.documento = documento;
             FechaNacmiento = fechaNacmiento;
             Sexo = sexo;
         }
