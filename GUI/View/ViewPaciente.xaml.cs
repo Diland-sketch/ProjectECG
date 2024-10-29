@@ -1,4 +1,4 @@
-﻿using ENTITY;
+﻿using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +35,7 @@ namespace GUI.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
-            paciente.IdPaciente = txtId.Text;
+            paciente.Identificacion = txtId.Text;
             
         }
         public void Cargar()
