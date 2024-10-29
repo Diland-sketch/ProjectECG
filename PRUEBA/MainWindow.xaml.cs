@@ -32,5 +32,12 @@ namespace PRUEBA
             var message = serviceRol.Guardar(rol);
             MessageBox.Show(message);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string idRol = txtEliminar.Text;
+            var message = serviceRol.Eliminar(idRol);
+            MessageBox.Show(message);
+        }
     }
 }

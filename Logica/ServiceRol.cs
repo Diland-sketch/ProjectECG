@@ -12,6 +12,11 @@ namespace Logica
     {
         RolRepositorio rolRepositorio = new RolRepositorio();
 
+        public string Eliminar(string idRol)
+        {
+            return rolRepositorio.Eliminar(idRol);
+        }
+
         public string Guardar(Rol rol)
         {
             return rolRepositorio.Guardar(rol);

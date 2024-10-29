@@ -29,7 +29,7 @@ namespace Persistencia
             throw new NotImplementedException();
         }
 
-        public string Eliminar(Medico entity)
+        public string Eliminar(string id)
         {
             throw new NotImplementedException();
         }
