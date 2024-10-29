@@ -1,5 +1,5 @@
-﻿using BLL;
-using ENTITY;
+﻿using Entidades;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;

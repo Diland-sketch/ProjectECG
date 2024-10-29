@@ -15,17 +15,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj" />
-    <ProjectReference Include="..\ENTITY\ENTITY.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj" />
+    <ProjectReference Include="..\Logica\Logica.csproj" />
   </ItemGroup>
 
   <ItemGroup>
