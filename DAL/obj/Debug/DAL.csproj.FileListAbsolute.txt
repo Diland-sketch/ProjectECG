@@ -16,3 +16,7 @@ C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\DAL\obj\Debug\DAL.cspro
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\DAL\obj\Debug\DAL.dll
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\DAL\obj\Debug\DAL.pdb
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\DAL\obj\Debug\DAL.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\DAL\obj\Debug\DAL.pdb

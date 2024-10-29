@@ -88,3 +88,14 @@ C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-wi
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.baml
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.g.cs
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.baml
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.csproj.AssemblyReference.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\LoginView.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewGraficaECG.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI_MarkupCompile.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI_MarkupCompile.lref
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\refint\GUI.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.pdb

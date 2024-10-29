@@ -20,3 +20,7 @@ C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\BLL\obj\Debug\BLL.cspro
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\BLL\obj\Debug\BLL.dll
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\BLL\obj\Debug\BLL.pdb
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\BLL\obj\Debug\BLL.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\BLL\obj\Debug\BLL.pdb

@@ -10,3 +10,9 @@ C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY.dll
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\ENTITY\obj\Debug\ENTITY.pdb
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\ENTITY\bin\Debug\ENTITY.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\ENTITY\bin\Debug\ENTITY.pdb
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\ENTITY\obj\Debug\ENTITY.csproj.AssemblyReference.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\ENTITY\obj\Debug\ENTITY.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\ENTITY\obj\Debug\ENTITY.pdb
