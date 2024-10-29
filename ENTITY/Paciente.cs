@@ -11,7 +11,7 @@ namespace ENTITY
         public string IdPaciente { get; set; }
         public List<HistorialMedico> historialMedicos { get; set; }
 
-        protected Paciente(string idPaciente, List<HistorialMedico> historialMedicos, string nombre, string apellido, string documento, DateTime fechaNacmiento, char sexo) : base(nombre, apellido, documento, fechaNacmiento, sexo)
+        public Paciente(string idPaciente, List<HistorialMedico> historialMedicos, string nombre, string apellido, string documento, DateTime fechaNacmiento, char sexo) : base(nombre, apellido, documento, fechaNacmiento, sexo)
         {
 
             IdPaciente = idPaciente;
