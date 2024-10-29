@@ -843,19 +843,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-<<<<<<< HEAD
-            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\BLL\\BLL.csproj"
+            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj": {
-              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj"
-=======
-            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj"
-            },
-            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj": {
-              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj"
->>>>>>> e6496cfefebf07b7a2d9ed51e5029785e3f6026e
+            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
             }
           }
         }
