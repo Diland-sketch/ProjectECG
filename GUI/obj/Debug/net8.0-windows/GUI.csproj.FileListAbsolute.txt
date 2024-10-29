@@ -43,6 +43,7 @@ C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-wi
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewGraficaECG.baml
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.g.cs
 C:\Users\Usuario\source\repos\Proyecto_P3-ECG\ProjectECG\GUI\obj\Debug\net8.0-windows\View\ViewPaciente.baml
+<<<<<<< HEAD
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\GUI.csproj.AssemblyReference.cache
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\View\LoginView.g.cs
@@ -146,3 +147,5 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GU
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.csproj.Up2Date
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.genruntimeconfig.cache
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ref\GUI.dll
+=======
+>>>>>>> 0fab55c09cc73b953769f0a20786475424594e3f

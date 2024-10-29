@@ -60,9 +60,37 @@ namespace Persistencia
             throw new NotImplementedException();
         }
 
-        public string Eliminar(Rol entity)
+        public string Eliminar(string id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string ssql = "DELETE FROM roles WHERE id_rol = :id";
+
+                AbrirConexion();
+                OracleCommand ocmd = conexion.CreateCommand();
+                ocmd.CommandText = ssql;
+
+                ocmd.Parameters.Add(new OracleParameter(":id", id));
+
+                int confirmacion = ocmd.ExecuteNonQuery();
+
+                if (confirmacion > 0)
+                {
+                    return "Se elimino satisfactoriamente";
+                }
+                else
+                {
+                    return "Error a la hora de eliminar";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally 
+            {
+                CerrarConexion();
+            }
         }
 
     }
