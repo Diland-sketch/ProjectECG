@@ -12,6 +12,6 @@ namespace Persistencia
         List<T> ConsultarTodo(T entity);
         string ConsultarId(string id);
         string Actualizar(T entity);
-        string Eliminar(T entity);
+        string Eliminar(string id);
     }
 }
