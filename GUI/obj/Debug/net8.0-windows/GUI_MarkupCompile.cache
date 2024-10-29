@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
+=======
+C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\
+>>>>>>> 22a7cfab5fb05761d841a56e1b3b17b1bcc7638b
 GUI
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\App.xaml
 4733406776
 
 7-1034051919
 206920721585
+=======
+C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\App.xaml
+4733406776
+
+7-1034051919
+2061534922008
+>>>>>>> 22a7cfab5fb05761d841a56e1b3b17b1bcc7638b
 MainWindow.xaml;View\LoginView.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
 
 False

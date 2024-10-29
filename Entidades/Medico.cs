@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Medico : Usuario
+    public class Medico : Persona
     {
         public List<Paciente> pacientes;
-        public Medico(string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, 
-            string identificacion, DateTime fechaNacmiento, char sexo, string nombreUsuario, string contrasenha, Rol rol) 
-            : base(primerNombre, segundoNombre, primerApellido, segundoApellido, identificacion, fechaNacmiento, sexo, nombreUsuario, contrasenha, rol)
+        public Usuario Credenciales { get; set; }
+
+        public Medico(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido,
+            DateTime fechaNacmiento, char sexo, Usuario credenciales)
+            : base(documento, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacmiento, sexo)
         {
             pacientes = new List<Paciente>();
+            Credenciales = credenciales;
         }
     }
 }

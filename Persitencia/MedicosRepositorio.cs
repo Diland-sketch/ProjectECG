@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,45 @@ namespace Persistencia
     {
         public string Guardar(Medico entity)
         {
-            //string sentenciaSql = "INSERT INTO medicos"
-            throw new NotImplementedException();
+            try
+            {
+                string ssql = "INSERT INTO medicos(id_medico, primer_nombre, segundo_nombre, primer_apellido, " +
+                    "segundo_apellido, sexo, fecha_nacimiento, usuarios_id_rol) " +
+                    "VALUES (:id_medico, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :sexo, :fecha_nacimiento, :usuarios_id_rol)";
+
+                AbrirConexion();
+                OracleCommand Ocmd = conexion.CreateCommand();
+                Ocmd.CommandText = ssql;
+
+                Ocmd.Parameters.Add(new OracleParameter(":id_medico", entity.Identificacion));
+                Ocmd.Parameters.Add(new OracleParameter(":primer_nombre", entity.PrimerNombre));
+                Ocmd.Parameters.Add(new OracleParameter(":segundo_nombre", entity.SegundoNombre));
+                Ocmd.Parameters.Add(new OracleParameter(":primer_apellido", entity.PrimerApellido));
+                Ocmd.Parameters.Add(new OracleParameter(":segundo_apellido", entity.SegundoApellido));
+                Ocmd.Parameters.Add(new OracleParameter(":sexo", entity.Sexo));
+                Ocmd.Parameters.Add(new OracleParameter(":fecha_nacimiento", entity.FechaNacmiento));
+                Ocmd.Parameters.Add(new OracleParameter(":usuarios_id_rol", entity.Credenciales.Rol.IdRol));
+
+                int confirmacion = Ocmd.ExecuteNonQuery();
+                //CerrarConexion();
+
+                if (confirmacion > 0)
+                {
+                    return "Se guardo satisfactoriamente";
+                }
+                else
+                {
+                    return "Error a la hora de guardar";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
         }
 
         public List<Medico> ConsultarTodo(Medico entity)
