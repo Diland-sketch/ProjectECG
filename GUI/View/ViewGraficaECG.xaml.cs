@@ -1,9 +1,9 @@
-﻿using BLL;
-using ENTITY;
+﻿using Entidades;
 using LiveCharts;
 using LiveCharts.Definitions.Charts;
 using LiveCharts.Wpf;
 using LiveCharts.Wpf.Charts.Base;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
