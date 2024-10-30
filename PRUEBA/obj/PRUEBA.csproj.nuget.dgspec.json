@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\PRUEBA.csproj": {}
+    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,6 +56,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -64,21 +78,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj",
-        "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,11 +107,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\Persitencia.csproj": {
-                "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\Persitencia.csproj"
+              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
               }
             }
           }
@@ -127,6 +141,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -135,21 +163,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\Persitencia.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\Persitencia.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
         "projectName": "Persitencia",
-        "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\Persitencia.csproj",
-        "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,8 +192,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -205,6 +233,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -213,21 +255,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\PRUEBA.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\PRUEBA.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
         "projectName": "PRUEBA",
-        "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\PRUEBA.csproj",
-        "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -242,11 +284,11 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj": {
-                "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj"
+              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
               }
             }
           }
@@ -284,7 +326,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

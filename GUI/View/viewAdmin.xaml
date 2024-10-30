@@ -1,0 +1,24 @@
+﻿<Window x:Class="GUI.View.viewAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI.View"
+        mc:Ignorable="d"
+        Title="viewAdmin" Height="450" Width="800" Background="Black"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        >
+    <DockPanel LastChildFill="False" Margin="0,0,0,-6">
+        <DockPanel.Background>
+            <ImageBrush/>
+        </DockPanel.Background>
+        <StackPanel Width="203" Background="#FF30D2D2">
+            <Label x:Name="lblMedico" Content="GESTION MEDICO" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" FontSize="16" Cursor="Hand" MouseDown="Label_MouseDown"/>
+            <Label x:Name="lblRol" Content="GESTION ROL" HorizontalContentAlignment="Center" FontSize="16" Margin="0,50,0,0" Cursor="Hand" />
+        </StackPanel>
+        <StackPanel x:Name="panelMedico" DockPanel.Dock="Right" Width="598" Background="Azure"/>
+    </DockPanel>
+</Window>

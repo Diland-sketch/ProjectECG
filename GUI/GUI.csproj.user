@@ -10,6 +10,15 @@
     <Compile Update="View\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\UserControlFormularioMedico.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControlMedico.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\viewAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ViewGraficaECG.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +31,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControlFormularioMedico.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControlMedico.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\viewAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewGraficaECG.xaml">

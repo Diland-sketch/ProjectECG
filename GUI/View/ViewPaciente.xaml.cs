@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,33 @@ namespace GUI.View
     /// </summary>
     public partial class ViewPaciente : Window
     {
+        Persona persona = new Persona();
+        Paciente paciente;
         public ViewPaciente()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            viewAdmin ViewAdmin = new viewAdmin();
+            ViewAdmin.Show();
+        }
+        public void Cargar()
+        {
+            ListView listView = new ListView();
+            listView.Items.Clear();
+            
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
