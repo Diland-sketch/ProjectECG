@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Persistencia
 {
@@ -45,17 +47,49 @@ namespace Persistencia
             }
         }
 
+        public List<Rol> ConsultarTodo(Rol entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CargarComboBoxRol(ComboBox comboBox)
+        {
+            try
+            {
+                string ssql = "SELECT id_rol, nombre_rol FROM roles WHERE nombre_rol = 'medico'";
+
+                AbrirConexion();
+                OracleCommand Ocmd = new OracleCommand(ssql, conexion);
+                OracleDataReader reader = Ocmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBox.Items.Add(new { IdRol = reader["id_rol"], NombreRol = reader["nombre_rol"] });
+                }
+
+                if (comboBox.Items.Count > 0)
+                {
+                    comboBox.SelectedIndex = 0;
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el rol de médico: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
         public string Actualizar(Rol entity)
         {
             throw new NotImplementedException();
         }
 
         public string ConsultarId(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Rol> ConsultarTodo(Rol entity)
         {
             throw new NotImplementedException();
         }

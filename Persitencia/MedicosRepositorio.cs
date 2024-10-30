@@ -15,8 +15,8 @@ namespace Persistencia
             try
             {
                 string ssql = "INSERT INTO medicos(id_medico, primer_nombre, segundo_nombre, primer_apellido, " +
-                    "segundo_apellido, sexo, fecha_nacimiento, usuarios_id_rol) " +
-                    "VALUES (:id_medico, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :sexo, :fecha_nacimiento, :usuarios_id_rol)";
+                    "segundo_apellido, sexo, fecha_nacimiento, usuarios_id_usuario) " +
+                    "VALUES (:id_medico, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :sexo, :fecha_nacimiento, :usuarios_id_usuario)";
 
                 AbrirConexion();
                 OracleCommand Ocmd = conexion.CreateCommand();
@@ -29,7 +29,7 @@ namespace Persistencia
                 Ocmd.Parameters.Add(new OracleParameter(":segundo_apellido", entity.SegundoApellido));
                 Ocmd.Parameters.Add(new OracleParameter(":sexo", entity.Sexo));
                 Ocmd.Parameters.Add(new OracleParameter(":fecha_nacimiento", entity.FechaNacmiento));
-                Ocmd.Parameters.Add(new OracleParameter(":usuarios_id_rol", entity.Credenciales.Rol.IdRol));
+                Ocmd.Parameters.Add(new OracleParameter(":usuarios_id_usuario", entity.Credenciales.IdUsuario));
 
                 int confirmacion = Ocmd.ExecuteNonQuery();
                 //CerrarConexion();

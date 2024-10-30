@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Logica
 {
@@ -15,6 +16,11 @@ namespace Logica
         public string Eliminar(string idRol)
         {
             return rolRepositorio.Eliminar(idRol);
+        }
+
+        public void CargarComboBox(ComboBox comboBox)
+        {
+            rolRepositorio.CargarComboBoxRol(comboBox);
         }
 
         public string Guardar(Rol rol)

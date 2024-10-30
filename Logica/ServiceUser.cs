@@ -19,7 +19,7 @@ namespace Logica
 
         public bool Login(Usuario usuario)
         {
-            return userRepository.ValidarUsuario(usuario);
+            return userRepository.ValidarUsuarioAdmin(usuario);
         }
     }
 }

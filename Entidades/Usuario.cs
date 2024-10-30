@@ -9,12 +9,14 @@ namespace Entidades
     public class Usuario
     {
 
+        public string IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string contrasenha;
         public Rol Rol { get; private set; }
 
-        public Usuario(string nombreUsuario, string contrasenha, Rol rol)
+        public Usuario(string idUsuario, string nombreUsuario, string contrasenha, Rol rol)
         {
+            IdUsuario = idUsuario;
             NombreUsuario = nombreUsuario;
             this.contrasenha = contrasenha;
             Rol = rol;
