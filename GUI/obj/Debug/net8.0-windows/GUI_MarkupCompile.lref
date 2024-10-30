@@ -1,6 +1,7 @@
 ﻿
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\MainWindow.xaml;;
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\View\LoginView.xaml;;
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\View\ViewGraficaECG.xaml;;
@@ -11,4 +12,13 @@ FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\LoginView.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\ViewGraficaECG.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\ViewPaciente.xaml;;
 >>>>>>> 22a7cfab5fb05761d841a56e1b3b17b1bcc7638b
+=======
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\MainWindow.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\LoginView.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlMedico.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\viewAdmin.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\ViewGraficaECG.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\ViewPaciente.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlFormularioMedico.xaml;;
+>>>>>>> 3996f82f7f8fe8beb914a5da85e15e75923d87d0
 

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\App.xaml
-4733406776
+7-584887408
 
-9987713690
+12-782050885
 206920721585
-MainWindow.xaml;View\LoginView.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
+MainWindow.xaml;View\LoginView.xaml;View\UserControlFormularioMedico.xaml;View\UserControlMedico.xaml;View\viewAdmin.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
 
 False
 

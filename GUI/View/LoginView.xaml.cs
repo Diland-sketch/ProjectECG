@@ -58,8 +58,8 @@ namespace GUI.View
             if (loginExitoso) 
             {
                 MessageBox.Show("Login exitoso");
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                viewAdmin ViewAdmin = new viewAdmin();
+                ViewAdmin.Show();
                 this.Close();
             }
             else

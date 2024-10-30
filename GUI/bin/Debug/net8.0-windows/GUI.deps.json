@@ -178,10 +178,7 @@
       "System.Security.Cryptography.ProtectedData/8.0.0": {},
       "Entidades/1.0.0": {
         "runtime": {
-          "Entidades.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Entidades.dll": {}
         }
       },
       "Logica/1.0.0": {
@@ -190,10 +187,7 @@
           "Persitencia": "1.0.0"
         },
         "runtime": {
-          "Logica.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Logica.dll": {}
         }
       },
       "Persitencia/1.0.0": {
@@ -203,10 +197,7 @@
           "System.IO.Ports": "8.0.0"
         },
         "runtime": {
-          "Persitencia.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Persitencia.dll": {}
         }
       }
     }
