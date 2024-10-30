@@ -8,10 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GUI
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Usuario\source\repos\ProjectECG\GUI\
-=======
-build_property.ProjectDir = C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\
->>>>>>> 22a7cfab5fb05761d841a56e1b3b17b1bcc7638b
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

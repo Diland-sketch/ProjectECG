@@ -34,9 +34,8 @@ namespace GUI.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            paciente.Identificacion = txtId.Text;
-            
+            viewAdmin ViewAdmin = new viewAdmin();
+            ViewAdmin.Show();
         }
         public void Cargar()
         {
