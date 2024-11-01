@@ -4,42 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
-=======
-C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\
->>>>>>> 22a7cfab5fb05761d841a56e1b3b17b1bcc7638b
-=======
-C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
->>>>>>> 3996f82f7f8fe8beb914a5da85e15e75923d87d0
 GUI
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\App.xaml
-4733406776
-
-7-1034051919
-206920721585
-=======
-C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\App.xaml
-4733406776
-
-7-1034051919
-2061534922008
->>>>>>> 22a7cfab5fb05761d841a56e1b3b17b1bcc7638b
-MainWindow.xaml;View\LoginView.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
-=======
-C:\Users\Usuario\source\repos\ProjectECG\GUI\App.xaml
 7-584887408
 
 101491150802
-2061899986176
+206920721585
 MainWindow.xaml;View\LoginView.xaml;View\UserControlFormularioMedico.xaml;View\UserControlMedico.xaml;View\viewAdmin.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
->>>>>>> 3996f82f7f8fe8beb914a5da85e15e75923d87d0
 
 False
 

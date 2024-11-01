@@ -12,14 +12,9 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
       "C:\\Users\\CAMILO MOSQUERA\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-=======
-      "C:\\Users\\Usuario\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Usuario\\.nuget\\packages"
->>>>>>> 3996f82f7f8fe8beb914a5da85e15e75923d87d0
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
