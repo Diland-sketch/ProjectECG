@@ -8,10 +8,10 @@ namespace Entidades
 {
     public class Rol
     {
-        public string IdRol { get; set; }
+        public int IdRol { get; set; }
         public string NombreRol { get; set; }
 
-        public Rol(string id, string nombreRol)
+        public Rol(int id, string nombreRol)
         {
             IdRol = id;
             NombreRol = nombreRol;

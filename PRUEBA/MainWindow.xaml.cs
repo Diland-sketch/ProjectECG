@@ -27,7 +27,7 @@ namespace PRUEBA
         public void Button_Click(object sender, RoutedEventArgs e)
         {
             Rol rol = new Rol();
-            rol.IdRol = txt1.Text;
+            rol.IdRol = int.Parse(txt1.Text);
             rol.NombreRol = txt2.Text;
             var message = serviceRol.Guardar(rol);
             MessageBox.Show(message);

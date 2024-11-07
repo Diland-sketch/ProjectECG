@@ -9,12 +9,12 @@ namespace Entidades
     public class Usuario
     {
 
-        public string IdUsuario { get; set; }
+        public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string contrasenha;
         public Rol Rol { get; private set; }
 
-        public Usuario(string idUsuario, string nombreUsuario, string contrasenha, Rol rol)
+        public Usuario(int idUsuario, string nombreUsuario, string contrasenha, Rol rol)
         {
             IdUsuario = idUsuario;
             NombreUsuario = nombreUsuario;

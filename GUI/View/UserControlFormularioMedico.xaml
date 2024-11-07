@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
     <UserControl.Background>
         <ImageBrush/>
     </UserControl.Background>
@@ -23,7 +24,6 @@
         <Label Content="Fecha nacimiento" HorizontalAlignment="Left" Margin="95,272,0,0" VerticalAlignment="Top" Width="166"/>
         <Label Content="Nombre usuario" HorizontalAlignment="Left" Margin="95,298,0,0" VerticalAlignment="Top" Width="166"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="95,324,0,0" VerticalAlignment="Top" Width="166"/>
-        <ComboBox HorizontalAlignment="Left" Margin="95,355,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="350,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPNombre" HorizontalAlignment="Left" Margin="350,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtSNombre" HorizontalAlignment="Left" Margin="350,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -32,8 +32,9 @@
         <TextBox x:Name="txtFechaNacimiento" HorizontalAlignment="Left" Margin="350,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="350,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="350,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="350,253,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="390,366,0,0" VerticalAlignment="Top" Click="btnGuardar_Click"/>
+        <TextBox x:Name="txtSexo" HorizontalAlignment="Left" Margin="350,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cboRol_2" HorizontalAlignment="Left" Margin="95,360,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </UserControl>

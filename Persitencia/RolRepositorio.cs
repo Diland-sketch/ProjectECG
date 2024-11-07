@@ -56,15 +56,15 @@ namespace Persistencia
         {
             try
             {
-                string ssql = "SELECT id_rol, nombre_rol FROM roles WHERE nombre_rol = 'medico'";
-
                 AbrirConexion();
+
+                string ssql = "SELECT nombre_rol FROM roles WHERE id_rol = 1";
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
                 OracleDataReader reader = Ocmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    comboBox.Items.Add(new { IdRol = reader["id_rol"], NombreRol = reader["nombre_rol"] });
+                    comboBox.Items.Add(reader["nombre_rol"]);
                 }
 
                 if (comboBox.Items.Count > 0)
@@ -92,6 +92,37 @@ namespace Persistencia
         public string ConsultarId(string id)
         {
             throw new NotImplementedException();
+        }
+
+        public int ObtenerIdRol(string nombreRol)
+        {
+            try
+            {
+                AbrirConexion();
+                string ssql = "SELECT id_rol FROM roles WHERE nombre_rol = :nombre_rol";
+                OracleCommand Ocmd = conexion.CreateCommand();
+                Ocmd.CommandText = ssql;
+                Ocmd.Parameters.Add(new OracleParameter(":nombre_rol", nombreRol));
+
+                OracleDataReader reader = Ocmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return reader.GetInt32(0);
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
         }
 
         public string Eliminar(string id)

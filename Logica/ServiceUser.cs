@@ -17,6 +17,11 @@ namespace Logica
             userRepository = new UserRepository();
         }
 
+        public string Guardar(Usuario user)
+        {
+            return userRepository.Guardar(user);
+        }
+
         public bool Login(Usuario usuario)
         {
             return userRepository.ValidarUsuarioAdmin(usuario);
