@@ -8,18 +8,37 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class ServiceMedico
+    public class ServiceMedico 
     {
-        MedicosRepositorio medicosRepositorio;
+        MedicosRepositorio MedicosRepositorio = new MedicosRepositorio();
 
-        public ServiceMedico()
+        public string Guardar(Medico medico, Usuario usuario)
         {
-            medicosRepositorio = new MedicosRepositorio();
+            return MedicosRepositorio.Guardar(medico, usuario);
+        }
+        public string Actualizar(Medico medico,Usuario usuario)
+        {
+            return MedicosRepositorio.Actualizar(medico, usuario);
+
         }
 
-        public string Guardar(Medico medico)
+        public string ConsultarId(string id)
         {
-            return medicosRepositorio.Guardar(medico);
+            throw new NotImplementedException();
         }
+
+        public List<Medico> ConsultarTodo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Eliminar(string id)
+        {
+            return MedicosRepositorio.Eliminar(id);
+        }
+
+        
+
+      
     }
 }

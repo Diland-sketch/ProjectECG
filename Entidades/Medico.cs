@@ -9,14 +9,18 @@ namespace Entidades
     public class Medico : Persona
     {
         public List<Paciente> pacientes;
-        public Usuario Credenciales { get; set; }
+        public string Usuario { get; set; }
+
+        public Medico()
+        {
+        }
 
         public Medico(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido,
-            DateTime fechaNacmiento, char sexo, Usuario credenciales)
+            DateOnly fechaNacmiento, char sexo, string usuario)
             : base(documento, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacmiento, sexo)
         {
             pacientes = new List<Paciente>();
-            Credenciales = credenciales;
+             Usuario = usuario;
         }
     }
 }

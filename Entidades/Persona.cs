@@ -13,10 +13,10 @@ namespace Entidades
         public string SegundoNombre { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
-        public DateTime FechaNacmiento { get; set; }
+        public DateOnly FechaNacmiento { get; set; }
         public char Sexo { get; set; }
 
-        public Persona(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, DateTime fechaNacmiento, char sexo)
+        public Persona(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, DateOnly fechaNacmiento, char sexo)
         {
             Identificacion = documento;
             PrimerNombre = primerNombre;
@@ -35,16 +35,16 @@ namespace Entidades
         {
             return $"{PrimerNombre} {SegundoNombre} {PrimerApellido} {SegundoApellido}";
         }
-        public int CalcularEdad()
-        {
-            var edad = DateTime.Now.Year - FechaNacmiento.Year;
-            if (DateTime.Now < FechaNacmiento.AddYears(edad))
-                edad--;
-            return edad;
-        }
-        public override string ToString()
-        {
-            return $"- Identificacion: {Identificacion}, {ObtenerNombreCompleto()}, Edad: {CalcularEdad()} años";
-        }
+        //public int CalcularEdad()
+        //{
+        //    var edad = DateOnly.FromDateTime(DateTime.Today) - FechaNacmiento.Year;
+        //    if (DateOnly.Now < FechaNacmiento.AddYears(edad))
+        //        edad--;
+        //    return edad;
+        //}
+        //public override string ToString()
+        //{
+        //    return $"- Identificacion: {Identificacion}, {ObtenerNombreCompleto()}, Edad: {CalcularEdad()} años";
+        //}
     }
 }

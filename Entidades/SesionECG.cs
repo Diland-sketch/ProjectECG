@@ -12,20 +12,17 @@ namespace Entidades
         public DateTime InicioSesionECG { get; set; }
         public DateTime FinSesionECG { get; set; }
         public string Descripcion { get; set; }
-        public string RutaArchivo { get; set; }
+        public string RutaArchivoDatos { get; set; }
         public string IdPaciente { get; set; }
         public string IdMedico { get; set; }
         public Incidentes Incidentes { get; set; }
 
-        public SesionECG(string idSesion, DateTime inicioSesionECG, DateTime finSesionECG, string descripcion, string rutaArchivo, string idPaciente, string idMedico, Incidentes incidentes)
+        public SesionECG(string idSesion, DateTime inicioSesion, DateTime finSesion, string descripcion, Incidentes incidentes)
         {
             IdSesion = idSesion;
-            InicioSesionECG = inicioSesionECG;
-            FinSesionECG = finSesionECG;
+            InicioSesionECG = inicioSesion;
+            FinSesionECG = finSesion;
             Descripcion = descripcion;
-            RutaArchivo = rutaArchivo;
-            IdPaciente = idPaciente;
-            IdMedico = idMedico;
             Incidentes = incidentes;
         }
     }

@@ -1,29 +1,29 @@
 ﻿using Entidades;
 using Oracle.ManagedDataAccess.Client;
+using System.Data.OracleClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
+using System.Data;
 
 namespace Persistencia
 {
-    public class RolRepositorio : ConexionOracle, ICrud<Rol>
+    public class RolRepositorio : ConexionOracle
     {
         public string Guardar(Rol entity)
         {
             try
             {
-                string ssql = "INSERT INTO roles(id_rol, nombre_rol) VALUES (:id_rol, :nombre_rol)";
+                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES ('{entity.IdRol}', '{entity.NombreRol}')";
 
+                
+                OracleCommand Ocmd = new OracleCommand(ssql,conexion);
                 AbrirConexion();
-                OracleCommand Ocmd = conexion.CreateCommand();
-                Ocmd.CommandText = ssql;
 
-                Ocmd.Parameters.Add(new OracleParameter(":id_rol", entity.IdRol));
-                Ocmd.Parameters.Add(new OracleParameter(":nombre_rol", entity.NombreRol));
+
 
                 int confirmacion = Ocmd.ExecuteNonQuery();
                 //CerrarConexion();
@@ -47,83 +47,6 @@ namespace Persistencia
             }
         }
 
-        public List<Rol> ConsultarTodo(Rol entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CargarComboBoxRol(ComboBox comboBox)
-        {
-            try
-            {
-                AbrirConexion();
-
-                string ssql = "SELECT nombre_rol FROM roles WHERE id_rol = 1";
-                OracleCommand Ocmd = new OracleCommand(ssql, conexion);
-                OracleDataReader reader = Ocmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    comboBox.Items.Add(reader["nombre_rol"]);
-                }
-
-                if (comboBox.Items.Count > 0)
-                {
-                    comboBox.SelectedIndex = 0;
-                }
-
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar el rol de médico: " + ex.Message);
-            }
-            finally
-            {
-                CerrarConexion();
-            }
-        }
-
-        public string Actualizar(Rol entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ConsultarId(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int ObtenerIdRol(string nombreRol)
-        {
-            try
-            {
-                AbrirConexion();
-                string ssql = "SELECT id_rol FROM roles WHERE nombre_rol = :nombre_rol";
-                OracleCommand Ocmd = conexion.CreateCommand();
-                Ocmd.CommandText = ssql;
-                Ocmd.Parameters.Add(new OracleParameter(":nombre_rol", nombreRol));
-
-                OracleDataReader reader = Ocmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    return reader.GetInt32(0);
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            catch (Exception ex)
-            {
-                return -1;
-            }
-            finally
-            {
-                CerrarConexion();
-            }
-        }
 
         public string Eliminar(string id)
         {
@@ -158,5 +81,57 @@ namespace Persistencia
             }
         }
 
+         public string MostrarIdRol(string NomRol)
+         {
+           
+            string ssql = $"SELECT * FROM roles WHERE nombre_rol = '{NomRol}' ";
+            string IdRol = "";
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+              AbrirConexion();
+              using (var reader = cmd.ExecuteReader())
+              {
+                 while (reader.Read())
+                 {
+                        IdRol = reader.GetString(reader.GetOrdinal("id_rol"));
+                 }
+              }
+            }
+            CerrarConexion();
+            return IdRol ;  
+         }        
+
+        public List<Rol> ConsultarTodo()
+        {
+            string ssql = $"SELECT * FROM roles ";
+            List<Rol> list = new List<Rol>();   
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(Mapper(reader));
+                            
+                    }
+                }
+            }
+            CerrarConexion();
+            return list;
+        }
+
+        public Rol Mapper(OracleDataReader reader)
+        {
+            return new Rol
+            {
+                IdRol = reader.GetString(reader.GetOrdinal("id_rol")),
+                NombreRol = reader.GetString(reader.GetOrdinal("nombre_rol")),
+                
+            };
+            
+        }
     }
 }

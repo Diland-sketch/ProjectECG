@@ -22,10 +22,9 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlFormularioMedico : UserControl
     {
-        ServiceRol serviceRol;
-        ServiceMedico serviceMedico;
-        ServiceUser serviceUser;
-
+        ServiceUser serviceUser = new ServiceUser();
+        ServiceRol serviceRol = new ServiceRol();
+        ServiceMedico serviceMedico = new ServiceMedico();
         public UserControlFormularioMedico()
         {
             InitializeComponent();
@@ -36,38 +35,54 @@ namespace GUI.View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            var id = txtId.Text;
-            var nombre1 = txtPNombre.Text;
-            var nombre2 = txtSNombre.Text;
-            var apellido1 = txtPApellido.Text;
-            var apellido2 = txtSApellido.Text;
-            var sexo = Char.Parse(txtSexo.Text);
-            var username = txtNombreUsuario.Text;
-            var password = txtContraseña.Text;
-            var fecha = DateTime.Parse(txtFechaNacimiento.Text);
+            
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = "4";
+            usuario.NombreUsuario = txtNombreUsuario.Text;
+            usuario.contrasenha = txtContraseña.Text;
+            Medico medico = new Medico();
+            medico.Identificacion = txtId.Text;
+            medico.PrimerNombre = txtPNombre.Text;
+            medico.SegundoNombre = txtSNombre.Text;
+            medico.PrimerApellido = txtPApellido.Text;
+            medico.SegundoApellido = txtSApellido.Text; 
+            medico.FechaNacmiento = DateOnly.Parse(txtFechaNacimiento.Text);
+            medico.Sexo = char.Parse(txtsexo.Text);
+            var message = serviceMedico.Guardar(medico,usuario);
+            MessageBox.Show(message);
 
-            Rol rol = new Rol();
-            rol.NombreRol = "medico";
-            rol.IdRol = 1;
-
-
-            Usuario user = new Usuario(1, username, password, rol);
-            var message2 = serviceUser.Guardar(user);
-
-            Medico medico = new Medico(id, nombre1, nombre2, apellido1, apellido2, fecha, sexo, user);
-
-            var message = serviceMedico.Guardar(medico);
-            MessageBox.Show(message, message2);
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            ServiceRol serviceRol = new ServiceRol();   
 
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            serviceRol.CargarComboBox(cboRol_2);
+            //serviceRol.CargarComboBox(cboRol_2);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            //Usuario usuario = new Usuario();
+            //usuario.NombreUsuario = txtNombreUsuario.Text;
+            //usuario.contrasenha = txtContraseña.Text;
+            //Medico medico = new Medico();
+            //medico.Identificacion = txtId.Text;
+            //medico.PrimerNombre = txtPNombre.Text;
+            //medico.SegundoNombre = txtSNombre.Text;
+            //medico.PrimerApellido = txtPApellido.Text;
+            //medico.SegundoApellido = txtSApellido.Text;
+            //medico.FechaNacmiento = DateOnly.Parse(txtFechaNacimiento.Text);
+            //medico.Sexo = char.Parse(txtsexo.Text);
+            //var message = serviceMedic.Actualizar(medico, usuario);
+            //MessageBox.Show(message);
+            string id = txtId.Text;
+            var message = serviceMedico.Eliminar(id);
+            MessageBox.Show(message);
         }
     }
 }
