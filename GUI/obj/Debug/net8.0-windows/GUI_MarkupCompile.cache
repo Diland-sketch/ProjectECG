@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
 GUI
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\Usuario\source\repos\ProjectECG\GUI\App.xaml
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\App.xaml
 7-584887408
 
 101491150802
-2061899986176
+206920721585
 MainWindow.xaml;View\LoginView.xaml;View\UserControlFormularioMedico.xaml;View\UserControlMedico.xaml;View\viewAdmin.xaml;View\ViewGraficaECG.xaml;View\ViewPaciente.xaml;
 
 False

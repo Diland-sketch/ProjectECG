@@ -9,7 +9,7 @@
     <UserControl.Background>
         <ImageBrush/>
     </UserControl.Background>
-    <Grid Width="598" Height="440.04">
+    <Grid Width="598" Height="440.04" Loaded="Grid_Loaded">
         <Grid.Background>
             <ImageBrush ImageSource="/View/medicalBackgroundo.jpg"/>
         </Grid.Background>
@@ -32,8 +32,9 @@
         <TextBox x:Name="txtFechaNacimiento" HorizontalAlignment="Left" Margin="350,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="350,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="350,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="350,253,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="390,366,0,0" VerticalAlignment="Top" Click="btnGuardar_Click"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="387,366,0,0" VerticalAlignment="Top" Click="btnGuardar_Click"/>
+        <TextBox x:Name="txtsexo" HorizontalAlignment="Left" Margin="355,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="actualizar" HorizontalAlignment="Left" Height="20" Margin="464,366,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
 
     </Grid>
 </UserControl>
