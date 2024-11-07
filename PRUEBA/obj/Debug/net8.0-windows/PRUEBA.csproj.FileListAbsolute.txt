@@ -1,3 +1,8 @@
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.csproj.AssemblyReference.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA_MarkupCompile.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA_MarkupCompile.lref
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\PRUEBA.exe
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\PRUEBA.deps.json
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\PRUEBA.runtimeconfig.json
@@ -22,11 +27,6 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\Entidades.pdb
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\Logica.pdb
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\Persitencia.pdb
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.csproj.AssemblyReference.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\App.g.cs
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA_MarkupCompile.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA_MarkupCompile.lref
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.g.resources
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.GeneratedMSBuildEditorConfig.editorconfig

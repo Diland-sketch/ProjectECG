@@ -9,8 +9,8 @@ namespace Persistencia
     internal interface ICrud<T>
     {
         string Guardar(T entity);
-        List<T> ConsultarTodo(T entity);
-        string ConsultarId(string id);
+        List<T> ConsultarTodo();
+        T ConsultarId(string id);
         string Actualizar(T entity);
         string Eliminar(string id);
     }
