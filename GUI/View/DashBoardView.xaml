@@ -1,0 +1,151 @@
+﻿<Window x:Class="GUI.DashBoardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:GUI.ViewModel"
+        xmlns:Menu="clr-namespace:GUI.Utilities"
+        mc:Ignorable="d"
+        Title="DashBoardView" 
+        Height="550" 
+        Width="800"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent">
+
+    <Window.DataContext>
+        <vm:NavigationVM />
+    </Window.DataContext>
+
+    <Grid>
+        <!--// Window Border //-->
+
+        <Border Background="#212529"
+         CornerRadius="20" />
+        <!--<Border Background="{Binding RelativeSource={RelativeSource Self}, Path=Background}">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                    <GradientStop Color="#212121" Offset="0"/>
+                    <GradientStop Color="#f70e0e" Offset="0.6"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>-->
+
+
+
+        <Grid>
+
+            <!--// Base Grid //-->
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228" />
+                <ColumnDefinition Width="622" />
+            </Grid.ColumnDefinitions>
+
+            <!--// Navigation Panel //-->
+
+            <Grid HorizontalAlignment="Left"
+           Width="228">
+
+                <Border Background="#272B2F"
+                 CornerRadius="0,0,0,0" />
+
+
+                <StackPanel Height="400"
+                     Width="228">
+                    <Image Source="/Images/logo-removebg-preview.png" Height="140" Width="200" HorizontalAlignment="Center" Margin="0,0"/>
+                    
+
+                    <!--// Home //-->
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                     Command="{Binding HomeCommand}"
+                     IsChecked="True">
+
+                        <Grid>
+
+                            <TextBlock Text="Home"
+                                Style="{StaticResource Text_Style}" />
+
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <!--// Registro y Gestion De Paciente //-->
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                       Command="{Binding CustomersCommand}">
+
+                        <Grid>
+
+
+
+                            <TextBlock Text="Registro Paciente"
+                                Style="{StaticResource Text_Style}" />
+
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <!--// Monitoreo Del Electrocardiograma en tienmpo real //-->
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                       Command="{Binding ProductsCommand}">
+
+                        <Grid>
+
+
+
+                            <TextBlock Text="Monitoreo ECG"
+                                Style="{StaticResource Text_Style}" />
+
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <!--// historial del paciente//-->
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                       Command="{Binding OrdersCommand}">
+
+                        <Grid>
+
+
+
+                            <TextBlock Text="Historial Seccion"
+                                Style="{StaticResource Text_Style}" />
+
+                        </Grid>
+
+                    </Menu:Btn>
+
+
+                    
+
+                    
+                    <StackPanel VerticalAlignment="Bottom">
+                        <Image Source="Images/logo-removebg-preview.png" Height="50" Width="50" HorizontalAlignment="Center" Margin="0,10" />
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <ContentControl x:Name="Pages"
+                         Content="{Binding CurrentView}" />
+
+            </Grid>
+
+        </Grid>
+
+        <Button x:Name="CloseApp"
+         Style="{StaticResource ExitApp}"
+         Click="CloseApp_Click" />
+
+
+
+
+    </Grid>
+</Window>

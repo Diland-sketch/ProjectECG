@@ -11,6 +11,8 @@
   <ItemGroup>
     <None Remove="Images\lock.png" />
     <None Remove="Images\logo-removebg-preview.png" />
+    <None Remove="Images\shutdown_def.png" />
+    <None Remove="Images\shutdown_mo.png" />
     <None Remove="Images\user%281%29.png" />
   </ItemGroup>
 
@@ -20,17 +22,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModel\" />
+    <Folder Include="Source Code\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
-    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\lock.png" />
-    <Resource Include="Images\logo-removebg-preview.png" />
+    <Resource Include="Images\logo-removebg-preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\shutdown_def.png" />
+    <Resource Include="Images\shutdown_mo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\user(1).png" />
   </ItemGroup>
 

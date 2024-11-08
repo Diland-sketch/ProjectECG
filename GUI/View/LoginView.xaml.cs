@@ -58,8 +58,8 @@ namespace GUI.View
             if (loginExitoso) 
             {
                 MessageBox.Show("Login exitoso");
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                DashBoardView dashBoardView = new DashBoardView();
+                dashBoardView.Show();
                 this.Close();
             }
             else
@@ -74,6 +74,11 @@ namespace GUI.View
         {
             ViewPaciente viewPaciente = new ViewPaciente();
             viewPaciente.Show();
+        }
+
+        private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
