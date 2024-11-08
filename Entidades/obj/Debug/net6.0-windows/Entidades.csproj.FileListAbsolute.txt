@@ -1,0 +1,12 @@
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.deps.json
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.pdb
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfoInputs.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfo.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.sourcelink.json
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\refint\Entidades.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.pdb
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\ref\Entidades.dll

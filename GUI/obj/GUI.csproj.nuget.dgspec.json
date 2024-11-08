@@ -4,62 +4,6 @@
     "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\BLL\\BLL.csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\BLL\\BLL.csproj",
-        "projectName": "BLL",
-        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\BLL\\BLL.csproj",
-        "frameworks": {
-          "net48": {
-            "projectReferences": {
-              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\DAL\\DAL.csproj"
-              },
-              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj": {
-                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj"
-              }
-            }
-          }
-        }
-      },
-      "frameworks": {
-        "net48": {}
-      }
-    },
-    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\DAL\\DAL.csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\DAL\\DAL.csproj",
-        "projectName": "DAL",
-        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\DAL\\DAL.csproj",
-        "frameworks": {
-          "net48": {
-            "projectReferences": {
-              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj": {
-                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj"
-              }
-            }
-          }
-        }
-      },
-      "frameworks": {
-        "net48": {}
-      }
-    },
-    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj",
-        "projectName": "ENTITY",
-        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj",
-        "frameworks": {
-          "net48": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net48": {}
-      }
-    },
     "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\GUI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -88,14 +32,7 @@
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
-            "projectReferences": {
-              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\BLL\\BLL.csproj"
-              },
-              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj": {
-                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

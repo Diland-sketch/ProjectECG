@@ -1,0 +1,175 @@
+﻿using Entidades;
+using Oracle.ManagedDataAccess.Client;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Persistencia
+{
+    public class UserRepository : ConexionOracle
+    {
+        RolRepositorio rolRepositorio = new RolRepositorio();
+        OracleDataAdapter da = new OracleDataAdapter();
+        public bool ValidarUsuario(Usuario usuario)
+        {
+            if(usuario.NombreUsuario == "admin" && usuario.contrasenha == "123")
+            {
+                return true;
+            }
+            return false;
+        }
+        public string Guardar(Usuario entity)
+        {
+            try
+            {
+                
+                string IdRol = rolRepositorio.MostrarIdRol("medicos");
+                entity.Rol = IdRol;
+                
+                string ssql = "INSERT INTO usuarios(contrasenha, roles_id_rol, id_usuario, nombre_usuario)" +
+                                                   $"VALUES ('{entity.contrasenha}','{entity.Rol}','{entity.IdUsuario}'," +
+                                                   $"'{entity.NombreUsuario}')";
+
+                OracleCommand Ocmd = new OracleCommand(ssql, conexion);
+                AbrirConexion();
+                
+                int confirmacion = Ocmd.ExecuteNonQuery();
+                //CerrarConexion();
+
+                if (confirmacion > 0)
+                {
+                    return "Se guardo satisfactoriamente";
+                }
+                else
+                {
+                    return "Error a la hora de guardar";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        public string MostrarId(string nomuser)
+        {
+
+            string ssql = $"SELECT id_usuario FROM usuarios WHERE nombre_usuario = '{nomuser}' ";
+            string iduser="";
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+             AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        iduser= reader.GetString(reader.GetOrdinal("id_usuario"));
+                    }
+                }
+            }
+            CerrarConexion();
+            return iduser;
+
+        }
+        
+
+        public Usuario ConsultarId(string id)
+        {
+
+            string ssql = $"SELECT nombre_usuario,contrasenha FROM usuarios WHERE id_usuario = '{id}' ";
+            Usuario user = new Usuario();
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        
+                        user.NombreUsuario = reader.GetString(reader.GetOrdinal("nombre_usuario"));
+                        user.contrasenha = reader.GetString(reader.GetOrdinal("contrasenha"));
+
+                    }
+                }
+            }
+            
+            CerrarConexion();
+            return user;
+        }
+
+        public string Actualizar(Usuario entity)
+        {
+            try
+            {
+                string ssql = $"UPDATE usuarios SET contrasenha = '{entity.contrasenha}', nombre_usuario = '{entity.NombreUsuario}' WHERE id_usuario = '{entity.IdUsuario}' ";
+                
+                OracleCommand Ocmd = new OracleCommand(ssql, conexion);
+                AbrirConexion();
+
+                int confirmacion = Ocmd.ExecuteNonQuery();
+                //CerrarConexion();
+
+                if (confirmacion > 0)
+                {
+                    return "Se actualizo satisfactoriamente";
+                }
+                else
+                {
+                    return "Error a la hora de actualizar";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+            
+            
+        }
+
+        public string Eliminar(string id)
+        {
+            try
+            {
+                string ssql = $"DELETE FROM usuarios WHERE id_usuario = '{id}'";
+
+                
+                OracleCommand ocmd = new OracleCommand(ssql, conexion);
+                AbrirConexion();
+                int confirmacion = ocmd.ExecuteNonQuery();
+
+                if (confirmacion > 0)
+                {
+                    return "Se elimino satisfactoriamente";
+                }
+                else
+                {
+                    return "Error a la hora de eliminar";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        
+    }
+}

@@ -1184,40 +1184,6 @@
             "rid": "win"
           }
         }
-      },
-      "BLL/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "DAL": "1.0.0",
-          "ENTITY": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/BLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BLL.dll": {}
-        }
-      },
-      "DAL/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "ENTITY": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DAL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DAL.dll": {}
-        }
-      },
-      "ENTITY/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/ENTITY.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ENTITY.dll": {}
-        }
       }
     }
   },
@@ -1825,27 +1791,10 @@
         "system.io.ports.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "BLL/1.0.0": {
-      "type": "project",
-      "path": "../BLL/BLL.csproj",
-      "msbuildProject": "../BLL/BLL.csproj"
-    },
-    "DAL/1.0.0": {
-      "type": "project",
-      "path": "../DAL/DAL.csproj",
-      "msbuildProject": "../DAL/DAL.csproj"
-    },
-    "ENTITY/1.0.0": {
-      "type": "project",
-      "path": "../ENTITY/ENTITY.csproj",
-      "msbuildProject": "../ENTITY/ENTITY.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "BLL >= 1.0.0",
-      "ENTITY >= 1.0.0",
       "LiveCharts.Wpf >= 0.9.7",
       "System.IO.Ports >= 9.0.0-rc.2.24473.5"
     ]
@@ -1882,14 +1831,7 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "projectReferences": {
-            "C:\\Users\\kerin\\source\\repos\\ProjectECG\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\BLL\\BLL.csproj"
-            },
-            "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj": {
-              "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\ENTITY\\ENTITY.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

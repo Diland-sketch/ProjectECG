@@ -14,11 +14,13 @@
     <None Remove="Images\shutdown_def.png" />
     <None Remove="Images\shutdown_mo.png" />
     <None Remove="Images\user%281%29.png" />
+    <None Remove="View\fondoAdmin.jpg" />
+    <None Remove="View\medicalBackgroundo.jpg" />
+    <None Remove="View\recorteadmin.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj" />
-    <ProjectReference Include="..\ENTITY\ENTITY.csproj" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +42,8 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\user(1).png" />
+    <Resource Include="View\medicalBackgroundo.jpg" />
+    <Resource Include="Images\recorteadmin.png" />
   </ItemGroup>
 
 </Project>
