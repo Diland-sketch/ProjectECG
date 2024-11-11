@@ -27,10 +27,24 @@ namespace GUI.View
         private void Label_MouseDown(object sender, MouseButtonEventArgs e)
         {
             panelMedico.Children.Clear();
-            UserControlFormularioMedico userControlFormularioMedico = new UserControlFormularioMedico();
-            panelMedico.Children.Add(userControlFormularioMedico);
+            UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
+            panelMedico.Children.Add(userControlCrudMedico);
         }
-        
-        
+        private void Label_mouse(object sender, MouseButtonEventArgs e)
+        {
+            panelMedico.Children.Clear();
+            UserControlCrudRol userControlCrudRol = new UserControlCrudRol();
+            panelMedico.Children.Add(userControlCrudRol);
+        }
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Button_Back(object sender, RoutedEventArgs e)
+        {
+            LoginView mainWindow = new LoginView();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

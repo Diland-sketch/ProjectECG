@@ -27,6 +27,41 @@ namespace GUI.View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            DateTime? fechaNacimiento = fechaNacimientoPicker.SelectedDate;
+            char sexo = ' ';
+            if (radioMasculino.IsChecked == true)
+            {
+                sexo = 'M';
+            }
+            else if (radioFemenino.IsChecked == true)
+            {
+                sexo = 'F';
+            }
+            if (sexo == ' ')
+            {
+                MessageBox.Show("Por favor, selecciona un sexo.");
+                return;
+            }
+        }
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Window.GetWindow(this) as viewAdmin;
+
+            if (mainWindow != null)
+            {
+                mainWindow.panelMedico.Children.Clear();
+                UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
+                mainWindow.panelMedico.Children.Add(userControlCrudMedico);
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
 
         }
     }

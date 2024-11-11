@@ -13,8 +13,9 @@
     <None Remove="Images\logo-removebg-preview.png" />
     <None Remove="Images\medicalBackgroundo.jpg" />
     <None Remove="Images\user%281%29.png" />
+    <None Remove="View\blackMedicalBackground.jpg" />
     <None Remove="View\fondoAdmin.jpg" />
-    <None Remove="View\medicalBackgroundo.jpg" />
+    <None Remove="View\fondoR.jpg" />
     <None Remove="View\recorteadmin.png" />
   </ItemGroup>
 
@@ -36,8 +37,10 @@
     <Resource Include="Images\lock.png" />
     <Resource Include="Images\logo-removebg-preview.png" />
     <Resource Include="Images\user(1).png" />
-    <Resource Include="View\medicalBackgroundo.jpg" />
+    <Resource Include="View\blackMedicalBackground.jpg" />
     <Resource Include="Images\recorteadmin.png" />
+    <Resource Include="Images\fondoR.jpg" />
+    <Resource Include="View\fondoR.jpg" />
   </ItemGroup>
 
 </Project>
