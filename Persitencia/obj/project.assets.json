@@ -24,7 +24,7 @@
           }
         }
       },
-      "Oracle.ManagedDataAccess.Core/23.6.0": {
+      "Oracle.ManagedDataAccess.Core/23.6.1": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.PerformanceCounter": "6.0.1",
@@ -399,10 +399,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Oracle.ManagedDataAccess.Core/23.6.0": {
-      "sha512": "dh9lSGv6DUU7e92HULZOFYdpRQuIPy6B4dlN5zT3eyhRU9lsVbu8CYdyB7yLAdPNx4Egpq75uP2Qcr98PhTbmg==",
+    "Oracle.ManagedDataAccess.Core/23.6.1": {
+      "sha512": "Oc8AX7xme05xrp4/aCxKBH4+bpWgMCFafXI7LbLO/7OBMJLZRXhMtejDgIb8aYvIVyV7vSdAy3LkCYcJorxn1A==",
       "type": "package",
-      "path": "oracle.manageddataaccess.core/23.6.0",
+      "path": "oracle.manageddataaccess.core/23.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -413,7 +413,7 @@
         "info.txt",
         "lib/net8.0/Oracle.ManagedDataAccess.dll",
         "lib/netstandard2.1/Oracle.ManagedDataAccess.dll",
-        "oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+        "oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
         "oracle.manageddataaccess.core.nuspec",
         "oracle.png"
       ]
@@ -869,29 +869,24 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Entidades >= 1.0.0",
-      "Oracle.ManagedDataAccess.Core >= 23.6.0",
+      "Oracle.ManagedDataAccess.Core >= 23.6.1",
       "System.IO.Ports >= 8.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
       "projectName": "Persitencia",
-      "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
-      "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -899,14 +894,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
             }
           }
         }
@@ -928,7 +924,7 @@
         "dependencies": {
           "Oracle.ManagedDataAccess.Core": {
             "target": "Package",
-            "version": "[23.6.0, )"
+            "version": "[23.6.1, )"
           },
           "System.IO.Ports": {
             "target": "Package",
@@ -954,7 +950,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

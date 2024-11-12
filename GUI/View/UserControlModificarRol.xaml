@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="GUI.View.UserControlModificarRol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Opacity="1" Loaded="UserControl_Loaded">
+    <Grid Width="598" Height="456">
+        <Grid.Background>
+            <ImageBrush ImageSource="/View/fondoR.jpg"/>
+        </Grid.Background>
+        <Label Content="MODIFICAR ROL" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" Margin="148,124,148,174">
+            <StackPanel Margin="0,0,0,-1">
+                <TextBlock Text="Identificacion:" Margin="5" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txtId" TextWrapping="Wrap" Width="268" Height="21"
+                    Background="Transparent"
+                    BorderBrush="Gray"
+                    BorderThickness="0,0,0,1"
+                    Foreground="White"
+                    Padding="0,0,0,0" TextChanged="IdentificacionTextBox_TextChanged"/>
+                <TextBlock Text="Nombre:" Margin="5" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txtNombre" TextWrapping="Wrap" Width="268" Height="21"
+                    Background="Transparent"
+                    BorderBrush="Gray"
+                    BorderThickness="0,0,0,1"
+                    Foreground="White"
+                    Padding="0,0,0,0"
+                    IsEnabled="False"/>
+                <Button Content="Guardar" Click="GuardarButton_Click" Width="58" Background="#FF333838" Foreground="White" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
+            <Button.Content>
+                <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Button.Content>
+        </Button>
+    </Grid>
+</UserControl>
