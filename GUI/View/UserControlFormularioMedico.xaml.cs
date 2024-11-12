@@ -37,7 +37,7 @@ namespace GUI.View
         {
             
             Usuario usuario = new Usuario();
-            usuario.IdUsuario = "4";
+            usuario.IdUsuario = 4;
             usuario.NombreUsuario = txtNombreUsuario.Text;
             usuario.contrasenha = txtContraseña.Text;
             Medico medico = new Medico();

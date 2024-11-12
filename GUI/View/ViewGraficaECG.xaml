@@ -6,6 +6,7 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:GUI.View"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="ViewGraficaECG" Height="450" Width="800">
     <Grid>
         <lvc:CartesianChart x:Name="ecgChart">
@@ -13,7 +14,7 @@
                 <lvc:Axis Title="Tiempo (s)" Labels="{x:Null}" />
             </lvc:CartesianChart.AxisX>
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Voltaje (mV)" />
+                <lvc:Axis Title="Voltaje (mV)"/>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
         <Button Content="Iniciar" Click="Iniciar_Click" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>

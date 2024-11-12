@@ -22,7 +22,7 @@ namespace Persistencia
                 entity.Usuario = userRepository.MostrarId(user.NombreUsuario);
                 string ssql = "INSERT INTO medicos(idmedico,primer_nombre,segundo_nombre, primer_apeliido,segundo_apellido,sexo,fecha_nacimiento,usuario_id)" +
                                                    $"VALUES('{entity.Identificacion}', '{entity.PrimerNombre}', '{entity.SegundoNombre}', '{entity.PrimerApellido}'," +
-                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacmiento}', 'DD/MM/YYYY')), '{entity.Usuario}')";
+                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacmiento}', 'DD/MM/YYYY')), {entity.Usuario})";
 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
                 AbrirConexion();
@@ -53,10 +53,10 @@ namespace Persistencia
         {
             throw new NotImplementedException();
         }
-        public string MostrarIdU(string id)
+        public int MostrarIdU(string id)
         {
             string ssql = $"SELECT usuario_id FROM medicos WHERE idmedico = '{id}' ";
-            string Iduser = "";
+            int Iduser = 0;
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
             {
@@ -67,7 +67,7 @@ namespace Persistencia
                     {
 
                         
-                        Iduser = reader.GetString(reader.GetOrdinal("usuario_id"));
+                        Iduser = reader.GetInt32(reader.GetOrdinal("usuario_id"));
 
                     }
                 }

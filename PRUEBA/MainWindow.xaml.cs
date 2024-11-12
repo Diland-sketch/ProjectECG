@@ -40,17 +40,15 @@ namespace PRUEBA
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string idRol = txt3.Text;
+            /*string idRol = txt3.Text;
             var message = serviceRol.Eliminar(idRol);
-            MessageBox.Show(message);
-
-
+            MessageBox.Show(message);*/
         }
 
         private void guaradarusu_Click_1(object sender, RoutedEventArgs e)
         {
             Usuario usuario = new Usuario();
-            usuario.IdUsuario = txt1.Text;
+            usuario.IdUsuario = int.Parse(txt1.Text);
             usuario.NombreUsuario = txt2.Text;
             usuario.contrasenha = txt3.Text;
             
@@ -70,7 +68,7 @@ namespace PRUEBA
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
             Usuario usuario= new Usuario();
-            usuario.IdUsuario = txt1.Text;
+            usuario.IdUsuario = int.Parse(txt1.Text);
            
             UserRepository userRepository = new UserRepository();
             usuario = userRepository.ConsultarId(usuario.IdUsuario);

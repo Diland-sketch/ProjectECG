@@ -22,7 +22,7 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public string ConsultarId(string id)
+        public string ConsultarId(int id)
         {
             throw new NotImplementedException();
         }
@@ -32,7 +32,7 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public string Eliminar(string idRol)
+        public string Eliminar(int idRol)
         {
             return rolRepositorio.Eliminar(idRol);
         }

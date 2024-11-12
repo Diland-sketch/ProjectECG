@@ -26,12 +26,12 @@ namespace Persistencia
         {
             try
             {
-                
-                string IdRol = rolRepositorio.MostrarIdRol("medicos");
+
+                int IdRol = rolRepositorio.MostrarIdRol("medico");
                 entity.Rol = IdRol;
                 
                 string ssql = "INSERT INTO usuarios(contrasenha, roles_id_rol, id_usuario, nombre_usuario)" +
-                                                   $"VALUES ('{entity.contrasenha}','{entity.Rol}','{entity.IdUsuario}'," +
+                                                   $"VALUES ('{entity.contrasenha}',{entity.Rol},{entity.IdUsuario}," +
                                                    $"'{entity.NombreUsuario}')";
 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
@@ -59,11 +59,11 @@ namespace Persistencia
             }
         }
 
-        public string MostrarId(string nomuser)
+        public int MostrarId(string nomuser)
         {
 
             string ssql = $"SELECT id_usuario FROM usuarios WHERE nombre_usuario = '{nomuser}' ";
-            string iduser="";
+            int iduser = 0;
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
             {
@@ -72,7 +72,7 @@ namespace Persistencia
                 {
                     while (reader.Read())
                     {
-                        iduser= reader.GetString(reader.GetOrdinal("id_usuario"));
+                        iduser = reader.GetInt32(reader.GetOrdinal("id_usuario"));
                     }
                 }
             }
@@ -82,10 +82,10 @@ namespace Persistencia
         }
         
 
-        public Usuario ConsultarId(string id)
+        public Usuario ConsultarId(int id)
         {
 
-            string ssql = $"SELECT nombre_usuario,contrasenha FROM usuarios WHERE id_usuario = '{id}' ";
+            string ssql = $"SELECT nombre_usuario,contrasenha FROM usuarios WHERE id_usuario = {id} ";
             Usuario user = new Usuario();
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
@@ -111,7 +111,7 @@ namespace Persistencia
         {
             try
             {
-                string ssql = $"UPDATE usuarios SET contrasenha = '{entity.contrasenha}', nombre_usuario = '{entity.NombreUsuario}' WHERE id_usuario = '{entity.IdUsuario}' ";
+                string ssql = $"UPDATE usuarios SET contrasenha = '{entity.contrasenha}', nombre_usuario = '{entity.NombreUsuario}' WHERE id_usuario = {entity.IdUsuario} ";
                 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
                 AbrirConexion();
@@ -140,11 +140,11 @@ namespace Persistencia
             
         }
 
-        public string Eliminar(string id)
+        public string Eliminar(int id)
         {
             try
             {
-                string ssql = $"DELETE FROM usuarios WHERE id_usuario = '{id}'";
+                string ssql = $"DELETE FROM usuarios WHERE id_usuario = {id}";
 
                 
                 OracleCommand ocmd = new OracleCommand(ssql, conexion);

@@ -34,7 +34,7 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public string ConsultarId(string id)
+        public string ConsultarId(int id)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@ namespace Logica
             return userRepository.Actualizar(entity);
         }
 
-        public string Eliminar(string id)
+        public string Eliminar(int id)
         {
             throw new NotImplementedException();
         }

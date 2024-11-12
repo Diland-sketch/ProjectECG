@@ -33,10 +33,8 @@
         <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="350,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="350,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="390,366,0,0" VerticalAlignment="Top" Click="btnGuardar_Click"/>
-        <TextBox x:Name="txtSexo" HorizontalAlignment="Left" Margin="350,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtsexo" HorizontalAlignment="Left" Margin="350,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cboRol_2" HorizontalAlignment="Left" Margin="95,360,0,0" VerticalAlignment="Top" Width="120"/>
-      
-        <TextBox x:Name="txtsexo" HorizontalAlignment="Left" Margin="355,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="actualizar" HorizontalAlignment="Left" Height="20" Margin="464,366,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
 
     </Grid>

@@ -8,12 +8,12 @@ namespace Entidades
 {
     public class Usuario
     {
-        public string IdUsuario { get; set; }
+        public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string contrasenha;
-        public string Rol { get; set; }
+        public int Rol { get; set; }
 
-        public Usuario(string idUsuario, string nombreUsuario, string contrasenha, string rol)
+        public Usuario(int idUsuario, string nombreUsuario, string contrasenha, int rol)
         {
             IdUsuario = idUsuario;
             NombreUsuario = nombreUsuario;

@@ -1,80 +1,22 @@
 ﻿using Entidades;
 using System;
-using System.Collections.Generic;
 using System.IO.Ports;
 
 namespace Persistencia
 {
     public class ArduinoRepositorio
     {
-        /*private SerialPort _serialPort;
-
-        public event Action<DatoECG> DatoRecibido;
-
-        public ArduinoRepositorio(string portName, int puerto)
-        {
-            _serialPort = new SerialPort(portName, puerto);
-            _serialPort.DataReceived += OnDatoRecibido;
-        }
-
-        public bool ConectarArduino()
-        {
-            try
-            {
-                if (!_serialPort.IsOpen)
-                {
-                    _serialPort.Open();
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al conectar con el Arduino: {ex.Message}");
-                return false;
-            }
-        }
-        public void DesconectarArduino()
-        {
-            if (_serialPort != null && _serialPort.IsOpen)
-            {
-                _serialPort.Close();
-            }
-        }
-        private void OnDatoRecibido(object sender, SerialDataReceivedEventArgs e)
-        {
-            try
-            {
-                string data = _serialPort.ReadLine();
-                Console.WriteLine($"Dato recibido: {data}"); // Verificar los datos recibidos
-                if (double.TryParse(data, out double valor))
-                {
-                    DatoECG dato = new DatoECG(valor);
-                    DatoRecibido?.Invoke(dato);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error leyendo datos del puerto serial: {ex.Message}");
-            }
-        }*/
-
         private SerialPort _serialPort;
         public event Action<DatoECG> DatoRecibido;
 
         public ArduinoRepositorio(string portName, int baudRate)
         {
-            _serialPort = new SerialPort
+            _serialPort = new SerialPort(portName, baudRate)
             {
-                PortName = portName,
-                BaudRate = baudRate,
                 DataBits = 8,
                 Parity = Parity.None,
-                StopBits = StopBits.One,  // Cambiado a One
-                ReadTimeout = 1000 // Aumentado el tiempo de espera para evitar timeouts cortos
+                StopBits = StopBits.One,
+                ReadTimeout = 1000
             };
 
             _serialPort.DataReceived += OnDatoRecibido;
@@ -82,6 +24,8 @@ namespace Persistencia
 
         public bool ConectarArduino()
         {
+            if (_serialPort.IsOpen) return false;
+
             try
             {
                 _serialPort.Open();
@@ -89,54 +33,28 @@ namespace Persistencia
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Falla en arduino");
+                Console.WriteLine($"Error al conectar con el Arduino: {ex.Message}");
                 return false;
             }
         }
 
-        public void EscucharSerial() 
+        public void DesconectarArduino()
         {
-            if (_serialPort.IsOpen && _serialPort != null)
-            {
-                try
-                {
-                
-                    string data = _serialPort.ReadLine();
+            if (!_serialPort.IsOpen) return;
 
-                    if (int.TryParse(data, out int valor))
-                    {
-                        DatoECG dato = new DatoECG(valor);
-
-                        DatoRecibido?.Invoke(dato);
-
-                        Console.WriteLine("Dato recibido");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Error al convertir el dato");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error al leer del puerto serial");
-                }
-            }
-            else
-            {
-                Console.WriteLine("El puerto serial no está abierto.");
-            }
+            _serialPort.Close();
+            _serialPort.DataReceived -= OnDatoRecibido;
         }
+
         private void OnDatoRecibido(object sender, SerialDataReceivedEventArgs e)
         {
             try
             {
                 string data = _serialPort.ReadLine();
-
                 if (double.TryParse(data, out double valor))
                 {
                     DatoECG dato = new DatoECG(valor);
                     DatoRecibido?.Invoke(dato);
-                    Console.WriteLine($"Dato recibido: {valor}");
                 }
                 else
                 {
@@ -150,14 +68,6 @@ namespace Persistencia
             catch (Exception ex)
             {
                 Console.WriteLine($"Error leyendo datos del puerto serial: {ex.Message}");
-            }
-        }
-        public void DesconectarArduino()
-        {
-            if (_serialPort != null && _serialPort.IsOpen)
-            {
-                _serialPort.Close();
-                _serialPort.DataReceived -= OnDatoRecibido;
             }
         }
     }
