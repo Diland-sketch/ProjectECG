@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mpxNiLfQgzo=",
+  "dgSpecHash": "Py6c6ftPDIs=",
   "success": true,
   "projectFilePath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dilan\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\dilan\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
-    "C:\\Users\\dilan\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.0\\oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+    "C:\\Users\\dilan\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.1\\oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
     "C:\\Users\\dilan\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\dilan\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\dilan\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",

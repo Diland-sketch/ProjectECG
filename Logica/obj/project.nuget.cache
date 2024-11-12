@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "I3r6/lGk+k8=",
+  "dgSpecHash": "Tl4vJwRKPIc=",
   "success": true,
   "projectFilePath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dilan\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\dilan\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.0\\oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+    "C:\\Users\\dilan\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.1\\oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
     "C:\\Users\\dilan\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\dilan\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\dilan\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",

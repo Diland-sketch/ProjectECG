@@ -12,30 +12,50 @@
     </UserControl.Background>
     <Grid Width="598" Height="440.04" Loaded="Grid_Loaded">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/medicalBackgroundo.jpg"/>
+            <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
         </Grid.Background>
-        <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="142"/>
-        <Label Content="Identificacion" HorizontalAlignment="Left" Margin="95,99,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Primer nombre" HorizontalAlignment="Left" Margin="95,130,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Segundo nombre" HorizontalAlignment="Left" Margin="95,161,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Primer apellido" HorizontalAlignment="Left" Margin="95,194,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Segundo apellido" HorizontalAlignment="Left" Margin="95,220,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Sexo" HorizontalAlignment="Left" Margin="95,246,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Fecha nacimiento" HorizontalAlignment="Left" Margin="95,272,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Nombre usuario" HorizontalAlignment="Left" Margin="95,298,0,0" VerticalAlignment="Top" Width="166"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="95,324,0,0" VerticalAlignment="Top" Width="166"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="350,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPNombre" HorizontalAlignment="Left" Margin="350,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtSNombre" HorizontalAlignment="Left" Margin="350,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPApellido" HorizontalAlignment="Left" Margin="350,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtSApellido" HorizontalAlignment="Left" Margin="350,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtFechaNacimiento" HorizontalAlignment="Left" Margin="350,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="350,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="350,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="390,366,0,0" VerticalAlignment="Top" Click="btnGuardar_Click"/>
-        <TextBox x:Name="txtsexo" HorizontalAlignment="Left" Margin="350,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cboRol_2" HorizontalAlignment="Left" Margin="95,360,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="actualizar" HorizontalAlignment="Left" Height="20" Margin="464,366,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
+        <Grid Width="598" Height="456">
 
+            <Grid.Background>
+                <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
+            </Grid.Background>
+
+            <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="142" Foreground="White"/>
+            <Label Content="Identificacion" HorizontalAlignment="Left" Margin="95,100,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Primer nombre" HorizontalAlignment="Left" Margin="95,125,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Segundo nombre" HorizontalAlignment="Left" Margin="95,150,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Primer apellido" HorizontalAlignment="Left" Margin="95,175,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Segundo apellido" HorizontalAlignment="Left" Margin="95,200,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Sexo" HorizontalAlignment="Left" Margin="95,225,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Fecha nacimiento" HorizontalAlignment="Left" Margin="95,250,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Nombre usuario" HorizontalAlignment="Left" Margin="95,275,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <Label Content="Contraseña" HorizontalAlignment="Left" Margin="95,300,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
+            <ComboBox HorizontalAlignment="Left" Margin="95,331,0,0" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="350,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtPNombre" HorizontalAlignment="Left" Margin="350,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtSNombre" HorizontalAlignment="Left" Margin="350,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtPApellido" HorizontalAlignment="Left" Margin="350,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtSApellido" HorizontalAlignment="Left" Margin="350,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="350,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="387,333,0,0" VerticalAlignment="Top" Click="btnGuardar_Click" Background="#FF473E3E" Foreground="White"/>
+            <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
+                <Button.Content>
+                    <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Button.Content>
+            </Button>
+            <DatePicker Name="fechaNacimientoPicker" HorizontalAlignment="Left" Margin="350,250,0,0" VerticalAlignment="Top"/>
+            <PasswordBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="350,300,0,0" VerticalAlignment="Top" Width="120"/>
+            <RadioButton x:Name="radioMasculino" Content="Masculino" HorizontalAlignment="Left" Margin="349,226,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White"/>
+            <RadioButton x:Name="radioFemenino" Content="Femenino" HorizontalAlignment="Left" Margin="422,226,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White"/>
+        </Grid>
     </Grid>
 </UserControl>

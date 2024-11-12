@@ -2,8 +2,17 @@
 
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\MainWindow.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\LoginView.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlConsultaMedico.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlConsultaRol.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlCrudMedico.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlCrudRol.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlEliminarMedico.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlEliminarRol.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlFormularioMedico.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlFormularioRol.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlMedico.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlModificarMedico.xaml;;
+FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\UserControlModificarRol.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\viewAdmin.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\ViewGraficaECG.xaml;;
 FC:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\View\ViewPaciente.xaml;;
