@@ -324,7 +324,7 @@
         "dependencies": {
           "Entidades": "1.0.0",
           "Oracle.ManagedDataAccess.Core": "23.6.1",
-          "System.IO.Ports": "9.0.0-rc.2.24473.5"
+          "System.IO.Ports": "8.0.0"
         },
         "compile": {
           "bin/placeholder/Persitencia.dll": {}
@@ -916,15 +916,6 @@
       "warningLevel": 1,
       "message": "El paquete \"LiveCharts.Wpf 0.9.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "LiveCharts.Wpf",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Advertencia como error: Degradación del paquete detectada: System.IO.Ports de 9.0.0-rc.2.24473.5 a 8.0.0. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n GUI -> Logica -> Persitencia -> System.IO.Ports (>= 9.0.0-rc.2.24473.5) \r\n GUI -> System.IO.Ports (>= 8.0.0)",
-      "libraryId": "System.IO.Ports",
       "targetGraphs": [
         "net8.0-windows7.0"
       ]

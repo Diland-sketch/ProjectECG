@@ -267,10 +267,7 @@
       "System.Security.Cryptography.ProtectedData/8.0.0": {},
       "Entidades/1.0.0": {
         "runtime": {
-          "Entidades.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Entidades.dll": {}
         }
       },
       "Logica/1.0.0": {
@@ -279,23 +276,21 @@
           "Persitencia": "1.0.0"
         },
         "runtime": {
-          "Logica.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Logica.dll": {}
         }
       },
       "Persitencia/1.0.0": {
         "dependencies": {
           "Entidades": "1.0.0",
           "Oracle.ManagedDataAccess.Core": "23.6.1",
+<<<<<<< HEAD
           "System.IO.Ports": "9.0.0-rc.2.24473.5"
+=======
+          "System.IO.Ports": "8.0.0"
+>>>>>>> 9360e01a5113b6a89c938e15113472dae43b7617
         },
         "runtime": {
-          "Persitencia.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Persitencia.dll": {}
         }
       }
     }

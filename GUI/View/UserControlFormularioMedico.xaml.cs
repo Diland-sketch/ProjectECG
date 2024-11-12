@@ -31,25 +31,74 @@ namespace GUI.View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (ValidarCampos())
-            {
-                Usuario usuario = new Usuario();
-                usuario.IdUsuario = 4;
-                usuario.NombreUsuario = txtNombreUsuario.Text;
-                usuario.contrasenha = txtContraseña.Text;
-                Medico medico = new Medico();
-                medico.Identificacion = txtId.Text;
-                medico.PrimerNombre = txtPNombre.Text;
-                medico.SegundoNombre = txtSNombre.Text;
-                medico.PrimerApellido = txtPApellido.Text;
-                medico.SegundoApellido = txtSApellido.Text;
-                medico.FechaNacmiento = DateOnly.Parse(txtFechaNacimiento.Text);
-                medico.Sexo = char.Parse(txtsexo.Text);
-                var message = serviceMedic.Guardar(medico, usuario);
-                MessageBox.Show(message);
-                LimpiarCampos();
-            }
+            Usuario usuario = new Usuario();
             
+            usuario.NombreUsuario = txtNombreUsuario.Text;
+            usuario.contrasenha = txtContraseña.Password;
+            Medico medico = new Medico();
+            medico.Identificacion = txtId.Text;
+            medico.PrimerNombre = txtPNombre.Text;
+            medico.SegundoNombre = txtSNombre.Text;
+            medico.PrimerApellido = txtPApellido.Text;
+            medico.SegundoApellido = txtSApellido.Text;
+            if (fechaNacimientoPicker.SelectedDate.HasValue)
+            {
+                DateTime fechaSeleccionada = fechaNacimientoPicker.SelectedDate.Value;
+            }
+            if (radioMasculino.IsChecked == true)
+            {
+                medico.Sexo = 'M';
+            }
+            else if (radioFemenino.IsChecked == true)
+            {
+                medico.Sexo = 'F';
+            }
+            if (medico.Sexo == ' ')
+            {
+                MessageBox.Show("Por favor, selecciona un sexo.");
+                return;
+            }
+
+            var message = serviceMedic.Guardar(medico, usuario);
+            MessageBox.Show(message);
+        }
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Window.GetWindow(this) as viewAdmin;
+
+            if (mainWindow != null)
+            {
+                mainWindow.panelMedico.Children.Clear();
+                UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
+                mainWindow.panelMedico.Children.Add(userControlCrudMedico);
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+            
+        //    Usuario usuario = new Usuario();
+        //    usuario.IdUsuario = "4";
+        //    usuario.NombreUsuario = txtNombreUsuario.Text;
+        //    usuario.contrasenha = txtContraseña.Text;
+        //    Medico medico = new Medico();
+        //    medico.Identificacion = txtId.Text;
+        //    medico.PrimerNombre = txtPNombre.Text;
+        //    medico.SegundoNombre = txtSNombre.Text;
+        //    medico.PrimerApellido = txtPApellido.Text;
+        //    medico.SegundoApellido = txtSApellido.Text;
+        //    medico.FechaNacmiento = DateOnly.Parse(txtFechaNacimiento.Text);
+        //    medico.Sexo = char.Parse(txtsexo.Text);
+        //    var message = serviceMedic.Guardar(medico,usuario);
+        //    MessageBox.Show(message);
+
+
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -81,7 +130,7 @@ namespace GUI.View
             //MessageBox.Show(message);
             Medico medico = new Medico();
             medico = serviceMedic.ConsultarId(txtId.Text);
-            txtFechaNacimiento.Text = medico.FechaNacmiento.ToString("dd-MM-yyyy");
+            //txtFechaNacimiento.Text = medico.FechaNacmiento.ToString("dd-MM-yyyy");
             
         }
         public void LimpiarCampos()
@@ -91,10 +140,9 @@ namespace GUI.View
             txtSNombre.Text = "";
             txtPApellido.Text = "";
             txtSApellido.Text = "";
-            txtsexo.Text = "";
-            txtFechaNacimiento.Text = "";
+            fechaNacimientoPicker.Text = "";
             txtNombreUsuario.Text = "";
-            txtContraseña.Text = "";
+            
         }
 
         public bool ValidarCampos()
@@ -109,23 +157,12 @@ namespace GUI.View
                         {
                             if (txtSApellido.Text != "")
                             {
-                                if (txtsexo.Text != "")
-                                {
-                                    if (txtFechaNacimiento.Text != "")
+                                
+                                    if (fechaNacimientoPicker.Text != "")
                                     {
                                         if (txtNombreUsuario.Text != "")
                                         {
-                                            if (txtContraseña.Text != "")
-                                            {
-                                                return true;
-                                            }
-                                            else
-                                            {
-                                                
-                                                MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                                                txtContraseña.Focus();
-                                                return false;
-                                            }
+                                        return true;
                                         }
                                         else
                                         {
@@ -137,16 +174,11 @@ namespace GUI.View
                                     else
                                     {
                                         MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                                        txtFechaNacimiento.Focus();
+                                        fechaNacimientoPicker.Focus();
                                         return false;
                                     }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                                    txtsexo.Focus();
-                                    return false;
-                                }
+                                
+                                
                             }
                             else
                             {

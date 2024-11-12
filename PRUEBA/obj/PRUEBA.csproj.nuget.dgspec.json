@@ -200,7 +200,7 @@
             },
             "System.IO.Ports": {
               "target": "Package",
-              "version": "[9.0.0-rc.2.24473.5, )"
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
