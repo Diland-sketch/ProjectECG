@@ -3,6 +3,7 @@
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\MainWindow.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\LoginView.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlConsultaMedico.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlConsultaRol.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlCrudMedico.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlCrudRol.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlEliminarMedico.xaml;;
@@ -15,5 +16,4 @@ FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlModificarRol.xaml;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\viewAdmin.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\ViewGraficaECG.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\ViewPaciente.xaml;;
-FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\UserControlConsultaRol.xaml;;
 

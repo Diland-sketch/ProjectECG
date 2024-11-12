@@ -53,8 +53,11 @@ namespace GUI.View
         private void IdentificacionTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             bool tieneIdentificacion = !string.IsNullOrWhiteSpace(txtId.Text);
-            txtNombre.IsEnabled = tieneIdentificacion;
-            txtApellido.IsEnabled = tieneIdentificacion;
+            txtPNombre.IsEnabled = tieneIdentificacion;
+            txtPApellido.IsEnabled = tieneIdentificacion;
+            fechaNacimientoPicker.IsEnabled = tieneIdentificacion;
+            txtSNombre.IsEnabled = tieneIdentificacion;
+            txtSApellido.IsEnabled = tieneIdentificacion;
         }
     }
 }

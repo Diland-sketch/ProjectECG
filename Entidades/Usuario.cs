@@ -8,13 +8,14 @@ namespace Entidades
 {
     public class Usuario
     {
-
+        public string IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string contrasenha;
-        public Rol Rol { get; private set; }
+        public string Rol { get; set; }
 
-        public Usuario(string nombreUsuario, string contrasenha, Rol rol)
+        public Usuario(string idUsuario, string nombreUsuario, string contrasenha, string rol)
         {
+            IdUsuario = idUsuario;
             NombreUsuario = nombreUsuario;
             this.contrasenha = contrasenha;
             Rol = rol;
@@ -31,7 +32,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"{base.ToString()}, Usuario: {NombreUsuario}, Rol: {Rol.NombreRol}";
+            return $"{base.ToString()}, Usuario: {NombreUsuario}, Rol: {Rol}";
         }
 
     }

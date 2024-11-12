@@ -11,6 +11,17 @@
         <Grid.Background>
             <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
         </Grid.Background>
+        <DataGrid x:Name="MedicosDataGrid" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True" 
+                  ItemsSource="{Binding Medicos}"
+                  Margin="117,76,117,76">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Identificacion" Binding="{Binding Identificacion}" Width="*" />
+                <DataGridTextColumn Header="Primer nombre" Binding="{Binding PrimerNombre}" Width="*" />
+                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
             <Button.Content>
                 <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
@@ -25,15 +36,6 @@
                 </Path>
             </Button.Content>
         </Button>
-        <ListView x:Name="MedicosListView" Margin="128,74,128,10" SelectionChanged="MedicosListView_SelectionChanged" Foreground="Black" Background="White">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Identificacion" DisplayMemberBinding="{Binding Identificacion}" Width="100"/>
-                    <GridViewColumn Header="PrimerNombre" DisplayMemberBinding="{Binding PrimerNombre}" Width="150"/>
-                    <GridViewColumn Header="Sexo" DisplayMemberBinding="{Binding Sexo}" Width="50"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
         <Label Content="CONSULTA MEDICO" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
 
     </Grid>

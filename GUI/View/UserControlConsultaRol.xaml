@@ -25,14 +25,16 @@
                 </Path>
             </Button.Content>
         </Button>
+        <DataGrid x:Name="RolesDataGrid" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True" 
+                  ItemsSource="{Binding Rol}"
+                  Margin="106,99,106,99">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdRol}" Width="*" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding NombreRol}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="CONSULTA ROL" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
-        <ListView x:Name="MedicosListView" Margin="171,77,171,7" SelectionChanged="MedicosListView_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Identificacion" DisplayMemberBinding="{Binding IdRol}" Width="100"/>
-                    <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding NombreRol}" Width="150"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
     </Grid>
 </UserControl>

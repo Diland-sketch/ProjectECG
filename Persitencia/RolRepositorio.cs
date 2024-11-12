@@ -1,27 +1,29 @@
 ﻿using Entidades;
 using Oracle.ManagedDataAccess.Client;
+using System.Data.OracleClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Data;
 
 namespace Persistencia
 {
-    public class RolRepositorio : ConexionOracle, ICrud<Rol>
+    public class RolRepositorio : ConexionOracle
     {
         public string Guardar(Rol entity)
         {
             try
             {
-                string ssql = "INSERT INTO roles(id_rol, nombre_rol) VALUES (:id_rol, :nombre_rol)";
+                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES ('{entity.IdRol}', '{entity.NombreRol}')";
 
+                
+                OracleCommand Ocmd = new OracleCommand(ssql,conexion);
                 AbrirConexion();
-                OracleCommand Ocmd = conexion.CreateCommand();
-                Ocmd.CommandText = ssql;
 
-                Ocmd.Parameters.Add(new OracleParameter(":id_rol", entity.IdRol));
-                Ocmd.Parameters.Add(new OracleParameter(":nombre_rol", entity.NombreRol));
+
 
                 int confirmacion = Ocmd.ExecuteNonQuery();
                 //CerrarConexion();
@@ -45,20 +47,6 @@ namespace Persistencia
             }
         }
 
-        public string Actualizar(Rol entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ConsultarId(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Rol> ConsultarTodo(Rol entity)
-        {
-            throw new NotImplementedException();
-        }
 
         public string Eliminar(string id)
         {
@@ -93,5 +81,57 @@ namespace Persistencia
             }
         }
 
+         public string MostrarIdRol(string NomRol)
+         {
+           
+            string ssql = $"SELECT * FROM roles WHERE nombre_rol = '{NomRol}' ";
+            string IdRol = "";
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+              AbrirConexion();
+              using (var reader = cmd.ExecuteReader())
+              {
+                 while (reader.Read())
+                 {
+                        IdRol = reader.GetString(reader.GetOrdinal("id_rol"));
+                 }
+              }
+            }
+            CerrarConexion();
+            return IdRol ;  
+         }        
+
+        public List<Rol> ConsultarTodo()
+        {
+            string ssql = $"SELECT * FROM roles ";
+            List<Rol> list = new List<Rol>();   
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(Mapper(reader));
+                            
+                    }
+                }
+            }
+            CerrarConexion();
+            return list;
+        }
+
+        public Rol Mapper(OracleDataReader reader)
+        {
+            return new Rol
+            {
+                IdRol = reader.GetString(reader.GetOrdinal("id_rol")),
+                NombreRol = reader.GetString(reader.GetOrdinal("nombre_rol")),
+                
+            };
+            
+        }
     }
 }

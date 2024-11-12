@@ -53,7 +53,7 @@ namespace GUI.View
                 new Rol { IdRol = "2", NombreRol = "Administrador" },
                 new Rol { IdRol = "3", NombreRol = "Medico"}
             };
-            MedicosListView.ItemsSource = Roles;
+            RolesDataGrid.ItemsSource = Roles;
         }
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

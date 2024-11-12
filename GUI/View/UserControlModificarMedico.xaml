@@ -35,22 +35,39 @@
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0" TextChanged="IdentificacionTextBox_TextChanged"/>
-                <TextBlock Text="Nombre:" Margin="5" FontSize="14" Foreground="White"/>
-                <TextBox x:Name="txtNombre" TextWrapping="Wrap" Width="268" Height="21"
+                <TextBlock Text="Primer Nombre:" Margin="5" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txtPNombre" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0"/>
-                <TextBlock Text="Apellido:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
-                <TextBox x:Name="txtApellido" TextWrapping="Wrap" Width="268" Height="21"
+                    Padding="0,0,0,0"
+                    IsEnabled="False"/>
+                <TextBlock Text="Segundo Nombre:" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txtSNombre" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0"/>
+                    Padding="0,0,0,0"
+                    IsEnabled="False"/>
+                <TextBlock Text="Primer Apellido:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
+                <TextBox x:Name="txtPApellido" TextWrapping="Wrap" Width="268" Height="21"
+                    Background="Transparent"
+                    BorderBrush="Gray"
+                    BorderThickness="0,0,0,1"
+                    Foreground="White"
+                    Padding="0,0,0,0" IsEnabled="False"/>
+                <TextBlock Text="Segundo Apellido:" FontSize="14" Foreground="White" Height="21" Width="270"/>
+                <TextBox x:Name="txtSApellido" TextWrapping="Wrap" Width="268" Height="21"
+                    Background="Transparent"
+                    BorderBrush="Gray"
+                    BorderThickness="0,0,0,1"
+                    Foreground="White"
+                    Padding="0,0,0,0"
+                    IsEnabled="False"/>
                 <TextBlock Text="Fecha de Naciemiento:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
-                <DatePicker x:Name="fechaNacimientoPicker"/>
+                <DatePicker x:Name="fechaNacimientoPicker" IsEnabled="False"/>
                 <Button Content="Guardar" Click="GuardarButton_Click" Width="58" Background="#FF333838" Foreground="White" Margin="0,10,0,0"/>
             </StackPanel>
         </Border>

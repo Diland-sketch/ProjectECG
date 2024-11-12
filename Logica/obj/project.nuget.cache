@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "r2HAU/Rmq3o=",
+  "dgSpecHash": "lpJChoxbQBk=",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.0\\oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.1\\oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",

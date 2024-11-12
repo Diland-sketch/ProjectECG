@@ -40,8 +40,8 @@ namespace GUI.View
                 new Medico { Identificacion = "1", PrimerNombre = "Dr. Juan Pérez" , Sexo = 'M'}, 
                 new Medico { Identificacion = "2", PrimerNombre = "Dra. Ana Gómez" , Sexo = 'M'}, 
                 new Medico { Identificacion = "3", PrimerNombre = "Dr. Carlos Ruiz" , Sexo = 'M'}
-            }; 
-            MedicosListView.ItemsSource = medicos; 
+            };
+            MedicosDataGrid.ItemsSource = medicos; 
         }
 
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
