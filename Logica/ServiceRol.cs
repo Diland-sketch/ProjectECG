@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class ServiceRol : ICrud<Rol>
+    public class ServiceRol 
     {
         RolRepositorio rolRepositorio = new RolRepositorio();
 
@@ -31,9 +31,9 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public string Eliminar(string idRol)
+        public string Eliminar(string nom)
         {
-            return rolRepositorio.Eliminar(idRol);
+            return rolRepositorio.Eliminar(nom);
         }
 
         

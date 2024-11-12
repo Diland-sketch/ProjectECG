@@ -17,7 +17,7 @@ namespace Persistencia
         {
             try
             {
-                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES ('{entity.IdRol}', '{entity.NombreRol}')";
+                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES (seq_roles.nextval, '{entity.NombreRol}')";
 
                 
                 OracleCommand Ocmd = new OracleCommand(ssql,conexion);
@@ -48,17 +48,15 @@ namespace Persistencia
         }
 
 
-        public string Eliminar(string id)
+        public string Eliminar(string nom)
         {
             try
             {
-                string ssql = "DELETE FROM roles WHERE id_rol = :id";
+                string ssql = $"DELETE FROM roles WHERE id_nombre = '{nom}'";
 
+                
+                OracleCommand ocmd = new OracleCommand (ssql,conexion);
                 AbrirConexion();
-                OracleCommand ocmd = conexion.CreateCommand();
-                ocmd.CommandText = ssql;
-
-                ocmd.Parameters.Add(new OracleParameter(":id", id));
 
                 int confirmacion = ocmd.ExecuteNonQuery();
 
@@ -81,11 +79,11 @@ namespace Persistencia
             }
         }
 
-         public string MostrarIdRol(string NomRol)
+         public int MostrarIdRol(string NomRol)
          {
            
-            string ssql = $"SELECT * FROM roles WHERE nombre_rol = '{NomRol}' ";
-            string IdRol = "";
+            string ssql = $"SELECT id_rol FROM roles WHERE nombre_rol = '{NomRol}' ";
+            int IdRol = 0;
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
             {
@@ -94,7 +92,7 @@ namespace Persistencia
               {
                  while (reader.Read())
                  {
-                        IdRol = reader.GetString(reader.GetOrdinal("id_rol"));
+                        IdRol = reader.GetInt32(reader.GetOrdinal("id_rol"));
                  }
               }
             }
@@ -127,7 +125,7 @@ namespace Persistencia
         {
             return new Rol
             {
-                IdRol = reader.GetString(reader.GetOrdinal("id_rol")),
+                IdRol = reader.GetInt32(reader.GetOrdinal("id_rol")),
                 NombreRol = reader.GetString(reader.GetOrdinal("nombre_rol")),
                 
             };

@@ -13,10 +13,10 @@ namespace Logica
 {
     public class ServiceUser : ICrud<Usuario>
     {
-        private UserRepository userRepository;
+        private UsuarioRepositorio userRepository;
         public ServiceUser()
         {
-            userRepository = new UserRepository();
+            userRepository = new UsuarioRepositorio();
         }
 
         public bool Login(Usuario usuario)

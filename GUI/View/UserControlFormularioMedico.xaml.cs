@@ -31,22 +31,25 @@ namespace GUI.View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            if (ValidarCampos())
+            {
+                Usuario usuario = new Usuario();
+                usuario.IdUsuario = 4;
+                usuario.NombreUsuario = txtNombreUsuario.Text;
+                usuario.contrasenha = txtContraseña.Text;
+                Medico medico = new Medico();
+                medico.Identificacion = txtId.Text;
+                medico.PrimerNombre = txtPNombre.Text;
+                medico.SegundoNombre = txtSNombre.Text;
+                medico.PrimerApellido = txtPApellido.Text;
+                medico.SegundoApellido = txtSApellido.Text;
+                medico.FechaNacmiento = DateOnly.Parse(txtFechaNacimiento.Text);
+                medico.Sexo = char.Parse(txtsexo.Text);
+                var message = serviceMedic.Guardar(medico, usuario);
+                MessageBox.Show(message);
+                LimpiarCampos();
+            }
             
-            Usuario usuario = new Usuario();
-            usuario.IdUsuario = "4";
-            usuario.NombreUsuario = txtNombreUsuario.Text;
-            usuario.contrasenha = txtContraseña.Text;
-            Medico medico = new Medico();
-            medico.Identificacion = txtId.Text;
-            medico.PrimerNombre = txtPNombre.Text;
-            medico.SegundoNombre = txtSNombre.Text;
-            medico.PrimerApellido = txtPApellido.Text;
-            medico.SegundoApellido = txtSApellido.Text; 
-            medico.FechaNacmiento = DateOnly.Parse(txtFechaNacimiento.Text);
-            medico.Sexo = char.Parse(txtsexo.Text);
-            var message = serviceMedic.Guardar(medico,usuario);
-            MessageBox.Show(message);
-
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -71,9 +74,114 @@ namespace GUI.View
             //medico.Sexo = char.Parse(txtsexo.Text);
             //var message = serviceMedic.Actualizar(medico, usuario);
             //MessageBox.Show(message);
-            string id = txtId.Text;
-            var message = serviceMedic.Eliminar(id);
-            MessageBox.Show(message);
+            //LimpiarCampos();
+
+            //string id = txtId.Text;
+            //var message = serviceMedic.Eliminar(id);
+            //MessageBox.Show(message);
+            Medico medico = new Medico();
+            medico = serviceMedic.ConsultarId(txtId.Text);
+            txtFechaNacimiento.Text = medico.FechaNacmiento.ToString("dd-MM-yyyy");
+            
+        }
+        public void LimpiarCampos()
+        {
+            txtId.Text = "";
+            txtPNombre.Text = "";
+            txtSNombre.Text = "";
+            txtPApellido.Text = "";
+            txtSApellido.Text = "";
+            txtsexo.Text = "";
+            txtFechaNacimiento.Text = "";
+            txtNombreUsuario.Text = "";
+            txtContraseña.Text = "";
+        }
+
+        public bool ValidarCampos()
+        {
+            if(txtId.Text != "")
+            {
+                if (txtPNombre.Text != "")
+                {
+                    if (txtSNombre.Text != "")
+                    {
+                        if (txtPApellido.Text != "")
+                        {
+                            if (txtSApellido.Text != "")
+                            {
+                                if (txtsexo.Text != "")
+                                {
+                                    if (txtFechaNacimiento.Text != "")
+                                    {
+                                        if (txtNombreUsuario.Text != "")
+                                        {
+                                            if (txtContraseña.Text != "")
+                                            {
+                                                return true;
+                                            }
+                                            else
+                                            {
+                                                
+                                                MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                                                txtContraseña.Focus();
+                                                return false;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                                            txtNombreUsuario.Focus();
+                                            return false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                                        txtFechaNacimiento.Focus();
+                                        return false;
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                                    txtsexo.Focus();
+                                    return false;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                                txtSApellido.Focus();
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                            txtPApellido.Focus();
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                        txtSNombre.Focus();
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                    txtPNombre.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                txtId.Focus();
+                return false;
+            }
         }
     }
 }

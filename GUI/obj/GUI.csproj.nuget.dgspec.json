@@ -280,11 +280,11 @@
           "dependencies": {
             "Oracle.ManagedDataAccess.Core": {
               "target": "Package",
-              "version": "[23.6.0, )"
+              "version": "[23.6.1, )"
             },
             "System.IO.Ports": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0-rc.2.24473.5, )"
             }
           },
           "imports": [

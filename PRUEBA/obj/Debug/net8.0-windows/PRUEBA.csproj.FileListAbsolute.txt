@@ -40,3 +40,14 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.pdb
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.genruntimeconfig.cache
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\ref\PRUEBA.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\bin\Debug\net8.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib

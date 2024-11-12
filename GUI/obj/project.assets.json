@@ -31,7 +31,7 @@
           }
         }
       },
-      "Oracle.ManagedDataAccess.Core/23.6.0": {
+      "Oracle.ManagedDataAccess.Core/23.6.1": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.PerformanceCounter": "8.0.0",
@@ -323,8 +323,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entidades": "1.0.0",
-          "Oracle.ManagedDataAccess.Core": "23.6.0",
-          "System.IO.Ports": "8.0.0"
+          "Oracle.ManagedDataAccess.Core": "23.6.1",
+          "System.IO.Ports": "9.0.0-rc.2.24473.5"
         },
         "compile": {
           "bin/placeholder/Persitencia.dll": {}
@@ -379,10 +379,10 @@
         "tools/install.ps1"
       ]
     },
-    "Oracle.ManagedDataAccess.Core/23.6.0": {
-      "sha512": "dh9lSGv6DUU7e92HULZOFYdpRQuIPy6B4dlN5zT3eyhRU9lsVbu8CYdyB7yLAdPNx4Egpq75uP2Qcr98PhTbmg==",
+    "Oracle.ManagedDataAccess.Core/23.6.1": {
+      "sha512": "Oc8AX7xme05xrp4/aCxKBH4+bpWgMCFafXI7LbLO/7OBMJLZRXhMtejDgIb8aYvIVyV7vSdAy3LkCYcJorxn1A==",
       "type": "package",
-      "path": "oracle.manageddataaccess.core/23.6.0",
+      "path": "oracle.manageddataaccess.core/23.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -393,7 +393,7 @@
         "info.txt",
         "lib/net8.0/Oracle.ManagedDataAccess.dll",
         "lib/netstandard2.1/Oracle.ManagedDataAccess.dll",
-        "oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+        "oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
         "oracle.manageddataaccess.core.nuspec",
         "oracle.png"
       ]
@@ -916,6 +916,15 @@
       "warningLevel": 1,
       "message": "El paquete \"LiveCharts.Wpf 0.9.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Advertencia como error: Degradación del paquete detectada: System.IO.Ports de 9.0.0-rc.2.24473.5 a 8.0.0. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n GUI -> Logica -> Persitencia -> System.IO.Ports (>= 9.0.0-rc.2.24473.5) \r\n GUI -> System.IO.Ports (>= 8.0.0)",
+      "libraryId": "System.IO.Ports",
       "targetGraphs": [
         "net8.0-windows7.0"
       ]
