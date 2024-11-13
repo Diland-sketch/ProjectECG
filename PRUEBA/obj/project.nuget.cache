@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SDe6CVeRQ8k=",
+  "dgSpecHash": "xRVxs1hZVsY=",
   "success": true,
   "projectFilePath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kerin\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.0\\oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+    "C:\\Users\\kerin\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.1\\oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
     "C:\\Users\\kerin\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\kerin\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\kerin\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",

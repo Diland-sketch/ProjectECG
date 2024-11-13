@@ -1,21 +1,3 @@
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.csproj.AssemblyReference.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.AssemblyInfoInputs.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.AssemblyInfo.cs
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.csproj.CoreCompileInputs.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.sourcelink.json
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Logica.deps.json
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Logica.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Logica.pdb
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Entidades.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Persitencia.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Entidades.pdb
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Persitencia.pdb
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.csproj.Up2Date
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\refint\Logica.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\Logica.pdb
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Logica\obj\Debug\net6.0-windows\ref\Logica.dll
 C:\Users\kerin\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Logica.deps.json
 C:\Users\kerin\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Logica.dll
 C:\Users\kerin\source\repos\ProjectECG\Logica\bin\Debug\net6.0-windows\Logica.pdb

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LowG2l2Bt88=",
+  "dgSpecHash": "n3dY05iz2FU=",
   "success": true,
   "projectFilePath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kerin\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\kerin\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
-    "C:\\Users\\kerin\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.0\\oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+    "C:\\Users\\kerin\\.nuget\\packages\\oracle.manageddataaccess.core\\23.6.1\\oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
     "C:\\Users\\kerin\\.nuget\\packages\\runtime.android-arm.runtime.native.system.io.ports\\9.0.0-rc.2.24473.5\\runtime.android-arm.runtime.native.system.io.ports.9.0.0-rc.2.24473.5.nupkg.sha512",
     "C:\\Users\\kerin\\.nuget\\packages\\runtime.android-arm64.runtime.native.system.io.ports\\9.0.0-rc.2.24473.5\\runtime.android-arm64.runtime.native.system.io.ports.9.0.0-rc.2.24473.5.nupkg.sha512",
     "C:\\Users\\kerin\\.nuget\\packages\\runtime.android-x64.runtime.native.system.io.ports\\9.0.0-rc.2.24473.5\\runtime.android-x64.runtime.native.system.io.ports.9.0.0-rc.2.24473.5.nupkg.sha512",

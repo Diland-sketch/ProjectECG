@@ -15,12 +15,14 @@
     <None Remove="Images\img_home.png" />
     <None Remove="Images\lock.png" />
     <None Remove="Images\logo-removebg-preview.png" />
+    <None Remove="Images\medicalBackgroundo.jpg" />
     <None Remove="Images\register.png" />
     <None Remove="Images\shutdown_def.png" />
     <None Remove="Images\shutdown_mo.png" />
     <None Remove="Images\user%281%29.png" />
+    <None Remove="View\blackMedicalBackground.jpg" />
     <None Remove="View\fondoAdmin.jpg" />
-    <None Remove="View\medicalBackgroundo.jpg" />
+    <None Remove="View\fondoR.jpg" />
     <None Remove="View\recorteadmin.png" />
   </ItemGroup>
 
@@ -57,6 +59,10 @@
     </Resource>
     <Resource Include="Images\user(1).png" />
     <Resource Include="View\medicalBackgroundo.jpg" />
+    <Resource Include="View\blackMedicalBackground.jpg" />
+    <Resource Include="Images\recorteadmin.png" />
+    <Resource Include="Images\fondoR.jpg" />
+    <Resource Include="View\fondoR.jpg" />
   </ItemGroup>
 
 </Project>

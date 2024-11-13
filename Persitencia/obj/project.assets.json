@@ -24,7 +24,7 @@
           }
         }
       },
-      "Oracle.ManagedDataAccess.Core/23.6.0": {
+      "Oracle.ManagedDataAccess.Core/23.6.1": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.PerformanceCounter": "6.0.1",
@@ -399,10 +399,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Oracle.ManagedDataAccess.Core/23.6.0": {
-      "sha512": "dh9lSGv6DUU7e92HULZOFYdpRQuIPy6B4dlN5zT3eyhRU9lsVbu8CYdyB7yLAdPNx4Egpq75uP2Qcr98PhTbmg==",
+    "Oracle.ManagedDataAccess.Core/23.6.1": {
+      "sha512": "Oc8AX7xme05xrp4/aCxKBH4+bpWgMCFafXI7LbLO/7OBMJLZRXhMtejDgIb8aYvIVyV7vSdAy3LkCYcJorxn1A==",
       "type": "package",
-      "path": "oracle.manageddataaccess.core/23.6.0",
+      "path": "oracle.manageddataaccess.core/23.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -413,7 +413,7 @@
         "info.txt",
         "lib/net8.0/Oracle.ManagedDataAccess.dll",
         "lib/netstandard2.1/Oracle.ManagedDataAccess.dll",
-        "oracle.manageddataaccess.core.23.6.0.nupkg.sha512",
+        "oracle.manageddataaccess.core.23.6.1.nupkg.sha512",
         "oracle.manageddataaccess.core.nuspec",
         "oracle.png"
       ]
@@ -869,7 +869,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Entidades >= 1.0.0",
-      "Oracle.ManagedDataAccess.Core >= 23.6.0",
+      "Oracle.ManagedDataAccess.Core >= 23.6.1",
       "System.IO.Ports >= 8.0.0"
     ]
   },
@@ -929,7 +929,7 @@
         "dependencies": {
           "Oracle.ManagedDataAccess.Core": {
             "target": "Package",
-            "version": "[23.6.0, )"
+            "version": "[23.6.1, )"
           },
           "System.IO.Ports": {
             "target": "Package",

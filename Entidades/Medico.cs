@@ -15,6 +15,7 @@ namespace Entidades
         {
         }
 
+
         public Medico(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido,
             DateOnly fechaNacmiento, char sexo, string usuario)
             : base(documento, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacmiento, sexo)
