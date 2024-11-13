@@ -20,9 +20,7 @@
         <view:PatientRegistrationView />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:SettingsVM}">
-        <view:SettingsView />
-    </DataTemplate>
+    
     
     
     

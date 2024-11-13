@@ -19,9 +19,6 @@
     <Compile Update="ViewDashBoard\PatientRegistrationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewDashBoard\SettingsView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\DashBoardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,9 +64,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ViewDashBoard\PatientRegistrationView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ViewDashBoard\SettingsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DashBoardView.xaml">

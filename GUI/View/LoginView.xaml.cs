@@ -1,5 +1,4 @@
-﻿using Entidades;
-using Logica;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Entidades;
+using Logica;
 
 namespace GUI.View
 {
@@ -58,13 +59,9 @@ namespace GUI.View
             if (loginExitoso) 
             {
                 MessageBox.Show("Login exitoso");
-<<<<<<< HEAD
                 DashBoardView dashBoardView = new DashBoardView();
                 dashBoardView.Show();
-=======
-                viewAdmin ViewAdmin = new viewAdmin();
-                ViewAdmin.Show();
->>>>>>> ca955b5d0fd683a3388365eb53bb58d3df6b0554
+       
                 this.Close();
             }
             else

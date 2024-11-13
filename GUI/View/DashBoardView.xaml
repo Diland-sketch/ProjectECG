@@ -12,6 +12,7 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
+        WindowState="Maximized"
         Background="Transparent">
 
     <Window.DataContext>
@@ -19,133 +20,80 @@
     </Window.DataContext>
 
     <Grid>
-        <!--// Window Border //-->
-
-        <Border Background="#212529"
-         CornerRadius="20" />
-        <!--<Border Background="{Binding RelativeSource={RelativeSource Self}, Path=Background}">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
-                    <GradientStop Color="#212121" Offset="0"/>
-                    <GradientStop Color="#f70e0e" Offset="0.6"/>
-                </LinearGradientBrush>
-            </Border.Background>
-        </Border>-->
-
-
+        <!-- Fondo con borde y esquinas redondeadas -->
+        <Border Background="#212529" CornerRadius="20" />
 
         <Grid>
-
-            <!--// Base Grid //-->
-
+            <!-- Definición de columnas -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="228" />
-                <ColumnDefinition Width="622" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!--// Navigation Panel //-->
+            <!-- Panel de navegación -->
+            <Grid HorizontalAlignment="Left" Width="228">
+                <Border Background="#272B2F" CornerRadius="0,0,0,0" />
+                <StackPanel Height="400" Width="228">
+                    <!-- Logo de la aplicación -->
+                    <Image Source="/Images/logo-removebg-preview.png" Height="140" Width="200" Margin="0,10,0,10" />
 
-            <Grid HorizontalAlignment="Left"
-           Width="228">
-
-                <Border Background="#272B2F"
-                 CornerRadius="0,0,0,0" />
-
-
-                <StackPanel Height="400"
-                     Width="228">
-                    <Image Source="/Images/logo-removebg-preview.png" Height="140" Width="200" HorizontalAlignment="Center" Margin="0,0"/>
-                    
-
-                    <!--// Home //-->
-                    <Menu:Btn Style="{StaticResource BtnStyle}"
-                     Command="{Binding HomeCommand}"
-                     IsChecked="True">
-
+                    <!-- Botón Home -->
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding HomeCommand}" IsChecked="True">
                         <Grid>
-
-                            <TextBlock Text="Home"
-                                Style="{StaticResource Text_Style}" />
-
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="pack://application:,,,/Images/img_home.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
+                            <TextBlock Text="Home" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="29,0,0,0"/>
                         </Grid>
-
                     </Menu:Btn>
 
-                    <!--// Registro y Gestion De Paciente //-->
-
-                    <Menu:Btn Style="{StaticResource BtnStyle}"
-                       Command="{Binding CustomersCommand}">
-
+                    <!-- Botón Registro Paciente -->
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding PatientRegistrationsCommand}">
                         <Grid>
-
-
-
-                            <TextBlock Text="Registro Paciente"
-                                Style="{StaticResource Text_Style}" />
-
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="pack://application:,,,/Images/img_customer.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
+                            <TextBlock Text="Registro Paciente" Style="{StaticResource Text_Style}" Margin="55,0,0,0" Grid.ColumnSpan="2"/>
                         </Grid>
-
                     </Menu:Btn>
 
-                    <!--// Monitoreo Del Electrocardiograma en tienmpo real //-->
-
-                    <Menu:Btn Style="{StaticResource BtnStyle}"
-                       Command="{Binding ProductsCommand}">
-
+                    <!-- Botón Monitoreo ECG -->
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding ECGMonitoringsCommand}">
                         <Grid>
-
-
-
-                            <TextBlock Text="Monitoreo ECG"
-                                Style="{StaticResource Text_Style}" />
-
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="pack://application:,,,/Images/register.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
+                            <TextBlock Text="Monitoreo ECG" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="0,7,0,0" VerticalAlignment="Top"/>
                         </Grid>
-
                     </Menu:Btn>
 
-                    <!--// historial del paciente//-->
-
-                    <Menu:Btn Style="{StaticResource BtnStyle}"
-                       Command="{Binding OrdersCommand}">
-
+                    <!-- Botón Historial Paciente -->
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding PatientHistorysCommand}">
                         <Grid>
-
-
-
-                            <TextBlock Text="Historial Seccion"
-                                Style="{StaticResource Text_Style}" />
-
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="pack://application:,,,/Images/historial.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
+                            <TextBlock Text="Historial Seccion" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="0,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.401,0.781"/>
                         </Grid>
-
                     </Menu:Btn>
-
-
-                    
-
-                    
-                    <StackPanel VerticalAlignment="Bottom">
-                        <Image Source="Images/logo-removebg-preview.png" Height="50" Width="50" HorizontalAlignment="Center" Margin="0,10" />
-                    </StackPanel>
-
                 </StackPanel>
-
             </Grid>
 
-            <Grid Grid.Column="1">
-
-                <ContentControl x:Name="Pages"
-                         Content="{Binding CurrentView}" />
-
+            <!-- Contenido dinámico en la segunda columna -->
+            <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="0,-53,0,53"/>
             </Grid>
-
         </Grid>
 
-        <Button x:Name="CloseApp"
-         Style="{StaticResource ExitApp}"
-         Click="CloseApp_Click" />
-
-
-
-
+        <!-- Botón de cerrar aplicación -->
+        <Button x:Name="CloseApp" Style="{StaticResource ExitApp}" Click="CloseApp_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
     </Grid>
 </Window>
