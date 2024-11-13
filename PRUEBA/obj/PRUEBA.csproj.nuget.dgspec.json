@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj": {}
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,21 +68,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,11 +101,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
               }
             }
           }
@@ -135,21 +143,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
         "projectName": "Persitencia",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,8 +176,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -213,21 +225,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
         "projectName": "PRUEBA",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\PRUEBA\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -242,11 +258,11 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
               }
             }
           }
@@ -284,7 +300,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
