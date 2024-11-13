@@ -1,5 +1,4 @@
-﻿using Entidades;
-using Logica;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Entidades;
+using Logica;
 
 namespace GUI.View
 {
@@ -58,8 +59,9 @@ namespace GUI.View
             if (loginExitoso) 
             {
                 MessageBox.Show("Login exitoso");
-                viewAdmin ViewAdmin = new viewAdmin();
-                ViewAdmin.Show();
+                DashBoardView dashBoardView = new DashBoardView();
+                dashBoardView.Show();
+       
                 this.Close();
             }
             else
@@ -74,6 +76,11 @@ namespace GUI.View
         {
             ViewPaciente viewPaciente = new ViewPaciente();
             viewPaciente.Show();
+        }
+
+        private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
