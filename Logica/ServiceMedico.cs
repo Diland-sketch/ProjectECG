@@ -29,7 +29,7 @@ namespace Logica
 
         public List<Medico> ConsultarTodo()
         {
-            throw new NotImplementedException();
+            return MedicosRepositorio.ConsultarTodo();
         }
 
         public string Eliminar(string id)

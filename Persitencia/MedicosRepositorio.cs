@@ -20,9 +20,9 @@ namespace Persistencia
                 UserRepository userRepository = new UserRepository();
                 userRepository.Guardar(user);
                 entity.Usuario = userRepository.MostrarId(user.NombreUsuario);
-                string ssql = "INSERT INTO medicos(idmedico,primer_nombre,segundo_nombre, primer_apeliido,segundo_apellido,sexo,fecha_nacimiento,usuario_id)" +
+                string ssql = "INSERT INTO medicos(idmedico,primer_nombre,segundo_nombre, primer_apeliido,segundo_apellido,sexo,fecha_nacimiento,id_usuario)" +
                                                    $"VALUES('{entity.Identificacion}', '{entity.PrimerNombre}', '{entity.SegundoNombre}', '{entity.PrimerApellido}'," +
-                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacmiento}', 'DD/MM/YYYY')), {entity.Usuario})";
+                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', TO_DATE ('{entity.FechaNacmiento}', 'dd/mm/yyyy'), {entity.Usuario})";
 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
                 AbrirConexion();
@@ -55,7 +55,7 @@ namespace Persistencia
         }
         public int MostrarIdU(string id)
         {
-            string ssql = $"SELECT usuario_id FROM medicos WHERE idmedico = '{id}' ";
+            string ssql = $"SELECT id_usuario FROM medicos WHERE idmedico = '{id}' ";
             int Iduser = 0;
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))

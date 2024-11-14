@@ -28,8 +28,8 @@ namespace Logica
         }
 
         public List<Rol> ConsultarTodo()
-        {
-            throw new NotImplementedException();
+        { 
+            return rolRepositorio.ConsultarTodo();
         }
 
         public string Eliminar(int idRol)

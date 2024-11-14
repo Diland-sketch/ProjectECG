@@ -35,8 +35,7 @@ namespace GUI.View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            /*Usuario usuario = new Usuario();
-            usuario.IdUsuario = 4;
+            Usuario usuario = new Usuario();
             usuario.NombreUsuario = txtNombreUsuario.Text;
             usuario.contrasenha = txtContraseña.Password;
             Medico medico = new Medico();
@@ -47,7 +46,8 @@ namespace GUI.View
             medico.SegundoApellido = txtSApellido.Text;
             if (fechaNacimientoPicker.SelectedDate.HasValue)
             {
-                DateTime fechaSeleccionada = fechaNacimientoPicker.SelectedDate.Value;
+                string fechaSeleccionada = DateOnly.FromDateTime( fechaNacimientoPicker.SelectedDate.Value).ToString();
+                medico.FechaNacmiento = DateOnly.Parse(fechaSeleccionada);
             }
             if (radioMasculino.IsChecked == true)
             {
@@ -63,8 +63,8 @@ namespace GUI.View
                 return;
             }
 
-            var message = serviceMedic.Guardar(medico, usuario);
-            MessageBox.Show(message);*/
+            var message = serviceMedico.Guardar(medico, usuario);
+            MessageBox.Show(message);
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {

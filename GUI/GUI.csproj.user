@@ -7,40 +7,25 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ViewDashBoard\ECGMonitoringView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewDashBoard\HomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewDashBoard\PatientHistoryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewDashBoard\PatientRegistrationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\DashBoardView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\UserControlConsultaMedico.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlConsultaRol.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlCrudMedico.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlCrudRol.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlEliminarMedico.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlEliminarRol.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\UserControlFormularioMedico.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlFormularioRol.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlMedico.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlModificarMedico.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\UserControlModificarRol.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\viewAdmin.xaml.cs">
@@ -49,57 +34,51 @@
     <Compile Update="View\ViewGraficaECG.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ViewPaciente.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Styles\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Image.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Text.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Utilities\DataTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewDashBoard\ECGMonitoringView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewDashBoard\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewDashBoard\PatientHistoryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewDashBoard\PatientRegistrationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\DashBoardView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\UserControlConsultaMedico.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlConsultaRol.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlCrudMedico.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlCrudRol.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlEliminarMedico.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlEliminarRol.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="View\UserControlFormularioMedico.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlFormularioRol.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlMedico.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlModificarMedico.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UserControlModificarRol.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\viewAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewGraficaECG.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\ViewPaciente.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

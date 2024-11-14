@@ -9,9 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\historial.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\img_customer.png" />
+    <None Remove="Images\img_home.png" />
     <None Remove="Images\lock.png" />
     <None Remove="Images\logo-removebg-preview.png" />
     <None Remove="Images\medicalBackgroundo.jpg" />
+    <None Remove="Images\register.png" />
+    <None Remove="Images\shutdown_def.png" />
+    <None Remove="Images\shutdown_mo.png" />
     <None Remove="Images\user%281%29.png" />
     <None Remove="View\blackMedicalBackground.jpg" />
     <None Remove="View\fondoAdmin.jpg" />
@@ -24,8 +31,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Source Code\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
-    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,9 +45,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\historial.png" />
+    <Resource Include="Images\img_customer.png" />
+    <Resource Include="Images\img_home.png" />
     <Resource Include="Images\lock.png" />
-    <Resource Include="Images\logo-removebg-preview.png" />
+    <Resource Include="Images\logo-removebg-preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\register.png" />
+    <Resource Include="Images\shutdown_def.png" />
+    <Resource Include="Images\shutdown_mo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\user(1).png" />
+    <Resource Include="View\medicalBackgroundo.jpg" />
     <Resource Include="View\blackMedicalBackground.jpg" />
     <Resource Include="Images\recorteadmin.png" />
     <Resource Include="Images\fondoR.jpg" />

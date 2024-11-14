@@ -9,11 +9,31 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
         AllowsTransparency="True"
-        
+        WindowState="Maximized"
         >
-    <DockPanel LastChildFill="False" Margin="0,0,0,-6">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#272B2F">
+            <Grid>
+                <Label x:Name="lblMedico" Content="GESTION MEDICO" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,408" FontSize="16" Cursor="Hand" MouseDown="Label_MouseDown" Foreground="White" Width="250"/>
+                <Label x:Name="lblRol" Content="GESTION ROL" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Margin="0,64,0,351" Cursor="Hand" MouseDown="Label_mouse" Foreground="White"/>
+                <Button Content="Back"  Background="#FF333838" Click="Button_Back" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="34" Width="48" Margin="0,387,0,0"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="1" Background="#212121">
+            <Grid Name ="panelMedico">
+
+            </Grid>
+        </Border>
+
+
+    </Grid>
+    <!--<DockPanel LastChildFill="False" Margin="0,0,0,-6">
         <DockPanel.Background>
             <ImageBrush/>
         </DockPanel.Background>
@@ -22,6 +42,6 @@
             <Label x:Name="lblRol" Content="GESTION ROL" HorizontalContentAlignment="Center" FontSize="16" Margin="0,50,0,0" Cursor="Hand" MouseDown="Label_mouse" Foreground="White"/>
             <Button Content="Back" Margin="0,70,0,0" Width="71" Background="#FF333838" Click="Button_Back" Foreground="White"/>
         </StackPanel>
-        <StackPanel x:Name="panelMedico" DockPanel.Dock="Right" Width="598" Background="#212121"/>        
-    </DockPanel>
+        <StackPanel x:Name="panelMedico" DockPanel.Dock="Right" Width="598" Background="#212121"/>
+    </DockPanel>-->
 </Window>

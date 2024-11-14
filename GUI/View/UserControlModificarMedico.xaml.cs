@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +23,11 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlModificarMedico : UserControl
     {
+        ServiceMedico serviceMedico;
         public UserControlModificarMedico()
         {
             InitializeComponent();
+            serviceMedico = new ServiceMedico();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -36,8 +40,22 @@ namespace GUI.View
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
+            Usuario usuario = new Usuario();
+            Medico medico = new Medico();
+            medico.Identificacion = txtId.Text;
+            medico.PrimerNombre = txtPNombre.Text;
+            medico.SegundoNombre = txtSNombre.Text;
+            medico.PrimerApellido = txtPApellido.Text;
+            medico.SegundoApellido = txtSApellido.Text;
+            if (fechaNacimientoPicker.SelectedDate.HasValue)
+            {
+                string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
+                medico.FechaNacmiento = DateOnly.Parse(fechaSeleccionada);
+            }
 
-        }
+            var message = serviceMedico.Actualizar(medico, usuario);
+            MessageBox.Show(message);
+    }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {

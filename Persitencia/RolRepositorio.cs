@@ -17,7 +17,7 @@ namespace Persistencia
         {
             try
             {
-                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES ({entity.IdRol}, '{entity.NombreRol}')";
+                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES ( SEQ_ROLES.NEXTVAL, '{entity.NombreRol}')";
 
                 
                 OracleCommand Ocmd = new OracleCommand(ssql,conexion);
@@ -84,7 +84,7 @@ namespace Persistencia
          public int MostrarIdRol(string NomRol)
          {
            
-            string ssql = $"SELECT * FROM roles WHERE nombre_rol = '{NomRol}' ";
+            string ssql = $"SELECT id_rol FROM roles WHERE nombre_rol = '{NomRol}' ";
             int IdRol = 0;
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))

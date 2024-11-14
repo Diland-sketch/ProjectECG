@@ -3,6 +3,7 @@ C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\PRUE
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\PRUEBA.runtimeconfig.json
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\PRUEBA.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\PRUEBA.pdb
+C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\MathNet.Numerics.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\System.DirectoryServices.Protocols.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\System.IO.Ports.dll
@@ -40,4 +41,3 @@ C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\refi
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.pdb
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.genruntimeconfig.cache
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\ref\PRUEBA.dll
-C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\bin\Debug\net8.0-windows\MathNet.Numerics.dll

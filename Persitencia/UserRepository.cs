@@ -28,10 +28,10 @@ namespace Persistencia
             {
 
                 int IdRol = rolRepositorio.MostrarIdRol("medico");
-                entity.Rol = IdRol;
+                
                 
                 string ssql = "INSERT INTO usuarios(contrasenha, roles_id_rol, id_usuario, nombre_usuario)" +
-                                                   $"VALUES ('{entity.contrasenha}',{entity.Rol},{entity.IdUsuario}," +
+                                                   $"VALUES ('{entity.contrasenha}',{IdRol}, SEQ_USUARIOS.NEXTVAL ," +
                                                    $"'{entity.NombreUsuario}')";
 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
