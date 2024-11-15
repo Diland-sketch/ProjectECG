@@ -12,9 +12,12 @@
     <UserControl.DataContext>
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
-    <Grid Margin="15">
-        <Border Background="Cyan"
-        CornerRadius="20" />
+    <Grid Margin="0,0,0,0" Height="1100" Width="1100" VerticalAlignment="Center">
+        <Border Background="DarkCyan"
+        CornerRadius="20" Margin="0,0,0,0" />
+        <Grid>
+            
+        </Grid>
 
 
 

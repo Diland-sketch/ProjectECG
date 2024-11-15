@@ -13,17 +13,23 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         WindowState="Maximized"
-        Background="Transparent">
+        Background="Transparent"
+        >
+    
 
     <Window.DataContext>
         <vm:NavigationVM />
     </Window.DataContext>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="129*"/>
+            <RowDefinition Height="421*"/>
+        </Grid.RowDefinitions>
         <!-- Fondo con borde y esquinas redondeadas -->
-        <Border Background="#212529" CornerRadius="20" />
+        <Border Background="#212529" CornerRadius="20" Grid.RowSpan="2" />
 
-        <Grid>
+        <Grid Grid.RowSpan="2">
             <!-- Definición de columnas -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="228" />
@@ -50,7 +56,7 @@
                     </Menu:Btn>
 
                     <!-- Botón Registro Paciente -->
-                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding PatientRegistrationsCommand}">
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding SearchPatientCommand}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -64,6 +70,7 @@
                     <!-- Botón Monitoreo ECG -->
                     <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding ECGMonitoringsCommand}">
                         <Grid>
+                            
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
@@ -89,11 +96,11 @@
 
             <!-- Contenido dinámico en la segunda columna -->
             <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="0,-53,0,53"/>
+                <ContentControl x:Name="Pages" Content="{Binding CurrentView}"/>
             </Grid>
         </Grid>
 
         <!-- Botón de cerrar aplicación -->
-        <Button x:Name="CloseApp" Style="{StaticResource ExitApp}" Click="CloseApp_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+        <Button x:Name="CloseApp" Style="{StaticResource ExitApp}" Click="CloseApp_Click" Margin="0,10,10,0"/>
     </Grid>
 </Window>

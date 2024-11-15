@@ -98,3 +98,5 @@ C:\Users\kerin\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.csproj.U
 C:\Users\kerin\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.dll
 C:\Users\kerin\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.genruntimeconfig.cache
 C:\Users\kerin\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ref\GUI.dll
+C:\Users\kerin\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\SearchPatient.g.cs
+C:\Users\kerin\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\SearchPatient.baml
