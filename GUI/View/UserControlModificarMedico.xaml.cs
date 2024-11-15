@@ -58,6 +58,23 @@ namespace GUI.View
             fechaNacimientoPicker.IsEnabled = tieneIdentificacion;
             txtSNombre.IsEnabled = tieneIdentificacion;
             txtSApellido.IsEnabled = tieneIdentificacion;
+            RbtnMasculino.IsEnabled = tieneIdentificacion;
+            RbtnFemenino.IsEnabled = tieneIdentificacion;
+            txtNombreUsuario.IsEnabled = tieneIdentificacion;
+            txtContraseña.IsEnabled = tieneIdentificacion;
+        }
+
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (1+1 == 2)
+            {
+                btnActualizar.IsEnabled = true;
+            }
+        }
+
+        private void ActualizarButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

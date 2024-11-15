@@ -7,21 +7,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Opacity="1" Loaded="UserControl_Loaded">
-    <Grid Width="598" Height="456">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
             <ImageBrush ImageSource="/View/fondoR.jpg"/>
         </Grid.Background>
         <Label Content="MODIFICAR ROL" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" Margin="148,124,148,174">
-            <StackPanel Margin="0,0,0,-1">
-                <TextBlock Text="Identificacion:" Margin="5" FontSize="14" Foreground="White"/>
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" Margin="260,158,260,158">
+            <StackPanel Margin="-11,-11,-11,-11">
+                <TextBlock Text="Identificacion:" Margin="5" FontSize="14" Foreground="White" Width="270"/>
                 <TextBox x:Name="txtId" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0" TextChanged="IdentificacionTextBox_TextChanged"/>
-                <TextBlock Text="Nombre:" Margin="5" FontSize="14" Foreground="White"/>
+                <TextBlock Text="Nombre:" Margin="5" FontSize="14" Foreground="White" Width="270"/>
                 <TextBox x:Name="txtNombre" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
