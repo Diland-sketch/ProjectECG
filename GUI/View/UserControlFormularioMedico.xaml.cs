@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -211,6 +212,14 @@ namespace GUI.View
                 txtId.Focus();
                 return false;
             }
+        }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation fadeInAnimation = new DoubleAnimation();
+            fadeInAnimation.From = 0;
+            fadeInAnimation.To = 1;
+            fadeInAnimation.Duration = new Duration(TimeSpan.FromSeconds(1));
+            this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
         }
     }
 }

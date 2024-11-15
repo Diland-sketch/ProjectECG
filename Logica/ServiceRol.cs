@@ -12,14 +12,11 @@ namespace Logica
     {
         RolRepositorio rolRepositorio = new RolRepositorio();
 
-        public string Guardar(Rol rol)
+        public string Guardar(string rol)
         {
             return rolRepositorio.Guardar(rol);
         }
-        public string Actualizar(Rol entity)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public string ConsultarId(string id)
         {

@@ -16,11 +16,16 @@ namespace Logica
         {
             return MedicosRepositorio.Guardar(medico, usuario);
         }
-        public string Actualizar(Medico medico)
+        public string Actualizar(Medico medico, Usuario usuario)
         {
-            return MedicosRepositorio.Actualizar(medico);
+            return MedicosRepositorio.Actualizar(medico, usuario);
 
         }
+        public int MostrarIdu(string id)
+        {
+            return MedicosRepositorio.MostrarIdU(id);
+        }
+
 
         public Medico ConsultarId(string id)
         {

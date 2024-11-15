@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Opacity="1" Loaded="UserControl_Loaded">
-    <Grid Width="598" Height="456">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
         <DataGrid x:Name="MedicosDataGrid" 
                   AutoGenerateColumns="False" 
@@ -36,7 +36,7 @@
                 </Path>
             </Button.Content>
         </Button>
-        <Label Content="CONSULTA MEDICO" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+        <Label Content="CONSULTA MEDICO" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Berlin Sans FB"/>
 
     </Grid>
 </UserControl>

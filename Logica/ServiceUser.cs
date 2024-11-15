@@ -11,7 +11,7 @@ using System.Data;
 
 namespace Logica
 {
-    public class ServiceUser : ICrud<Usuario>
+    public class ServiceUser 
     {
         private UsuarioRepositorio userRepository;
         public ServiceUser()
@@ -33,9 +33,9 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public string ConsultarId(string id)
+        public Usuario ConsultarId(int id)
         {
-            throw new NotImplementedException();
+            return userRepository.ConsultarId(id);
         }
 
         public string Actualizar(Usuario entity)

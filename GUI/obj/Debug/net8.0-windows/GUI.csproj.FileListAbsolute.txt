@@ -45,6 +45,7 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\Vi
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\HomeView.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientHistoryView.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientRegistrationView.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\SearchPatient.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\DashBoardView.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\LoginView.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\UserControlConsultaMedico.g.cs
@@ -71,6 +72,7 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\Vi
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\HomeView.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientHistoryView.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientRegistrationView.baml
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\SearchPatient.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\DashBoardView.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\LoginView.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\View\UserControlConsultaMedico.baml

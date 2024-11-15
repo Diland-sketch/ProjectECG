@@ -13,11 +13,11 @@ namespace Persistencia
 {
     public class RolRepositorio : ConexionOracle
     {
-        public string Guardar(Rol entity)
+        public string Guardar(string entity)
         {
             try
             {
-                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES (seq_roles.nextval, '{entity.NombreRol}')";
+                string ssql = $"INSERT INTO roles(id_rol, nombre_rol) VALUES (seq_roles.nextval, '{entity}')";
 
                 
                 OracleCommand Ocmd = new OracleCommand(ssql,conexion);
@@ -78,6 +78,7 @@ namespace Persistencia
                 CerrarConexion();
             }
         }
+
 
          public int MostrarIdRol(string NomRol)
          {

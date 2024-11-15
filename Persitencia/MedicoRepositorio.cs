@@ -49,15 +49,15 @@ namespace Persistencia
             }
         }
 
-        public string Actualizar(Medico entity)
+        public string Actualizar(Medico entity, Usuario user)
         {
             try
             {
 
-                //UsuarioRepositorio userRepository = new UsuarioRepositorio();
-                //user.IdUsuario = int.Parse(MostrarIdU(entity.Identificacion));
-                ///*string u =*/
-                //userRepository.Actualizar(user);
+                UsuarioRepositorio userRepository = new UsuarioRepositorio();
+                user.IdUsuario = MostrarIdU(entity.Identificacion);
+                /*string u =*/
+                userRepository.Actualizar(user);
 
 
                 string ssql = $"UPDATE medicos SET primer_nombre = '{entity.PrimerNombre}'," +
@@ -136,10 +136,10 @@ namespace Persistencia
             };
 
         }
-        public string MostrarIdU(string id)
+        public int MostrarIdU(string id)
         {
             string ssql = $"SELECT usuario_id FROM medicos WHERE idmedico = '{id}' ";
-            string Iduser = "";
+            int Iduser = 0;
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
             {
@@ -150,7 +150,7 @@ namespace Persistencia
                     {
 
                         
-                        Iduser = reader.GetString(reader.GetOrdinal("usuario_id"));
+                        Iduser = reader.GetInt32(reader.GetOrdinal("usuario_id"));
 
                     }
                 }
@@ -214,6 +214,7 @@ namespace Persistencia
                         medico.Sexo = char.Parse(sexo);
                         string fecha = reader.GetString(reader.GetOrdinal("fecha_nacimiento"));
                         medico.FechaNacmiento = DateOnly.Parse(fecha);
+                        
                     }
                 }
             }

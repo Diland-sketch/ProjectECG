@@ -24,10 +24,12 @@ namespace GUI.View
     public partial class UserControlModificarMedico : UserControl
     {
         ServiceMedic ServiceMedic;
+        ServiceUser ServiceUser;
         public UserControlModificarMedico()
         {
             InitializeComponent();
             ServiceMedic = new ServiceMedic();
+            ServiceUser = new ServiceUser();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -40,40 +42,9 @@ namespace GUI.View
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ValidarCampos())
-            {
+            
 
-                Medico medico = new Medico();
-                medico.Identificacion = txtId.Text;
-                medico.PrimerNombre = txtPNombre.Text;
-                medico.SegundoNombre = txtSNombre.Text;
-                medico.PrimerApellido = txtPApellido.Text;
-                medico.SegundoApellido = txtSApellido.Text;
-                if (fechaNacimientoPicker.SelectedDate.HasValue)
-                {
-                    string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
-                    medico.FechaNacmiento = DateOnly.Parse(fechaSeleccionada);
-                }
-                //if (radioMasculino.IsChecked == true)
-                //{
-                //    medico.Sexo = 'M';
-                //}
-                //else if (radioFemenino.IsChecked == true)
-                //{
-                //    medico.Sexo = 'F';
-                //}
-                //if (medico.Sexo == ' ')
-                //{
-                //    MessageBox.Show("Por favor, selecciona un sexo.");
-                //    return;
-
-
-                var message = ServiceMedic.Actualizar(medico);
-                MessageBox.Show(message);
-                LimpiarCampos();
             }
-
-        }
 
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -95,6 +66,81 @@ namespace GUI.View
             fechaNacimientoPicker.IsEnabled = tieneIdentificacion;
             txtSNombre.IsEnabled = tieneIdentificacion;
             txtSApellido.IsEnabled = tieneIdentificacion;
+            RbtnMasculino.IsEnabled = tieneIdentificacion;
+            RbtnFemenino.IsEnabled = tieneIdentificacion;
+            txtNombreUsuario.IsEnabled = tieneIdentificacion;
+            txtContraseña.IsEnabled = tieneIdentificacion;
+        }
+
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (1 + 1 == 2)
+            {
+                btnActualizar.IsEnabled = true;
+            }
+
+            Medico medico = new Medico();
+            medico = ServiceMedic.ConsultarId(txtId.Text);
+            txtPNombre.Text = medico.PrimerNombre;
+            txtSNombre.Text = medico.SegundoNombre;
+            txtPApellido.Text = medico.PrimerApellido;
+            txtSApellido.Text = medico.SegundoApellido;
+            if ((medico.Sexo == 'M')||(medico.Sexo == 'm'))
+            {
+                RbtnMasculino.IsChecked = true;
+            }
+            else
+            {
+                RbtnFemenino.IsChecked = true;
+            }
+
+            fechaNacimientoPicker.Text = medico.FechaNacmiento.ToString();
+            Usuario usuario = new Usuario();
+            usuario = ServiceUser.ConsultarId(ServiceMedic.MostrarIdu(txtId.Text));
+            txtNombreUsuario.Text = usuario.NombreUsuario;
+            txtContraseña.Text = usuario.contrasenha;
+        }
+
+        private void ActualizarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (ValidarCampos())
+            {
+
+                Medico medico = new Medico();
+                medico.Identificacion = txtId.Text;
+                medico.PrimerNombre = txtPNombre.Text;
+                medico.SegundoNombre = txtSNombre.Text;
+                medico.PrimerApellido = txtPApellido.Text;
+                medico.SegundoApellido = txtSApellido.Text;
+                if (fechaNacimientoPicker.SelectedDate.HasValue)
+                {
+                    string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
+                    medico.FechaNacmiento = DateOnly.Parse(fechaSeleccionada);
+                }
+                if (RbtnMasculino.IsChecked == true)
+                {
+                    medico.Sexo = 'M';
+                }
+                else if (RbtnFemenino.IsChecked == true)
+                {
+                    medico.Sexo = 'F';
+                }
+                if (medico.Sexo == ' ')
+                {
+                    MessageBox.Show("Por favor, selecciona un sexo.");
+                    return;
+
+                }
+                Usuario usuario = new Usuario();
+                usuario.NombreUsuario = txtNombreUsuario.Text;
+                usuario.contrasenha = txtContraseña.Text;
+                    var message = ServiceMedic.Actualizar(medico, usuario);
+                    MessageBox.Show(message);
+                    LimpiarCampos();
+                
+            }
+
         }
         public void LimpiarCampos()
         {
@@ -108,7 +154,7 @@ namespace GUI.View
 
         public bool ValidarCampos()
         {
-            if ( txtId.Text != "")
+            if (txtId.Text != "")
             {
                 if (txtPNombre.Text != "")
                 {
@@ -156,6 +202,10 @@ namespace GUI.View
                 return false;
             }
         }
+
+
+
+
     }
 }
 
