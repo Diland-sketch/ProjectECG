@@ -28,8 +28,8 @@
         </Button>
         <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="108" Margin="0,163,0,0">
             <StackPanel>
-                <Label Content="Identificacion:" FontSize="14" Foreground="White"/>
-                <TextBox x:Name="txtId" TextWrapping="Wrap" Width="298" Height="21"
+                <Label Content="Nombre:" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txtNombre" TextWrapping="Wrap" Width="298" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"

@@ -59,5 +59,10 @@ namespace GUI.View
         {
 
         }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

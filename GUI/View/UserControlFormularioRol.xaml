@@ -11,15 +11,8 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" VerticalAlignment="Center" HorizontalAlignment="Center" Height="163">
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" VerticalAlignment="Center" HorizontalAlignment="Center" Height="112">
             <StackPanel>
-                <TextBlock Text="Identificacion" Margin="5" FontSize="14" Foreground="White"/>
-                <TextBox x:Name="txtId" TextWrapping="Wrap" Width="268" Height="21"
-                    Background="Transparent"
-                    BorderBrush="Gray"
-                    BorderThickness="0,0,0,1"
-                    Foreground="White"
-                    Padding="0,0,0,0"/>
                 <TextBlock Text="Nombre:" Margin="5" FontSize="14" Foreground="White"/>
                 <TextBox x:Name="txtNombre" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"

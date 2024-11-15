@@ -59,5 +59,10 @@ namespace GUI.View
                 mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
         }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
