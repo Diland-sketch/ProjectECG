@@ -209,10 +209,7 @@
       },
       "Entidades/1.0.0": {
         "runtime": {
-          "Entidades.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Entidades.dll": {}
         }
       },
       "Persitencia/1.0.0": {
@@ -222,10 +219,7 @@
           "System.IO.Ports": "8.0.0"
         },
         "runtime": {
-          "Persitencia.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Persitencia.dll": {}
         }
       }
     }
