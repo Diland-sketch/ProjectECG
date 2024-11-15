@@ -78,18 +78,18 @@ namespace GUI.ViewModel
                 VoltajeActual = nuevoVoltaje;
 
                 // Actualiza gráfica
-                App.Current.Dispatcher.Invoke(() =>
-                {
-                    ECGSignalSeries[0].Values.Add(nuevoVoltaje);
-                    SignalTimeLabels.Add((timeStep * 0.5).ToString("0.0"));
+                //App.Current.Dispatcher.Invoke(() =>
+                //{
+                //    ECGSignalSeries[0].Values.Add(nuevoVoltaje);
+                //    SignalTimeLabels.Add((timeStep * 0.5).ToString("0.0"));
 
-                    // Limita la cantidad de puntos en la gráfica
-                    if (ECGSignalSeries[0].Values.Count > 100)
-                    {
-                        ECGSignalSeries[0].Values.RemoveAt(0);
-                        SignalTimeLabels.RemoveAt(0);
-                    }
-                });
+                //    // Limita la cantidad de puntos en la gráfica
+                //    if (ECGSignalSeries[0].Values.Count > 100)
+                //    {
+                //        ECGSignalSeries[0].Values.RemoveAt(0);
+                //        SignalTimeLabels.RemoveAt(0);
+                //    }
+                //});
 
                 timeStep++;
             };
