@@ -20,8 +20,12 @@
         <view:PatientRegistrationView />
     </DataTemplate>
 
-    
-    
-    
-    
+    <DataTemplate DataType="{x:Type vm:SearchPatient}">
+        <view:SearchPatient />
+    </DataTemplate>
+
+
+
+
+
 </ResourceDictionary>
