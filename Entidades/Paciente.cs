@@ -1,21 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entidades
+﻿namespace Entidades
 {
-    public class Paciente : Persona
+    public class Paciente
     {
-        
-        public SesionECG SesionECG { get; set; }
+        // Propiedades de la clase Paciente
+        public string Documento { get; set; }
+        public string PrimerNombre { get; set; }
+        public string SegundoNombre { get; set; }
+        public string PrimerApellido { get; set; }
+        public string SegundoApellido { get; set; }
+        public DateOnly FechaNacimiento { get; set; }
+        public char Sexo { get; set; }
 
-        public Paciente(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido,
-            DateOnly fechaNacmiento, char sexo)
-            : base(documento, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacmiento, sexo)
+        // Constructor que acepta parámetros
+        public Paciente(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, DateOnly fechaNacimiento, char sexo)
         {
-            
+            Documento = documento;
+            PrimerNombre = primerNombre;
+            SegundoNombre = segundoNombre;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
+            FechaNacimiento = fechaNacimiento;
+            Sexo = sexo;
+        }
+
+        // Constructor sin parámetros (si lo prefieres)
+        public Paciente()
+        {
         }
     }
 }
+

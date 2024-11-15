@@ -4,12 +4,13 @@ using System.Windows.Input;
 using GUI.Model;
 using LiveCharts;
 using LiveCharts.Wpf;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using System.IO;
 using Entidades;
 using GUI.Utilities;
-using System.Windows.Media;
 
 namespace GUI.ViewModel
 {
@@ -36,7 +37,7 @@ namespace GUI.ViewModel
         public ECGMonitoringVM()
         {
             // Inicialización de datos
-            Paciente = new Paciente { PrimerNombre = "Juan", PrimerApellido = "Pérez", Documento = "123456789" };
+            Paciente = new Paciente("123456789", "Juan", "SegundoNombre", "Pérez", "SegundoApellido", DateOnly.Parse("1990-01-01"), 'M');
             FechaHoraECG = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             FrecuenciaCardiaca = 75.0; // Valor inicial (BPM)
             AmplitudOnda = 1.2;       // Valor inicial (mV)
@@ -101,27 +102,44 @@ namespace GUI.ViewModel
             {
                 string filename = $"ECG_Report_{Paciente.Documento}.pdf";
 
-                // Crea un nuevo documento PDF
-                PdfDocument document = new PdfDocument();
-                document.Info.Title = "Reporte de ECG";
+                // Crea un nuevo documento PDF con iTextSharp
+                using (PdfWriter writer = new PdfWriter(filename))
+                {
+                    using (PdfDocument pdf = new PdfDocument(writer))
+                    {
+                        Document document = new Document(pdf);
 
-                // Página
-                PdfPage page = document.AddPage();
-                XGraphics gfx = XGraphics.FromPdfPage(page);
+                        //// Título
+                        //document.Add(new Paragraph("Reporte de ECG")
+                        //    .SetFont(iText.Kernel.Props.PdfFontFactory.CreateFont(iText.Kernel.Props.PdfFontFactory.HELVETICA_BOLD))
+                        //    .SetFontSize(20));
 
-                // Texto
-                gfx.DrawString("Reporte de ECG", new XFont("Arial", 20, XFontStyle.Bold), XBrushes.Black, new XPoint(40, 40));
-                gfx.DrawString($"Paciente: {Paciente.PrimerNombre} {Paciente.PrimerApellido}", new XFont("Arial", 14), XBrushes.Black, new XPoint(40, 80));
-                gfx.DrawString($"Documento: {Paciente.Documento}", new XFont("Arial", 14), XBrushes.Black, new XPoint(40, 100));
-                gfx.DrawString($"Fecha: {FechaHoraECG}", new XFont("Arial", 14), XBrushes.Black, new XPoint(40, 120));
-                gfx.DrawString($"Frecuencia Cardíaca (BPM): {FrecuenciaCardiaca}", new XFont("Arial", 14), XBrushes.Black, new XPoint(40, 140));
-                gfx.DrawString($"Amplitud de Onda (mV): {AmplitudOnda}", new XFont("Arial", 14), XBrushes.Black, new XPoint(40, 160));
+                        //// Información del paciente
+                        //document.Add(new Paragraph($"Paciente: {Paciente.PrimerNombre} {Paciente.PrimerApellido}")
+                        //    .SetFont(iText.Kernel.Props.PdfFontFactory.CreateFont(iText.Kernel.Props.PdfFontFactory.HELVETICA))
+                        //    .SetFontSize(14));
+                        //document.Add(new Paragraph($"Documento: {Paciente.Documento}")
+                        //    .SetFont(iText.Kernel.Props.PdfFontFactory.CreateFont(iText.Kernel.Props.PdfFontFactory.HELVETICA))
+                        //    .SetFontSize(14));
+                        //document.Add(new Paragraph($"Fecha: {FechaHoraECG}")
+                        //    .SetFont(iText.Kernel.Props.PdfFontFactory.CreateFont(iText.Kernel.Props.PdfFontFactory.HELVETICA))
+                        //    .SetFontSize(14));
+                        //document.Add(new Paragraph($"Frecuencia Cardíaca (BPM): {FrecuenciaCardiaca}")
+                        //    .SetFont(iText.Kernel.Props.PdfFontFactory.CreateFont(iText.Kernel.Props.PdfFontFactory.HELVETICA))
+                        //    .SetFontSize(14));
+                        //document.Add(new Paragraph($"Amplitud de Onda (mV): {AmplitudOnda}")
+                        //    .SetFont(iText.Kernel.Props.PdfFontFactory.CreateFont(iText.Kernel.Props.PdfFontFactory.HELVETICA))
+                        //    .SetFontSize(14));
 
-                // Gráfica (simulada como rectángulo aquí)
-                gfx.DrawRectangle(XPens.Black, XBrushes.LightGray, new XRect(40, 200, 500, 200));
+                        //// Agregar la simulación de la gráfica (se puede reemplazar con una imagen real de la gráfica si es necesario)
+                        //document.Add(new Paragraph("Gráfica simulada: (Esto es solo un rectángulo para la demo)")
+                        //    .SetFont(iText.Kernel.Props.PdfFontFactory.CreateFont(iText.Kernel.Props.PdfFontFactory.HELVETICA))
+                        //    .SetFontSize(12));
 
-                // Guarda el archivo
-                document.Save(filename);
+                        // Guarda el archivo
+                        document.Close();
+                    }
+                }
 
                 // Notifica al usuario
                 System.Windows.MessageBox.Show($"Reporte guardado como {filename}", "Éxito", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
