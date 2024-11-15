@@ -10,12 +10,14 @@
 
   <ItemGroup>
     <None Remove="Images\cross.png" />
+    <None Remove="Images\femenino.png" />
     <None Remove="Images\historial.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\img_customer.png" />
     <None Remove="Images\img_home.png" />
     <None Remove="Images\lock.png" />
     <None Remove="Images\logo-removebg-preview.png" />
+    <None Remove="Images\masculino.png" />
     <None Remove="Images\medicalBackgroundo.jpg" />
     <None Remove="Images\register.png" />
     <None Remove="Images\search.png" />
@@ -44,6 +46,7 @@
 
   <ItemGroup>
     <Resource Include="Images\cross.png" />
+    <Resource Include="Images\femenino.png" />
     <Resource Include="Images\historial.png" />
     <Resource Include="Images\img_customer.png" />
     <Resource Include="Images\img_home.png" />
@@ -51,6 +54,7 @@
     <Resource Include="Images\logo-removebg-preview.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\masculino.png" />
     <Resource Include="Images\register.png" />
     <Resource Include="Images\search.png" />
     <Resource Include="Images\shutdown_def.png" />

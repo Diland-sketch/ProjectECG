@@ -23,54 +23,54 @@
                 <!-- Documento -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Documento" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox x:Name="txtDocumento" Width="304"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumento" Width="290"/>
                 </StackPanel>
 
 
                 <!-- Primer Nombre -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Primer Nombre" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox x:Name="txtPrimerNombre" Width="284"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtPrimerNombre" Width="290"/>
                 </StackPanel>
 
                 <!-- Segundo Nombre -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Segundo Nombre" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox x:Name="txtSegundoNombre" Width="284"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoNombre" Width="290"/>
                 </StackPanel>
 
                 <!-- Primer Apellido -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Primer Apellido" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="left" Margin="0,0,10,0"/>
-                    <TextBox x:Name="txtPrimerApellido" Width="350" HorizontalAlignment="Left"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}"  x:Name="txtPrimerApellido" Width="290" HorizontalAlignment="Left"/>
                 </StackPanel>
 
                 <!-- Segundo Apellido -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Segundo Apellido" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox x:Name="txtSegundoApellido" Width="350" HorizontalAlignment="Left"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoApellido" Width="290" HorizontalAlignment="Left"/>
                 </StackPanel>
 
                 <!-- Fecha de Nacimiento -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
-                    <TextBlock Text="Fecha de Nacimiento" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <DatePicker x:Name="dpFechaNacimiento" Width="250"  HorizontalAlignment="Left"/>
+                    <TextBlock Text="Fecha de Nacimiento" Style="{StaticResource LabelTextBlockStyle}"/>
+                    <DatePicker  x:Name="dpFechaNacimiento" Width="290"  HorizontalAlignment="Left" />
                 </StackPanel>
 
                 <!-- Sexo -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
-                    <TextBlock Text="Sexo:" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="180" TextAlignment="Right" Margin="0,0,10,0"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <RadioButton Content="Masculino" Foreground="White" GroupName="Sexo" FontSize="24" Margin="0,0,20,0"/>
-                        <RadioButton Content="Femenino" Foreground="White" GroupName="Sexo" FontSize="24"/>
+                    <TextBlock Text="Sexo" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="180" TextAlignment="Center" Margin="0,0,10,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton Style="{StaticResource MaleRadioButtonStyle}" GroupName="Sexo"  Margin="80,0,20,0"/>
+                        <RadioButton Style="{StaticResource FemaleRadioButtonStyle}" GroupName="Sexo"/>
                     </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="474">
+                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0" Click="Button_Click"/>
+                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar" Width="219" Height="53" FontSize="18" Margin="10,0"/>
                 </StackPanel>
 
                 <!-- Botones -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30">
-                    <Button Content="Cancelar" Width="120" Height="40" FontSize="18" Margin="10,0"/>
-                    <Button Content="Guardar" Width="120" Height="40" FontSize="18" Margin="10,0"/>
-                </StackPanel>
 
             </StackPanel>
         </Border>
