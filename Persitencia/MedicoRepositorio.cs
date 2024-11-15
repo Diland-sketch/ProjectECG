@@ -49,15 +49,15 @@ namespace Persistencia
             }
         }
 
-        public string Actualizar(Medico entity, Usuario user)
+        public string Actualizar(Medico entity)
         {
             try
             {
 
-                UsuarioRepositorio userRepository = new UsuarioRepositorio();
-                user.IdUsuario = int.Parse(MostrarIdU(entity.Identificacion));
-                /*string u =*/
-                userRepository.Actualizar(user);
+                //UsuarioRepositorio userRepository = new UsuarioRepositorio();
+                //user.IdUsuario = int.Parse(MostrarIdU(entity.Identificacion));
+                ///*string u =*/
+                //userRepository.Actualizar(user);
 
 
                 string ssql = $"UPDATE medicos SET primer_nombre = '{entity.PrimerNombre}'," +

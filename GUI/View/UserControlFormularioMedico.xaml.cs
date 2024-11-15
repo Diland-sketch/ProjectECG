@@ -31,36 +31,40 @@ namespace GUI.View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            Usuario usuario = new Usuario();
-            
-            usuario.NombreUsuario = txtNombreUsuario.Text;
-            usuario.contrasenha = txtContraseña.Password;
-            Medico medico = new Medico();
-            medico.Identificacion = txtId.Text;
-            medico.PrimerNombre = txtPNombre.Text;
-            medico.SegundoNombre = txtSNombre.Text;
-            medico.PrimerApellido = txtPApellido.Text;
-            medico.SegundoApellido = txtSApellido.Text;
-            if (fechaNacimientoPicker.SelectedDate.HasValue)
+            if (ValidarCampos())
             {
-                DateTime fechaSeleccionada = fechaNacimientoPicker.SelectedDate.Value;
-            }
-            if (radioMasculino.IsChecked == true)
-            {
-                medico.Sexo = 'M';
-            }
-            else if (radioFemenino.IsChecked == true)
-            {
-                medico.Sexo = 'F';
-            }
-            if (medico.Sexo == ' ')
-            {
-                MessageBox.Show("Por favor, selecciona un sexo.");
-                return;
-            }
+                Usuario usuario = new Usuario();
+                usuario.NombreUsuario = txtNombreUsuario.Text;
+                usuario.contrasenha = txtContraseña.Password;
+                Medico medico = new Medico();
+                medico.Identificacion = txtId.Text;
+                medico.PrimerNombre = txtPNombre.Text;
+                medico.SegundoNombre = txtSNombre.Text;
+                medico.PrimerApellido = txtPApellido.Text;
+                medico.SegundoApellido = txtSApellido.Text;
+                if (fechaNacimientoPicker.SelectedDate.HasValue)
+                {
+                    string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
+                    medico.FechaNacmiento = DateOnly.Parse(fechaSeleccionada);
+                }
+                if (radioMasculino.IsChecked == true)
+                {
+                    medico.Sexo = 'M';
+                }
+                else if (radioFemenino.IsChecked == true)
+                {
+                    medico.Sexo = 'F';
+                }
+                if (medico.Sexo == ' ')
+                {
+                    MessageBox.Show("Por favor, selecciona un sexo.");
+                    return;
+                }
 
-            var message = serviceMedic.Guardar(medico, usuario);
-            MessageBox.Show(message);
+                var message = serviceMedic.Guardar(medico, usuario);
+                MessageBox.Show(message);
+                LimpiarCampos();
+            }
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -72,11 +76,6 @@ namespace GUI.View
                 UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
                 mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -142,7 +141,7 @@ namespace GUI.View
             txtSApellido.Text = "";
             fechaNacimientoPicker.Text = "";
             txtNombreUsuario.Text = "";
-            
+            txtContraseña.Password = "";
         }
 
         public bool ValidarCampos()
@@ -151,55 +150,53 @@ namespace GUI.View
             {
                 if (txtPNombre.Text != "")
                 {
-                    if (txtSNombre.Text != "")
+                    if (txtPApellido.Text != "")
                     {
-                        if (txtPApellido.Text != "")
+                        if (txtSApellido.Text != "")
                         {
-                            if (txtSApellido.Text != "")
+                            if (fechaNacimientoPicker.Text != "")
                             {
-                                
-                                    if (fechaNacimientoPicker.Text != "")
+                                if (txtNombreUsuario.Text != "")
+                                {
+                                    if (txtContraseña.Password != "")
                                     {
-                                        if (txtNombreUsuario.Text != "")
-                                        {
-                                        return true;
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                                            txtNombreUsuario.Focus();
-                                            return false;
-                                        }
+                                       return true;
                                     }
                                     else
                                     {
                                         MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                                        fechaNacimientoPicker.Focus();
+                                        txtContraseña.Focus();
                                         return false;
                                     }
-                                
-                                
+                                }
+                                else
+                                {
+                                     MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                                     txtNombreUsuario.Focus();
+                                     return false;
+                                }
                             }
                             else
                             {
                                 MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                                txtSApellido.Focus();
+                                fechaNacimientoPicker.Focus();
                                 return false;
-                            }
+                            }                           
                         }
                         else
                         {
                             MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                            txtPApellido.Focus();
+                            txtSApellido.Focus();
                             return false;
                         }
                     }
                     else
                     {
                         MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
-                        txtSNombre.Focus();
-                        return false;
-                    }
+                        txtPApellido.Focus();
+                        return false;      
+                    }  
+                    
                 }
                 else
                 {

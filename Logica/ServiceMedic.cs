@@ -16,9 +16,9 @@ namespace Logica
         {
             return MedicosRepositorio.Guardar(medico, usuario);
         }
-        public string Actualizar(Medico medico,Usuario usuario)
+        public string Actualizar(Medico medico)
         {
-            return MedicosRepositorio.Actualizar(medico, usuario);
+            return MedicosRepositorio.Actualizar(medico);
 
         }
 

@@ -26,7 +26,7 @@
                 </Path>
             </Button.Content>
         </Button>
-        <Button x:Name="btnEliminar" Content="Eliminar" Width="100" Height="30" Background="#FF333838" Foreground="White" Margin="249,278,249,148" FontSize="14">
+        <Button x:Name="btnEliminar" Content="Eliminar" Width="100" Height="30" Background="#FF333838" Foreground="White" Margin="249,278,249,148" FontSize="14" Click="btnEliminar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" Background="{TemplateBinding Background}" 
