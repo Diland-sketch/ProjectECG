@@ -9,7 +9,7 @@
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/fondoR.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
         <Label Content="GESTION ROL" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="16" Foreground="White"/>
         <Button x:Name="btnAgregar" Content="AGREGAR" Width="100" Height="30" Background="#FF333838" Foreground="White" Margin="350,129,350,291" FontSize="14" Click="btnAgregar_Click" FontFamily="Berlin Sans FB">

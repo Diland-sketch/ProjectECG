@@ -13,10 +13,10 @@
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
         <Grid.Background>
-            <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
 
-        <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="142" Foreground="White"/>
+        <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="142" Foreground="White" FontSize="16" FontFamily="Berlin Sans FB"/>
         <Grid HorizontalAlignment="Center" Height="254" VerticalAlignment="Center" Width="400">
             <Label Content="Identificacion" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Foreground="White"/>
             <Label Content="Primer nombre" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
@@ -34,7 +34,23 @@
             <TextBox x:Name="txtPApellido" HorizontalAlignment="Left" Margin="255,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="txtSApellido" HorizontalAlignment="Left" Margin="255,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="255,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="292,233,0,0" VerticalAlignment="Top" Click="btnGuardar_Click" Background="#FF473E3E" Foreground="White"/>
+            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="290,227,0,0" VerticalAlignment="Top" Click="btnGuardar_Click" Background="#FF473E3E" Foreground="White" Height="21" Width="50">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+    BorderBrush="{TemplateBinding BorderBrush}" 
+    BorderThickness="1" 
+    CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <DatePicker x:Name="fechaNacimientoPicker" HorizontalAlignment="Left" Margin="255,150,0,0" VerticalAlignment="Top"/>
             <PasswordBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="255,200,0,0" VerticalAlignment="Top" Width="120"/>
             <RadioButton x:Name="radioMasculino" Content="Masculino" HorizontalAlignment="Left" Margin="254,126,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White"/>

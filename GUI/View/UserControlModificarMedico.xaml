@@ -9,7 +9,7 @@
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
         <Label Content="MODIFICAR MEDICO" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" HorizontalContentAlignment="Center"/>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
@@ -87,8 +87,40 @@
                     Foreground="White"
                     Padding="0,0,0,0"
                     IsEnabled="False"/>
-                <Button x:Name="btnBuscar" Content="Buscar" Click="BuscarButton_Click" Width="58" Background="#FF333838" Foreground="White" Margin="0,10,0,0"/>
-                <Button x:Name="btnActualizar" Content="Actualizar" Click="ActualizarButton_Click" Width="58" Background="#FF333838" Foreground="White" Margin="0,10,0,0" IsEnabled="False"/>
+                <Button x:Name="btnBuscar" Content="Buscar" Click="BuscarButton_Click" Width="64" Background="#FF333838" Foreground="White" Margin="0,10,0,0" FontSize="14" Height="25">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="1" 
+                                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="btnActualizar" Content="Actualizar" Click="ActualizarButton_Click" Width="64" Background="#FF333838" Foreground="White" Margin="0,10,0,0" IsEnabled="False" FontSize="14" Height="27">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="1" 
+                CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Border>
     </Grid>

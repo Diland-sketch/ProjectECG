@@ -9,7 +9,7 @@
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/fondoR.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
             <Button.Content>
@@ -35,6 +35,6 @@
                 <DataGridTextColumn Header="Nombre" Binding="{Binding NombreRol}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="CONSULTA ROL" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+        <Label Content="CONSULTA ROL" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Berlin Sans FB"/>
     </Grid>
 </UserControl>

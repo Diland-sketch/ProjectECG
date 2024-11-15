@@ -7,11 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Opacity="1" Loaded="UserControl_Loaded">
-    <Grid Width="598" Height="456">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/fondoR.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" Margin="148,120,148,177">
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" VerticalAlignment="Center" HorizontalAlignment="Center" Height="163">
             <StackPanel>
                 <TextBlock Text="Identificacion" Margin="5" FontSize="14" Foreground="White"/>
                 <TextBox x:Name="txtId" TextWrapping="Wrap" Width="268" Height="21"
@@ -27,7 +27,23 @@
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0"/>
-                <Button Content="Guardar" Click="GuardarButton_Click" Width="58" Background="#FF333838" Foreground="White" Margin="0,10,0,0"/>
+                <Button Content="Guardar" Click="GuardarButton_Click" Width="72" Background="#FF333838" Foreground="White" Margin="0,10,0,0" Height="27" FontSize="14">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{TemplateBinding Background}" 
+    BorderBrush="{TemplateBinding BorderBrush}" 
+    BorderThickness="1" 
+    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Border>
 
@@ -45,7 +61,7 @@
                 </Path>
             </Button.Content>
         </Button>
-        <Label Content="GESTION ROL" HorizontalAlignment="Center" Margin="0,49,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label Content="GESTION ROL" HorizontalAlignment="Center" Margin="0,49,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontFamily="Berlin Sans FB"/>
 
     </Grid>
 </UserControl>

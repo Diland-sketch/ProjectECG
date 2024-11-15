@@ -9,7 +9,7 @@
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
         <Label x:Name="___Sin_nombre_" Content="ELIMINAR MEDICO" HorizontalAlignment="Center" Margin="0,114,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Berlin Sans FB"/>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">

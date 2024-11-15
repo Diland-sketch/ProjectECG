@@ -9,9 +9,9 @@
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush ImageSource="/View/fondoR.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
-        <Label x:Name="___Sin_nombre_" Content="ELIMINAR ROL" HorizontalAlignment="Center" Margin="0,114,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+        <Label x:Name="___Sin_nombre_" Content="ELIMINAR ROL" HorizontalAlignment="Center" Margin="0,114,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Berlin Sans FB"/>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
             <Button.Content>
                 <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
@@ -26,7 +26,7 @@
                 </Path>
             </Button.Content>
         </Button>
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="105" Margin="0,163,0,0">
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="108" Margin="0,163,0,0">
             <StackPanel>
                 <Label Content="Identificacion:" FontSize="14" Foreground="White"/>
                 <TextBox x:Name="txtId" TextWrapping="Wrap" Width="298" Height="21"

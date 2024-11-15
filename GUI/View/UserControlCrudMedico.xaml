@@ -13,7 +13,7 @@
             <RowDefinition Height="277*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/View/blackMedicalBackground.jpg"/>
+            <ImageBrush/>
         </Grid.Background>
 
 
