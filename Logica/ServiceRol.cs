@@ -16,16 +16,16 @@ namespace Logica
         {
             return rolRepositorio.Guardar(rol);
         }
-        
 
-        public string ConsultarId(string id)
+
+        public Rol ConsultarNom(string id)
         {
-            throw new NotImplementedException();
+            return rolRepositorio.ConsultarNom(id);
         }
 
         public List<Rol> ConsultarTodo()
         {
-            throw new NotImplementedException();
+            return rolRepositorio.ConsultarTodo();
         }
 
         public string Eliminar(string nom)

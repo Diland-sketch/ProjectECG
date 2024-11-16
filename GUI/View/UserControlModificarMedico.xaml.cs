@@ -94,7 +94,7 @@ namespace GUI.View
                 RbtnFemenino.IsChecked = true;
             }
 
-            fechaNacimientoPicker.Text = medico.FechaNacmiento.ToString();
+            fechaNacimientoPicker.Text = medico.FechaNacimiento.ToString();
             Usuario usuario = new Usuario();
             usuario = ServiceUser.ConsultarId(ServiceMedic.MostrarIdu(txtId.Text));
             txtNombreUsuario.Text = usuario.NombreUsuario;
@@ -116,7 +116,7 @@ namespace GUI.View
                 if (fechaNacimientoPicker.SelectedDate.HasValue)
                 {
                     string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
-                    medico.FechaNacmiento = DateOnly.Parse(fechaSeleccionada);
+                    medico.FechaNacimiento = DateOnly.Parse(fechaSeleccionada);
                 }
                 if (RbtnMasculino.IsChecked == true)
                 {

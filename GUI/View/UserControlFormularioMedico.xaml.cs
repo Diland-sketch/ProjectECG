@@ -46,7 +46,7 @@ namespace GUI.View
                 if (fechaNacimientoPicker.SelectedDate.HasValue)
                 {
                     string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
-                    medico.FechaNacmiento = DateOnly.Parse(fechaSeleccionada);
+                    medico.FechaNacimiento = DateOnly.Parse(fechaSeleccionada);
                 }
                 if (radioMasculino.IsChecked == true)
                 {

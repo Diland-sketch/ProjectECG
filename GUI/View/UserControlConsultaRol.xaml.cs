@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,11 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlConsultaRol : UserControl
     {
+        ServiceRol ServiceRol;
         public UserControlConsultaRol()
         {
             InitializeComponent();
-            CargarRoles();
+            ServiceRol = new ServiceRol();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -45,17 +47,20 @@ namespace GUI.View
             fadeInAnimation.To = 1;
             fadeInAnimation.Duration = new Duration(TimeSpan.FromSeconds(1));
             this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
+            CargarRoles();
+
         }
         private void CargarRoles()
         {
-            var Roles = new List<Rol>{
-                new Rol { IdRol = 1, NombreRol = "Medico" },
-                new Rol { IdRol = 2, NombreRol = "Administrador" },
-                new Rol { IdRol = 3, NombreRol = "Medico"}
-            };
-            RolesDataGrid.ItemsSource = Roles;
+            
+            RolesDataGrid.ItemsSource = ServiceRol.ConsultarTodo();
         }
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
 
         }

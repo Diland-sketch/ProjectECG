@@ -17,7 +17,7 @@ namespace Persitencia
             {
                 string ssql = "INSERT INTO pacientes(idpaciente,primer_nombre,segundo_nombre, primer_apeliido,segundo_apellido,sexo,fecha_nacimiento,usuario_id)" +
                                                    $"VALUES('{entity.Identificacion}', '{entity.PrimerNombre}', '{entity.SegundoNombre}', '{entity.PrimerApellido}'," +
-                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacmiento}', 'DD/MM/YYYY')))";
+                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacimiento}', 'DD/MM/YYYY')))";
 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
                 AbrirConexion();
@@ -52,7 +52,7 @@ namespace Persitencia
                                                    $"primer_apeliido = '{entity.PrimerApellido}'," +
                                                    $"segundo_apellido = '{entity.SegundoApellido}'," +
                                                    $"sexo = '{entity.Sexo}'," +
-                                                   $"fecha_nacimiento = (TO_DATE ('{entity.FechaNacmiento}', 'DD/MM/YYYY'))" +
+                                                   $"fecha_nacimiento = (TO_DATE ('{entity.FechaNacimiento}', 'DD/MM/YYYY'))" +
                                                    $"WHERE idpaciente = '{entity.Identificacion}'";
 
 
@@ -102,7 +102,7 @@ namespace Persitencia
                         paciente.SegundoApellido = reader.GetString(reader.GetOrdinal("segundo_apellido"));
                         paciente.Sexo = reader.GetChar(reader.GetOrdinal("sexo"));
                         string fecha = reader.GetOrdinal("fecha_nacimiento").ToString("dd-mm-yyyy");
-                        paciente.FechaNacmiento = DateOnly.Parse(fecha);
+                        paciente.FechaNacimiento = DateOnly.Parse(fecha);
                     }
                 }
             }
@@ -142,7 +142,7 @@ namespace Persitencia
                 PrimerApellido = reader.GetString(reader.GetOrdinal("primer_apellido")),
                 SegundoApellido = reader.GetString(reader.GetOrdinal("segundo_apellido")),
                 Sexo = reader.GetChar(reader.GetOrdinal("sexo")),
-                FechaNacmiento = DateOnly.Parse(fecha),
+                FechaNacimiento = DateOnly.Parse(fecha),
 
             };
 

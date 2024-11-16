@@ -13,17 +13,17 @@ namespace Entidades
         public string SegundoNombre { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
-        public DateOnly FechaNacmiento { get; set; }
+        public DateOnly FechaNacimiento { get; set; }
         public char Sexo { get; set; }
 
-        public Persona(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, DateOnly fechaNacmiento, char sexo)
+        public Persona(string documento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, DateOnly fechaNacimiento, char sexo)
         {
             Identificacion = documento;
             PrimerNombre = primerNombre;
             SegundoNombre = segundoNombre;
             PrimerApellido = primerApellido;
             SegundoApellido = segundoApellido;
-            FechaNacmiento = fechaNacmiento;
+            FechaNacimiento = fechaNacimiento;
             Sexo = sexo;
         }
 

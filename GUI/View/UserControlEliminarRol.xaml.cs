@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,11 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlEliminarRol : UserControl
     {
+        ServiceRol ServiceRol;
         public UserControlEliminarRol()
         {
             InitializeComponent();
+            ServiceRol = new ServiceRol();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -34,10 +37,7 @@ namespace GUI.View
             this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
         }
 
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -49,6 +49,15 @@ namespace GUI.View
                 UserControlCrudRol userControlCrudRol = new UserControlCrudRol();
                 mainWindow.panelMedico.Children.Add(userControlCrudRol);
             }
+        }
+
+        
+
+        private void btnEliminar_Click_1(object sender, RoutedEventArgs e)
+        {
+            var message = ServiceRol.Eliminar(txtNombre.Text);
+            MessageBox.Show(message);
+            txtNombre.Text = "";
         }
     }
 }

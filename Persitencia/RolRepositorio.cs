@@ -52,10 +52,10 @@ namespace Persistencia
         {
             try
             {
-                string ssql = $"DELETE FROM roles WHERE id_nombre = '{nom}'";
+                string ssql = $"DELETE FROM roles WHERE nombre_rol = '{nom}' ";
 
                 
-                OracleCommand ocmd = new OracleCommand (ssql,conexion);
+                OracleCommand ocmd = new OracleCommand (ssql, conexion);
                 AbrirConexion();
 
                 int confirmacion = ocmd.ExecuteNonQuery();
@@ -99,8 +99,29 @@ namespace Persistencia
             }
             CerrarConexion();
             return IdRol ;  
-         }        
+         }
 
+        public Rol ConsultarNom(string nom)
+        {
+            string ssql = $"SELECT * FROM roles WHERE nombre_rol = '{nom}'";
+            Rol rol = new Rol();
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        rol.IdRol = reader.GetInt32(reader.GetOrdinal("id_rol"));
+                        rol.NombreRol = reader.GetString(reader.GetOrdinal("nombre_rol"));
+
+                    }
+                }
+            }
+            CerrarConexion();
+            return rol;
+        }
         public List<Rol> ConsultarTodo()
         {
             string ssql = $"SELECT * FROM roles ";

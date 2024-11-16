@@ -11,19 +11,28 @@ namespace Persistencia
 {
     public class MedicoRepositorio : ConexionOracle 
     {
-        
+        UsuarioRepositorio userRepository = new UsuarioRepositorio();
         public string Guardar(Medico entity, Usuario user)
         {
             try
             {
 
-                UsuarioRepositorio userRepository = new UsuarioRepositorio();
+                
                 userRepository.Guardar(user);
                 entity.Usuario = userRepository.MostrarId(user.NombreUsuario);
-                string ssql = "INSERT INTO medicos(idmedico,primer_nombre,segundo_nombre, primer_apellido,segundo_apellido,sexo,fecha_nacimiento,usuario_id)" +
+                string ssql = "";
+                if (entity.SegundoNombre == "")
+                {
+                    ssql = "INSERT INTO medicos(idmedico,primer_nombre,segundo_nombre, primer_apellido,segundo_apellido,sexo,fecha_nacimiento,usuario_id)" +
+                                                   $"VALUES('{entity.Identificacion}', '{entity.PrimerNombre}', DEFAULT, '{entity.PrimerApellido}'," +
+                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacimiento}', 'DD/MM/YYYY')), {entity.Usuario})";
+                }
+                else 
+                { 
+                    ssql =  "INSERT INTO medicos(idmedico,primer_nombre,segundo_nombre, primer_apellido,segundo_apellido,sexo,fecha_nacimiento,usuario_id)" +
                                                    $"VALUES('{entity.Identificacion}', '{entity.PrimerNombre}', '{entity.SegundoNombre}', '{entity.PrimerApellido}'," +
-                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacmiento}', 'DD/MM/YYYY')), {entity.Usuario})";
-
+                                                   $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacimiento}', 'DD/MM/YYYY')), {entity.Usuario})";
+                }
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
                 AbrirConexion();
 
@@ -54,7 +63,7 @@ namespace Persistencia
             try
             {
 
-                UsuarioRepositorio userRepository = new UsuarioRepositorio();
+                
                 user.IdUsuario = MostrarIdU(entity.Identificacion);
                 /*string u =*/
                 userRepository.Actualizar(user);
@@ -65,7 +74,7 @@ namespace Persistencia
                                                   $"primer_apellido = '{entity.PrimerApellido}'," +
                                                   $"segundo_apellido = '{entity.SegundoApellido}'," +
                                                   $"sexo = '{entity.Sexo}'," +
-                                                  $"fecha_nacimiento = (TO_DATE ('{entity.FechaNacmiento}', 'DD/MM/YYYY'))" +
+                                                  $"fecha_nacimiento = (TO_DATE ('{entity.FechaNacimiento}', 'DD/MM/YYYY'))" +
                                                   $"WHERE idmedico = '{entity.Identificacion}'";
 
 
@@ -132,7 +141,7 @@ namespace Persistencia
                 PrimerApellido = reader.GetString(reader.GetOrdinal("primer_apellido")),
                 SegundoApellido = reader.GetString(reader.GetOrdinal("segundo_apellido")),
                 Sexo = char.Parse(sexo),
-                FechaNacmiento = DateOnly.Parse(fecha)
+                FechaNacimiento = DateOnly.Parse(fecha),
             };
 
         }
@@ -164,15 +173,16 @@ namespace Persistencia
         {
             try
             {
+                int idu = MostrarIdU(id);
                 string ssql = $"DELETE FROM medicos WHERE idmedico = '{id}'";
-
+                
                 
                 OracleCommand ocmd = new OracleCommand(ssql, conexion);
                 AbrirConexion();
 
 
                 int confirmacion = ocmd.ExecuteNonQuery();
-
+                userRepository.Eliminar(idu);
                 if (confirmacion > 0)
                 {
                     return "Se elimino satisfactoriamente";
@@ -213,7 +223,7 @@ namespace Persistencia
                         string sexo = reader.GetString(reader.GetOrdinal("sexo"));
                         medico.Sexo = char.Parse(sexo);
                         string fecha = reader.GetString(reader.GetOrdinal("fecha_nacimiento"));
-                        medico.FechaNacmiento = DateOnly.Parse(fecha);
+                        medico.FechaNacimiento = DateOnly.Parse(fecha);
                         
                     }
                 }

@@ -64,7 +64,7 @@ namespace PRUEBA
             RolRepositorio rolRepositorio = new RolRepositorio();
             Medico IdRol = new Medico();
             
-            MessageBox.Show(IdRol.FechaNacmiento.ToString());
+            MessageBox.Show(IdRol.FechaNacimiento.ToString());
         }
 
         private void Button3_Click(object sender, RoutedEventArgs e)
