@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,9 +23,11 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlEliminarMedico : UserControl
     {
+        ServiceMedic ServiceMedic;
         public UserControlEliminarMedico()
         {
             InitializeComponent();
+            ServiceMedic = new ServiceMedic();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -43,6 +47,14 @@ namespace GUI.View
             fadeInAnimation.To = 1;
             fadeInAnimation.Duration = new Duration(TimeSpan.FromSeconds(1));
             this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            string id = txtId.Text;
+            var message = ServiceMedic.Eliminar(id);
+            MessageBox.Show(message);
+            txtId.Text = "";    
         }
     }
 }

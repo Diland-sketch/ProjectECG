@@ -7,21 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Opacity="1" Loaded="UserControl_Loaded">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Loaded="Grid_Loaded">
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <DataGrid x:Name="MedicosDataGrid" 
-                  AutoGenerateColumns="False" 
-                  IsReadOnly="True" 
-                  ItemsSource="{Binding Medicos}"
-                  Margin="116,134,118,40">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Identificacion" Binding="{Binding Identificacion}" Width="*" />
-                <DataGridTextColumn Header="Primer nombre" Binding="{Binding PrimerNombre}" Width="*" />
-                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
-            </DataGrid.Columns>
-        </DataGrid>
+
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
             <Button.Content>
                 <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
@@ -64,6 +54,21 @@
             </Button>
 
         </Grid>
+        <DataGrid x:Name="MedicosDataGrid" 
+          AutoGenerateColumns="False" 
+          IsReadOnly="True" 
+          ItemsSource="{Binding Medicos}"
+          Margin="116,134,118,40">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Identificacion" Binding="{Binding Identificacion}" Width="*" />
+                <DataGridTextColumn Header="Primer nombre" Binding="{Binding PrimerNombre}" Width="*" />
+                <DataGridTextColumn Header="Segundo nombre" Binding="{Binding SegundoNombre}" Width="*" />
+                <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />
+                <DataGridTextColumn Header="Segundo Apellido" Binding="{Binding SegundoApellido}" Width="*" />
+                <DataGridTextColumn Header="Fecha De Nacimiento nombre" Binding="{Binding FechaNacimiento}" Width="*" />
+                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </UserControl>
