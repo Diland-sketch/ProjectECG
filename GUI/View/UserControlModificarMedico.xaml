@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Label Content="MODIFICAR MEDICO" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" HorizontalContentAlignment="Center"/>
+        <Label Content="MODIFICAR MEDICO" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" HorizontalContentAlignment="Center"/>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
             <Button.Content>
                 <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
@@ -26,68 +26,62 @@
                 </Path>
             </Button.Content>
         </Button>
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="566">
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="585">
             <StackPanel>
-                <TextBlock Text="Identificacion:" Margin="5" FontSize="14" Foreground="White" Width="270"/>
+                <TextBlock Text="Identificacion:" Margin="5" FontSize="18" Foreground="White" Width="270"/>
                 <TextBox x:Name="txtId" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" TextChanged="IdentificacionTextBox_TextChanged"/>
-                <TextBlock Text="Primer Nombre:" Margin="5" FontSize="14" Foreground="White" Width="270"/>
+                    Padding="0,0,0,0" TextChanged="IdentificacionTextBox_TextChanged" FontSize="18"/>
+                <TextBlock Text="Primer Nombre:" Margin="5" FontSize="18" Foreground="White" Width="270"/>
                 <TextBox x:Name="txtPNombre" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0"
-                    IsEnabled="False"/>
-                <TextBlock Text="Segundo Nombre:" FontSize="14" Foreground="White" Width="270"/>
+                    IsEnabled="False" FontSize="18"/>
+                <TextBlock Text="Segundo Nombre:" FontSize="18" Foreground="White" Width="270"/>
                 <TextBox x:Name="txtSNombre" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0"
-                    IsEnabled="False"/>
-                <TextBlock Text="Primer Apellido:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
+                    IsEnabled="False" FontSize="18"/>
+                <TextBlock Text="Primer Apellido:" FontSize="18" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
                 <TextBox x:Name="txtPApellido" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" IsEnabled="False"/>
-                <TextBlock Text="Segundo Apellido:" FontSize="14" Foreground="White" Height="21" Width="270"/>
+                    Padding="0,0,0,0" IsEnabled="False" FontSize="18"/>
+                <TextBlock Text="Segundo Apellido:" FontSize="18" Foreground="White" Height="21" Width="270"/>
                 <TextBox x:Name="txtSApellido" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0"
-                    IsEnabled="False"/>
-                <TextBlock Text="Fecha de Naciemiento:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
+                    IsEnabled="False" FontSize="18"/>
+                <TextBlock Text="Fecha de Naciemiento:" FontSize="18" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
                 <DatePicker x:Name="fechaNacimientoPicker" IsEnabled="False" Width="270"/>
-                <TextBlock Text="Sexo:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10"/>
+                <TextBlock Text="Sexo:" FontSize="18" Foreground="White" Height="21" Width="270" Margin="0,10"/>
                 <RadioButton x:Name="RbtnMasculino" Content="Masculino" Foreground="White" Margin="0,0" IsEnabled="False"/>
                 <RadioButton x:Name="RbtnFemenino" Content="Femenino" Foreground="White" IsEnabled="False"/>
-                <TextBlock Text="Nombre de Usuario:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10"/>
+                <TextBlock Text="Nombre de Usuario:" FontSize="18" Foreground="White" Height="21" Width="270" Margin="0,10"/>
                 <TextBox x:Name="txtNombreUsuario" TextWrapping="Wrap" Width="268" Height="21"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0"
-                    IsEnabled="False" Margin="0,-10,0,0"/>
-                <TextBlock Text="Contraseña:" FontSize="14" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
-                <TextBox x:Name="txtContraseña" TextWrapping="Wrap" Width="268" Height="21"
-                    Background="Transparent"
-                    BorderBrush="Gray"
-                    BorderThickness="0,0,0,1"
-                    Foreground="White"
-                    Padding="0,0,0,0"
-                    IsEnabled="False"/>
-                <Button x:Name="btnBuscar" Content="Buscar" Click="BuscarButton_Click" Width="64" Background="#FF333838" Foreground="White" Margin="0,10,0,0" FontSize="14" Height="25">
+                    IsEnabled="False" Margin="0,-10,0,0" FontSize="18"/>
+                <TextBlock Text="Contraseña:" FontSize="18" Foreground="White" Height="21" Width="270" Margin="0,10,0,0"/>
+                <PasswordBox x:Name="txtContraseña" Width="264" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,1" Height="21"/>
+                <Button x:Name="btnBuscar" Content="Buscar" Click="BuscarButton_Click" Width="64" Background="#FF333838" Foreground="White" Margin="0,10,0,0" FontSize="18" Height="25">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}"
@@ -104,7 +98,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button x:Name="btnActualizar" Content="Actualizar" Click="ActualizarButton_Click" Width="64" Background="#FF333838" Foreground="White" Margin="0,10,0,0" IsEnabled="False" FontSize="14" Height="27">
+                <Button x:Name="btnActualizar" Content="Actualizar" Click="ActualizarButton_Click" Width="81" Background="#FF333838" Foreground="White" Margin="0,10,0,0" IsEnabled="False" FontSize="18" Height="27">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}"

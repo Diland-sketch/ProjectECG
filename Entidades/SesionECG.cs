@@ -16,6 +16,10 @@ namespace Entidades
         public string IdPaciente { get; set; }
         public string IdMedico { get; set; }
         public Incidentes Incidentes { get; set; }
+        public SesionECG()
+        {
+
+        }
 
         public SesionECG(string idSesion, DateTime inicioSesionECG, DateTime finSesionECG, string descripcion, string rutaArchivoDatos, string idPaciente, string idMedico, Incidentes incidentes)
         {

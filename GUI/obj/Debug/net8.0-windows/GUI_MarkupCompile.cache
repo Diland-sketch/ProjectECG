@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Usuario\source\repos\ProjectECG\GUI\App.xaml
-26-145569654
+27-2014822932
 
-34-30810261
+35-439700896
 206675784160
-MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;ViewDashBoard\ECGMonitoringView.xaml;ViewDashBoard\HomeView.xaml;ViewDashBoard\PatientHistoryView.xaml;ViewDashBoard\PatientRegistrationView.xaml;ViewDashBoard\SearchPatient.xaml;View\DashBoardView.xaml;View\LoginView.xaml;View\UserControlConsultaMedico.xaml;View\UserControlConsultaRol.xaml;View\UserControlCrudMedico.xaml;View\UserControlCrudRol.xaml;View\UserControlEliminarMedico.xaml;View\UserControlEliminarRol.xaml;View\UserControlFormularioMedico.xaml;View\UserControlFormularioRol.xaml;View\UserControlModificarMedico.xaml;View\UserControlModificarRol.xaml;View\viewAdmin.xaml;View\viewDashboard.xaml;View\ViewGraficaECG.xaml;
+MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;ViewDashBoard\ECGMonitoringView.xaml;ViewDashBoard\HomeView.xaml;ViewDashBoard\PatientHistoryView.xaml;ViewDashBoard\PatientRegistrationView.xaml;ViewDashBoard\SearchPatient.xaml;ViewDashBoard\UserControlDetallePacientes.xaml;View\DashBoardView.xaml;View\LoginView.xaml;View\UserControlConsultaMedico.xaml;View\UserControlConsultaRol.xaml;View\UserControlCrudMedico.xaml;View\UserControlCrudRol.xaml;View\UserControlEliminarMedico.xaml;View\UserControlEliminarRol.xaml;View\UserControlFormularioMedico.xaml;View\UserControlFormularioRol.xaml;View\UserControlModificarMedico.xaml;View\UserControlModificarRol.xaml;View\viewAdmin.xaml;View\viewDashboard.xaml;View\ViewGraficaECG.xaml;
 
 False
 

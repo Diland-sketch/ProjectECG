@@ -202,3 +202,5 @@ C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\refint\GUI
 C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.pdb
 C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\GUI.genruntimeconfig.cache
 C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ref\GUI.dll
+C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\UserControlDetallePacientes.g.cs
+C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\UserControlDetallePacientes.baml
