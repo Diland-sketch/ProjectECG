@@ -29,13 +29,13 @@ namespace PRUEBA
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            Rol rol = new Rol();
+           // Rol rol = new Rol();
             
-            rol.NombreRol = txt2.Text;
+           // rol.NombreRol = txt2.Text;
 
 
-            var message = serviceRol.Guardar(rol);
-            MessageBox.Show(message);
+           // var message = serviceRol.Guardar(rol);
+           // MessageBox.Show(message);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

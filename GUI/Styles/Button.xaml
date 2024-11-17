@@ -126,7 +126,9 @@
                                 Background="#FFFFFF"
                                 Visibility="Collapsed"
                                 CornerRadius="2" />
-                            <ContentPresenter />
+                            <!-- Centrar el texto -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
                         </Grid>
                     </Border>
 
@@ -169,6 +171,142 @@
         </Setter>
     </Style>
 
+
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Background" Value="#272B2F"/>
+        <Setter Property="Padding" Value="0,0,0,5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+
+        <!-- Establecer la plantilla del control -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <!-- Contenido del TextBox -->
+                        <ScrollViewer x:Name="PART_ContentHost" Background="Transparent"/>
+
+                        <!-- Línea inferior -->
+                        <Border x:Name="Underline"
+                            Height="2"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Bottom"
+                            Background="Aqua"
+                            CornerRadius="1"/>
+                    </Grid>
+
+                    <!-- Definir los triggers -->
+                    <ControlTemplate.Triggers>
+                        <!-- Cambiar el color de la línea al pasar el ratón -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Underline" Property="Background" Value="LimeGreen"/>
+                        </Trigger>
+
+                        <!-- Cambiar el color de la línea al hacer clic en el TextBox -->
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="Underline" Property="Background" Value="white"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Estilo para el RadioButton Masculino -->
+    <Style x:Key="MaleRadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <Border x:Name="MaleBorder" Width="60" Height="60" CornerRadius="30" Background="Transparent">
+                            <Image Source="pack://application:,,,/Images/masculino.png" Width="50" Height="50" Stretch="Uniform"/>
+                        </Border>
+                        <TextBlock Text="Masculino" Foreground="White" FontSize="16" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="MaleBorder" Property="Background" Value="Aqua"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="MaleBorder" Property="Background" Value="#3E434A"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Estilo para el RadioButton Femenino -->
+    <Style x:Key="FemaleRadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <Border x:Name="FemaleBorder" Width="60" Height="60" CornerRadius="30" Background="Transparent">
+                            <Image Source="pack://application:,,,/Images/femenino.png" Width="50" Height="50" Stretch="Uniform"/>
+                        </Border>
+                        <TextBlock Text="Femenino" Foreground="White" FontSize="16" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="FemaleBorder" Property="Background" Value="Aqua"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="FemaleBorder" Property="Background" Value="#3E434A"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Estilo para el TextBlock de etiquetas -->
+    <Style x:Key="LabelTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="Width" Value="222"/>
+    </Style>
+
+    <!-- Estilo para el DatePicker -->
+    <Style x:Key="CustomDatePickerStyle" TargetType="DatePicker">
+        <Setter Property="Width" Value="290"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Background" Value="#272B2F"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="Green"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="5,2,5,2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DatePicker">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="2">
+                        <StackPanel Orientation="Horizontal">
+                            <DatePickerTextBox x:Name="PART_TextBox"
+                                               Background="Transparent"
+                                               Foreground="{TemplateBinding Foreground}"
+                                               BorderThickness="0"
+                                               VerticalContentAlignment="Center"/>
+                            <Button x:Name="PART_Button"
+                                    Background="Transparent"
+                                    Width="24"
+                                    BorderThickness="0"
+                                    ToolTip="Seleccionar Fecha">
+                                <Image Source="pack://application:,,,/GUI/Images/calendar_icon.png" Width="16" Height="16"/>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <ImageBrush x:Key="close_app_def"
               ImageSource="/Images/shutdown_def.png"
