@@ -25,8 +25,7 @@ namespace Persistencia
         public string Guardar(Usuario entity)
         {
             try
-            {
-                
+            { 
                 int IdRol = rolRepositorio.MostrarIdRol("medico");
                 entity.IdRol = IdRol;
                 
@@ -62,7 +61,6 @@ namespace Persistencia
 
         public int MostrarId(string nomuser)
         {
-
             string ssql = $"SELECT id_usuario FROM usuarios WHERE nombre_usuario = '{nomuser}' ";
             int iduser = 0;
 
@@ -85,7 +83,6 @@ namespace Persistencia
 
         public Usuario ConsultarId(int id)
         {
-
             string ssql = $"SELECT nombre_usuario,contrasenha FROM usuarios WHERE id_usuario = {id} ";
             Usuario user = new Usuario();
 

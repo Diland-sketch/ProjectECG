@@ -16,8 +16,6 @@ namespace Persistencia
         {
             try
             {
-
-                
                 userRepository.Guardar(user);
                 entity.Usuario = userRepository.MostrarId(user.NombreUsuario);
                 string ssql = "";
@@ -62,8 +60,6 @@ namespace Persistencia
         {
             try
             {
-
-                
                 user.IdUsuario = MostrarIdU(entity.Identificacion);
                 /*string u =*/
                 userRepository.Actualizar(user);
