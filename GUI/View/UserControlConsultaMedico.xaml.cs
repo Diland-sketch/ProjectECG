@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,11 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlConsultaMedico : UserControl
     {
+        ServiceMedic ServiceMedic;
         public UserControlConsultaMedico()
         {
             InitializeComponent();
-            CargarMedicos();
+            ServiceMedic = new ServiceMedic();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -58,6 +60,17 @@ namespace GUI.View
                 UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
                 mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            MedicosDataGrid.ItemsSource = ServiceMedic.ConsultarTodo();
+            
         }
     }
 }

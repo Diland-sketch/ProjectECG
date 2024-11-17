@@ -29,20 +29,20 @@ namespace PRUEBA
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            Rol rol = new Rol();
-            rol.IdRol = txt1.Text;
-            rol.NombreRol = txt2.Text;
+           // Rol rol = new Rol();
+            
+           // rol.NombreRol = txt2.Text;
 
 
-            var message = serviceRol.Guardar(rol);
-            MessageBox.Show(message);
+           // var message = serviceRol.Guardar(rol);
+           // MessageBox.Show(message);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string idRol = txt3.Text;
-            var message = serviceRol.Eliminar(idRol);
-            MessageBox.Show(message);
+            //var message = serviceRol.Eliminar(idRol);
+            //MessageBox.Show(message);
 
 
         }
@@ -50,7 +50,7 @@ namespace PRUEBA
         private void guaradarusu_Click_1(object sender, RoutedEventArgs e)
         {
             Usuario usuario = new Usuario();
-            usuario.IdUsuario = txt1.Text;
+            //usuario.IdUsuario = txt1.Text;
             usuario.NombreUsuario = txt2.Text;
             usuario.contrasenha = txt3.Text;
             
@@ -64,20 +64,26 @@ namespace PRUEBA
             RolRepositorio rolRepositorio = new RolRepositorio();
             Medico IdRol = new Medico();
             
-            MessageBox.Show(IdRol.FechaNacmiento.ToString());
+            MessageBox.Show(IdRol.FechaNacimiento.ToString());
         }
 
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
             Usuario usuario= new Usuario();
-            usuario.IdUsuario = txt1.Text;
+            //usuario.IdUsuario = txt1.Text;
            
-            UserRepository userRepository = new UserRepository();
+            UsuarioRepositorio userRepository = new UsuarioRepositorio();
             usuario = userRepository.ConsultarId(usuario.IdUsuario);
             MessageBox.Show(usuario.NombreUsuario +usuario.contrasenha );
             
             
             
+        }
+
+        private void dvg_Loaded(object sender, RoutedEventArgs e)
+        {
+            ServiceMedic serviceMedic = new ServiceMedic();
+            datagriv.ItemsSource = serviceMedic.ConsultarTodo();
         }
     }
 }
