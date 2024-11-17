@@ -24,9 +24,9 @@ namespace Logica
             return userRepository.Guardar(user);
         }
 
-        public bool Login(Usuario usuario)
+        public int Login(Usuario usuario)
         {
-            return userRepository.ValidarUsuario(usuario);
+            return userRepository.ValidarUsuario(usuario.NombreUsuario, usuario.contrasenha);
         }
 
         public List<Usuario> ConsultarTodo()

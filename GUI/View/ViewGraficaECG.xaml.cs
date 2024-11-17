@@ -10,7 +10,7 @@ namespace GUI.View
 {
     public partial class ViewGraficaECG : Window
     {
-        private ServiceECG _serviceEcg;
+        /*private ServiceECG _serviceEcg;
         private ChartValues<double> _ecgValues;
         public SeriesCollection EcgSeries { get; set; }
 
@@ -67,7 +67,7 @@ namespace GUI.View
                 _ecgValues.RemoveAt(0);
             }
             ecgChart.Update();
-        }
+        }*/
     }
 
 }

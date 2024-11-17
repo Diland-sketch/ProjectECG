@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entidades
+﻿namespace Entidades
 {
     public class Paciente : Persona
     {
@@ -16,7 +10,8 @@ namespace Entidades
             DateOnly fechaNacmiento, char sexo)
             : base(documento, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacmiento, sexo)
         {
-            
+
         }
     }
 }
+

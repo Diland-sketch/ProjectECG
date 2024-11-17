@@ -15,7 +15,7 @@ namespace Persitencia
         {
             try
             {
-                string ssql = "INSERT INTO pacientes(idpaciente,primer_nombre,segundo_nombre, primer_apeliido,segundo_apellido,sexo,fecha_nacimiento,usuario_id)" +
+                string ssql = "INSERT INTO pacientes(idpaciente,primer_nombre,segundo_nombre, primer_apellido,segundo_apellido,sexo,fecha_nacimiento)" +
                                                    $"VALUES('{entity.Identificacion}', '{entity.PrimerNombre}', '{entity.SegundoNombre}', '{entity.PrimerApellido}'," +
                                                    $" '{entity.SegundoApellido}', '{entity.Sexo}', (TO_DATE ('{entity.FechaNacimiento}', 'DD/MM/YYYY')))";
 

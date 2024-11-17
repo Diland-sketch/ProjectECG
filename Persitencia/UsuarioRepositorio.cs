@@ -14,13 +14,27 @@ namespace Persistencia
     {
         RolRepositorio rolRepositorio = new RolRepositorio();
         OracleDataAdapter da = new OracleDataAdapter();
-        public bool ValidarUsuario(Usuario usuario)
+        public int ValidarUsuario(string nombre, string contrasenha)
         {
-            if(usuario.NombreUsuario == "admin" && usuario.contrasenha == "123")
+            if (nombre == "admin" && contrasenha == "123")
             {
-                return true;
+                return 1;
             }
-            return false;
+            else
+            {
+                Usuario user = ConsultarUsuario(nombre, contrasenha);
+                string nom, contra;
+                nom = user.NombreUsuario;
+                contra = user.contrasenha;
+                if (nom == null && contra == null)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
         }
         public string Guardar(Usuario entity)
         {
@@ -78,6 +92,27 @@ namespace Persistencia
             CerrarConexion();
             return iduser;
 
+        }
+
+        public Usuario ConsultarUsuario(string nombre, string contrasenha)
+        {
+            string ssql = $"SELECT nombre_usuario, contrasenha FROM usuarios WHERE nombre_usuario = '{nombre}' AND contrasenha = '{contrasenha}'";
+            Usuario user = new Usuario();
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        user.NombreUsuario = reader.GetString(reader.GetOrdinal("nombre_usuario"));
+                        user.contrasenha = reader.GetString(reader.GetOrdinal("contrasenha"));
+                    }
+                }
+            }
+            CerrarConexion();
+            return user;
         }
         
 

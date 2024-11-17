@@ -23,9 +23,9 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlFormularioMedico : UserControl
     {
-        ServiceUser serviceUser = new ServiceUser();
-        ServiceRol serviceRol = new ServiceRol();
-        ServiceMedico serviceMedico = new ServiceMedico();
+        ServiceUser serviceUser;
+        ServiceRol serviceRol;
+        ServiceMedico serviceMedico;
         public UserControlFormularioMedico()
         {
             InitializeComponent();
