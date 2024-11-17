@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kerin\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
+C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\obj\Debug\net8.0-windows\
 GUI
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\kerin\source\repos\ProjectECG\GUI\App.xaml
-26-145569654
+C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\App.xaml
+27505016111
 
-34-30810261
-232-228981415
-MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;ViewDashBoard\ECGMonitoringView.xaml;ViewDashBoard\HomeView.xaml;ViewDashBoard\PatientHistoryView.xaml;ViewDashBoard\PatientRegistrationView.xaml;ViewDashBoard\SearchPatient.xaml;View\DashBoardView.xaml;View\LoginView.xaml;View\UserControlConsultaMedico.xaml;View\UserControlConsultaRol.xaml;View\UserControlCrudMedico.xaml;View\UserControlCrudRol.xaml;View\UserControlEliminarMedico.xaml;View\UserControlEliminarRol.xaml;View\UserControlFormularioMedico.xaml;View\UserControlFormularioRol.xaml;View\UserControlModificarMedico.xaml;View\UserControlModificarRol.xaml;View\viewAdmin.xaml;View\viewDashboard.xaml;View\ViewGraficaECG.xaml;
+35-1400468865
+232-958660780
+MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;ViewDashBoard\ECGMonitoringView.xaml;ViewDashBoard\GraphView.xaml;ViewDashBoard\HomeView.xaml;ViewDashBoard\PatientHistoryView.xaml;ViewDashBoard\PatientRegistrationView.xaml;ViewDashBoard\SearchPatient.xaml;View\DashBoardView.xaml;View\LoginView.xaml;View\UserControlConsultaMedico.xaml;View\UserControlConsultaRol.xaml;View\UserControlCrudMedico.xaml;View\UserControlCrudRol.xaml;View\UserControlEliminarMedico.xaml;View\UserControlEliminarRol.xaml;View\UserControlFormularioMedico.xaml;View\UserControlFormularioRol.xaml;View\UserControlModificarMedico.xaml;View\UserControlModificarRol.xaml;View\viewAdmin.xaml;View\viewDashboard.xaml;View\ViewGraficaECG.xaml;
 
 False
 

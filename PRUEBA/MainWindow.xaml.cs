@@ -33,7 +33,8 @@ namespace PRUEBA
             
            // rol.NombreRol = txt2.Text;
 
-
+        //    var message = serviceRol.Guardar(rol);
+        //    MessageBox.Show(message);
            // var message = serviceRol.Guardar(rol);
            // MessageBox.Show(message);
         }
@@ -82,7 +83,7 @@ namespace PRUEBA
 
         private void dvg_Loaded(object sender, RoutedEventArgs e)
         {
-            ServiceMedic serviceMedic = new ServiceMedic();
+            ServiceMedico serviceMedic = new ServiceMedico();
             datagriv.ItemsSource = serviceMedic.ConsultarTodo();
         }
     }

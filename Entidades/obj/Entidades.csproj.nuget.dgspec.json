@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -43,15 +43,4 @@
             </Grid>
         </Border>
     </Grid>
-    <!--<DockPanel LastChildFill="False" Margin="0,0,0,-6">
-        <DockPanel.Background>
-            <ImageBrush/>
-        </DockPanel.Background>
-        <StackPanel Width="203" Background="#212121">
-            <Label x:Name="lblMedico" Content="GESTION MEDICO" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" FontSize="16" Cursor="Hand" MouseDown="Label_MouseDown" Foreground="White"/>
-            <Label x:Name="lblRol" Content="GESTION ROL" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" Margin="0,50,0,0" Cursor="Hand" MouseDown="Label_mouse" Foreground="White"/>
-            <Button Content="Back" Margin="0,70,0,0" Width="71" Background="#FF333838" Click="Button_Back" Foreground="White"/>
-        </StackPanel>
-        <StackPanel x:Name="panelMedico" DockPanel.Dock="Right" Width="598" Background="#212121"/>        
-    </DockPanel>-->
 </Window>

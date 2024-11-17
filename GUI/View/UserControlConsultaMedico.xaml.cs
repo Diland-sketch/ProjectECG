@@ -23,11 +23,11 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlConsultaMedico : UserControl
     {
-        ServiceMedic ServiceMedic;
+        ServiceMedico serviceMedico;
         public UserControlConsultaMedico()
         {
             InitializeComponent();
-            ServiceMedic = new ServiceMedic();
+            serviceMedico = new ServiceMedico();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -36,14 +36,10 @@ namespace GUI.View
             fadeInAnimation.To = 1;
             fadeInAnimation.Duration = new Duration(TimeSpan.FromSeconds(1));
             this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
+            CargarMedicos();
         }
         private void CargarMedicos(){
-            var medicos = new List<Medico>{
-                new Medico { Identificacion = "1", PrimerNombre = "Dr. Juan Pérez" , Sexo = 'M'}, 
-                new Medico { Identificacion = "2", PrimerNombre = "Dra. Ana Gómez" , Sexo = 'M'}, 
-                new Medico { Identificacion = "3", PrimerNombre = "Dr. Carlos Ruiz" , Sexo = 'M'}
-            };
-            MedicosDataGrid.ItemsSource = medicos; 
+            MedicosDataGrid.ItemsSource = serviceMedico.ConsultarTodo(); 
         }
 
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -69,7 +65,7 @@ namespace GUI.View
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            MedicosDataGrid.ItemsSource = ServiceMedic.ConsultarTodo();
+            MedicosDataGrid.ItemsSource = serviceMedico.ConsultarTodo();
             
         }
     }

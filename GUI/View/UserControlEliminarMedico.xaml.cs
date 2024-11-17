@@ -23,11 +23,11 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlEliminarMedico : UserControl
     {
-        ServiceMedic ServiceMedic;
+        ServiceMedico serviceMedico;
         public UserControlEliminarMedico()
         {
             InitializeComponent();
-            ServiceMedic = new ServiceMedic();
+            serviceMedico = new ServiceMedico();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -52,7 +52,7 @@ namespace GUI.View
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             string id = txtId.Text;
-            var message = ServiceMedic.Eliminar(id);
+            var message = serviceMedico.Eliminar(id);
             MessageBox.Show(message);
             txtId.Text = "";    
         }
