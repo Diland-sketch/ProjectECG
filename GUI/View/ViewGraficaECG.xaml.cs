@@ -62,7 +62,7 @@ namespace GUI.View
             double valorEscalado = (dato.Valor - 300) / 5;
             _ecgValues.Add(valorEscalado);
 
-            if (_ecgValues.Count > 500)
+            if (_ecgValues.Count > 300)
             {
                 _ecgValues.RemoveAt(0);
             }
