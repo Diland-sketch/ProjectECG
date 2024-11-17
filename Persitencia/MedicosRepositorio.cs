@@ -16,7 +16,6 @@ namespace Persistencia
         {
             try
             {
-
                 UserRepository userRepository = new UserRepository();
                 userRepository.Guardar(user);
                 entity.Usuario = userRepository.MostrarId(user.NombreUsuario);

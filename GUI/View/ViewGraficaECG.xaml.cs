@@ -27,27 +27,22 @@ namespace GUI.View
             new LineSeries
             {
                 Values = _ecgValues,
+                Stroke = System.Windows.Media.Brushes.Red,
                 PointGeometry = null,
                 StrokeThickness = 1,
-                LineSmoothness = 0, // Picos definidos
+                LineSmoothness = 0,
                 Fill = Brushes.Transparent
             }
         };
 
             ecgChart.Series = EcgSeries;
-            ecgChart.AxisY.Add(new Axis { MinValue = -30, MaxValue = 30 }); // Escala del eje Y
+            ecgChart.AxisY.Add(new Axis { MinValue = -1.5, MaxValue = 1.5 });
             DataContext = this;
         }
 
-        private DateTime ultimoTiempoActualizacion = DateTime.MinValue;
-
         private void OnDatoRecibido(DatoECG dato)
         {
-            if ((DateTime.Now - ultimoTiempoActualizacion).TotalMilliseconds >= 50) // Aumenta a 10 ms o más
-            {
-                Application.Current.Dispatcher.Invoke(() => ActualizarGrafica(dato));
-                ultimoTiempoActualizacion = DateTime.Now;
-            }
+           Application.Current.Dispatcher.Invoke(() => ActualizarGrafica(dato));
         }
 
         private void Iniciar_Click(object sender, RoutedEventArgs e)
@@ -64,10 +59,10 @@ namespace GUI.View
 
         private void ActualizarGrafica(DatoECG dato)
         {
-            double valorEscalado = dato.Valor / 2; // Ajusta el factor si es necesario
+            double valorEscalado = (dato.Valor - 300) / 5;
             _ecgValues.Add(valorEscalado);
 
-            if (_ecgValues.Count > 300)
+            if (_ecgValues.Count > 500)
             {
                 _ecgValues.RemoveAt(0);
             }

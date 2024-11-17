@@ -6,7 +6,6 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:GUI.View"
         mc:Ignorable="d"
-        WindowState="Maximized"
         Title="ViewGraficaECG" Height="450" Width="800">
     <Grid>
         <lvc:CartesianChart x:Name="ecgChart">

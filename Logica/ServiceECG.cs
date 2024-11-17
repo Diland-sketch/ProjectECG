@@ -9,17 +9,12 @@ namespace Logica
     {
         private ArduinoRepositorio _conexion;
         public event Action<DatoECG> DatoRecibido;
-        private readonly FiltroSuavizado _filtro;
-        private readonly List<double> _datosAcumulados;
-
-        private const int TamañoBloque = 50;
+        private FiltroPasaBajas FiltroPasaBajas = new FiltroPasaBajas();
+        private FiltroMediana filtroMediana = new FiltroMediana(5);
 
         public ServiceECG(string portName, int baudRate)
         {
             _conexion = new ArduinoRepositorio(portName, baudRate);
-            _filtro = new FiltroSuavizado();
-            _datosAcumulados = new List<double>();
-
             _conexion.DatoRecibido += OnDatoRecibido;
         }
 
@@ -48,22 +43,10 @@ namespace Logica
 
         private void ProcesarDato(DatoECG dato)
         {
-            _datosAcumulados.Add(dato.Valor);
-
-            if(_datosAcumulados.Count >= TamañoBloque)
-            {
-                double[] bloqueDatos = _datosAcumulados.ToArray();
-                double[] bloqueFiltrado = _filtro.Suavizar(bloqueDatos);
-
-                _datosAcumulados.Clear();
-
-                foreach(double valorFiltrado in bloqueFiltrado)
-                {
-                    DatoECG datoFiltrado = new DatoECG(valorFiltrado);
-                    DatoRecibido?.Invoke(datoFiltrado);
-                }
-            }
+            double valorFiltrado = filtroMediana.Aplicar(dato.Valor);
+            valorFiltrado = FiltroPasaBajas.AplicarFiltro(valorFiltrado);
+            DatoECG datoFiltrado = new DatoECG(valorFiltrado);
+            DatoRecibido?.Invoke(datoFiltrado);
         }
-
     }
 }

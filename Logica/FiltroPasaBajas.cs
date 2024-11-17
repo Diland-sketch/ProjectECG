@@ -9,16 +9,10 @@ namespace Logica
     public class FiltroPasaBajas
     {
         private double _valorAnterior = 0;
-        private double _alpha;
 
-        public FiltroPasaBajas(double frecuenciaCorte, double frecuenciaMuestreo)
+        public double AplicarFiltro(double valorActual, double factor = 0.1)
         {
-            _alpha = frecuenciaCorte / (frecuenciaCorte + frecuenciaMuestreo);
-        }
-
-        public double AplicarFiltro(double valorActual)
-        {
-            _valorAnterior = _alpha * valorActual + (1 - _alpha) * _valorAnterior;
+            _valorAnterior = _valorAnterior + factor * (valorActual - _valorAnterior);
             return _valorAnterior;
         }
     }

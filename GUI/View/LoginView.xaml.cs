@@ -59,7 +59,7 @@ namespace GUI.View
             if (loginExitoso) 
             {
                 MessageBox.Show("Login exitoso");
-                viewAdmin dashBoardView = new viewAdmin();
+                DashBoardView dashBoardView = new DashBoardView();
                 dashBoardView.Show();
        
                 this.Close();
