@@ -10,21 +10,26 @@ namespace Logica
 {
     public class ServiceMedico 
     {
-        MedicosRepositorio MedicosRepositorio = new MedicosRepositorio();
+        MedicoRepositorio MedicosRepositorio = new MedicoRepositorio();
 
         public string Guardar(Medico medico, Usuario usuario)
         {
             return MedicosRepositorio.Guardar(medico, usuario);
         }
-        public string Actualizar(Medico medico,Usuario usuario)
+        public string Actualizar(Medico medico, Usuario usuario)
         {
             return MedicosRepositorio.Actualizar(medico, usuario);
 
         }
-
-        public string ConsultarId(string id)
+        public int MostrarIdu(string id)
         {
-            throw new NotImplementedException();
+            return MedicosRepositorio.MostrarIdU(id);
+        }
+
+
+        public Medico ConsultarId(string id)
+        {
+            return MedicosRepositorio.ConsultarId(id);
         }
 
         public List<Medico> ConsultarTodo()
@@ -37,7 +42,10 @@ namespace Logica
             return MedicosRepositorio.Eliminar(id);
         }
 
-        
+        public string EliminarTodo()
+        {
+            return MedicosRepositorio.EliminarTodo();
+        }
 
       
     }

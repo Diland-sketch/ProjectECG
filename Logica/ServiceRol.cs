@@ -9,32 +9,29 @@ using System.Windows.Controls;
 
 namespace Logica
 {
-    public class ServiceRol : ICrud<Rol>
+    public class ServiceRol 
     {
         RolRepositorio rolRepositorio = new RolRepositorio();
 
-        public string Guardar(Rol rol)
+        public string Guardar(string rol)
         {
             return rolRepositorio.Guardar(rol);
         }
-        public string Actualizar(Rol entity)
-        {
-            throw new NotImplementedException();
-        }
 
-        public string ConsultarId(int id)
+
+        public Rol ConsultarNom(string id)
         {
-            throw new NotImplementedException();
+            return rolRepositorio.ConsultarNom(id);
         }
 
         public List<Rol> ConsultarTodo()
-        { 
+        {
             return rolRepositorio.ConsultarTodo();
         }
 
-        public string Eliminar(int idRol)
+        public string Eliminar(string nom)
         {
-            return rolRepositorio.Eliminar(idRol);
+            return rolRepositorio.Eliminar(nom);
         }
 
         

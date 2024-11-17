@@ -17,11 +17,11 @@ namespace Entidades
         public string IdMedico { get; set; }
         public List<Incidentes> Incidentes { get; set; } = new List<Incidentes>();
 
-        public SesionECG(int idSesion, DateTime inicioSesion, DateTime finSesion, string descripcion)
+        public SesionECG(int idSesion, DateTime inicioSesionECG, DateTime finSesionECG, string descripcion, string rutaArchivoDatos, string idPaciente, string idMedico, Incidentes incidentes)
         {
             IdSesion = idSesion;
-            InicioSesionECG = inicioSesion;
-            FinSesionECG = finSesion;
+            InicioSesionECG = inicioSesionECG;
+            FinSesionECG = finSesionECG;
             Descripcion = descripcion;
         }
     }

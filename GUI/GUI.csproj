@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\cross.png" />
     <None Remove="Images\historial.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\img_customer.png" />
@@ -17,6 +18,7 @@
     <None Remove="Images\logo-removebg-preview.png" />
     <None Remove="Images\medicalBackgroundo.jpg" />
     <None Remove="Images\register.png" />
+    <None Remove="Images\search.png" />
     <None Remove="Images\shutdown_def.png" />
     <None Remove="Images\shutdown_mo.png" />
     <None Remove="Images\user%281%29.png" />
@@ -24,10 +26,6 @@
     <None Remove="View\fondoAdmin.jpg" />
     <None Remove="View\fondoR.jpg" />
     <None Remove="View\recorteadmin.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\cross.png" />
     <Resource Include="Images\historial.png" />
     <Resource Include="Images\img_customer.png" />
     <Resource Include="Images\img_home.png" />
@@ -53,6 +52,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\register.png" />
+    <Resource Include="Images\search.png" />
     <Resource Include="Images\shutdown_def.png" />
     <Resource Include="Images\shutdown_mo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

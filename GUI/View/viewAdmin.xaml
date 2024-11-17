@@ -19,29 +19,28 @@
         </Grid.ColumnDefinitions>
         <Border Background="#272B2F">
             <Grid>
-                <Label x:Name="lblMedico" Content="GESTION MEDICO" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,408" FontSize="16" Cursor="Hand" MouseDown="Label_MouseDown" Foreground="White" Width="250"/>
-                <Label x:Name="lblRol" Content="GESTION ROL" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Margin="0,64,0,351" Cursor="Hand" MouseDown="Label_mouse" Foreground="White"/>
-                <Button Content="Back"  Background="#FF333838" Click="Button_Back" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="34" Width="48" Margin="0,387,0,0"/>
+                <Label x:Name="lblMedico" Content="GESTION MEDICO" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" Cursor="Hand" MouseDown="Label_MouseDown" Foreground="White" Margin="0,130,0,0"/>
+                <Label x:Name="lblRol" Content="GESTION ROL" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Cursor="Hand" MouseDown="Label_mouse" Foreground="White"/>
+                <Button Width="49" Background="#FF333838" Click="Button_Back" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35">
+                    <Button.Content>
+                        <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Button.Content>
+                </Button>
             </Grid>
         </Border>
-
         <Border Grid.Column="1" Background="#212121">
-            <Grid Name ="panelMedico">
+            <Grid x:Name="panelMedico">
 
             </Grid>
         </Border>
-
-
     </Grid>
-    <!--<DockPanel LastChildFill="False" Margin="0,0,0,-6">
-        <DockPanel.Background>
-            <ImageBrush/>
-        </DockPanel.Background>
-        <StackPanel Width="203" Background="#212121">
-            <Label x:Name="lblMedico" Content="GESTION MEDICO" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" FontSize="16" Cursor="Hand" MouseDown="Label_MouseDown" Foreground="White"/>
-            <Label x:Name="lblRol" Content="GESTION ROL" HorizontalContentAlignment="Center" FontSize="16" Margin="0,50,0,0" Cursor="Hand" MouseDown="Label_mouse" Foreground="White"/>
-            <Button Content="Back" Margin="0,70,0,0" Width="71" Background="#FF333838" Click="Button_Back" Foreground="White"/>
-        </StackPanel>
-        <StackPanel x:Name="panelMedico" DockPanel.Dock="Right" Width="598" Background="#212121"/>
-    </DockPanel>-->
 </Window>

@@ -8,11 +8,11 @@ namespace Entidades
 {
     public class Medico : Persona
     {
-        
         public int Usuario { get; set; }
 
         public Medico()
         {
+            
         }
 
 
@@ -22,6 +22,7 @@ namespace Entidades
         {
             
              Usuario = usuario;
+
         }
     }
 }

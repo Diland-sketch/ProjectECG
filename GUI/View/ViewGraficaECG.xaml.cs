@@ -36,7 +36,7 @@ namespace GUI.View
         };
 
             ecgChart.Series = EcgSeries;
-            ecgChart.AxisY.Add(new Axis { MinValue = -1.5, MaxValue = 1.5 });
+            ecgChart.AxisY.Add(new Axis { MinValue = -1, MaxValue = 1 });
             DataContext = this;
         }
 

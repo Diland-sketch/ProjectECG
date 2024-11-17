@@ -24,13 +24,15 @@ namespace GUI.ViewModel
         public ICommand ECGMonitoringsCommand { get; set; }
         public ICommand PatientHistorysCommand { get; set; }
         public ICommand PatientRegistrationsCommand { get; set; }
-       
+        public ICommand SearchPatientCommand { get; set; }
+
 
         private void Home(object obj) => CurrentView = new HomeVM();
         private void ECGMonitoring(object obj) => CurrentView = new ECGMonitoringVM();
         private void PatientHistory(object obj) => CurrentView = new PatientHistoryVM();
         private void PatientRegistration(object obj) => CurrentView = new PatientRegistrationVM();
-     
+        private void SearchPatient(object obj) => CurrentView = new SearchPatient();
+
 
         public NavigationVM()
         {
@@ -38,7 +40,8 @@ namespace GUI.ViewModel
             ECGMonitoringsCommand = new RelayCommand(ECGMonitoring);
             PatientHistorysCommand = new RelayCommand(PatientHistory);
             PatientRegistrationsCommand = new RelayCommand(PatientRegistration);
-           
+            SearchPatientCommand = new RelayCommand(SearchPatient);
+
 
             // Startup Page
             CurrentView = new HomeVM();
