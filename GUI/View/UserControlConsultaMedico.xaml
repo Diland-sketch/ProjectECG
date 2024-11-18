@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Opacity="1" Loaded="UserControl_Loaded">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Loaded="Grid_Loaded">
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
@@ -65,7 +65,6 @@
             </Button>
 
         </Grid>
-
     </Grid>
 </UserControl>
 

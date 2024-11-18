@@ -11,21 +11,22 @@ using System.Data;
 
 namespace Logica
 {
-    public class ServiceUser : ICrud<Usuario>
+    public class ServiceUser 
     {
-        private UserRepository userRepository;
+        private UsuarioRepositorio userRepository;
         public ServiceUser()
         {
-            userRepository = new UserRepository();
+            userRepository = new UsuarioRepositorio();
         }
 
-        public bool Login(Usuario usuario)
+        public string Guardar(Usuario user)
         {
-            return userRepository.ValidarUsuario(usuario);
+            return userRepository.Guardar(user);
         }
-        public string Guardar(Usuario usuario)
+
+        public int Login(Usuario usuario)
         {
-            return userRepository.Guardar(usuario);
+            return userRepository.ValidarUsuario(usuario.NombreUsuario, usuario.contrasenha);
         }
 
         public List<Usuario> ConsultarTodo()
@@ -33,9 +34,9 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public string ConsultarId(string id)
+        public Usuario ConsultarId(int id)
         {
-            throw new NotImplementedException();
+            return userRepository.ConsultarId(id);
         }
 
         public string Actualizar(Usuario entity)
@@ -43,7 +44,7 @@ namespace Logica
             return userRepository.Actualizar(entity);
         }
 
-        public string Eliminar(string id)
+        public string Eliminar(int id)
         {
             throw new NotImplementedException();
         }

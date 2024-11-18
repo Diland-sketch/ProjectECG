@@ -10,7 +10,7 @@
              Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
-        <vm:HomeVM />
+        <vm:HomeVM/>
     </UserControl.DataContext>
 
     <Grid Margin="15">

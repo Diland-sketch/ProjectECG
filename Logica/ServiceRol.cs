@@ -5,35 +5,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Logica
 {
-    public class ServiceRol : ICrud<Rol>
+    public class ServiceRol 
     {
         RolRepositorio rolRepositorio = new RolRepositorio();
 
-        public string Guardar(Rol rol)
+        public string Guardar(string rol)
         {
             return rolRepositorio.Guardar(rol);
         }
-        public string Actualizar(Rol entity)
-        {
-            throw new NotImplementedException();
-        }
 
-        public string ConsultarId(string id)
+
+        public Rol ConsultarNom(string id)
         {
-            throw new NotImplementedException();
+            return rolRepositorio.ConsultarNom(id);
         }
 
         public List<Rol> ConsultarTodo()
         {
-            throw new NotImplementedException();
+            return rolRepositorio.ConsultarTodo();
         }
 
-        public string Eliminar(string idRol)
+        public string Eliminar(string nom)
         {
-            return rolRepositorio.Eliminar(idRol);
+            return rolRepositorio.Eliminar(nom);
         }
 
         

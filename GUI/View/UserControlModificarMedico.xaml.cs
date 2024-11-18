@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +23,12 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlModificarMedico : UserControl
     {
+        ServiceUser ServiceUser;
+        ServiceMedico serviceMedico;
         public UserControlModificarMedico()
         {
             InitializeComponent();
+            serviceMedico = new ServiceMedico();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -36,8 +41,23 @@ namespace GUI.View
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
+            Usuario usuario = new Usuario();
+            Medico medico = new Medico();
+            medico.Identificacion = txtId.Text;
+            medico.PrimerNombre = txtPNombre.Text;
+            medico.SegundoNombre = txtSNombre.Text;
+            medico.PrimerApellido = txtPApellido.Text;
+            medico.SegundoApellido = txtSApellido.Text;
+            if (fechaNacimientoPicker.SelectedDate.HasValue)
+            {
+                string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
+                medico.FechaNacimiento = DateOnly.Parse(fechaSeleccionada);
+            }
 
-        }
+            var message = serviceMedico.Actualizar(medico, usuario);
+            MessageBox.Show(message);
+    }
+
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -66,15 +86,139 @@ namespace GUI.View
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (1+1 == 2)
+            if (1 + 1 == 2)
             {
                 btnActualizar.IsEnabled = true;
             }
+
+            Medico medico = new Medico();
+            medico = serviceMedico.ConsultarId(txtId.Text);
+            txtPNombre.Text = medico.PrimerNombre;
+            txtSNombre.Text = medico.SegundoNombre;
+            txtPApellido.Text = medico.PrimerApellido;
+            txtSApellido.Text = medico.SegundoApellido;
+            if ((medico.Sexo == 'M')||(medico.Sexo == 'm'))
+            {
+                RbtnMasculino.IsChecked = true;
+            }
+            else
+            {
+                RbtnFemenino.IsChecked = true;
+            }
+
+            fechaNacimientoPicker.Text = medico.FechaNacimiento.ToString();
+            Usuario usuario = new Usuario();
+            usuario = ServiceUser.ConsultarId(serviceMedico.MostrarIdu(txtId.Text));
+            txtNombreUsuario.Text = usuario.NombreUsuario;
+            txtContraseña.Password = usuario.contrasenha;
         }
 
         private void ActualizarButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (ValidarCampos())
+            {
+
+                Medico medico = new Medico();
+                medico.Identificacion = txtId.Text;
+                medico.PrimerNombre = txtPNombre.Text;
+                medico.SegundoNombre = txtSNombre.Text;
+                medico.PrimerApellido = txtPApellido.Text;
+                medico.SegundoApellido = txtSApellido.Text;
+                if (fechaNacimientoPicker.SelectedDate.HasValue)
+                {
+                    string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
+                    medico.FechaNacimiento = DateOnly.Parse(fechaSeleccionada);
+                }
+                if (RbtnMasculino.IsChecked == true)
+                {
+                    medico.Sexo = 'M';
+                }
+                else if (RbtnFemenino.IsChecked == true)
+                {
+                    medico.Sexo = 'F';
+                }
+                if (medico.Sexo == ' ')
+                {
+                    MessageBox.Show("Por favor, selecciona un sexo.");
+                    return;
+
+                }
+                Usuario usuario = new Usuario();
+                usuario.NombreUsuario = txtNombreUsuario.Text;
+                usuario.contrasenha = txtContraseña.Password;
+                    var message = serviceMedico.Actualizar(medico, usuario);
+                    MessageBox.Show(message);
+                    LimpiarCampos();
+                
+            }
+
         }
+        public void LimpiarCampos()
+        {
+            txtId.Text = "";
+            txtPNombre.Text = "";
+            txtSNombre.Text = "";
+            txtPApellido.Text = "";
+            txtSApellido.Text = "";
+            fechaNacimientoPicker.Text = "";
+        }
+
+        public bool ValidarCampos()
+        {
+            if (txtId.Text != "")
+            {
+                if (txtPNombre.Text != "")
+                {
+                    if (txtPApellido.Text != "")
+                    {
+                        if (txtSApellido.Text != "")
+                        {
+                            if (fechaNacimientoPicker.Text != "")
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                                fechaNacimientoPicker.Focus();
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                            txtSApellido.Focus();
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                        txtPApellido.Focus();
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                    txtPNombre.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("TE FALTAN CAMPOS POR COMPLETAR");
+                txtId.Focus();
+                return false;
+            }
+        }
+
+
+
+
     }
 }
+
+

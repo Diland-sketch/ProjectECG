@@ -11,9 +11,9 @@ namespace Logica
        
             string Guardar(T entity);
             List<T> ConsultarTodo();
-            string ConsultarId(string id);
+            string ConsultarId(int id);
             string Actualizar(T entity);
-            string Eliminar(string id);
+            string Eliminar(int id);
         
     }
 }

@@ -15,20 +15,50 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
+            <!-- Menú lateral -->
             <ColumnDefinition/>
+            <!-- Contenido principal -->
         </Grid.ColumnDefinitions>
+
+        <!-- Menú lateral -->
         <Border Background="#272B2F">
             <Grid>
-                <Grid Margin="0,107,0,0" Cursor="">
-                    <Image Source="/Images/logo-removebg-preview.png" Margin="26,0,26,0" VerticalAlignment="Top" Height="140"/>
-                    <Grid Margin="0,214,0,0" VerticalAlignment="Stretch">
-                        <Label x:Name="lblMedico" Content="GESTION MEDICO" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Cursor="Hand" MouseDown="Label_MouseDown" Foreground="White" Margin="0,64,0,0"/>
-                        <Label x:Name="lblRol" Content="GESTION ROL" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Cursor="Hand" MouseDown="Label_mouse" Foreground="White" Width="138" Margin="46,0,0,0"/>
-                    </Grid>
-                </Grid>
-                <Button Width="49" Background="#FF333838" Click="Button_Back" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="67*"/>
+                    <RowDefinition Height="83*"/>
+                </Grid.RowDefinitions>
+                <!-- Logo en la parte superior -->
+                <Image Source="/Images/logo-removebg-preview.png" HorizontalAlignment="Center" 
+                       Height="140" Margin="0,61,0,0" />
+
+                <!-- Contenedor de botones con imágenes y labels -->
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1">
+                    <!-- Primer elemento: Gestión Médico -->
+                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
+                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\enfermero.png" 
+                               Width="70" Height="56" />
+                        <Label x:Name="lblMedico" Content="GESTION MEDICO" 
+                               FontSize="20" Cursor="Hand" MouseDown="Label_MouseDown" 
+                               Foreground="White" VerticalAlignment="Center" 
+                               Margin="10,0,0,0" FontFamily="Berlin Sans FB" />
+                    </StackPanel>
+
+                    <!-- Segundo elemento: Gestión Rol -->
+                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left" Width="250">
+                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\rol1.png" 
+                               Width="50" Height="50" Margin="10,0,0,0" />
+                        <Label x:Name="lblRol" Content="GESTION ROL" 
+                               FontSize="20" Cursor="Hand" MouseDown="Label_mouse" 
+                               Foreground="White" VerticalAlignment="Center" 
+                               Margin="20,0,0,0" FontFamily="Berlin Sans FB" />
+                    </StackPanel>
+                </StackPanel>
+                <Button Width="49" Height="35" Background="#FF333838" 
+                        Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Back">
                     <Button.Content>
-                        <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" 
+                              Fill="Transparent" Width="11" Height="9" Stretch="Fill" 
+                              RenderTransformOrigin="0.5,0.5">
                             <Path.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -42,6 +72,7 @@
                 </Button>
             </Grid>
         </Border>
+
         <Border Grid.Column="1" Background="#212121">
             <Grid x:Name="panelMedico">
 

@@ -10,14 +10,14 @@
 
   <ItemGroup>
     <None Remove="Images\cross.png" />
+    <None Remove="Images\femenino.png" />
     <None Remove="Images\historial.png" />
     <None Remove="Images\home.png" />
-    <None Remove="Images\iconoMedico.png" />
-    <None Remove="Images\iconoRol2.png" />
     <None Remove="Images\img_customer.png" />
     <None Remove="Images\img_home.png" />
     <None Remove="Images\lock.png" />
     <None Remove="Images\logo-removebg-preview.png" />
+    <None Remove="Images\masculino.png" />
     <None Remove="Images\medicalBackgroundo.jpg" />
     <None Remove="Images\register.png" />
     <None Remove="Images\search.png" />
@@ -35,6 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="itext.kernel.core" Version="1.0.2" />
+    <PackageReference Include="itext7" Version="8.0.5" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="System.IO.Ports" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
@@ -46,15 +49,15 @@
 
   <ItemGroup>
     <Resource Include="Images\cross.png" />
+    <Resource Include="Images\femenino.png" />
     <Resource Include="Images\historial.png" />
-    <Resource Include="Images\iconoMedico.png" />
-    <Resource Include="Images\iconoRol2.png" />
     <Resource Include="Images\img_customer.png" />
     <Resource Include="Images\img_home.png" />
     <Resource Include="Images\lock.png" />
     <Resource Include="Images\logo-removebg-preview.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\masculino.png" />
     <Resource Include="Images\register.png" />
     <Resource Include="Images\search.png" />
     <Resource Include="Images\shutdown_def.png" />

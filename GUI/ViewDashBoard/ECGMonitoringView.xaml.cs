@@ -13,16 +13,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace GUI.ViewDashBoard
 {
     /// <summary>
     /// Lógica de interacción para ECGMonitoringView.xaml
     /// </summary>
-    public partial class ECGMonitoringView : UserControl
+    public partial class ECGMonitoringView : UserControl 
     {
         public ECGMonitoringView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            graphView.Iniciar_Click(sender, e);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            graphView.Detener_Click(sender, e);
         }
     }
 }

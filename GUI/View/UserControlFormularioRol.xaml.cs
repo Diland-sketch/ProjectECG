@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +23,12 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlFormularioRol : UserControl
     {
+        ServiceRol ServiceRol;
+
         public UserControlFormularioRol()
         {
             InitializeComponent();
+            ServiceRol = new ServiceRol();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -47,7 +52,11 @@ namespace GUI.View
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
+           
 
+            var message = ServiceRol.Guardar(txtNombre.Text);
+            MessageBox.Show(message);
+            txtNombre.Text = "";
         }
     }
 }
