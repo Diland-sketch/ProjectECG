@@ -23,12 +23,13 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlModificarMedico : UserControl
     {
-        ServiceUser ServiceUser;
+        ServiceUser serviceUser;
         ServiceMedico serviceMedico;
         public UserControlModificarMedico()
         {
             InitializeComponent();
             serviceMedico = new ServiceMedico();
+            serviceUser = new ServiceUser();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -108,7 +109,7 @@ namespace GUI.View
 
             fechaNacimientoPicker.Text = medico.FechaNacimiento.ToString();
             Usuario usuario = new Usuario();
-            usuario = ServiceUser.ConsultarId(serviceMedico.MostrarIdu(txtId.Text));
+            usuario = serviceUser.ConsultarId(serviceMedico.MostrarIdu(txtId.Text));
             txtNombreUsuario.Text = usuario.NombreUsuario;
             txtContraseña.Text = usuario.contrasenha;
         }

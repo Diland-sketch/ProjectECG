@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 
 
@@ -22,9 +23,24 @@ namespace GUI.ViewDashBoard
     /// </summary>
     public partial class ECGMonitoringView : UserControl 
     {
+        private DispatcherTimer fechaHoraTimer;
         public ECGMonitoringView()
         {
             InitializeComponent();
+            fechaHoraTimer = new DispatcherTimer();
+            fechaHoraTimer.Interval = TimeSpan.FromSeconds(1);
+            fechaHoraTimer.Tick += ActualizarFechaHora;
+            fechaHoraTimer.Start();
+        }
+
+        private void ActualizarFechaHora(object sender, EventArgs e)
+        {
+            fechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            fechaHoraTimer.Stop();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
