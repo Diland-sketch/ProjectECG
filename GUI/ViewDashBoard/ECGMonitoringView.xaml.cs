@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 
 
@@ -22,9 +25,26 @@ namespace GUI.ViewDashBoard
     /// </summary>
     public partial class ECGMonitoringView : UserControl 
     {
+        ServicePaciente servicePaciente;
+        private DispatcherTimer fechaHoraTimer;
         public ECGMonitoringView()
         {
             InitializeComponent();
+            servicePaciente = new ServicePaciente();
+            fechaHoraTimer = new DispatcherTimer();
+            fechaHoraTimer.Interval = TimeSpan.FromSeconds(1);
+            fechaHoraTimer.Tick += ActualizarFechaHora;
+            fechaHoraTimer.Start();
+        }
+
+        private void ActualizarFechaHora(object sender, EventArgs e)
+        {
+            fechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            fechaHoraTimer.Stop();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,14 +56,13 @@ namespace GUI.ViewDashBoard
         {
             graphView.Detener_Click(sender, e);
         }
-        private void IdentificacionTextBox_TextChanged(object sender, TextChangedEventArgs e)
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            bool tieneIdentificacion = !string.IsNullOrWhiteSpace(txtDocumento.Text);
-            txtNombre.IsEnabled = tieneIdentificacion;
-            txtApellido.IsEnabled = tieneIdentificacion;
-            txtFecha.IsEnabled = tieneIdentificacion;
-            txtAmplitud.IsEnabled = tieneIdentificacion;
-            txtFrecuencia.IsEnabled = tieneIdentificacion;
+            Paciente paciente = new Paciente();
+            paciente = servicePaciente.TraerPaciente(txtDocumento.Text);
+            txtNombre.Text = paciente.PrimerNombre;
+            txtApellido.Text = paciente.PrimerApellido;
         }
     }
 }

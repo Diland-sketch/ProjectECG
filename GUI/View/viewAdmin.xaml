@@ -35,7 +35,7 @@
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1">
                     <!-- Primer elemento: Gestión Médico -->
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
-                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\enfermero.png" 
+                        <Image Source="C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\Images\enfermero.png" 
                                Width="70" Height="56" />
                         <Label x:Name="lblMedico" Content="GESTION MEDICO" 
                                FontSize="20" Cursor="Hand" MouseDown="Label_MouseDown" 
@@ -45,7 +45,7 @@
 
                     <!-- Segundo elemento: Gestión Rol -->
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left" Width="250">
-                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\rol1.png" 
+                        <Image Source="C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\Images\rol1.png" 
                                Width="50" Height="50" Margin="10,0,0,0" />
                         <Label x:Name="lblRol" Content="GESTION ROL" 
                                FontSize="20" Cursor="Hand" MouseDown="Label_mouse" 

@@ -228,6 +228,7 @@ namespace Persistencia
             CerrarConexion();
             return medico;
         }
+
         
         public string EliminarTodo()
         {

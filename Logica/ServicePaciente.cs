@@ -34,6 +34,11 @@ namespace Logica
             return repositorio.ConsultarId(id);
         }
 
+        public Paciente TraerPaciente(string id)
+        {
+            return repositorio.TraerPaciente(id);
+        }
+
         public List<Paciente> ConsultarTodo()
         {
             return repositorio.ConsultarTodo();

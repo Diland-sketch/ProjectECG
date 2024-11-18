@@ -111,6 +111,28 @@ namespace Persitencia
             return paciente;
         }
 
+        public Paciente TraerPaciente(string id)
+        {
+            string ssql = $"SELECT * FROM pacientes WHERE idpaciente = '{id}' ";
+            Paciente paciente = new Paciente();
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        paciente.PrimerNombre = reader.GetString(reader.GetOrdinal("primer_nombre"));
+                        paciente.PrimerApellido = reader.GetString(reader.GetOrdinal("primer_apellido"));
+                    }
+                }
+
+                CerrarConexion();
+                return paciente;
+            }
+        }
+
         public List<Paciente> ConsultarTodo()
         {
             string ssql = $"SELECT * FROM pacientes ";

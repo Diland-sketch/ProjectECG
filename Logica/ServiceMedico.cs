@@ -31,7 +31,6 @@ namespace Logica
         {
             return MedicosRepositorio.ConsultarId(id);
         }
-
         public List<Medico> ConsultarTodo()
         {
             return MedicosRepositorio.ConsultarTodo();
