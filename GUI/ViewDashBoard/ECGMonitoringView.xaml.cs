@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Entidades;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +59,10 @@ namespace GUI.ViewDashBoard
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-
+            Paciente paciente = new Paciente();
+            paciente = servicePaciente.TraerPaciente(txtDocumento.Text);
+            txtNombre.Text = paciente.PrimerNombre;
+            txtApellido.Text = paciente.PrimerApellido;
         }
     }
 }

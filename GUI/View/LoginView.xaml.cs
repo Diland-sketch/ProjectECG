@@ -60,7 +60,7 @@ namespace GUI.View
             if (loginExitoso == 1)
             {
                 MessageBox.Show("Bienvenido de nuevo Admin");
-                DashBoardView viewAdmin = new DashBoardView();
+                viewAdmin viewAdmin = new viewAdmin();
                 viewAdmin.Show();
                 this.Close();
             }
