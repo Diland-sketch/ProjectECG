@@ -5802,19 +5802,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dilan\\.nuget\\packages\\": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
       "projectName": "Logica",
-      "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj",
-      "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5829,11 +5829,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\Persitencia.csproj": {
-              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Persitencia\\Persitencia.csproj"
+            "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
             }
           }
         }
@@ -5885,7 +5885,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   },

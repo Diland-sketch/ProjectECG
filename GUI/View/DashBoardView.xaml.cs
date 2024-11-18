@@ -19,13 +19,31 @@ namespace GUI
     /// </summary>
     public partial class DashBoardView : Window
     {
-            public DashBoardView() => InitializeComponent();
-            // Método que se llama cuando el usuario hace clic en el botón para cerrar la aplicación
+        private Stack<object> vistaAnterior;
+        public DashBoardView()
+        {
+            InitializeComponent();
+            vistaAnterior = new Stack<object>();
+        }
             private void CloseApp_Click(object sender, RoutedEventArgs e)
             {
-                // Cierra la aplicación
                 this.Close();
             }
-        
+        public void CambiarVista(UserControl nuevaVista)
+        {
+            if (Pages.Content != null)
+            {
+                vistaAnterior.Push(Pages.Content);
+            }
+            Pages.Content = nuevaVista;
+        }
+        public void VolverVistaAnterior()
+        {
+            if (vistaAnterior.Count > 0)
+            {
+                Pages.Content = vistaAnterior.Pop();
+            }
+        }
+
     }
 }

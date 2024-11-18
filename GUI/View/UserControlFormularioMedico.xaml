@@ -10,53 +10,60 @@
     <UserControl.Background>
         <ImageBrush/>
     </UserControl.Background>
+
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="91*"/>
+            <RowDefinition Height="359*"/>
+        </Grid.RowDefinitions>
 
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
 
-        <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="142" Foreground="White" FontSize="16" FontFamily="Berlin Sans FB"/>
-        <Grid HorizontalAlignment="Center" Height="254" VerticalAlignment="Center" Width="400">
-            <Label Content="Identificacion" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Primer nombre" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Segundo nombre" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Primer apellido" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Segundo apellido" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Sexo" HorizontalAlignment="Left" Margin="0,125,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Fecha nacimiento" HorizontalAlignment="Left" Margin="0,150,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Nombre usuario" HorizontalAlignment="Left" Margin="0,175,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <Label Content="Contraseña" HorizontalAlignment="Left" Margin="0,200,0,0" VerticalAlignment="Top" Width="166" Foreground="White"/>
-            <ComboBox HorizontalAlignment="Left" Margin="0,231,0,0" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="255,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtPNombre" HorizontalAlignment="Left" Margin="255,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtSNombre" HorizontalAlignment="Left" Margin="255,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtPApellido" HorizontalAlignment="Left" Margin="255,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtSApellido" HorizontalAlignment="Left" Margin="255,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="255,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="290,227,0,0" VerticalAlignment="Top" Click="btnGuardar_Click" Background="#FF473E3E" Foreground="White" Height="21" Width="50">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" Background="{TemplateBinding Background}" 
-    BorderBrush="{TemplateBinding BorderBrush}" 
-    BorderThickness="1" 
-    CornerRadius="10">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#FF555555"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <DatePicker x:Name="fechaNacimientoPicker" HorizontalAlignment="Left" Margin="255,150,0,0" VerticalAlignment="Top"/>
-            <PasswordBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="255,200,0,0" VerticalAlignment="Top" Width="120"/>
-            <RadioButton x:Name="radioMasculino" Content="Masculino" HorizontalAlignment="Left" Margin="254,126,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White"/>
-            <RadioButton x:Name="radioFemenino" Content="Femenino" HorizontalAlignment="Left" Margin="327,126,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White"/>
-        </Grid>
-        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
+        <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" VerticalAlignment="Center" Width="204" Foreground="White" FontSize="20" FontFamily="Berlin Sans FB" Height="32"/>
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Center" Height="389" VerticalAlignment="Top" Width="424" Grid.Row="1">
+                <Label Content="Sexo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Foreground="White" Margin="0,190,0,0" FontSize="18"/>
+                <Label Content="Fecha nacimiento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Foreground="White" Margin="0,229,0,0" FontSize="18"/>
+                <Label Content="Nombre usuario" HorizontalAlignment="Left" Margin="0,268,0,0" VerticalAlignment="Top" Width="166" Foreground="White" FontSize="18"/>
+                <Label Content="Contraseña" HorizontalAlignment="Left" Margin="0,310,0,0" VerticalAlignment="Top" Width="166" Foreground="White" FontSize="18"/>
+                <ComboBox HorizontalAlignment="Left" Margin="0,348,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Identificacion" HorizontalAlignment="Left" Width="166" Foreground="White" FontSize="18" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtId" HorizontalAlignment="Left" TextWrapping="Wrap" Width="120" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,2" FontSize="18" VerticalAlignment="Top" Margin="245,4,0,0" Foreground="White"/>
+                <Label Content="Primer nombre" HorizontalAlignment="Left" Width="166" Foreground="White" FontSize="18" VerticalAlignment="Top" Margin="0,38,0,0"/>
+                <TextBox x:Name="txtPNombre" HorizontalAlignment="Left" TextWrapping="Wrap" Width="120" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,2" FontSize="18" VerticalAlignment="Top" Margin="245,42,0,0"/>
+                <Label Content="Segundo nombre" HorizontalAlignment="Left" Width="166" Foreground="White" FontSize="18" VerticalAlignment="Top" Margin="0,76,0,0"/>
+                <TextBox x:Name="txtSNombre" HorizontalAlignment="Left" TextWrapping="Wrap" Width="120" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,2" FontSize="18" VerticalAlignment="Top" Margin="245,79,0,0" Foreground="White"/>
+                <Label Content="Primer apellido" HorizontalAlignment="Left" Width="166" Foreground="White" FontSize="18" VerticalAlignment="Top" Margin="0,112,0,0"/>
+                <TextBox x:Name="txtPApellido" HorizontalAlignment="Left" TextWrapping="Wrap" Width="120" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,2" FontSize="18" VerticalAlignment="Top" Margin="245,116,0,0" Foreground="White"/>
+                <Label Content="Segundo apellido" HorizontalAlignment="Left" Width="166" Foreground="White" FontSize="18" VerticalAlignment="Top" Margin="0,151,0,0"/>
+                <TextBox x:Name="txtSApellido" HorizontalAlignment="Left" TextWrapping="Wrap" Width="120" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,2" FontSize="18" VerticalAlignment="Top" Margin="245,155,0,0" Foreground="White"/>
+                <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="245,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,2" FontSize="18" Foreground="White"/>
+                <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="264,347,0,0" VerticalAlignment="Top" Click="btnGuardar_Click" Background="#FF473E3E" Foreground="White" Height="21" Width="82" FontSize="18" FontFamily="Berlin Sans FB">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="1" 
+                            CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <DatePicker x:Name="fechaNacimientoPicker" HorizontalAlignment="Left" Margin="242,234,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <PasswordBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="245,310,0,0" VerticalAlignment="Top" Width="120" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,2" FontSize="18" Foreground="White"/>
+                <RadioButton x:Name="radioMasculino" Content="Masculino" HorizontalAlignment="Left" Margin="232,198,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White" FontSize="16"/>
+                <RadioButton x:Name="radioFemenino" Content="Femenino" HorizontalAlignment="Left" Margin="328,198,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White" FontSize="16"/>
+            </Grid>
+        </Border>
+        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="30" Width="32">
             <Button.Content>
                 <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
                     <Path.RenderTransform>
