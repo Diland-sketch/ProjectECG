@@ -23,25 +23,29 @@
             </DataGrid>
             <StackPanel Margin="0,550,0,229" HorizontalAlignment="Center">
                 <TextBlock Text="Detalles de la Seccion" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" Foreground="White" />
-                <TextBlock Text="Id paciente:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtId" Margin="0,0,0,10" FontSize="14" />
-                <TextBlock Text="Nombre:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtNombre" Margin="0,0,0,10" FontSize="14" />
-                <TextBlock Text="Sexo:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtSexo" Margin="0,0,0,10" FontSize="14" />
-                <TextBlock Text="Especialidad:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtEspecialidad" FontSize="14" />
+                <TextBlock Text="Id Sesion:" FontWeight="Bold" Foreground="White" FontSize="14" />
+                <TextBlock x:Name="txtIdSesion" Margin="0,0,0,10" FontSize="14" />
+                <TextBlock Text="Inicio:" FontWeight="Bold" Foreground="White" FontSize="14" />
+                <TextBlock x:Name="txtInicio" Margin="0,0,0,10" FontSize="14" />
+                <TextBlock Text="Fin:" FontWeight="Bold" Foreground="White" FontSize="14" />
+                <TextBlock x:Name="txtFin" Margin="0,0,0,10" FontSize="14" />
+                <TextBlock Text="Id Medico:" FontWeight="Bold" Foreground="White" FontSize="14" />
+                <TextBlock x:Name="txtIdMedico" FontSize="14" />
+                <TextBlock Text="Id paciente:" FontWeight="Bold" Foreground="White" FontSize="14"/>
+                <TextBlock x:Name="txtIdPaciente" FontSize="14" />
+                <TextBlock Text="Descripcion de la Sesion:" FontWeight="Bold" Foreground="White" FontSize="14"/>
+                <TextBlock x:Name="txtDescripcion" FontSize="14" Height="50" />
             </StackPanel>
             <Label Content="Historial de pacientes" Margin="0,224,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
             <Grid HorizontalAlignment="Center" Height="28" VerticalAlignment="Top" Width="432" Margin="0,306,0,0">
-                <Label Content="Buscar por identificacion:" HorizontalAlignment="Left" FontSize="14" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Label Content="Buscar por identificacion:" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Center"/>
                 <TextBox x:Name="txtId1" TextWrapping="Wrap"
                     Background="Transparent"
                     BorderBrush="Black"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" Margin="175,3,121,4"/>
-                <Button x:Name="Buscar" Content="Buscar" HorizontalAlignment="Left" Height="24" Margin="330,0,0,0" VerticalAlignment="Top" Width="47" Click="Buscar_Click">
+                    Padding="0,0,0,0" Margin="196,4,100,4"/>
+                <Button x:Name="Buscar" Content="Buscar" HorizontalAlignment="Left" Height="24" Margin="344,0,0,0" VerticalAlignment="Center" Width="47" Click="Buscar_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}"                                

@@ -36,5 +36,14 @@ namespace GUI.ViewDashBoard
         {
             graphView.Detener_Click(sender, e);
         }
+        private void IdentificacionTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bool tieneIdentificacion = !string.IsNullOrWhiteSpace(txtDocumento.Text);
+            txtNombre.IsEnabled = tieneIdentificacion;
+            txtApellido.IsEnabled = tieneIdentificacion;
+            txtFecha.IsEnabled = tieneIdentificacion;
+            txtAmplitud.IsEnabled = tieneIdentificacion;
+            txtFrecuencia.IsEnabled = tieneIdentificacion;
+        }
     }
 }

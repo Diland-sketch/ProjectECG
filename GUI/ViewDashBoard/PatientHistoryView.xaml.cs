@@ -50,10 +50,7 @@ namespace GUI.ViewDashBoard
         }
         public void CargarDetalles(Paciente paciente)
         {
-            txtId.Text = paciente.Identificacion.ToString();
-            txtNombre.Text =  paciente.PrimerNombre;
-            txtSexo.Text = paciente.Sexo.ToString();
-            
+
         }
 
         private void Buscar_Click(object sender, RoutedEventArgs e)
