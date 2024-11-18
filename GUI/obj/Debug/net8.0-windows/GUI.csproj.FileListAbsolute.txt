@@ -136,11 +136,9 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\GU
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\GUI.runtimeconfig.json
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\GUI.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\GUI.pdb
-<<<<<<< Updated upstream
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\LiveCharts.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
-=======
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Common.Logging.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Common.Logging.Core.dll
@@ -157,8 +155,6 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\it
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\itext.svg.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\itext.commons.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\itextsharp.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\LiveCharts.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -168,9 +164,7 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Mi
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\BouncyCastle.Crypto.dll
->>>>>>> Stashed changes
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\System.DirectoryServices.Protocols.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\System.IO.Ports.dll
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\bin\Debug\net8.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
@@ -207,10 +201,7 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\St
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\Styles\Text.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\ECGMonitoringView.g.cs
-<<<<<<< Updated upstream
-=======
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\GraphView.g.cs
->>>>>>> Stashed changes
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\HomeView.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientHistoryView.g.cs
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientRegistrationView.g.cs
@@ -238,10 +229,7 @@ C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\Ap
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\Utilities\DataTemplate.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\ECGMonitoringView.baml
-<<<<<<< Updated upstream
-=======
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\GraphView.baml
->>>>>>> Stashed changes
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\HomeView.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientHistoryView.baml
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\ViewDashBoard\PatientRegistrationView.baml
