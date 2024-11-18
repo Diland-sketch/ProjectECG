@@ -111,7 +111,7 @@ namespace GUI.View
             Usuario usuario = new Usuario();
             usuario = serviceUser.ConsultarId(serviceMedico.MostrarIdu(txtId.Text));
             txtNombreUsuario.Text = usuario.NombreUsuario;
-            txtContraseña.Text = usuario.contrasenha;
+            txtContraseña.Password = usuario.contrasenha;
         }
 
         private void ActualizarButton_Click(object sender, RoutedEventArgs e)
@@ -147,7 +147,7 @@ namespace GUI.View
                 }
                 Usuario usuario = new Usuario();
                 usuario.NombreUsuario = txtNombreUsuario.Text;
-                usuario.contrasenha = txtContraseña.Text;
+                usuario.contrasenha = txtContraseña.Password;
                     var message = serviceMedico.Actualizar(medico, usuario);
                     MessageBox.Show(message);
                     LimpiarCampos();

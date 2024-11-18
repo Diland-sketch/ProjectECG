@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,12 @@ namespace GUI.ViewDashBoard
     /// </summary>
     public partial class ECGMonitoringView : UserControl 
     {
+        ServicePaciente servicePaciente;
         private DispatcherTimer fechaHoraTimer;
         public ECGMonitoringView()
         {
             InitializeComponent();
+            servicePaciente = new ServicePaciente();
             fechaHoraTimer = new DispatcherTimer();
             fechaHoraTimer.Interval = TimeSpan.FromSeconds(1);
             fechaHoraTimer.Tick += ActualizarFechaHora;
@@ -51,6 +54,11 @@ namespace GUI.ViewDashBoard
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             graphView.Detener_Click(sender, e);
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

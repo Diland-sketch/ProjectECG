@@ -14,6 +14,10 @@ namespace Entidades
         public string Descripcion { get; set; }
         public string IdPaciente { get; set; }
         public string IdMedico { get; set; }
+        public SesionECG()
+        {
+
+        }
         public List<Incidentes> Incidentes { get; set; } = new List<Incidentes>();
 
         public SesionECG(int idSesion, DateTime inicioSesionECG, DateTime finSesionECG, string descripcion, string idPaciente, string idMedico, Incidentes incidentes)

@@ -11,72 +11,60 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Label Content="GESTION ROL" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="16" Foreground="White"/>
-        <Button x:Name="btnAgregar" Content="AGREGAR" Width="100" Height="30" Background="#FF333838" Foreground="White" Margin="350,142,350,278" FontSize="14" Click="btnAgregar_Click" FontFamily="Berlin Sans FB">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" 
-                        BorderBrush="{TemplateBinding BorderBrush}" 
-                        BorderThickness="1" 
-                        CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+        <Label Content="GESTION ROL" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White"/>
+        <Grid Height="NaN" Margin="312,144,312,144" Width="NaN" HorizontalAlignment="Center">
+            <Button x:Name="btnAgregar" Content="AGREGAR" Height="30" Background="#FF333838" Foreground="White" Margin="0,0,0,133" FontSize="18" Click="btnAgregar_Click" FontFamily="Berlin Sans FB">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="1" 
+                            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
-        <Button x:Name="btnEliminar" Content="ELIMINAR" Width="100" Height="30" Background="#FF333838" Foreground="White" Margin="350,205,350,215" FontSize="14" Click="btnEliminar_Click" FontFamily="Berlin Sans FB">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" 
-                BorderBrush="{TemplateBinding BorderBrush}" 
-                BorderThickness="1" 
-                CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnConsulta" Content="CONSULTA GENERAL" Height="30" Background="#FF333838" Foreground="White" Margin="330,275,330,145" FontSize="14" Click="btnConsulta_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" 
-                BorderBrush="{TemplateBinding BorderBrush}" 
-                BorderThickness="1" 
-                CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
-            <Button.Content>
-                <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
-            </Button.Content>
-        </Button>
+            <Button x:Name="btnEliminar" Content="ELIMINAR" Height="30" Background="#FF333838" Foreground="White" Margin="0,63,0,70" FontSize="18" Click="btnEliminar_Click" FontFamily="Berlin Sans FB">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="1" 
+                            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnConsulta" Content="CONSULTA GENERAL" Height="30" Background="#FF333838" Foreground="White" Margin="0,133,0,0" FontSize="18" Click="btnConsulta_Click" FontFamily="Berlin Sans FB">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="1" 
+                            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
     </Grid>
 </UserControl>
