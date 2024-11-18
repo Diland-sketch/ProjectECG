@@ -10,14 +10,14 @@ namespace Entidades
     {
         public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
-        public string contrasenha;
+        public string Contrasenha { get; set; }
         public int IdRol { get; set; }
 
         public Usuario(int idUsuario, string nombreUsuario, string contrasenha, int rol)
         {
             IdUsuario = idUsuario;
             NombreUsuario = nombreUsuario;
-            this.contrasenha = contrasenha;
+            Contrasenha = contrasenha;
             IdRol = rol;
         }
 
@@ -27,7 +27,7 @@ namespace Entidades
 
         public bool ValidarCredenciales(string nombreUsuario, string contrasenha)
         {
-            return NombreUsuario.Equals(nombreUsuario) && this.contrasenha.Equals(contrasenha);
+            return NombreUsuario.Equals(nombreUsuario) && this.Contrasenha.Equals(contrasenha);
         }
 
         public override string ToString()

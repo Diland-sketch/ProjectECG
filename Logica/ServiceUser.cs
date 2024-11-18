@@ -25,7 +25,11 @@ namespace Logica
         }
         public string Guardar(Usuario usuario)
         {
+<<<<<<< Updated upstream
             return userRepository.Guardar(usuario);
+=======
+            return userRepository.ValidarUsuario(usuario.NombreUsuario, usuario.Contrasenha);
+>>>>>>> Stashed changes
         }
 
         public List<Usuario> ConsultarTodo()

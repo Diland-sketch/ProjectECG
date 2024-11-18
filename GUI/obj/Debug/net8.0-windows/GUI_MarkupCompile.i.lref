@@ -3,6 +3,10 @@ FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\App.xaml;;
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\MainWindow.xaml;;
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\Utilities\DataTemplate.xaml;;
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\ViewDashBoard\ECGMonitoringView.xaml;;
+<<<<<<< Updated upstream
+=======
+FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\ViewDashBoard\GraphView.xaml;;
+>>>>>>> Stashed changes
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\ViewDashBoard\HomeView.xaml;;
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\ViewDashBoard\PatientHistoryView.xaml;;
 FC:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\ViewDashBoard\PatientRegistrationView.xaml;;

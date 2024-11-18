@@ -23,12 +23,21 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlModificarMedico : UserControl
     {
+<<<<<<< Updated upstream
         ServiceMedic ServiceMedic;
         ServiceUser ServiceUser;
         public UserControlModificarMedico()
         {
             InitializeComponent();
             ServiceMedic = new ServiceMedic();
+=======
+       public ServiceUser ServiceUser;
+       public ServiceMedico serviceMedico;
+        public UserControlModificarMedico()
+        {
+            InitializeComponent();
+            serviceMedico = new ServiceMedico();
+>>>>>>> Stashed changes
             ServiceUser = new ServiceUser();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -96,9 +105,16 @@ namespace GUI.View
 
             fechaNacimientoPicker.Text = medico.FechaNacimiento.ToString();
             Usuario usuario = new Usuario();
+<<<<<<< Updated upstream
             usuario = ServiceUser.ConsultarId(ServiceMedic.MostrarIdu(txtId.Text));
             txtNombreUsuario.Text = usuario.NombreUsuario;
             txtContraseña.Text = usuario.contrasenha;
+=======
+            int i = serviceMedico.MostrarIdu(txtId.Text);
+            usuario = ServiceUser.ConsultarId(i);
+;            txtNombreUsuario.Text = usuario.NombreUsuario;
+            txtContraseña.Text = usuario.Contrasenha;
+>>>>>>> Stashed changes
         }
 
         private void ActualizarButton_Click(object sender, RoutedEventArgs e)
@@ -134,8 +150,13 @@ namespace GUI.View
                 }
                 Usuario usuario = new Usuario();
                 usuario.NombreUsuario = txtNombreUsuario.Text;
+<<<<<<< Updated upstream
                 usuario.contrasenha = txtContraseña.Text;
                     var message = ServiceMedic.Actualizar(medico, usuario);
+=======
+                usuario.Contrasenha = txtContraseña.Text;
+                    var message = serviceMedico.Actualizar(medico, usuario);
+>>>>>>> Stashed changes
                     MessageBox.Show(message);
                     LimpiarCampos();
                 

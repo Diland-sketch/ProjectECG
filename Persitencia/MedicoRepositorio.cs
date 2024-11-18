@@ -169,6 +169,29 @@ namespace Persistencia
             return Iduser;
         }
 
+        public string MostrarId(int id)
+        {
+            string ssql = $"SELECT idmedico  FROM medicos WHERE usuario_id = {id} ";
+            string Identificacion = "";
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+
+                        Identificacion = reader.GetString(reader.GetOrdinal("idmedico"));
+
+                    }
+                }
+            }
+
+            CerrarConexion();
+            return Identificacion;
+        }
         public string Eliminar(string id)
         {
             try

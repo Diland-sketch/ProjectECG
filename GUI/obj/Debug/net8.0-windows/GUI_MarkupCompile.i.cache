@@ -10,11 +10,19 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\App.xaml
+<<<<<<< Updated upstream
 26-145569654
 
 361990955348
 206-2092142042
 MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;ViewDashBoard\ECGMonitoringView.xaml;ViewDashBoard\HomeView.xaml;ViewDashBoard\PatientHistoryView.xaml;ViewDashBoard\PatientRegistrationView.xaml;ViewDashBoard\SearchPatient.xaml;View\DashBoardView.xaml;View\LoginView.xaml;View\UserControlConsultaMedico.xaml;View\UserControlConsultaRol.xaml;View\UserControlCrudMedico.xaml;View\UserControlCrudRol.xaml;View\UserControlEliminarMedico.xaml;View\UserControlEliminarRol.xaml;View\UserControlFormularioMedico.xaml;View\UserControlFormularioRol.xaml;View\UserControlModificarMedico.xaml;View\UserControlModificarRol.xaml;View\viewAdmin.xaml;View\viewDashboard.xaml;View\ViewGraficaECG.xaml;
+=======
+27505016111
+
+37621296744
+232-883639755
+MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;ViewDashBoard\ECGMonitoringView.xaml;ViewDashBoard\GraphView.xaml;ViewDashBoard\HomeView.xaml;ViewDashBoard\PatientHistoryView.xaml;ViewDashBoard\PatientRegistrationView.xaml;ViewDashBoard\SearchPatient.xaml;View\DashBoardView.xaml;View\LoginView.xaml;View\UserControlConsultaMedico.xaml;View\UserControlConsultaRol.xaml;View\UserControlCrudMedico.xaml;View\UserControlCrudRol.xaml;View\UserControlEliminarMedico.xaml;View\UserControlEliminarRol.xaml;View\UserControlFormularioMedico.xaml;View\UserControlFormularioRol.xaml;View\UserControlModificarMedico.xaml;View\UserControlModificarRol.xaml;View\viewAdmin.xaml;View\viewDashboard.xaml;View\ViewGraficaECG.xaml;
+>>>>>>> Stashed changes
 
 True
 
