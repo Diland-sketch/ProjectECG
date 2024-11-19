@@ -23,11 +23,11 @@
         </Grid.ColumnDefinitions>
 
         <!-- Sección izquierda: Información del paciente -->
-        <StackPanel Grid.Column="0" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="600">
             <TextBlock Text="Monitoreo de ECG" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" Foreground="White" />
             <StackPanel Margin="0,10">
                 <TextBlock Text="Documento" Foreground="White" />
-                <TextBox x:Name="txtDocumento" Width="200" TextChanged="IdentificacionTextBox_TextChanged"/>
+                <TextBox x:Name="txtDocumento" Width="200"/>
             </StackPanel>
             <StackPanel Margin="0,10">
                 <TextBlock Text="Nombre" Foreground="White" />
@@ -49,7 +49,22 @@
                 <TextBlock Text="Amplitud (mV)" Foreground="White" />
                 <TextBox x:Name="txtAmplitud" Width="200" IsEnabled="False"/>
             </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Id Medico" Foreground="White" />
+                <TextBox x:Name="txtIdMedico" Width="200" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Descripcion" Foreground="White" />
+                <TextBox Name="TextArea" 
+                 AcceptsReturn="True" 
+                 AcceptsTab="True" 
+                 TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Visible" 
+                 HorizontalScrollBarVisibility="Auto" />
+            </StackPanel>
             <Button Content="Guardar en PDF" Width="150" HorizontalAlignment="Left" Margin="0,20" />
+            <Button x:Name="btnBuscar" Content="Buscar" Width="150" HorizontalAlignment="Left" Click="btnBuscar_Click"/>
+            <Button x:Name="btnGuardar" Content="Guardar Sesion" Width="150" HorizontalAlignment="Left" Click="btnGuardar_Click" Margin="0,20"/>
         </StackPanel>
 
         <!-- Sección derecha: Gráfica -->

@@ -45,5 +45,15 @@ namespace GUI.ViewDashBoard
             txtAmplitud.IsEnabled = tieneIdentificacion;
             txtFrecuencia.IsEnabled = tieneIdentificacion;
         }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

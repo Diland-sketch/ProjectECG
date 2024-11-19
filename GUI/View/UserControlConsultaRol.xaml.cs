@@ -37,8 +37,6 @@ namespace GUI.View
             if (mainWindow != null)
             {
                 mainWindow.panelMedico.Children.Clear();
-                UserControlCrudRol userControlCrudRol = new UserControlCrudRol();
-                mainWindow.panelMedico.Children.Add(userControlCrudRol);
             }
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

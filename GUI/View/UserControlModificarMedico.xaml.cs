@@ -66,8 +66,6 @@ namespace GUI.View
             if (mainWindow != null)
             {
                 mainWindow.panelMedico.Children.Clear();
-                UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
-                mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
         }
         private void IdentificacionTextBox_TextChanged(object sender, TextChangedEventArgs e)
