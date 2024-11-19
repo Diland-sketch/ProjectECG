@@ -4583,7 +4583,6 @@
       "path": "system.runtime.interopservices.runtimeinformation/4.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5650,19 +5649,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dilan\\.nuget\\packages\\": {}
+    "C:\\Users\\kerin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\PRUEBA.csproj",
+      "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
       "projectName": "PRUEBA",
-      "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\PRUEBA.csproj",
-      "packagesPath": "C:\\Users\\dilan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\PRUEBA\\obj\\",
+      "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
+      "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\dilan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5677,11 +5681,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Entidades\\Entidades.csproj"
+            "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj": {
-              "projectPath": "C:\\Users\\dilan\\source\\repos\\Proyecto_P3-ECG\\Logica\\Logica.csproj"
+            "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+              "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
             }
           }
         }

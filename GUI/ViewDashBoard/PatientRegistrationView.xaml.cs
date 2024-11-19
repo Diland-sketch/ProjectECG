@@ -1,3 +1,5 @@
+
+﻿using GUI.ViewModel;
 ﻿using Entidades;
 using Logica;
 using System;
@@ -28,6 +30,7 @@ namespace GUI.ViewDashBoard
             InitializeComponent();
             servicePaciente = new ServicePaciente();
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

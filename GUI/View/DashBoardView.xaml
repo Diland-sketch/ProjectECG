@@ -56,14 +56,14 @@
                     </Menu:Btn>
 
                     <!-- Botón Registro Paciente -->
-                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding PatientRegistrationsCommand}">
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding NavigationCrudPatientsCommand}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Image Source="pack://application:,,,/Images/img_customer.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
-                            <TextBlock Text="Registro Paciente" Style="{StaticResource Text_Style}" Margin="55,0,0,0" Grid.ColumnSpan="2"/>
+                            <TextBlock Text="Gestion Paciente" Style="{StaticResource Text_Style}" Margin="55,0,0,0" Grid.ColumnSpan="2"/>
                         </Grid>
                     </Menu:Btn>
 
