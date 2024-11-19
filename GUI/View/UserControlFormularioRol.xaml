@@ -15,16 +15,16 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" VerticalAlignment="Top" HorizontalAlignment="Center" Height="124" Margin="0,19,0,0" Grid.Row="1" Width="290">
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" VerticalAlignment="Top" HorizontalAlignment="Center" Height="172" Margin="0,19,0,0" Grid.Row="1" Width="290">
             <StackPanel>
-                <TextBlock Text="Nombre:" Margin="5" FontSize="18" Foreground="White" FontFamily="Berlin Sans FB"/>
+                <TextBlock Text="Nombre:" Margin="5" FontSize="24" Foreground="White" FontFamily="Berlin Sans FB"/>
                 <TextBox x:Name="txtNombre" TextWrapping="Wrap" Width="255" Height="25"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" FontSize="18" FontFamily="Berlin Sans FB"/>
-                <Button Content="Guardar" Click="GuardarButton_Click" Width="72" Background="#FF333838" Foreground="White" Margin="0,10,0,0" Height="27" FontSize="18" FontFamily="Berlin Sans FB">
+                    Padding="0,0,0,0" FontSize="24" FontFamily="Berlin Sans FB" PreviewTextInput="txtNombre_PreviewTextInput"/>
+                <Button Content="Guardar" Click="GuardarButton_Click" Width="92" Background="#FF333838" Foreground="White" Margin="0,10,0,0" Height="29" FontSize="24" FontFamily="Berlin Sans FB">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -41,24 +41,26 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                <Button x:Name="btnGuardar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="0,14" FontFamily="Berlin Sans FB">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{TemplateBinding Background}" 
+BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="1" 
+CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Border>
-
-        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
-            <Button.Content>
-                <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
-            </Button.Content>
-        </Button>
-        <Label Content="GESTION ROL" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20" FontFamily="Berlin Sans FB" Height="32" Width="130"/>
+        <Label Content="GESTION ROL" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="36" FontFamily="Berlin Sans FB" Height="47" Width="228"/>
 
     </Grid>
 </UserControl>

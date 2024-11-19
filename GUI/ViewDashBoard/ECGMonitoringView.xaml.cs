@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -68,6 +69,11 @@ namespace GUI.ViewDashBoard
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Permitir solo números
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
     }
 }

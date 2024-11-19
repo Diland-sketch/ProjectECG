@@ -26,19 +26,22 @@
                 <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
-            <Button.Content>
-                <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
-            </Button.Content>
+        <Button x:Name="btnCancelar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="350,371,350,49" FontFamily="Berlin Sans FB">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="1" 
+CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
         <Label Content="CONSULTA MEDICO" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" FontFamily="Berlin Sans FB"/>
         <Grid HorizontalAlignment="Center" Height="28" VerticalAlignment="Top" Width="496" Margin="0,90,0,0">
@@ -52,7 +55,7 @@
                 BorderBrush="Gray"
                 BorderThickness="0,0,0,1"
                 Foreground="White"
-                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18"/>
+                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18" PreviewTextInput="txtId_PreviewTextInput"/>
             <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,0" Click="btnBuscar_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Width="60">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">

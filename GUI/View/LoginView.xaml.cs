@@ -95,5 +95,31 @@ namespace GUI.View
         {
 
         }
+
+        private void btnLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+        
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtUser.Focus();
+        }
     }
 }

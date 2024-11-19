@@ -11,20 +11,6 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
-            <Button.Content>
-                <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
-            </Button.Content>
-        </Button>
         <DataGrid x:Name="RolesDataGrid" 
                   AutoGenerateColumns="False" 
                   IsReadOnly="True" 
@@ -45,7 +31,7 @@
                 BorderBrush="Gray"
                 BorderThickness="0,0,0,1"
                 Foreground="White"
-                Padding="0,0,0,0" Margin="161,0,89,7" FontSize="18"/>
+                Padding="0,0,0,0" Margin="161,0,89,7" FontSize="18" PreviewTextInput="txtNombre_PreviewTextInput"/>
             <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="16" Margin="361,0,0,0" Click="btnBuscar_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Width="59">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -63,6 +49,24 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            
         </Grid>
+        <Button x:Name="btnGuardar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="350,356,350,64" FontFamily="Berlin Sans FB">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="1" 
+CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </UserControl>

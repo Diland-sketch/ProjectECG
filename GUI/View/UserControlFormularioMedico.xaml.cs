@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -222,6 +223,14 @@ namespace GUI.View
             fadeInAnimation.To = 1;
             fadeInAnimation.Duration = new Duration(TimeSpan.FromSeconds(1));
             this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
+        }
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
+        }
+        private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
         }
     }
 }

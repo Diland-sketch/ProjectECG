@@ -24,5 +24,18 @@ namespace GUI.ViewDashBoard
         {
             InitializeComponent();
         }
+
+        private void txtDocumentoEliminar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnEliminar_Click(sender, e);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
