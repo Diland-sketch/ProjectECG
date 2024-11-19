@@ -27,23 +27,33 @@ namespace GUI.ViewDashBoard
     {
         public ServicePaciente servicePaciente;
         public ServiceMedico serviceMedico;
-        ServiceSesionECG ServiceSesion;
+        ServiceSesionECG serviceSesion;
         private DispatcherTimer fechaHoraTimer;
+        private DispatcherTimer fechaHoraTimer2;
         public ECGMonitoringView()
         {
             InitializeComponent();
             servicePaciente = new ServicePaciente();
             serviceMedico = new ServiceMedico();
-            ServiceSesion = new ServiceSesionECG();
+            serviceSesion = new ServiceSesionECG();
             fechaHoraTimer = new DispatcherTimer();
             fechaHoraTimer.Interval = TimeSpan.FromSeconds(1);
             fechaHoraTimer.Tick += ActualizarFechaHora;
             fechaHoraTimer.Start();
+            fechaHoraTimer2 = new DispatcherTimer();
+            fechaHoraTimer2.Interval = TimeSpan.FromSeconds(1);
+            fechaHoraTimer2.Tick += ActualizarFechaHora2;
+            fechaHoraTimer2.Start();
         }
 
         private void ActualizarFechaHora(object sender, EventArgs e)
         {
             fechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+
+        private void ActualizarFechaHora2(object sender, EventArgs e)
+        {
+            fechaHoraFinal.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -54,18 +64,28 @@ namespace GUI.ViewDashBoard
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             graphView.Iniciar_Click(sender, e);
-            FechaHoraSesion();
+            fechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            fechaHoraTimer.Stop();
 
-        }
+            SesionECG sesion = new SesionECG
+            {
+                IdPaciente = txtDocumento.Text,
+                IdMedico = txtIdMedico.Text,
+                InicioSesionECG = DateTime.Parse(fechaHora.Text),
+                FinSesionECG = null,
+                Descripcion = null
+            };
 
-        public DateTime FechaHoraSesion()
-        {
-            DateTime fecha = DateTime.Parse(fechaHora.Text);
-            return fecha;
+            var message = serviceSesion.Guardar(sesion);
+            MessageBox.Show(message);
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             graphView.Detener_Click(sender, e);
+            fechaHoraFinal.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            fechaHoraTimer2.Stop();
+
+            MessageBox.Show("\"La sesión ha finalizado. Por favor, complete la descripción y guarde.");
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -87,22 +107,23 @@ namespace GUI.ViewDashBoard
             
         }
 
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-            int u= servicePaciente.RetornarIdMedico();
-            txtIdMedico.Text = serviceMedico.MostrarId(u);
-        }
-
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            SesionECG sesion = new SesionECG();
-            sesion.IdPaciente = txtDocumento.Text;
-            sesion.IdMedico = txtIdMedico.Text;
-            sesion.Descripcion = TextArea.Text;
-            sesion.InicioSesionECG = FechaHoraSesion();
-            sesion.FinSesionECG = FechaHoraSesion();
-            var message = ServiceSesion.Guardar(sesion);
+            SesionECG sesion = new SesionECG()
+            {
+                IdPaciente = txtDocumento.Text,
+                IdMedico = txtIdMedico.Text,
+                FinSesionECG = DateTime.Parse(fechaHoraFinal.Text),
+                Descripcion = TextArea.Text,
+            };
+            var message = serviceSesion.Actualizar(sesion);
             MessageBox.Show(message);
+        }
+
+        private void Grid_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            int u = servicePaciente.RetornarIdMedico();
+            txtIdMedico.Text = serviceMedico.MostrarId(u);
         }
     }
 }

@@ -28,10 +28,17 @@ namespace GUI.ViewDashBoard
         private ChartValues<double> _ecgValues;
         public SeriesCollection EcgSeries { get; set; }
 
+        private readonly Queue<double> _buffer = new Queue<double>();
+        private const int BufferSize = 5;
+        private System.Timers.Timer _graficaTimer;
+
         public GraphView()
         {
             InitializeComponent();
             
+            _graficaTimer = new System.Timers.Timer(100);
+            _graficaTimer.Elapsed += (s, e) => ActualizarGraficaDesdeBuffer();
+            _graficaTimer.Start();
 
             _ecgValues = new ChartValues<double>();
             _serviceEcg = new ServiceECG("COM4", 9600);
@@ -52,36 +59,59 @@ namespace GUI.ViewDashBoard
 
             ecgChart.Series = EcgSeries;
             ecgChart.AxisY.Add(new Axis { MinValue = -1, MaxValue = 1 });
-            DataContext = this;
         }
 
+        private readonly List<double> _datosBuffer = new List<double>();
         private void OnDatoRecibido(DatoECG dato)
         {
-            Application.Current.Dispatcher.Invoke(() => ActualizarGrafica(dato));
+            double valorEscalado = (dato.Valor - 300);
+            lock (_datosBuffer)
+            {
+                _datosBuffer.Add(valorEscalado);
+            }
         }
+
+        private void ActualizarGraficaDesdeBuffer()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                lock (_datosBuffer)
+                {
+                    foreach (var dato in _datosBuffer)
+                    {
+                        double datoFiltrado = FiltrarDato(dato);
+                        _ecgValues.Add(datoFiltrado);
+                        if (_ecgValues.Count > 300)
+                        {
+                            _ecgValues.RemoveAt(0);
+                        }
+                    }
+                    _datosBuffer.Clear();
+                }
+                ecgChart.Update();
+            });
+        }
+    
 
         public void Iniciar_Click(object sender, RoutedEventArgs e)
         {
-            _serviceEcg.DatoRecibido += OnDatoRecibido;
             _serviceEcg.IniciarLectura();
         }
 
         public void Detener_Click(object sender, RoutedEventArgs e)
         {
-            _serviceEcg.DatoRecibido -= OnDatoRecibido;
             _serviceEcg.DetenerLectura();
         }
 
-        private void ActualizarGrafica(DatoECG dato)
+        private double FiltrarDato(double nuevoDato)
         {
-            double valorEscalado = (dato.Valor - 300) / 5;
-            _ecgValues.Add(valorEscalado);
-
-            if (_ecgValues.Count > 300)
+            if (_buffer.Count > BufferSize)
             {
-                _ecgValues.RemoveAt(0);
+                _buffer.Dequeue();
             }
-            ecgChart.Update();
+            _buffer.Enqueue(nuevoDato);
+
+            return _buffer.Average();
         }
     }
 }

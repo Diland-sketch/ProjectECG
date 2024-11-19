@@ -15,7 +15,7 @@
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
 
-    <Grid>
+    <Grid Loaded="Grid_Loaded_1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <!-- Sección izquierda -->
@@ -50,16 +50,16 @@
                 <TextBox x:Name="txtApellido" Width="200" IsReadOnly="True"/>
             </StackPanel>
             <StackPanel Margin="0,10">
-                <TextBlock Text="Fecha y Hora" Foreground="White" />
+                <TextBlock Text="Fecha y Hora Inicio" Foreground="White" />
                 <TextBox x:Name="fechaHora" IsReadOnly="True" Width="200" />
+            </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Fecha y Hora Final" Foreground="White" />
+                <TextBox x:Name="fechaHoraFinal" IsReadOnly="True" Width="200" />
             </StackPanel>
             <StackPanel Margin="0,10">
                 <TextBlock Text="Frecuencia (BPM)" Foreground="White" />
                 <TextBox x:Name="txtFrecuencia" Width="200" IsReadOnly="True"/>
-            </StackPanel>
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Amplitud (mV)" Foreground="White" />
-                <TextBox x:Name="txtAmplitud" Width="200" IsReadOnly="True"/>
             </StackPanel>
             <StackPanel Margin="0,10">
                 <TextBlock Text="Id Medico" Foreground="White" />
@@ -92,8 +92,6 @@
                 <Button Content="Iniciar" Width="100" Margin="10" Click="Button_Click" />
                 <Button Content="Detener" Width="100" Margin="10" Click="Button_Click_1" />
             </StackPanel>
-            <TextBlock Text="Voltaje actual (mV):" Foreground="White" Margin="0,10" />
-            <TextBox Width="150" />
         </StackPanel>
     </Grid>
 
