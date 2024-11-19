@@ -64,5 +64,10 @@ namespace GUI.ViewDashBoard
             txtNombre.Text = paciente.PrimerNombre;
             txtApellido.Text = paciente.PrimerApellido;
         }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
