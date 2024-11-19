@@ -14,6 +14,7 @@ namespace Logica
 
         public PacienteRepositorio repositorio;
 
+        UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
         public ServicePaciente()
         {
             repositorio = new PacienteRepositorio();
@@ -42,6 +43,11 @@ namespace Logica
         public List<Paciente> ConsultarTodo()
         {
             return repositorio.ConsultarTodo();
+        }
+
+        public int RetornarIdMedico()
+        {
+            return usuarioRepositorio.Retornaridmedico();
         }
 
         public string Eliminar(string id)

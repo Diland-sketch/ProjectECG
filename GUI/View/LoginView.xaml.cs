@@ -52,15 +52,16 @@ namespace GUI.View
             Usuario usuario = new Usuario()
             {
                 NombreUsuario = txtUser.Text,
-                contrasenha = txtPassword.Password
+                Contrasenha = txtPassword.Password
             };
+
 
             int loginExitoso = serviceUser.Login(usuario);
 
             if (loginExitoso == 1)
             {
                 MessageBox.Show("Bienvenido de nuevo Admin");
-                viewAdmin viewAdmin = new viewAdmin();
+                DashBoardView viewAdmin = new DashBoardView();
                 viewAdmin.Show();
                 this.Close();
             }

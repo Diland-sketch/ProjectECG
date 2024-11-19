@@ -15,7 +15,7 @@
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
 
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <!-- Sección izquierda -->
