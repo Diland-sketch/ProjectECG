@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -89,8 +90,8 @@ namespace GUI.ViewDashBoard
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            int u= servicePaciente.RetornarIdMedico();
-            txtIdMedico.Text = serviceMedico.MostrarId(u);
+            //int u= servicePaciente.RetornarIdMedico();
+            //txtIdMedico.Text = serviceMedico.MostrarId(u);
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -103,6 +104,11 @@ namespace GUI.ViewDashBoard
             sesion.FinSesionECG = FechaHoraSesion();
             var message = ServiceSesion.Guardar(sesion);
             MessageBox.Show(message);
+        }
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Permitir solo números
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
     }
 }

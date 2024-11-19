@@ -33,9 +33,7 @@ namespace GUI.ViewDashBoard
         private void cargar()
         {
             var pacientes = new List<Paciente>{
-                new Paciente { Identificacion = "1", PrimerNombre = "Juan" , Sexo = 'M'},
-                new Paciente { Identificacion = "2", PrimerNombre = "Ana" , Sexo = 'M'},
-                new Paciente { Identificacion = "3", PrimerNombre = "Carlos" , Sexo = 'M'}
+
             };
             pacientes = pacientes.Where(p => !string.IsNullOrEmpty(p.Identificacion) && !string.IsNullOrEmpty(p.PrimerNombre)).ToList();
             dataGridPacientes.ItemsSource = pacientes;

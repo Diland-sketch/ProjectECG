@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
+C:\Users\Usuario\source\repos\ProjectECG\GUI\obj\Debug\net8.0-windows\
 GUI
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\GUI\App.xaml
+C:\Users\Usuario\source\repos\ProjectECG\GUI\App.xaml
 311954739559
 
 421469162719
-232-883639755
+2321349000483
 MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;ViewDashBoard\ConsultPatient.xaml;ViewDashBoard\DeletePatient.xaml;ViewDashBoard\ECGMonitoringView.xaml;ViewDashBoard\GraphView.xaml;ViewDashBoard\HomeView.xaml;ViewDashBoard\NavigationCrudPatient.xaml;ViewDashBoard\PatientHistoryView.xaml;ViewDashBoard\PatientRegistrationView.xaml;ViewDashBoard\UpdatePatient.xaml;ViewDashBoard\UserControlDetallePacientes.xaml;View\DashBoardView.xaml;View\LoginView.xaml;View\UserControlConsultaMedico.xaml;View\UserControlConsultaRol.xaml;View\UserControlCrudMedico.xaml;View\UserControlCrudRol.xaml;View\UserControlEliminarMedico.xaml;View\UserControlEliminarRol.xaml;View\UserControlFormularioMedico.xaml;View\UserControlFormularioRol.xaml;View\UserControlModificarMedico.xaml;View\UserControlModificarRol.xaml;View\viewAdmin.xaml;View\viewDashboard.xaml;View\ViewGraficaECG.xaml;
 
 False
