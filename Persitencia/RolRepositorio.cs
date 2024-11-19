@@ -149,7 +149,6 @@ namespace Persistencia
             {
                 IdRol = reader.GetInt32(reader.GetOrdinal("id_rol")),
                 NombreRol = reader.GetString(reader.GetOrdinal("nombre_rol")),
-                
             };
             
         }

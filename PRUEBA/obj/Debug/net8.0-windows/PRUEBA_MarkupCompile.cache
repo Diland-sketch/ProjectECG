@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\
+=======
+C:\Users\Usuario\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\
+>>>>>>> 98296a0fbdb8907d59b828a06dfa08025e4ae6e6
 PRUEBA
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\App.xaml
 11407045341
 
 4-499455322
 230129790734
+=======
+C:\Users\Usuario\source\repos\ProjectECG\PRUEBA\App.xaml
+11407045341
+
+4-499455322
+230522495350
+>>>>>>> 98296a0fbdb8907d59b828a06dfa08025e4ae6e6
 MainWindow.xaml;
 
 False

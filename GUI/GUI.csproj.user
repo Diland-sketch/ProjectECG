@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ViewDashBoard\ConsultPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewDashBoard\DeletePatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ViewDashBoard\ECGMonitoringView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -16,13 +22,16 @@
     <Compile Update="ViewDashBoard\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ViewDashBoard\NavigationCrudPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ViewDashBoard\PatientHistoryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewDashBoard\PatientRegistrationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewDashBoard\SearchPatient.xaml.cs">
+    <Compile Update="ViewDashBoard\UpdatePatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewDashBoard\UserControlDetallePacientes.xaml.cs">
@@ -60,6 +69,12 @@
     <Page Update="Utilities\DataTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ViewDashBoard\ConsultPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewDashBoard\DeletePatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ViewDashBoard\ECGMonitoringView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -69,13 +84,16 @@
     <Page Update="ViewDashBoard\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ViewDashBoard\NavigationCrudPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ViewDashBoard\PatientHistoryView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ViewDashBoard\PatientRegistrationView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewDashBoard\SearchPatient.xaml">
+    <Page Update="ViewDashBoard\UpdatePatient.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ViewDashBoard\UserControlDetallePacientes.xaml">

@@ -23,16 +23,18 @@ namespace GUI.ViewDashBoard
     /// <summary>
     /// Lógica de interacción para ECGMonitoringView.xaml
     /// </summary>
-    public partial class ECGMonitoringView : UserControl 
+    public partial class ECGMonitoringView : UserControl
     {
-        public  ServicePaciente servicePaciente;
+        public ServicePaciente servicePaciente;
         public ServiceMedico serviceMedico;
+        ServiceSesionECG ServiceSesion;
         private DispatcherTimer fechaHoraTimer;
         public ECGMonitoringView()
         {
             InitializeComponent();
             servicePaciente = new ServicePaciente();
             serviceMedico = new ServiceMedico();
+            ServiceSesion = new ServiceSesionECG();
             fechaHoraTimer = new DispatcherTimer();
             fechaHoraTimer.Interval = TimeSpan.FromSeconds(1);
             fechaHoraTimer.Tick += ActualizarFechaHora;
@@ -52,8 +54,15 @@ namespace GUI.ViewDashBoard
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             graphView.Iniciar_Click(sender, e);
+            FechaHoraSesion();
+
         }
 
+        public DateTime FechaHoraSesion()
+        {
+            DateTime fecha = DateTime.Parse(fechaHora.Text);
+            return fecha;
+        }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             graphView.Detener_Click(sender, e);
@@ -84,6 +93,16 @@ namespace GUI.ViewDashBoard
             txtIdMedico.Text = serviceMedico.MostrarId(u);
         }
 
-        
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            SesionECG sesion = new SesionECG();
+            sesion.IdPaciente = txtDocumento.Text;
+            sesion.IdMedico = txtIdMedico.Text;
+            sesion.Descripcion = TextArea.Text;
+            sesion.InicioSesionECG = FechaHoraSesion();
+            sesion.FinSesionECG = FechaHoraSesion();
+            var message = ServiceSesion.Guardar(sesion);
+            MessageBox.Show(message);
+        }
     }
 }

@@ -12,8 +12,8 @@
             <ImageBrush/>
         </Grid.Background>
         <Label Content="GESTION ROL" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White"/>
-        <Grid Height="NaN" Margin="312,144,312,144" Width="NaN" HorizontalAlignment="Center">
-            <Button x:Name="btnAgregar" Content="AGREGAR" Height="30" Background="#FF333838" Foreground="White" Margin="0,0,0,133" FontSize="18" Click="btnAgregar_Click" FontFamily="Berlin Sans FB">
+        <StackPanel Margin="315,144,314,214" Orientation="Vertical">
+            <Button x:Name="btnAgregar" Content="AGREGAR" Background="#FF333838" Foreground="White" FontSize="18" Click="btnAgregar_Click" FontFamily="Berlin Sans FB" Height="31" Width="170">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -30,8 +30,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-            <Button x:Name="btnEliminar" Content="ELIMINAR" Height="30" Background="#FF333838" Foreground="White" Margin="0,63,0,70" FontSize="18" Click="btnEliminar_Click" FontFamily="Berlin Sans FB">
+            <Button x:Name="btnEliminar" Content="ELIMINAR" Background="#FF333838" Foreground="White" FontSize="18" Click="btnEliminar_Click" FontFamily="Berlin Sans FB" Height="31" Width="170">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -48,7 +47,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="btnConsulta" Content="CONSULTA GENERAL" Height="30" Background="#FF333838" Foreground="White" Margin="0,133,0,0" FontSize="18" Click="btnConsulta_Click" FontFamily="Berlin Sans FB">
+            <Button x:Name="btnConsulta" Content="CONSULTA GENERAL" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnConsulta_Click" FontFamily="Berlin Sans FB" Width="171">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -65,6 +64,6 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-        </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

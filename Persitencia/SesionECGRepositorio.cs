@@ -16,8 +16,8 @@ namespace Persitencia
         {
             try
             { 
-                OracleCommand Ocmd = new OracleCommand($"insertar_sesion({entity.InicioSesionECG},{entity.FinSesionECG},{entity.IdPaciente}" +
-                                                       $",{entity.Descripcion},{entity.IdMedico})", conexion);
+                OracleCommand Ocmd = new OracleCommand($"insertar_sesion('{entity.InicioSesionECG}','{entity.FinSesionECG}','{entity.IdPaciente}'" +
+                                                       $",'{entity.Descripcion}','{entity.IdMedico}')", conexion);
                 AbrirConexion();
 
                 int confirmacion = Ocmd.ExecuteNonQuery();
