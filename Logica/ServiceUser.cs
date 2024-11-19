@@ -33,7 +33,6 @@ namespace Logica
         {
             throw new NotImplementedException();
         }
-
         public Usuario ConsultarId(int id)
         {
             return userRepository.ConsultarId(id);

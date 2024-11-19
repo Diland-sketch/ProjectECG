@@ -26,6 +26,7 @@ namespace GUI.ViewDashBoard
     public partial class ECGMonitoringView : UserControl 
     {
         ServicePaciente servicePaciente;
+        ServiceUser serviceUser = new ServiceUser();
         private DispatcherTimer fechaHoraTimer;
         public ECGMonitoringView()
         {
@@ -63,6 +64,10 @@ namespace GUI.ViewDashBoard
             paciente = servicePaciente.TraerPaciente(txtDocumento.Text);
             txtNombre.Text = paciente.PrimerNombre;
             txtApellido.Text = paciente.PrimerApellido;
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

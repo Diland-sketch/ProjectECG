@@ -10,14 +10,19 @@ namespace Entidades
     {
         public int IdIncidente { get; set; }
         public DateTime FechaHoraIncidente { get; set; }
-        public string DescripcionIncidente { get; set; }
+        public string Descripcion { get; set; }
+        public int IdSesionECG { get; set; }
 
-
-        public Incidentes(int idIncidente, DateTime fechaHoraIncidente, string descripcionIncidente)
+        public Incidentes()
         {
-            IdIncidente = idIncidente;
+            
+        }
+
+        public Incidentes( DateTime fechaHoraIncidente, string descripcionIncidente, int idSesion)
+        {
+            IdSesionECG = idSesion;
             FechaHoraIncidente = fechaHoraIncidente;
-            DescripcionIncidente = descripcionIncidente;
+            Descripcion = descripcionIncidente;
         }
 
         public override string ToString()

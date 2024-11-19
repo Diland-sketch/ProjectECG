@@ -12,8 +12,14 @@ namespace Persistencia
 {
     public class UsuarioRepositorio : ConexionOracle
     {
-        RolRepositorio rolRepositorio = new RolRepositorio();
-        OracleDataAdapter da = new OracleDataAdapter();
+        RolRepositorio rolRepositorio;
+
+        public UsuarioRepositorio()
+        {
+            rolRepositorio = new RolRepositorio();
+            //medicoRepositorio = new MedicoRepositorio();
+        }
+
         public int ValidarUsuario(string nombre, string contrasenha)
         {
             if (nombre == "admin" && contrasenha == "123")
@@ -93,7 +99,6 @@ namespace Persistencia
             return iduser;
 
         }
-
         public Usuario ConsultarUsuario(string nombre, string contrasenha)
         {
             string ssql = $"SELECT nombre_usuario, contrasenha FROM usuarios WHERE nombre_usuario = '{nombre}' AND contrasenha = '{contrasenha}'";
