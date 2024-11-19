@@ -9,8 +9,8 @@
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
-            <RowDefinition Height="173*"/>
-            <RowDefinition Height="277*"/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush/>
@@ -18,9 +18,9 @@
 
 
 
-        <Label Content="GESTION MEDICO" HorizontalAlignment="Center" Margin="0,60,0,0" FontSize="16" FontFamily="Berlin Sans FB" Foreground="White" VerticalAlignment="Top" Height="28" Width="132"/>
-        <Grid HorizontalAlignment="Center" Height="134" VerticalAlignment="Top" Width="132" Margin="0,19,0,0" Grid.Row="1">
-            <Button x:Name="btnAgregar" Content="AGREGAR" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="14" Click="btnAgregar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Label Content="GESTION MEDICO" HorizontalAlignment="Center" FontSize="20" FontFamily="Berlin Sans FB" Foreground="White" VerticalAlignment="Center" Height="28" Width="163"/>
+        <Grid HorizontalAlignment="Center" Height="134" VerticalAlignment="Top" Width="192" Grid.Row="1">
+            <Button x:Name="btnAgregar" Content="AGREGAR" Width="172" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnAgregar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -37,7 +37,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="btnEliminar" Content="ELIMINAR" Width="100" Height="30" Background="#FF333838" Foreground="White" Margin="0,35,0,0" FontSize="14" Click="btnEliminar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button x:Name="btnEliminar" Content="ELIMINAR" Width="172" Height="30" Background="#FF333838" Foreground="White" Margin="0,35,0,0" FontSize="18" Click="btnEliminar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -54,7 +54,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="btnModificar" Content="MODIFICAR" Width="100" Height="30" Background="#FF333838" Foreground="White" Margin="0,70,0,0" FontSize="14" Click="btnModificar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button x:Name="btnModificar" Content="MODIFICAR" Width="172" Height="30" Background="#FF333838" Foreground="White" Margin="0,70,0,0" FontSize="18" Click="btnModificar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -71,7 +71,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="btnConsulta" Content="CONSULTA GENERAL" Height="30" Background="#FF333838" Foreground="White" Margin="0,105,0,0" FontSize="14" Click="btnConsulta_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button x:Name="btnConsulta" Content="CONSULTA GENERAL" Height="30" Background="#FF333838" Foreground="White" Margin="0,105,0,0" FontSize="18" Click="btnConsulta_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top" Width="172">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -89,19 +89,5 @@
                 </Button.Template>
             </Button>
         </Grid>
-        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
-            <Button.Content>
-                <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
-            </Button.Content>
-        </Button>
     </Grid>
 </UserControl>

@@ -19,24 +19,21 @@ namespace Logica
             userRepository = new UsuarioRepositorio();
         }
 
-        public bool Login(Usuario usuario)
+        public string Guardar(Usuario user)
         {
-            return userRepository.ValidarUsuario(usuario);
+            return userRepository.Guardar(user);
         }
-        public string Guardar(Usuario usuario)
+
+        public int Login(Usuario usuario)
         {
-<<<<<<< Updated upstream
-            return userRepository.Guardar(usuario);
-=======
             return userRepository.ValidarUsuario(usuario.NombreUsuario, usuario.Contrasenha);
->>>>>>> Stashed changes
         }
 
-        public List<Usuario> ConsultarTodo()
+
+        public int MostrarId(string nom)
         {
-            throw new NotImplementedException();
+            return userRepository.MostrarId(nom);
         }
-
         public Usuario ConsultarId(int id)
         {
             return userRepository.ConsultarId(id);
@@ -47,10 +44,7 @@ namespace Logica
             return userRepository.Actualizar(entity);
         }
 
-        public string Eliminar(string id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
         
 }

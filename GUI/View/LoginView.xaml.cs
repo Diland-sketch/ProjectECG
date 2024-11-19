@@ -23,6 +23,7 @@ namespace GUI.View
     public partial class LoginView : Window
     {
         ServiceUser serviceUser = new ServiceUser();
+
         public LoginView()
         {
             InitializeComponent();
@@ -54,22 +55,35 @@ namespace GUI.View
                 Contrasenha = txtPassword.Password
             };
 
-            bool loginExitoso = serviceUser.Login(usuario);
 
-            if (loginExitoso) 
+            int loginExitoso = serviceUser.Login(usuario);
+
+            if (loginExitoso == 1)
             {
-                MessageBox.Show("Login exitoso");
-                viewAdmin dashBoardView = new viewAdmin();
-                dashBoardView.Show();
-       
+                MessageBox.Show("Bienvenido de nuevo Admin");
+                viewAdmin viewAdmin = new viewAdmin();
+                viewAdmin.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                if (loginExitoso == 2)
+                {
+                    MessageBox.Show("Bienvenido, Medico");
+                    DashBoardView viewDash = new DashBoardView();
+                    viewDash.Show();
+                    this.Close();
+                }
+                else
+                {
+                    if(loginExitoso == -1)
+                    {
+                        MessageBox.Show("Credenciales erroneas");
+                        LoginView viewLogin = new LoginView();
+                        viewLogin.Show();
+                    }
+                }
             }
-            txtUser.Text = "";
-            txtPassword.Password = "";
         }
 
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

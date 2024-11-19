@@ -1,26 +1,86 @@
-﻿<UserControl x:Class="GUI.ViewDashBoard.ECGMonitoringView"
+﻿<UserControl  x:Class="GUI.ViewDashBoard.ECGMonitoringView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vm="clr-namespace:GUI.ViewModel"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" 
-             d:DesignWidth="800"
-             Style="{StaticResource Page_Style}">
+             xmlns:graph="clr-namespace:GUI.ViewDashBoard"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d"
+             d:DesignHeight="700"
+             d:DesignWidth="800">
 
     <UserControl.DataContext>
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
-    <Grid Margin="0,0,0,0" Height="1100" Width="1100" VerticalAlignment="Center">
-        <Border Background="DarkCyan"
-        CornerRadius="20" Margin="0,0,0,0" />
-        <Grid>
-            
-        </Grid>
 
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <!-- Sección izquierda -->
+            <ColumnDefinition Width="3*" />
+            <!-- Sección derecha -->
+        </Grid.ColumnDefinitions>
 
+        <!-- Sección izquierda: Información del paciente -->
+        <StackPanel Grid.Column="0" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Monitoreo de ECG" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" Foreground="White" />
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Documento" Foreground="White" />
+                <TextBox x:Name="txtDocumento" Width="200" />
+            </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Nombre" Foreground="White" />
+                <TextBox x:Name="txtNombre" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Apellido" Foreground="White" />
+                <TextBox x:Name="txtApellido" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Fecha y Hora" Foreground="White" />
+                <TextBox x:Name="fechaHora" IsReadOnly="True" Width="200" />
+            </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Frecuencia (BPM)" Foreground="White" />
+                <TextBox x:Name="txtFrecuencia" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Amplitud (mV)" Foreground="White" />
+                <TextBox x:Name="txtAmplitud" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Margin="0,10">
+                <TextBlock Text="Id Medico" Foreground="White" />
+                <TextBox x:Name="txtIdMedico" Width="200" IsReadOnly="True" />
+            </StackPanel>
+            <Button Content="Guardar en PDF" Width="150" HorizontalAlignment="Left" Margin="0,20" />
+        </StackPanel>
 
+        <!-- Sección derecha: Gráfica -->
+        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Señal en tiempo real" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" Foreground="White" />
+            <Border BorderBrush="White" BorderThickness="1" CornerRadius="5">
+                <Grid>
+                    <graph:GraphView x:Name="graphView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Grid>
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+                <Button Content="Iniciar" Width="100" Margin="10" Click="Button_Click" />
+                <Button Content="Detener" Width="100" Margin="10" Click="Button_Click_1" />
+            </StackPanel>
+            <TextBlock Text="Voltaje actual (mV):" Foreground="White" Margin="0,10" />
+            <TextBox Width="150" />
+        </StackPanel>
+        <Button x:Name="btnBuscar" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Buscar" Click="btnBuscar_Click" Margin="268,182,10,498" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.511"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
     </Grid>
 
 </UserControl>

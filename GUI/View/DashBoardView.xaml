@@ -56,7 +56,7 @@
                     </Menu:Btn>
 
                     <!-- Botón Registro Paciente -->
-                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding SearchPatientCommand}">
+                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding PatientRegistrationsCommand}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>

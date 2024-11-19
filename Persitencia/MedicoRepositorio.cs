@@ -16,8 +16,6 @@ namespace Persistencia
         {
             try
             {
-
-                
                 userRepository.Guardar(user);
                 entity.Usuario = userRepository.MostrarId(user.NombreUsuario);
                 string ssql = "";
@@ -62,8 +60,6 @@ namespace Persistencia
         {
             try
             {
-
-                
                 user.IdUsuario = MostrarIdU(entity.Identificacion);
                 /*string u =*/
                 userRepository.Actualizar(user);
@@ -106,11 +102,8 @@ namespace Persistencia
         public List<Medico> ConsultarTodo()
         {
 
-            string ssql = "SELECT * FROM medicos";
-                //$"SELECT m.idmedico,m.primer_nombre,m.segundo_nombre,m.primer_apellido,m.segundo_apellido,m.sexo,m.fecha_nacimiento , u.nombre_usuario" +
-            //                       $"FROM medicos m" +
-            //                       $"JOIN usuarios u" +
-            //                       $"ON m.usuario_id =u.id_usuario";
+            string ssql = "SELECT idmedico,primer_nombre,segundo_nombre, primer_apellido,segundo_apellido,sexo,fecha_nacimiento FROM medicos";
+                
 
             List<Medico> list = new List<Medico>();
 
@@ -255,6 +248,7 @@ namespace Persistencia
             CerrarConexion();
             return medico;
         }
+
         
         public string EliminarTodo()
         {

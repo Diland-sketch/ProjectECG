@@ -8,7 +8,6 @@ namespace Entidades
 {
     public class Medico : Persona
     {
-        public List<Paciente> pacientes;
         public int Usuario { get; set; }
 
         public Medico()
@@ -21,8 +20,6 @@ namespace Entidades
             DateOnly fechaNacmiento, char sexo, int usuario)
             : base(documento, primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacmiento, sexo)
         {
-            pacientes = new List<Paciente>();
-            
             
              Usuario = usuario;
 

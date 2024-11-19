@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using iText.Commons.Bouncycastle.Cert.Ocsp;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -10,23 +11,20 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
+    public static class global
+    {
+        public static int i;
+    }
     public class UsuarioRepositorio : ConexionOracle
     {
-        RolRepositorio rolRepositorio = new RolRepositorio();
-<<<<<<< Updated upstream
-        OracleDataAdapter da = new OracleDataAdapter();
-        public bool ValidarUsuario(Usuario usuario)
-=======
-        MedicoRepositorio medicoRepositorio = new MedicoRepositorio();
-        string idmedic;
+        RolRepositorio rolRepositorio = new RolRepositorio(); 
+
         public int ValidarUsuario(string nombre, string contrasenha)
->>>>>>> Stashed changes
+
         {
-            if(usuario.NombreUsuario == "admin" && usuario.contrasenha == "123")
+            if (nombre == "admin" && contrasenha == "123")
             {
-<<<<<<< Updated upstream
-                return true;
-=======
+
                 return 1;
             }
             else
@@ -34,29 +32,34 @@ namespace Persistencia
                 Usuario user = ConsultarUsuario(nombre, contrasenha);
                 string nom, contra;
                 nom = user.NombreUsuario;
+
                 contra = user.Contrasenha;
+
+                
+
                 if (nom == null && contra == null)
                 {
                     return -1;
                 }
                 else
                 {
-                   idmedic = medicoRepositorio.MostrarId(MostrarId(nom));
+                    int  oi = MostrarId(nom);
+                    global.i = oi;
                     return 2;
                 }
->>>>>>> Stashed changes
+
+
+                
             }
-            return false;
         }
         public string Guardar(Usuario entity)
         {
             try
-            {
-                
-                int IdRol = rolRepositorio.MostrarIdRol("medicos");
+            { 
+                int IdRol = rolRepositorio.MostrarIdRol("medico");
                 entity.IdRol = IdRol;
                 
-                string ssql = "INSERT INTO usuarios(Contrasenha, roles_id_rol, id_usuario, nombre_usuario)" +
+                string ssql = "INSERT INTO usuarios(contrasenha, roles_id_rol, id_usuario, nombre_usuario)" +
                                                    $"VALUES ('{entity.Contrasenha}', {entity.IdRol} , seq_usuarios.nextval ," +
                                                    $"'{entity.NombreUsuario}')";
 
@@ -87,7 +90,6 @@ namespace Persistencia
 
         public int MostrarId(string nomuser)
         {
-
             string ssql = $"SELECT id_usuario FROM usuarios WHERE nombre_usuario = '{nomuser}' ";
             int iduser = 0;
 
@@ -106,12 +108,10 @@ namespace Persistencia
             return iduser;
 
         }
-<<<<<<< Updated upstream
-=======
-
         public Usuario ConsultarUsuario(string nombre, string contrasenha)
         {
-            string ssql = $"SELECT nombre_usuario, Contrasenha FROM usuarios WHERE nombre_usuario = '{nombre}' AND Contrasenha = '{contrasenha}'";
+            string ssql = $"SELECT nombre_usuario, contrasenha FROM usuarios WHERE nombre_usuario = '{nombre}' AND contrasenha = '{contrasenha}'";
+
             Usuario user = new Usuario();
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
@@ -122,24 +122,23 @@ namespace Persistencia
                     while (reader.Read())
                     {
                         user.NombreUsuario = reader.GetString(reader.GetOrdinal("nombre_usuario"));
-                        user.Contrasenha = reader.GetString(reader.GetOrdinal("Contrasenha"));
+
+                        user.Contrasenha = reader.GetString(reader.GetOrdinal("contrasenha"));
+
                     }
                 }
             }
             CerrarConexion();
             return user;
         }
->>>>>>> Stashed changes
+
         
 
         public Usuario ConsultarId(int id)
         {
-<<<<<<< Updated upstream
 
-            string ssql = $"SELECT nombre_usuario,contrasenha FROM usuarios WHERE id_usuario = {id} ";
-=======
             string ssql = $"SELECT nombre_usuario, Contrasenha  FROM usuarios WHERE id_usuario = {id} ";
->>>>>>> Stashed changes
+
             Usuario user = new Usuario();
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
@@ -156,9 +155,9 @@ namespace Persistencia
                     }
                 }
             }
-
-            return user;
             CerrarConexion();
+            return user;
+            
             
         }
 
@@ -195,9 +194,9 @@ namespace Persistencia
             
         }
 
-        public string Retornaridmedico()
+        public int Retornaridmedico()
         {
-            return idmedic;
+            return global.i;
         }
 
         public string Eliminar(int id)

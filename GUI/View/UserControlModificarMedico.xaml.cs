@@ -23,22 +23,13 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlModificarMedico : UserControl
     {
-<<<<<<< Updated upstream
-        ServiceMedic ServiceMedic;
-        ServiceUser ServiceUser;
-        public UserControlModificarMedico()
-        {
-            InitializeComponent();
-            ServiceMedic = new ServiceMedic();
-=======
-       public ServiceUser ServiceUser;
-       public ServiceMedico serviceMedico;
+        ServiceUser serviceUser;
+        ServiceMedico serviceMedico;
         public UserControlModificarMedico()
         {
             InitializeComponent();
             serviceMedico = new ServiceMedico();
->>>>>>> Stashed changes
-            ServiceUser = new ServiceUser();
+            serviceUser = new ServiceUser();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -51,9 +42,22 @@ namespace GUI.View
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            
-
+            Usuario usuario = new Usuario();
+            Medico medico = new Medico();
+            medico.Identificacion = txtId.Text;
+            medico.PrimerNombre = txtPNombre.Text;
+            medico.SegundoNombre = txtSNombre.Text;
+            medico.PrimerApellido = txtPApellido.Text;
+            medico.SegundoApellido = txtSApellido.Text;
+            if (fechaNacimientoPicker.SelectedDate.HasValue)
+            {
+                string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
+                medico.FechaNacimiento = DateOnly.Parse(fechaSeleccionada);
             }
+
+            var message = serviceMedico.Actualizar(medico, usuario);
+            MessageBox.Show(message);
+    }
 
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -89,7 +93,7 @@ namespace GUI.View
             }
 
             Medico medico = new Medico();
-            medico = ServiceMedic.ConsultarId(txtId.Text);
+            medico = serviceMedico.ConsultarId(txtId.Text);
             txtPNombre.Text = medico.PrimerNombre;
             txtSNombre.Text = medico.SegundoNombre;
             txtPApellido.Text = medico.PrimerApellido;
@@ -105,16 +109,9 @@ namespace GUI.View
 
             fechaNacimientoPicker.Text = medico.FechaNacimiento.ToString();
             Usuario usuario = new Usuario();
-<<<<<<< Updated upstream
-            usuario = ServiceUser.ConsultarId(ServiceMedic.MostrarIdu(txtId.Text));
+            usuario = serviceUser.ConsultarId(serviceMedico.MostrarIdu(txtId.Text));
             txtNombreUsuario.Text = usuario.NombreUsuario;
-            txtContraseña.Text = usuario.contrasenha;
-=======
-            int i = serviceMedico.MostrarIdu(txtId.Text);
-            usuario = ServiceUser.ConsultarId(i);
-;            txtNombreUsuario.Text = usuario.NombreUsuario;
-            txtContraseña.Text = usuario.Contrasenha;
->>>>>>> Stashed changes
+            txtContraseña.Password = usuario.Contrasenha;
         }
 
         private void ActualizarButton_Click(object sender, RoutedEventArgs e)
@@ -150,13 +147,8 @@ namespace GUI.View
                 }
                 Usuario usuario = new Usuario();
                 usuario.NombreUsuario = txtNombreUsuario.Text;
-<<<<<<< Updated upstream
-                usuario.contrasenha = txtContraseña.Text;
-                    var message = ServiceMedic.Actualizar(medico, usuario);
-=======
-                usuario.Contrasenha = txtContraseña.Text;
+                usuario.Contrasenha = txtContraseña.Password;
                     var message = serviceMedico.Actualizar(medico, usuario);
->>>>>>> Stashed changes
                     MessageBox.Show(message);
                     LimpiarCampos();
                 
