@@ -23,13 +23,13 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlModificarMedico : UserControl
     {
-        ServiceMedic ServiceMedic;
-        ServiceUser ServiceUser;
+        ServiceUser serviceUser;
+        ServiceMedico serviceMedico;
         public UserControlModificarMedico()
         {
             InitializeComponent();
-            ServiceMedic = new ServiceMedic();
-            ServiceUser = new ServiceUser();
+            serviceMedico = new ServiceMedico();
+            serviceUser = new ServiceUser();
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -42,9 +42,22 @@ namespace GUI.View
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            
-
+            Usuario usuario = new Usuario();
+            Medico medico = new Medico();
+            medico.Identificacion = txtId.Text;
+            medico.PrimerNombre = txtPNombre.Text;
+            medico.SegundoNombre = txtSNombre.Text;
+            medico.PrimerApellido = txtPApellido.Text;
+            medico.SegundoApellido = txtSApellido.Text;
+            if (fechaNacimientoPicker.SelectedDate.HasValue)
+            {
+                string fechaSeleccionada = DateOnly.FromDateTime(fechaNacimientoPicker.SelectedDate.Value).ToString();
+                medico.FechaNacimiento = DateOnly.Parse(fechaSeleccionada);
             }
+
+            var message = serviceMedico.Actualizar(medico, usuario);
+            MessageBox.Show(message);
+    }
 
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -80,7 +93,7 @@ namespace GUI.View
             }
 
             Medico medico = new Medico();
-            medico = ServiceMedic.ConsultarId(txtId.Text);
+            medico = serviceMedico.ConsultarId(txtId.Text);
             txtPNombre.Text = medico.PrimerNombre;
             txtSNombre.Text = medico.SegundoNombre;
             txtPApellido.Text = medico.PrimerApellido;
@@ -96,9 +109,9 @@ namespace GUI.View
 
             fechaNacimientoPicker.Text = medico.FechaNacimiento.ToString();
             Usuario usuario = new Usuario();
-            usuario = ServiceUser.ConsultarId(ServiceMedic.MostrarIdu(txtId.Text));
+            usuario = serviceUser.ConsultarId(serviceMedico.MostrarIdu(txtId.Text));
             txtNombreUsuario.Text = usuario.NombreUsuario;
-            txtContraseña.Text = usuario.contrasenha;
+            txtContraseña.Password = usuario.contrasenha;
         }
 
         private void ActualizarButton_Click(object sender, RoutedEventArgs e)
@@ -134,8 +147,8 @@ namespace GUI.View
                 }
                 Usuario usuario = new Usuario();
                 usuario.NombreUsuario = txtNombreUsuario.Text;
-                usuario.contrasenha = txtContraseña.Text;
-                    var message = ServiceMedic.Actualizar(medico, usuario);
+                usuario.contrasenha = txtContraseña.Password;
+                    var message = serviceMedico.Actualizar(medico, usuario);
                     MessageBox.Show(message);
                     LimpiarCampos();
                 

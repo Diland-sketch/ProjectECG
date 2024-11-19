@@ -11,7 +11,14 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-
+        <DataGrid x:Name="MedicosDataGrid"
+                  IsReadOnly="True" 
+                  ItemsSource="{Binding Medicos}"
+                  Margin="152,118,0,107"
+                  HorizontalAlignment="Left" FontSize="18">
+            <DataGrid.Columns>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">
             <Button.Content>
                 <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
@@ -26,16 +33,20 @@
                 </Path>
             </Button.Content>
         </Button>
-        <Label Content="CONSULTA MEDICO" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontFamily="Berlin Sans FB"/>
-        <Grid HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="432" Margin="116,101,0,0">
-            <Label Content="Buscar por identificacion:" HorizontalAlignment="Left" FontSize="16" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Center"/>
+        <Label Content="CONSULTA MEDICO" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" FontFamily="Berlin Sans FB"/>
+        <Grid HorizontalAlignment="Center" Height="28" VerticalAlignment="Top" Width="496" Margin="0,90,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Buscar por identificacion:" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
             <TextBox x:Name="txtId" TextWrapping="Wrap"
                 Background="Transparent"
                 BorderBrush="Gray"
                 BorderThickness="0,0,0,1"
                 Foreground="White"
-                Padding="0,0,0,0" Margin="175,3,47,4"/>
-            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="14" Margin="390,7,0,0" Click="btnBuscar_Click" HorizontalAlignment="Left" VerticalAlignment="Top">
+                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18"/>
+            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,0" Click="btnBuscar_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Width="60">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -54,22 +65,6 @@
             </Button>
 
         </Grid>
-        <DataGrid x:Name="MedicosDataGrid" 
-          AutoGenerateColumns="False" 
-          IsReadOnly="True" 
-          ItemsSource="{Binding Medicos}"
-          Margin="116,134,118,40">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Identificacion" Binding="{Binding Identificacion}" Width="*" />
-                <DataGridTextColumn Header="Primer nombre" Binding="{Binding PrimerNombre}" Width="*" />
-                <DataGridTextColumn Header="Segundo nombre" Binding="{Binding SegundoNombre}" Width="*" />
-                <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />
-                <DataGridTextColumn Header="Segundo Apellido" Binding="{Binding SegundoApellido}" Width="*" />
-                <DataGridTextColumn Header="Fecha De Nacimiento nombre" Binding="{Binding FechaNacimiento}" Width="*" />
-                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
-            </DataGrid.Columns>
-        </DataGrid>
-
     </Grid>
 </UserControl>
 

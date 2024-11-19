@@ -7,16 +7,16 @@
         xmlns:local="clr-namespace:GUI.View"
         mc:Ignorable="d"
         Title="ViewGraficaECG" Height="450" Width="800">
-    <Grid>
+    <!--<Grid>
         <lvc:CartesianChart x:Name="ecgChart">
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Title="Tiempo (s)" Labels="{x:Null}" />
             </lvc:CartesianChart.AxisX>
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Voltaje (mV)" />
+                <lvc:Axis Title="Voltaje (mV)"/>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
         <Button Content="Iniciar" Click="Iniciar_Click" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
         <Button Content="Detener" Click="Detener_Click" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,10,0,0"/>
-    </Grid>
+    </Grid>-->
 </Window>

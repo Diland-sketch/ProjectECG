@@ -23,11 +23,12 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlConsultaRol : UserControl
     {
-        ServiceRol ServiceRol;
+        ServiceRol serviceRol;
+        public List<Rol> roles { get; set; }
         public UserControlConsultaRol()
         {
             InitializeComponent();
-            ServiceRol = new ServiceRol();
+            serviceRol = new ServiceRol();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -48,12 +49,10 @@ namespace GUI.View
             fadeInAnimation.Duration = new Duration(TimeSpan.FromSeconds(1));
             this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
             CargarRoles();
-
         }
         private void CargarRoles()
         {
-            
-            RolesDataGrid.ItemsSource = ServiceRol.ConsultarTodo();
+            RolesDataGrid.ItemsSource = serviceRol.ConsultarTodo();
         }
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

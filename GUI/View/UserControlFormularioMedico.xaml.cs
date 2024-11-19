@@ -23,11 +23,15 @@ namespace GUI.View
     /// </summary>
     public partial class UserControlFormularioMedico : UserControl
     {
-        ServiceUser serviceUser = new ServiceUser();
-        ServiceMedic serviceMedic = new ServiceMedic();
+        ServiceUser serviceUser;
+        ServiceRol serviceRol;
+        ServiceMedico serviceMedico;
         public UserControlFormularioMedico()
         {
             InitializeComponent();
+            serviceRol = new ServiceRol();
+            serviceMedico = new ServiceMedico();
+            serviceUser = new ServiceUser();
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -62,7 +66,7 @@ namespace GUI.View
                     return;
                 }
 
-                var message = serviceMedic.Guardar(medico, usuario);
+                var message = serviceMedico.Guardar(medico, usuario);
                 MessageBox.Show(message);
                 LimpiarCampos();
             }
@@ -129,7 +133,7 @@ namespace GUI.View
             //var message = serviceMedic.Eliminar(id);
             //MessageBox.Show(message);
             Medico medico = new Medico();
-            medico = serviceMedic.ConsultarId(txtId.Text);
+            medico = serviceMedico.ConsultarId(txtId.Text);
             //txtFechaNacimiento.Text = medico.FechaNacmiento.ToString("dd-MM-yyyy");
             
         }

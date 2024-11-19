@@ -16,6 +16,9 @@
     <Compile Update="ViewDashBoard\ECGMonitoringView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ViewDashBoard\GraphView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ViewDashBoard\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewDashBoard\UpdatePatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewDashBoard\UserControlDetallePacientes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\DashBoardView.xaml.cs">
@@ -72,6 +78,9 @@
     <Page Update="ViewDashBoard\ECGMonitoringView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ViewDashBoard\GraphView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ViewDashBoard\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -85,6 +94,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ViewDashBoard\UpdatePatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewDashBoard\UserControlDetallePacientes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DashBoardView.xaml">

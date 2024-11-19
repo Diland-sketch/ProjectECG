@@ -10,14 +10,11 @@
              Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
-        <vm:HomeVM />
+        <vm:HomeVM/>
     </UserControl.DataContext>
 
     <Grid Margin="15">
-        <!-- Border para el fondo -->
         <Border Background="#212529" CornerRadius="20" />
-
-        <!-- Imagen centrada -->
         <Image Source="pack://application:,,,/Images/logo-removebg-preview.png"
                Width="200" Height="200"
                HorizontalAlignment="Center"
