@@ -102,11 +102,8 @@ namespace Persistencia
         public List<Medico> ConsultarTodo()
         {
 
-            string ssql = "SELECT * FROM medicos";
-                //$"SELECT m.idmedico,m.primer_nombre,m.segundo_nombre,m.primer_apellido,m.segundo_apellido,m.sexo,m.fecha_nacimiento , u.nombre_usuario" +
-            //                       $"FROM medicos m" +
-            //                       $"JOIN usuarios u" +
-            //                       $"ON m.usuario_id =u.id_usuario";
+            string ssql = "SELECT idmedico,primer_nombre,segundo_nombre, primer_apellido,segundo_apellido,sexo,fecha_nacimiento FROM medicos";
+                
 
             List<Medico> list = new List<Medico>();
 
@@ -165,6 +162,29 @@ namespace Persistencia
             return Iduser;
         }
 
+        public string MostrarId(int id)
+        {
+            string ssql = $"SELECT idmedico  FROM medicos WHERE usuario_id = {id} ";
+            string Identificacion = "";
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+
+                        Identificacion = reader.GetString(reader.GetOrdinal("idmedico"));
+
+                    }
+                }
+            }
+
+            CerrarConexion();
+            return Identificacion;
+        }
         public string Eliminar(string id)
         {
             try

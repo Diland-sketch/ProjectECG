@@ -15,7 +15,7 @@
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
 
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <!-- Sección izquierda -->
@@ -63,7 +63,7 @@
             </StackPanel>
             <StackPanel Margin="0,10">
                 <TextBlock Text="Id Medico" Foreground="White" />
-                <TextBox x:Name="txtIdMedico" Width="200" IsReadOnly="True"/>
+                <TextBox x:Name="txtIdMedico" Width="200" IsReadOnly="True" />
             </StackPanel>
             <StackPanel Margin="0,10"/>
             <TextBlock Text="Descripcion" Foreground="White" />

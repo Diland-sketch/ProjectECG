@@ -2749,7 +2749,6 @@
       "path": "system.appcontext/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3798,7 +3797,6 @@
       "path": "system.linq.expressions/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3882,7 +3880,6 @@
       "path": "system.objectmodel/4.0.12",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4033,7 +4030,6 @@
       "path": "system.reflection.emit/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4065,7 +4061,6 @@
       "path": "system.reflection.emit.ilgeneration/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net45/_._",
@@ -4098,7 +4093,6 @@
       "path": "system.reflection.emit.lightweight/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net45/_._",
@@ -4131,7 +4125,6 @@
       "path": "system.reflection.extensions/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4245,7 +4238,6 @@
       "path": "system.reflection.typeextensions/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5801,19 +5793,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+      "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
       "projectName": "Logica",
-      "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Logica\\obj\\",
+      "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+      "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5821,18 +5818,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
+            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
+              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
             }
           }
         }
@@ -5884,7 +5880,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   },

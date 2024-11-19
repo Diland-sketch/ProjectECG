@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using iText.Commons.Bouncycastle.Cert.Ocsp;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,20 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
+    public static class global
+    {
+        public static int i;
+    }
     public class UsuarioRepositorio : ConexionOracle
     {
-        RolRepositorio rolRepositorio = new RolRepositorio();
-        OracleDataAdapter da = new OracleDataAdapter();
+        RolRepositorio rolRepositorio = new RolRepositorio(); 
+
         public int ValidarUsuario(string nombre, string contrasenha)
+
         {
             if (nombre == "admin" && contrasenha == "123")
             {
+
                 return 1;
             }
             else
@@ -25,15 +32,24 @@ namespace Persistencia
                 Usuario user = ConsultarUsuario(nombre, contrasenha);
                 string nom, contra;
                 nom = user.NombreUsuario;
-                contra = user.contrasenha;
+
+                contra = user.Contrasenha;
+
+                
+
                 if (nom == null && contra == null)
                 {
                     return -1;
                 }
                 else
                 {
+                    int  oi = MostrarId(nom);
+                    global.i = oi;
                     return 2;
                 }
+
+
+                
             }
         }
         public string Guardar(Usuario entity)
@@ -43,9 +59,8 @@ namespace Persistencia
                 int IdRol = rolRepositorio.MostrarIdRol("medico");
                 entity.IdRol = IdRol;
                 
-                
                 string ssql = "INSERT INTO usuarios(contrasenha, roles_id_rol, id_usuario, nombre_usuario)" +
-                                                   $"VALUES ('{entity.contrasenha}', {entity.IdRol} , seq_usuarios.nextval ," +
+                                                   $"VALUES ('{entity.Contrasenha}', {entity.IdRol} , seq_usuarios.nextval ," +
                                                    $"'{entity.NombreUsuario}')";
 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
@@ -93,10 +108,10 @@ namespace Persistencia
             return iduser;
 
         }
-
         public Usuario ConsultarUsuario(string nombre, string contrasenha)
         {
             string ssql = $"SELECT nombre_usuario, contrasenha FROM usuarios WHERE nombre_usuario = '{nombre}' AND contrasenha = '{contrasenha}'";
+
             Usuario user = new Usuario();
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
@@ -107,18 +122,23 @@ namespace Persistencia
                     while (reader.Read())
                     {
                         user.NombreUsuario = reader.GetString(reader.GetOrdinal("nombre_usuario"));
-                        user.contrasenha = reader.GetString(reader.GetOrdinal("contrasenha"));
+
+                        user.Contrasenha = reader.GetString(reader.GetOrdinal("contrasenha"));
+
                     }
                 }
             }
             CerrarConexion();
             return user;
         }
+
         
 
         public Usuario ConsultarId(int id)
         {
-            string ssql = $"SELECT nombre_usuario,contrasenha FROM usuarios WHERE id_usuario = {id} ";
+
+            string ssql = $"SELECT nombre_usuario, Contrasenha  FROM usuarios WHERE id_usuario = {id} ";
+
             Usuario user = new Usuario();
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
@@ -130,21 +150,22 @@ namespace Persistencia
                     {
                         
                         user.NombreUsuario = reader.GetString(reader.GetOrdinal("nombre_usuario"));
-                        user.contrasenha = reader.GetString(reader.GetOrdinal("contrasenha"));
+                        user.Contrasenha = reader.GetString(reader.GetOrdinal("Contrasenha"));
 
                     }
                 }
             }
-            
             CerrarConexion();
             return user;
+            
+            
         }
 
         public string Actualizar(Usuario entity)
         {
             try
             {
-                string ssql = $"UPDATE usuarios SET contrasenha = '{entity.contrasenha}', nombre_usuario = '{entity.NombreUsuario}' WHERE id_usuario = {entity.IdUsuario} ";
+                string ssql = $"UPDATE usuarios SET Contrasenha = '{entity.Contrasenha}', nombre_usuario = '{entity.NombreUsuario}' WHERE id_usuario = {entity.IdUsuario} ";
                 
                 OracleCommand Ocmd = new OracleCommand(ssql, conexion);
                 AbrirConexion();
@@ -171,6 +192,11 @@ namespace Persistencia
             }
             
             
+        }
+
+        public int Retornaridmedico()
+        {
+            return global.i;
         }
 
         public string Eliminar(int id)

@@ -14,8 +14,9 @@
         <DataGrid x:Name="MedicosDataGrid"
                   IsReadOnly="True" 
                   ItemsSource="{Binding Medicos}"
-                  Margin="0,123,0,102"
-                  HorizontalAlignment="Center" FontSize="18" AutoGenerateColumns="False">
+                  Margin="152,118,0,107"
+                  HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False">
+            
             <DataGrid.Columns>
                 <DataGridTextColumn Header="IDENTIFICACION" Binding="{Binding Identificacion}" Width="*" />
                 <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />

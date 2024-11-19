@@ -26,14 +26,14 @@ namespace Logica
 
         public int Login(Usuario usuario)
         {
-            return userRepository.ValidarUsuario(usuario.NombreUsuario, usuario.contrasenha);
+            return userRepository.ValidarUsuario(usuario.NombreUsuario, usuario.Contrasenha);
         }
 
-        public List<Usuario> ConsultarTodo()
+
+        public int MostrarId(string nom)
         {
-            throw new NotImplementedException();
+            return userRepository.MostrarId(nom);
         }
-
         public Usuario ConsultarId(int id)
         {
             return userRepository.ConsultarId(id);
@@ -44,10 +44,7 @@ namespace Logica
             return userRepository.Actualizar(entity);
         }
 
-        public string Eliminar(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
         
 }
