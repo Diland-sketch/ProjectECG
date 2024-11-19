@@ -2,12 +2,15 @@
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\App.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\MainWindow.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\Utilities\DataTemplate.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\ConsultPatient.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\DeletePatient.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\ECGMonitoringView.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\GraphView.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\HomeView.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\NavigationCrudPatient.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\PatientHistoryView.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\PatientRegistrationView.xaml;;
-FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\SearchPatient.xaml;;
+FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\UpdatePatient.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\ViewDashBoard\UserControlDetallePacientes.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\DashBoardView.xaml;;
 FC:\Users\Usuario\source\repos\ProjectECG\GUI\View\LoginView.xaml;;
