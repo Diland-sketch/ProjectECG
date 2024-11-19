@@ -93,7 +93,7 @@ namespace GUI.ViewDashBoard {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GUI;component/viewdashboard/usercontroldetallepacientes.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GUI;V1.0.0.0;component/viewdashboard/usercontroldetallepacientes.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewDashBoard\UserControlDetallePacientes.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

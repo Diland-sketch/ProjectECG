@@ -68,7 +68,6 @@
     <Resource Include="View\medicalBackgroundo.jpg" />
     <Resource Include="View\blackMedicalBackground.jpg" />
     <Resource Include="Images\recorteadmin.png" />
-    <Resource Include="Images\fondoR.jpg" />
     <Resource Include="View\fondoR.jpg" />
   </ItemGroup>
 

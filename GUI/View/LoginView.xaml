@@ -12,6 +12,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown"
+        Loaded="Window_Loaded"
         >
     <Border CornerRadius="8"
             BorderThickness="0">
@@ -131,7 +132,7 @@
                              Width="250"
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
-                             Padding="25,0,0,0" TextChanged="txtUser_TextChanged">
+                             Padding="25,0,0,0" TextChanged="txtUser_TextChanged" KeyDown="txtUser_KeyDown">
 
                         <TextBox.Background>
                             <ImageBrush ImageSource="/Images/user(1).png"
@@ -161,7 +162,8 @@
                                  Width="250"
                                  VerticalContentAlignment="Center"
                                  Margin="0,5,0,0"
-                                 Padding="25,0,0,0">
+                                 Padding="25,0,0,0"
+                                 KeyDown="txtPassword_KeyDown">
 
                         <PasswordBox.Background>
                             <ImageBrush ImageSource="\Images\lock.png"
@@ -180,7 +182,7 @@
                             Cursor="Hand"
                             Grid.Column="2"
                             Margin="0,25,0,0"
-                            Click="btnLogin_Click">
+                            Click="btnLogin_Click" KeyDown="btnLogin_KeyDown">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#dd2708"/>

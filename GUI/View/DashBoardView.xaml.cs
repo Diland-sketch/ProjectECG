@@ -51,6 +51,12 @@ namespace GUI
             mainWindow.Show();
             this.Close();
         }
+        private void Label_mouse(object sender, MouseButtonEventArgs e)
+        {
+            LoginView mainWindow = new LoginView();
+            mainWindow.Show();
+            this.Close();
+        }
 
     }
 }
