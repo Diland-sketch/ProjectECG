@@ -54,7 +54,7 @@ namespace PRUEBA
             Usuario usuario = new Usuario();
             //usuario.IdUsuario = txt1.Text;
             usuario.NombreUsuario = txt2.Text;
-            usuario.contrasenha = txt3.Text;
+            usuario.Contrasenha = txt3.Text;
             
             var message = ServiceUser.Guardar(usuario);
             MessageBox.Show(message);
@@ -76,7 +76,7 @@ namespace PRUEBA
            
             UsuarioRepositorio userRepository = new UsuarioRepositorio();
             usuario = userRepository.ConsultarId(usuario.IdUsuario);
-            MessageBox.Show(usuario.NombreUsuario +usuario.contrasenha );
+            MessageBox.Show(usuario.NombreUsuario +usuario.Contrasenha );
             
             
             

@@ -15,8 +15,16 @@
                   IsReadOnly="True" 
                   ItemsSource="{Binding Medicos}"
                   Margin="152,118,0,107"
-                  HorizontalAlignment="Left" FontSize="18">
+                  HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False">
+            
             <DataGrid.Columns>
+                <DataGridTextColumn Header="IDENTIFICACION" Binding="{Binding Identificacion}" Width="*" />
+                <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
+                <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*" />
+                <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />
+                <DataGridTextColumn Header="SegundoApellido" Binding="{Binding SegundoApellido}" Width="*" />
+                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
+                <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="31" Width="32">

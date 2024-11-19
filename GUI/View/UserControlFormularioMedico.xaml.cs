@@ -40,7 +40,7 @@ namespace GUI.View
             {
                 Usuario usuario = new Usuario();
                 usuario.NombreUsuario = txtNombreUsuario.Text;
-                usuario.contrasenha = txtContraseña.Password;
+                usuario.Contrasenha = txtContraseña.Password;
                 Medico medico = new Medico();
                 medico.Identificacion = txtId.Text;
                 medico.PrimerNombre = txtPNombre.Text;
@@ -78,8 +78,6 @@ namespace GUI.View
             if (mainWindow != null)
             {
                 mainWindow.panelMedico.Children.Clear();
-                UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
-                mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
         }
 
@@ -90,7 +88,7 @@ namespace GUI.View
         //    Usuario usuario = new Usuario();
         //    usuario.IdUsuario = "4";
         //    usuario.NombreUsuario = txtNombreUsuario.Text;
-        //    usuario.contrasenha = txtContraseña.Text;
+        //    usuario.Contrasenha = txtContraseña.Text;
         //    Medico medico = new Medico();
         //    medico.Identificacion = txtId.Text;
         //    medico.PrimerNombre = txtPNombre.Text;
@@ -116,7 +114,7 @@ namespace GUI.View
 
             //Usuario usuario = new Usuario();
             //usuario.NombreUsuario = txtNombreUsuario.Text;
-            //usuario.contrasenha = txtContraseña.Text;
+            //usuario.Contrasenha = txtContraseña.Text;
             //Medico medico = new Medico();
             //medico.Identificacion = txtId.Text;
             //medico.PrimerNombre = txtPNombre.Text;

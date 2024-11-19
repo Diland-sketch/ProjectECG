@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Oracle.ManagedDataAccess.Client;
 using Persistencia;
 using System;
 using System.Collections.Generic;
@@ -8,22 +9,37 @@ using System.Threading.Tasks;
 
 namespace Persitencia
 {
-    public class SesionECGRepositorio : ConexionOracle, ICrud<SesionECG>
+    public class SesionECGRepositorio : ConexionOracle
     {
-
+        UsuarioRepositorio UsuarioRepositorio = new UsuarioRepositorio();
         public string Guardar(SesionECG entity)
         {
-            /*try
-            {
-                string ssql = "INSERT INTO sesiones(ID_SESION, FECHAINICIOSESION, DESCRIPCION, IDPACIENTE, IDMEDICO, RUTA_ARCHIVO) " +
-                      "VALUES (:idSesion, :inicioSesion, :descripcion, :idPaciente, :idMedico, :rutaArchivo)";
-            }*/
-            throw new NotImplementedException();
-        }
+            try
+            { 
+                OracleCommand Ocmd = new OracleCommand($"insertar_sesion('{entity.InicioSesionECG}','{entity.FinSesionECG}','{entity.IdPaciente}'" +
+                                                       $",'{entity.Descripcion}','{entity.IdMedico}')", conexion);
+                AbrirConexion();
 
-        public string Actualizar(SesionECG entity)
-        {
-            throw new NotImplementedException();
+                int confirmacion = Ocmd.ExecuteNonQuery();
+                //CerrarConexion();
+
+                if (confirmacion > 0)
+                {
+                    return "Se guardo satisfactoriamente";
+                }
+                else
+                {
+                    return "Error a la hora de guardar";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
         }
 
         public SesionECG ConsultarId(string id)
@@ -36,9 +52,33 @@ namespace Persitencia
             throw new NotImplementedException();
         }
         
-        public string Eliminar(string id)
-        {
-            throw new NotImplementedException();
-        }
+        //public string Eliminar(string id)
+        //{
+        //    try
+        //    { 
+        //        OracleCommand ocmd = new OracleCommand(ssql, conexion);
+        //        AbrirConexion();
+
+
+        //        int confirmacion = ocmd.ExecuteNonQuery();
+                
+        //        if (confirmacion > 0)
+        //        {
+        //            return "Se elimino satisfactoriamente";
+        //        }
+        //        else
+        //        {
+        //            return "Error a la hora de eliminar";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return ex.Message;
+        //    }
+        //    finally
+        //    {
+        //        CerrarConexion();
+        //    }
+        //}
     }
 }

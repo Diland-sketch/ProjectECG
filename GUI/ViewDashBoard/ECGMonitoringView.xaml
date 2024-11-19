@@ -8,30 +8,41 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d"
              d:DesignHeight="700"
-             d:DesignWidth="800">
+             d:DesignWidth="800"
+             Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
 
-    <Grid Loaded="Grid_Loaded">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="320*" />
+            <ColumnDefinition Width="2*" />
             <!-- Sección izquierda -->
-            <ColumnDefinition Width="373*" />
-            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="3*" />
             <!-- Sección derecha -->
         </Grid.ColumnDefinitions>
 
         <!-- Sección izquierda: Información del paciente -->
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="622">
             <TextBlock Text="Monitoreo de ECG" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" Foreground="White" />
+            <TextBlock Text="Buscar paciente" Foreground="White" />
             <StackPanel Margin="0,10">
-                <TextBlock Text="Documento" Foreground="White" />
-                <TextBox x:Name="txtDocumento" Width="200" />
+                <TextBlock Text="Documento" Foreground="White"/>
+                <TextBox x:Name="txtDocumento" Width="200"/>
             </StackPanel>
+            <Button x:Name="btnBusca" Content="Buscar" Click="btnBuscar_Click" RenderTransformOrigin="0.5,0.5" Width="55">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.511"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
             <StackPanel Margin="0,10">
-                <TextBlock Text="Nombre" Foreground="White" />
+                <TextBlock Text="Nombre" Foreground="White"/>
                 <TextBox x:Name="txtNombre" Width="200" IsReadOnly="True"/>
             </StackPanel>
             <StackPanel Margin="0,10">
@@ -54,11 +65,23 @@
                 <TextBlock Text="Id Medico" Foreground="White" />
                 <TextBox x:Name="txtIdMedico" Width="200" IsReadOnly="True"/>
             </StackPanel>
-            <Button Content="Guardar en PDF" Width="150" HorizontalAlignment="Left" Margin="0,20" />
+            <StackPanel Margin="0,10"/>
+            <TextBlock Text="Descripcion" Foreground="White" />
+            <TextBox x:Name="TextArea" 
+                 AcceptsReturn="True" 
+                 AcceptsTab="True" 
+                 TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Visible" 
+                 HorizontalScrollBarVisibility="Auto" Height="65" 
+                 Width="204"/>
+            <StackPanel Margin="0,10">
+            </StackPanel>
+            <StackPanel/>
+            <Button x:Name="btnGuardar" Content="Guardar Sesion" Width="150" Click="btnGuardar_Click"/>
         </StackPanel>
 
         <!-- Sección derecha: Gráfica -->
-        <StackPanel Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Señal en tiempo real" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" Foreground="White" />
             <Border BorderBrush="White" BorderThickness="1" CornerRadius="5">
                 <Grid>
@@ -72,16 +95,6 @@
             <TextBlock Text="Voltaje actual (mV):" Foreground="White" Margin="0,10" />
             <TextBox Width="150" />
         </StackPanel>
-        <Button x:Name="btnBuscar" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Buscar" Click="btnBuscar_Click" Margin="270,182,0,0" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.511"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
     </Grid>
 
 </UserControl>

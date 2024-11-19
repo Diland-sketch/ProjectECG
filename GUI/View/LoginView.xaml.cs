@@ -52,8 +52,9 @@ namespace GUI.View
             Usuario usuario = new Usuario()
             {
                 NombreUsuario = txtUser.Text,
-                contrasenha = txtPassword.Password
+                Contrasenha = txtPassword.Password
             };
+
 
             int loginExitoso = serviceUser.Login(usuario);
 

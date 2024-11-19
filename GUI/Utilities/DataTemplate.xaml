@@ -11,18 +11,33 @@
     <DataTemplate DataType="{x:Type vm:HomeVM}">
         <view:HomeView />
     </DataTemplate>
-
+    
     <DataTemplate DataType="{x:Type vm:PatientHistoryVM}">
         <view:PatientHistoryView />
     </DataTemplate>
-
+    
+    <DataTemplate DataType="{x:Type vm:NavigationCrudPatientVM}">
+        <view:NavigationCrudPatient />
+    </DataTemplate>
+    <!--Crud Paciente-->
     <DataTemplate DataType="{x:Type vm:PatientRegistrationVM}">
         <view:PatientRegistrationView />
     </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:SearchPatient}">
-        <view:SearchPatient />
+    
+    <DataTemplate DataType="{x:Type vm:DeletePatientVM}">
+        <view:DeletePatient />
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:UpdatePatientVM}">
+        <view:UpdatePatient />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:ConsultPatientVM}">
+        <view:ConsultPatient />
+    </DataTemplate>
+
+
+   
 
 
 
