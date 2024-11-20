@@ -12,11 +12,15 @@ namespace Logica
     public class ServiceSesionECG
     {
         SesionECGRepositorio repositorio = new SesionECGRepositorio();
-        public string Guardar(SesionECG sesion)
+        public int Guardar(SesionECG sesion)
         {
             return repositorio.Guardar(sesion);
         }
 
+        public string Actualizar(SesionECG sesion)
+        {
+            return repositorio.Actualizar(sesion.IdPaciente, sesion.IdMedico, sesion.FinSesionECG, sesion.Descripcion);
+        }
         public DataTable ConsultarTodo()
         {
             return repositorio.ConsultarTodo();

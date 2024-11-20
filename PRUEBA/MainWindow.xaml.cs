@@ -22,6 +22,7 @@ namespace PRUEBA
     {
         ServiceRol serviceRol = new ServiceRol();
         ServiceUser ServiceUser = new ServiceUser();
+        ServiceIncidente serviceIncidente = new ServiceIncidente();
        
         public MainWindow()
         {
@@ -86,6 +87,22 @@ namespace PRUEBA
         {
             ServiceSesionECG serviceMedic = new ServiceSesionECG();
             datagriv.ItemsSource = serviceMedic.ConsultarTodo().DefaultView;
+        }
+
+        private void btnGuardarIncidente_Click(object sender, RoutedEventArgs e)
+        {
+            Incidentes incidente = new Incidentes();
+            incidente.Descripcion = txtDescripcion.Text;
+            DateTime fecha = fechaHora.SelectedDate.HasValue ? fechaHora.SelectedDate.Value : DateTime.Now.Date;
+            DateTime fechaHoraActual = DateTime.Now;
+            fechaHoraActual = fecha.Add(DateTime.Now.TimeOfDay);
+            incidente.FechaHoraIncidente = fechaHoraActual;
+            incidente.IdSesionECG = int.Parse(txtIdSesion.Text);
+
+
+            var message = serviceIncidente.Guardar(incidente);
+            MessageBox.Show(message);
+
         }
     }
 }

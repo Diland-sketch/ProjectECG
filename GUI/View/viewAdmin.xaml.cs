@@ -24,25 +24,8 @@ namespace GUI.View
         public viewAdmin()
         {
             InitializeComponent();
-        }
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            //panelMedico.Children.Clear();
-            //UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
-            //panelMedico.Children.Add(userControlCrudMedico);
-
-        }
-        private void Label_mouse(object sender, MouseButtonEventArgs e)
-        {
-            //panelMedico.Children.Clear();
-            //UserControlCrudRol userControlCrudRol = new UserControlCrudRol();
-            //panelMedico.Children.Add(userControlCrudRol);
-        }
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Button_Back(object sender, RoutedEventArgs e)
+        }        
+        private void Label_mouse1(object sender, MouseButtonEventArgs e)
         {
             LoginView mainWindow = new LoginView();
             mainWindow.Show();
@@ -133,9 +116,8 @@ namespace GUI.View
 
         private void lblMedico_MouseEnter(object sender, MouseEventArgs e)
         {
-            // Iniciar la animación para que el panel aparezca desde la izquierda
             var storyboard = (Storyboard)FindResource("SlideInAnimation");
-            btnPanelMedico.Visibility = Visibility.Visible; // Asegurarse de que sea visible
+            btnPanelMedico.Visibility = Visibility.Visible;
             storyboard.Begin(btnPanelMedico);
         }
 

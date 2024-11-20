@@ -14,32 +14,65 @@ namespace Persitencia
     public class SesionECGRepositorio : ConexionOracle
     {
         UsuarioRepositorio UsuarioRepositorio = new UsuarioRepositorio();
-        public string Guardar(SesionECG entity)
+        public int Guardar(SesionECG entity)
         {
             try
-            { 
-                OracleCommand Ocmd = new OracleCommand($"insertar_sesion", conexion);
+
+            {
+
                 AbrirConexion();
-
-                int confirmacion = Ocmd.ExecuteNonQuery();
-                //CerrarConexion();
-
-                if (confirmacion > 0)
+                using (OracleCommand cmd = new OracleCommand("f_insertar_sesion", conexion)
                 {
-                    return "Se guardo satisfactoriamente";
-                }
-                else
+                    CommandType = System.Data.CommandType.StoredProcedure
+                })
                 {
-                    return "Error a la hora de guardar";
+                    cmd.Parameters.Add("p_fecha_ini", OracleDbType.Date).Value = entity.InicioSesionECG;
+                    cmd.Parameters.Add("p_fecha_fini", OracleDbType.Date).Value = entity.FinSesionECG;
+                    cmd.Parameters.Add("p_paciente", OracleDbType.Varchar2).Value = entity.IdPaciente;
+                    cmd.Parameters.Add("p_descripcion", OracleDbType.Varchar2).Value = entity.Descripcion;
+                    cmd.Parameters.Add("p_medico", OracleDbType.Varchar2).Value = entity.IdMedico;
+
+                    var returnparametro = new OracleParameter("return_value", OracleDbType.Int32);
+                    returnparametro.Direction = System.Data.ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(returnparametro);
+
+                    cmd.ExecuteNonQuery();
+
+                    int idsesion = Convert.ToInt32(returnparametro.Value);
+                    return idsesion;
                 }
+                CerrarConexion();
+                
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return -1;
             }
-            finally
+        }
+
+        public string Actualizar(string idPaciente, string idMedico, DateTime? fechaFin, string descripcion) 
+        {
+            try
             {
+                AbrirConexion();
+                using (OracleCommand cmd = new OracleCommand("actualizar_sesion", conexion)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                })
+                {
+                    cmd.Parameters.Add("p_id_paciente", OracleDbType.Varchar2).Value = idPaciente;
+                    cmd.Parameters.Add("p_id_medico", OracleDbType.Varchar2).Value = idMedico;
+                    cmd.Parameters.Add("p_fecha_fini", OracleDbType.TimeStamp).Value = fechaFin;
+                    cmd.Parameters.Add("p_descripcion", OracleDbType.Varchar2).Value = descripcion;
+
+                    cmd.ExecuteNonQuery();
+                }
                 CerrarConexion();
+                return "Sesion Guardada con exito";
+            }
+            catch (Exception ex) 
+            {
+                return "Error al guardar una sesion";
             }
         }
 
@@ -50,7 +83,7 @@ namespace Persitencia
 
         public DataTable ConsultarTodo()
         {
-            string ssql = $"SELECT * FROM historia_sesiones ";
+            string ssql = $"SELECT * FROM historial_sesiones ";
             AbrirConexion();
             OracleCommand cmd = new OracleCommand(ssql, conexion);
             OracleDataAdapter oracleDataAdapter = new OracleDataAdapter(cmd);
