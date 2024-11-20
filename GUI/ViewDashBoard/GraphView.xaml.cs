@@ -35,11 +35,6 @@ namespace GUI.ViewDashBoard
         private const int BufferSize = 5;
         private System.Timers.Timer _graficaTimer;
 
-        public static class global
-        {
-            public static int i;
-        }
-
         public GraphView()
         {
             InitializeComponent();
@@ -114,16 +109,16 @@ namespace GUI.ViewDashBoard
 
         public void Detener_Click(object sender, RoutedEventArgs e)
         {
-            _graficaTimer.Stop();
+           // _graficaTimer.Stop();
             _serviceEcg.DetenerLectura();
-            _serviceEcg.DatoRecibido -= OnDatoRecibido;
+            //_serviceEcg.DatoRecibido -= OnDatoRecibido;
 
-            lock (_datosBuffer)
-            {
-                _datosBuffer.Clear();
-            }
+            //lock (_datosBuffer)
+            //{
+              //  _datosBuffer.Clear();
+            //}
             _ecgValues.Clear();
-            ecgChart.Update();
+            //ecgChart.Update();
         }
 
         private double FiltrarDato(double nuevoDato)
@@ -161,21 +156,16 @@ namespace GUI.ViewDashBoard
 
             CalcularBpm();
             NotificarBpmActualizado();
-            if (bpmActual > 100)
-            {
-                IncidenteRepositorio incidenteRepositorio = new IncidenteRepositorio();
-                Incidentes incidentes = new Incidentes();
-                incidentes.IdSesionECG = global.i;
-                incidentes.Descripcion = "BPM ALTO DETECTADO";
-                incidentes.FechaHoraIncidente = DateTime.Now;
-                incidenteRepositorio.Guardar(incidentes);
-            }
-        }
-
-        public void returnt(int id)
-{
-            global.i = id;
-            
+            //if (bpmActual > 40)
+            //{
+            //    MessageBox.Show("Incidente detectado");
+            //    IncidenteRepositorio incidenteRepositorio = new IncidenteRepositorio();
+            //    Incidentes incidentes = new Incidentes();
+            //    incidentes.IdSesionECG = 4;
+            //    incidentes.Descripcion = "BPM ALTO DETECTADO";
+            //    incidentes.FechaHoraIncidente = DateTime.Now;
+            //    incidenteRepositorio.Guardar(incidentes);
+            //}
         }
 
         public double bpmActual = 0;

@@ -39,10 +39,11 @@ namespace Persitencia
                     cmd.ExecuteNonQuery();
 
                     int idsesion = Convert.ToInt32(returnparametro.Value);
+
+                    CerrarConexion();
                     return idsesion;
+                    //return 1;
                 }
-                CerrarConexion();
-                
             }
             catch (Exception ex)
             {

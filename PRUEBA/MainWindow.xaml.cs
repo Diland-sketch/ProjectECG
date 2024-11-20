@@ -85,8 +85,8 @@ namespace PRUEBA
 
         private void dvg_Loaded(object sender, RoutedEventArgs e)
         {
-            ServiceSesionECG serviceMedic = new ServiceSesionECG();
-            datagriv.ItemsSource = serviceMedic.ConsultarTodo().DefaultView;
+        //    ServiceSesionECG serviceMedic = new ServiceSesionECG();
+        //    datagriv.ItemsSource = serviceMedic.ConsultarTodo().DefaultView;
         }
 
         private void btnGuardarIncidente_Click(object sender, RoutedEventArgs e)

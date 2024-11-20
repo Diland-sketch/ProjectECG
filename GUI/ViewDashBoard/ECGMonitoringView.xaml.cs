@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Logica;
+using Persitencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,15 +28,21 @@ namespace GUI.ViewDashBoard
     public partial class ECGMonitoringView : UserControl
     {
         public ServicePaciente servicePaciente;
+        public ServiceIncidente service;
         public ServiceMedico serviceMedico;
         ServiceSesionECG serviceSesion;
         private DispatcherTimer fechaHoraTimer;
         private DispatcherTimer fechaHoraTimer2;
+        public static class global
+        {
+            public static int i;
+        }
         public ECGMonitoringView()
         {
             InitializeComponent();
             graphView.BpmActualizado += ActualizarFrecuenciaVista;
             servicePaciente = new ServicePaciente();
+            service = new ServiceIncidente();
             serviceMedico = new ServiceMedico();
             serviceSesion = new ServiceSesionECG();
             fechaHoraTimer = new DispatcherTimer();
@@ -54,6 +61,15 @@ namespace GUI.ViewDashBoard
             {
                 txtFrecuencia.Text = bpm.ToString("F0");
             });
+            if (bpm > 40)
+            {
+                //MessageBox.Show("Incidente detectado");
+                Incidentes incidente = new Incidentes();
+                incidente.IdSesionECG = global.i;
+                incidente.Descripcion = "BPM ALTO DETECTADO";
+                incidente.FechaHoraIncidente = DateTime.Now;
+                service.Guardar(incidente);
+            }
         }
 
         private void ActualizarFechaHora(object sender, EventArgs e)
@@ -97,7 +113,7 @@ namespace GUI.ViewDashBoard
                 var message = serviceSesion.Guardar(sesion);
                 if(message != -1)
                 {
-                    
+                    global.i = message;
                     MessageBox.Show("sesion inicializada");
                 }
                 else

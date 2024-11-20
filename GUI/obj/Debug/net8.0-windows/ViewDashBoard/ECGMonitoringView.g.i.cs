@@ -143,7 +143,7 @@ namespace GUI.ViewDashBoard {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GUI;component/viewdashboard/ecgmonitoringview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GUI;V1.0.0.0;component/viewdashboard/ecgmonitoringview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewDashBoard\ECGMonitoringView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
