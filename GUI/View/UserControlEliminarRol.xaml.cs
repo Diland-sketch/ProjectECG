@@ -50,7 +50,7 @@ namespace GUI.View
             }
         }
 
-        private void btnEliminar_Click_1(object sender, RoutedEventArgs e)
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             var message = ServiceRol.Eliminar(txtNombre.Text);
             MessageBox.Show(message);
@@ -59,6 +59,13 @@ namespace GUI.View
         private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
+        }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnEliminar_Click(sender, e);
+            }
         }
     }
 }

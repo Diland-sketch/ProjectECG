@@ -59,5 +59,12 @@ namespace GUI.View
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
         }
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                GuardarButton_Click(sender, e);
+            }
+        }
     }
 }

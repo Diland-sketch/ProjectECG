@@ -111,5 +111,12 @@ namespace GUI.View
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnBuscar_Click(sender, e);
+            }
+        }
     }
 }
