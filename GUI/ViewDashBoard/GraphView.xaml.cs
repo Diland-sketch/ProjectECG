@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Media;
+using Persitencia;
 
 namespace GUI.ViewDashBoard
 {
@@ -35,7 +35,10 @@ namespace GUI.ViewDashBoard
         private const int BufferSize = 5;
         private System.Timers.Timer _graficaTimer;
 
-        private SoundPlayer soundPlayer;
+        public static class global
+        {
+            public static int i;
+        }
 
         public GraphView()
         {
@@ -43,7 +46,7 @@ namespace GUI.ViewDashBoard
 
             serviceIncidente = new ServiceIncidente();
 
-            soundPlayer = new SoundPlayer("Resources/ekg-6149.wav");
+            //soundPlayer = new SoundPlayer("Resources/ekg-6149.wav");
             
             _graficaTimer = new System.Timers.Timer(200);
             _graficaTimer.Elapsed += (s, e) => ActualizarGraficaDesdeBuffer();
@@ -158,11 +161,21 @@ namespace GUI.ViewDashBoard
 
             CalcularBpm();
             NotificarBpmActualizado();
-
-            if (bpmActual < 100)
+            if (bpmActual > 100)
             {
-                //serviceIncidente.Guardar("BPM alto detectado", DateTime.Now, idSesion);
+                IncidenteRepositorio incidenteRepositorio = new IncidenteRepositorio();
+                Incidentes incidentes = new Incidentes();
+                incidentes.IdSesionECG = global.i;
+                incidentes.Descripcion = "BPM ALTO DETECTADO";
+                incidentes.FechaHoraIncidente = DateTime.Now;
+                incidenteRepositorio.Guardar(incidentes);
             }
+        }
+
+        public void returnt(int id)
+{
+            global.i = id;
+            
         }
 
         public double bpmActual = 0;

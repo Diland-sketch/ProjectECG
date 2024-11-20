@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Logica;
 using Persistencia;
+using System.Data;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -84,8 +85,8 @@ namespace PRUEBA
 
         private void dvg_Loaded(object sender, RoutedEventArgs e)
         {
-            ServiceMedico serviceMedic = new ServiceMedico();
-            datagriv.ItemsSource = serviceMedic.ConsultarTodo();
+            ServiceSesionECG serviceMedic = new ServiceSesionECG();
+            datagriv.ItemsSource = serviceMedic.ConsultarTodo().DefaultView;
         }
 
         private void btnGuardarIncidente_Click(object sender, RoutedEventArgs e)
