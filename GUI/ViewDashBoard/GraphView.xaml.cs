@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Persitencia;
 
 namespace GUI.ViewDashBoard
 {
@@ -32,6 +33,11 @@ namespace GUI.ViewDashBoard
         private readonly Queue<double> _buffer = new Queue<double>();
         private const int BufferSize = 5;
         private System.Timers.Timer _graficaTimer;
+
+        public static class global
+        {
+            public static int i;
+        }
 
         public GraphView()
         {
@@ -150,6 +156,21 @@ namespace GUI.ViewDashBoard
 
             CalcularBpm();
             NotificarBpmActualizado();
+            if (bpmActual > 100)
+            {
+                IncidenteRepositorio incidenteRepositorio = new IncidenteRepositorio();
+                Incidentes incidentes = new Incidentes();
+                incidentes.IdSesionECG = global.i;
+                incidentes.Descripcion = "BALTO DETECTADO";
+                incidentes.FechaHoraIncidente = DateTime.Now;
+                incidenteRepositorio.Guardar(incidentes);
+            }
+        }
+
+        public void returnt(int id)
+{
+            global.i = id;
+            
         }
 
         public double bpmActual = 0;

@@ -31,6 +31,20 @@ namespace GUI.ViewDashBoard
             InitializeComponent();
             servicePaciente = new ServicePaciente();
         }
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Accede al DataContext de la ventana principal (DashboardView)
+            var dashboardView = (Window.GetWindow(this) as DashBoardView);
+            if (dashboardView != null)
+            {
+                var navigationVM = dashboardView.DataContext as NavigationVM;
+                if (navigationVM != null)
+                {
+                    // Cambia la vista a HomeView
+                    navigationVM.CurrentView = new HomeView();  // Cambia la vista a Home
+                }
+            }
+        }
 
         /*private void Button_Click_1(object sender, RoutedEventArgs e)
         {

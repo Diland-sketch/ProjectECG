@@ -29,10 +29,15 @@ namespace GUI.ViewDashBoard
     {
         public ServicePaciente servicePaciente;
         public ServiceMedico serviceMedico;
-        ServiceSesionECG serviceSesion;
+        public ServiceIncidente ServiceIncidente;
+        public ServiceSesionECG serviceSesion;
         private DispatcherTimer fechaHoraTimer;
         private DispatcherTimer fechaHoraTimer2;
-        private Storyboard heartbeatStoryboard;
+
+        public static class global
+        {
+            public static int id;
+        }
         public ECGMonitoringView()
         {
             InitializeComponent();
@@ -40,6 +45,7 @@ namespace GUI.ViewDashBoard
             servicePaciente = new ServicePaciente();
             serviceMedico = new ServiceMedico();
             serviceSesion = new ServiceSesionECG();
+            ServiceIncidente = new ServiceIncidente();
             fechaHoraTimer = new DispatcherTimer();
             fechaHoraTimer.Interval = TimeSpan.FromSeconds(1);
             fechaHoraTimer.Tick += ActualizarFechaHora;
@@ -56,6 +62,16 @@ namespace GUI.ViewDashBoard
             {
                 txtFrecuencia.Text = bpm.ToString("F0");
             });
+
+            if(bpm > 80)
+            {
+                Incidentes incidentes = new Incidentes();
+                incidentes.IdSesionECG = global.id;
+                incidentes.FechaHoraIncidente = DateTime.Now;
+                incidentes.Descripcion = "pico alto detectado";
+                var message = ServiceIncidente.Guardar(incidentes);
+                MessageBox.Show(message);
+            }
         }
 
         private void ActualizarFechaHora(object sender, EventArgs e)
@@ -97,13 +113,13 @@ namespace GUI.ViewDashBoard
                 };
 
                 var message = serviceSesion.Guardar(sesion);
-                MessageBox.Show(message);
+                global.id = serviceSesion.Mostrarid(DateTime.Parse(fechaHora.Text));
+                MessageBox.Show(message);                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al iniciar sesión: " + ex.Message);
             }
-            heartbeatStoryboard.Begin(this, true);
         }
         private void btnDetener_Click(object sender, RoutedEventArgs e)
         {
@@ -112,7 +128,6 @@ namespace GUI.ViewDashBoard
             fechaHoraTimer2.Stop();
 
             MessageBox.Show("\"La sesión ha finalizado. Por favor, complete la descripción y guarde.");
-            heartbeatStoryboard.Stop(this);
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)

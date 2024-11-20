@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using GUI.View;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,10 +26,12 @@ namespace GUI.ViewDashBoard
     /// </summary>
     public partial class PatientHistoryView : UserControl
     {
+        ServiceSesionECG ServiceSesionECG;
         public PatientHistoryView()
         {
             InitializeComponent();
-            cargar();
+            ServiceSesionECG = new ServiceSesionECG();
+            
         }
 
         private void cargar()
@@ -85,11 +88,16 @@ namespace GUI.ViewDashBoard
                 MessageBox.Show("Por favor, ingrese un ID para buscar.");
                 dataGridPacientes.ItemsSource = listaMedicos;
             }
-            if (idTexto == null)
+            if (txtId1.Text == null)
             {
                 dataGridPacientes.ItemsSource = null;
                 cargar();
             }
+        }
+
+        private void Border_Loaded(object sender, RoutedEventArgs e)
+        {
+            dataGridPacientes.ItemsSource =  ServiceSesionECG.ConsultarTodo().DefaultView;
         }
         private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

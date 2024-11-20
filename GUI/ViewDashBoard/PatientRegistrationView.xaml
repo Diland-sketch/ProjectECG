@@ -12,7 +12,7 @@
     <UserControl.DataContext>
         <vm:NavigationVM/>
     </UserControl.DataContext>
-    
+
     <Grid Margin="20">
         <Border Background="#212529" CornerRadius="10" Padding="20" BorderThickness="1">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="600">
@@ -67,7 +67,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Width="474">
 
-                    <Button Command="{Binding CancelCommand}" 
+                    <Button Command="{Binding HomeCommand}" 
                      Style="{StaticResource BtnStyleSearch}" 
                      Foreground="White" 
                      Content="Cancelar" 
@@ -84,13 +84,30 @@
                        FontSize="18" 
                      Margin="10,0" Click="Button_Click_2"/>
 
-                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0"/>
+                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0"  Command="{Binding CancelCommand}" />
                     <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar" Width="219" Height="53" FontSize="18" Margin="10,0"/>
 
                 </StackPanel>
+
                 <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <ContentControl x:Name="Pages" Content="{Binding CurrentView}"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="221*"/>
+                        <ColumnDefinition Width="105*"/>
+                        <ColumnDefinition Width="254*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="-55,-568,-11,-33" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4">
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-0.303"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="1.529"/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
                 </Grid>
+
 
 
                 <!-- Botones -->

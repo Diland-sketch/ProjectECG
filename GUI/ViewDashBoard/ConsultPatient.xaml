@@ -8,38 +8,75 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Style="{StaticResource Page_Style}">
+
     <UserControl.DataContext>
-        <vm:ConsultPatientVM/>
+        <vm:NavigationVM/>
     </UserControl.DataContext>
-    
+
+
+
     <Grid Margin="20">
-        <Border Background="#212529" CornerRadius="10" Padding="20">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="600">
+        <Border Background="#212529" CornerRadius="10" Padding="20" BorderThickness="1">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="740">
 
                 <!-- Título -->
                 <TextBlock Text="Consultar Paciente" Foreground="White" FontSize="36" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,30"/>
 
-                <!-- Documento para buscar -->
-                <StackPanel Orientation="Horizontal" Margin="0,10">
-                    <TextBlock Text="Documento" Foreground="White" FontSize="24" Width="222" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtDocumentoBuscar_KeyDown"/>
+                <!-- Buscar por documento -->
+                <StackPanel Orientation="Horizontal" Margin="0,10" Height="57" Width="720">
+                    <TextBlock Text="Documento" Foreground="White" FontSize="24" Width="159" TextAlignment="Center" Height="29"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290"/>
+                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Buscar" Width="257" Height="54" FontSize="18" />
                 </StackPanel>
 
-                <!-- Botón Buscar -->
-                <Button Style="{StaticResource BtnStyleSearch}" Content="Buscar" Width="219" Height="53" FontSize="18" HorizontalAlignment="Center" Margin="10" Click="btnBusar_Click"/>
+                <!-- DataGrid de resultados -->
+                <DataGrid x:Name="PacienteDataGrid"
+          IsReadOnly="True" 
+          ItemsSource="{Binding Pacientes}"
+          Margin="0,10"
+          HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False" 
+          Background="#343a40" Foreground="Black" Height="120">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="DOCUMENTO" Binding="{Binding Documento}" Width="*" />
+                        <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
+                        <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*" />
+                        <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />
+                        <DataGridTextColumn Header="Segundo Apellido" Binding="{Binding SegundoApellido}" Width="*" />
+                        <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
+                        <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
 
-                <!-- Resultado -->
-                <Border Background="#343a40" CornerRadius="10" Padding="10" Margin="0,20,0,0">
-                    <StackPanel>
-                        <TextBlock Text="Datos del Paciente:" FontSize="24" Foreground="White" Margin="0,0,0,10"/>
-                        <!-- Información cargada -->
-                        <TextBlock Text="Nombre Completo: Juan Pérez" Foreground="White" FontSize="18"/>
-                        <TextBlock Text="Fecha de Nacimiento: 01/01/1990" Foreground="White" FontSize="18"/>
-                        <TextBlock Text="Sexo: Masculino" Foreground="White" FontSize="18"/>
-                        <!-- Más campos según los datos -->
-                    </StackPanel>
-                </Border>
+
+                <!-- Botones -->
+                <StackPanel Orientation="Horizontal" Width="232" Margin="20,0">
+                    <!-- Botón Cancelar -->
+                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0" Command="{Binding CancelCommand}" />
+                    <!-- Botón Buscar -->
+                </StackPanel>
+                
+
             </StackPanel>
+            
         </Border>
+        <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="221*"/>
+                <ColumnDefinition Width="105*"/>
+                <ColumnDefinition Width="254*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="-27,-22,-9,-13" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4">
+                <ContentControl.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.303"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="1.529"/>
+                    </TransformGroup>
+                </ContentControl.RenderTransform>
+            </ContentControl>
+        </Grid>
+
     </Grid>
 </UserControl>
