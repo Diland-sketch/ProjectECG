@@ -84,19 +84,5 @@ CornerRadius="10">
                 <RadioButton x:Name="radioFemenino" Content="Femenino" HorizontalAlignment="Left" Margin="410,213,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Foreground="White" FontSize="20"/>
             </Grid>
         </Border>
-        <Button x:Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBack_Click" Height="30" Width="32">
-            <Button.Content>
-                <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" Fill="Transparent" Width="11" Height="9" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                </Path>
-            </Button.Content>
-        </Button>
     </Grid>
 </UserControl>
