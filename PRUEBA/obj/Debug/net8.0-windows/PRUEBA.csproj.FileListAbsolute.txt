@@ -66,3 +66,11 @@ C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\refi
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.pdb
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.genruntimeconfig.cache
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\PRUEBA\obj\Debug\net8.0-windows\ref\PRUEBA.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.csproj.AssemblyReference.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA_MarkupCompile.cache
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA_MarkupCompile.lref
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\refint\PRUEBA.dll
+C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\PRUEBA\obj\Debug\net8.0-windows\PRUEBA.pdb

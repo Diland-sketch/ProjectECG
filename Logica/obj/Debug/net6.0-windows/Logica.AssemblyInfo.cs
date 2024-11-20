@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Logica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef76f012c1952764e573aec9d4cadfa923b16a53")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9d7215615148dcd66af80a452ba7ee6c3b03115")]
 [assembly: System.Reflection.AssemblyProductAttribute("Logica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Logica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -95,7 +95,17 @@ namespace GUI.ViewDashBoard
                 };
 
                 var message = serviceSesion.Guardar(sesion);
-                MessageBox.Show(message);
+                if(message != -1)
+                {
+                    
+                    MessageBox.Show("sesion inicializada");
+                }
+                else
+                {
+
+                    MessageBox.Show("error de inicializacion");
+                }
+                
             }
             catch (Exception ex)
             {
