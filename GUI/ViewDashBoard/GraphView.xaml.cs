@@ -26,6 +26,7 @@ namespace GUI.ViewDashBoard
     {
         private ServiceECG _serviceEcg;
         private ChartValues<double> _ecgValues;
+        private List<double> datosGraficados =  new List<double>();
         public SeriesCollection EcgSeries { get; set; }
 
         private readonly Queue<double> _buffer = new Queue<double>();
@@ -36,7 +37,7 @@ namespace GUI.ViewDashBoard
         {
             InitializeComponent();
             
-            _graficaTimer = new System.Timers.Timer(100);
+            _graficaTimer = new System.Timers.Timer(200);
             _graficaTimer.Elapsed += (s, e) => ActualizarGraficaDesdeBuffer();
             _graficaTimer.Start();
 
@@ -69,6 +70,8 @@ namespace GUI.ViewDashBoard
             {
                 _datosBuffer.Add(valorEscalado);
             }
+
+            DetectarPicos(valorEscalado, DateTime.Now);
         }
 
         private void ActualizarGraficaDesdeBuffer()
@@ -100,7 +103,16 @@ namespace GUI.ViewDashBoard
 
         public void Detener_Click(object sender, RoutedEventArgs e)
         {
+            _graficaTimer.Stop();
             _serviceEcg.DetenerLectura();
+            _serviceEcg.DatoRecibido -= OnDatoRecibido;
+
+            lock (_datosBuffer)
+            {
+                _datosBuffer.Clear();
+            }
+            _ecgValues.Clear();
+            ecgChart.Update();
         }
 
         private double FiltrarDato(double nuevoDato)
@@ -112,6 +124,56 @@ namespace GUI.ViewDashBoard
             _buffer.Enqueue(nuevoDato);
 
             return _buffer.Average();
+        }
+
+        public event Action<double> BpmActualizado;
+
+        private void NotificarBpmActualizado()
+        {
+            BpmActualizado?.Invoke(bpmActual);
+        }
+
+        private List<DateTime> tiemposPicos = new List<DateTime>();
+
+        public void DetectarPicos(double nuevoValor, DateTime tiempoActual)
+        {
+            double umbralDinamico = _ecgValues.Max() * 0.6;
+
+            if(nuevoValor > umbralDinamico)
+            {
+                if(tiemposPicos.Count == 0 || (tiempoActual - tiemposPicos.Last()).TotalMilliseconds > 300)
+                {
+                    tiemposPicos.Add(tiempoActual);
+                }
+            }
+            if (tiemposPicos.Count > 100) tiemposPicos.RemoveAt(0);
+
+            CalcularBpm();
+            NotificarBpmActualizado();
+        }
+
+        public double bpmActual = 0;
+        public double CalcularBpm()
+        {
+            if (tiemposPicos.Count > 1)
+            {
+                var intervalosRR = new List<double>();
+                for (int i = 1; i < tiemposPicos.Count; i++)
+                {
+                    intervalosRR.Add((tiemposPicos[i] - tiemposPicos[i - 1]).TotalSeconds);
+                }
+
+                if (intervalosRR.Count > 0)
+                {
+                    intervalosRR = intervalosRR.Where(rr => rr > 0.3 && rr < 2.0).ToList();
+                    if (intervalosRR.Any())
+                    {
+                        double promedioRR = intervalosRR.Average();
+                        bpmActual = promedioRR > 0 ? 60 / promedioRR : 0;
+                    }
+                }
+            }
+            return bpmActual;
         }
     }
 }

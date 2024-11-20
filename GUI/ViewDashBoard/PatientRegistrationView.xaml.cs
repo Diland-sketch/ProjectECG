@@ -31,13 +31,7 @@ namespace GUI.ViewDashBoard
             servicePaciente = new ServicePaciente();
         }
 
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        /*private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (ValidarCampos())
             {
@@ -71,7 +65,7 @@ namespace GUI.ViewDashBoard
                 MessageBox.Show(message);
                 LimpiarCampos();
             }
-        }
+        }*/
 
         public void LimpiarCampos()
         {
@@ -131,6 +125,47 @@ namespace GUI.ViewDashBoard
                 txtDocumento.Focus();
                 return false;
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                Paciente paciente = new Paciente
+                {
+                    Identificacion = txtDocumento.Text,
+                    PrimerNombre = txtPrimerNombre.Text,
+                    SegundoNombre = txtSegundoNombre.Text,
+                    PrimerApellido = txtPrimerApellido.Text,
+                    SegundoApellido = txtSegundoApellido.Text
+                };
+                if (dpFechaNacimiento.SelectedDate.HasValue)
+                {
+                    string fechaSeleccionada = DateOnly.FromDateTime(dpFechaNacimiento.SelectedDate.Value).ToString();
+                    paciente.FechaNacimiento = DateOnly.Parse(fechaSeleccionada);
+                }
+                if (radioMasculino.IsChecked == true)
+                {
+                    paciente.Sexo = 'M';
+                }
+                else if (radioFemenino.IsChecked == true)
+                {
+                    paciente.Sexo = 'F';
+                }
+                if (paciente.Sexo == ' ')
+                {
+                    MessageBox.Show("Por favor, selecciona un sexo.");
+                    return;
+                }
+                var message = servicePaciente.Guardar(paciente);
+                MessageBox.Show(message);
+                LimpiarCampos();
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

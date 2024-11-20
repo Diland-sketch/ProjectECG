@@ -34,6 +34,7 @@ namespace GUI.ViewDashBoard
         public ECGMonitoringView()
         {
             InitializeComponent();
+            graphView.BpmActualizado += ActualizarFrecuenciaVista;
             servicePaciente = new ServicePaciente();
             serviceMedico = new ServiceMedico();
             serviceSesion = new ServiceSesionECG();
@@ -45,6 +46,14 @@ namespace GUI.ViewDashBoard
             fechaHoraTimer2.Interval = TimeSpan.FromSeconds(1);
             fechaHoraTimer2.Tick += ActualizarFechaHora2;
             fechaHoraTimer2.Start();
+        }
+
+        private void ActualizarFrecuenciaVista(double bpm)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                txtFrecuencia.Text = bpm.ToString("F0");
+            });
         }
 
         private void ActualizarFechaHora(object sender, EventArgs e)
@@ -64,21 +73,34 @@ namespace GUI.ViewDashBoard
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            graphView.Iniciar_Click(sender, e);
-            fechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            fechaHoraTimer.Stop();
-
-            SesionECG sesion = new SesionECG
+            try
             {
-                IdPaciente = txtDocumento.Text,
-                IdMedico = txtIdMedico.Text,
-                InicioSesionECG = DateTime.Parse(fechaHora.Text),
-                FinSesionECG = null,
-                Descripcion = null
-            };
+                if (string.IsNullOrEmpty(txtDocumento.Text) || string.IsNullOrEmpty(txtIdMedico.Text))
+                {
+                    MessageBox.Show("Por favor, complete los datos del paciente y del médico.");
+                    return;
+                }
 
-            var message = serviceSesion.Guardar(sesion);
-            MessageBox.Show(message);
+                graphView.Iniciar_Click(sender, e);
+                fechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                fechaHoraTimer.Stop();
+
+                var sesion = new SesionECG
+                {
+                    IdPaciente = txtDocumento.Text,
+                    IdMedico = txtIdMedico.Text,
+                    InicioSesionECG = DateTime.Parse(fechaHora.Text),
+                    FinSesionECG = null,
+                    Descripcion = null
+                };
+
+                var message = serviceSesion.Guardar(sesion);
+                MessageBox.Show(message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al iniciar sesión: " + ex.Message);
+            }
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
