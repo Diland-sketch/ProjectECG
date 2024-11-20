@@ -12,14 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
       "C:\\Users\\dilan\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\dilan\\.nuget\\packages"
-=======
-      "C:\\Users\\kerin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\kerin\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
->>>>>>> 5821685a46f883bb9931ac83c3ee76c706a1657d
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
