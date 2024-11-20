@@ -15,5 +15,10 @@ namespace Logica
         {
             return repositorio.Guardar(sesion);
         }
+
+        public string Actualizar(SesionECG sesion)
+        {
+            return repositorio.Actualizar(sesion.IdPaciente, sesion.IdMedico, sesion.FinSesionECG, sesion.Descripcion);
+        }
     }
 }

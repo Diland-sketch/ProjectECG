@@ -7,93 +7,94 @@
              xmlns:graph="clr-namespace:GUI.ViewDashBoard"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d"
-             d:DesignHeight="700"
-             d:DesignWidth="800"
+             d:DesignHeight="1080"
+             d:DesignWidth="1600"
              Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
 
-    <Grid Loaded="Grid_Loaded">
+    <Grid Loaded="Grid_Loaded_1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <!-- Sección izquierda -->
             <!-- Sección derecha -->
         </Grid.ColumnDefinitions>
-
-        <!-- Sección izquierda: Información del paciente -->
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Height="622" Margin="57,0,0,0">
-            <TextBlock Text="Monitoreo de ECG" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" Foreground="White" />
-            <TextBlock Text="Buscar paciente" Foreground="White" />
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Documento" Foreground="White"/>
-                <TextBox x:Name="txtDocumento" Width="200" PreviewTextInput="txtId_PreviewTextInput"/>
-            </StackPanel>
-            <Button x:Name="btnBusca" Content="Buscar" Click="btnBuscar_Click" RenderTransformOrigin="0.5,0.5" Width="55">
+        <Grid HorizontalAlignment="Left" Margin="10,638,0,354" Width="200">
+            <TextBlock Text="Buscar paciente" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,69"/>
+            <Button
+                Width="55" RenderTransformOrigin="0.5,0.5" x:Name="btnBusca" Content="Buscar" Click="btnBuscar_Click" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,68,0,0">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="0.511"/>
+                        <RotateTransform Angle="0.51100000000000012"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Nombre" Foreground="White"/>
-                <TextBox x:Name="txtNombre" Width="200" IsReadOnly="True"/>
-            </StackPanel>
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Apellido" Foreground="White" />
-                <TextBox x:Name="txtApellido" Width="200" IsReadOnly="True"/>
-            </StackPanel>
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Fecha y Hora" Foreground="White" />
-                <TextBox x:Name="fechaHora" IsReadOnly="True" Width="200" />
-            </StackPanel>
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Frecuencia (BPM)" Foreground="White" />
-                <TextBox x:Name="txtFrecuencia" Width="200" IsReadOnly="True"/>
-            </StackPanel>
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Amplitud (mV)" Foreground="White" />
-                <TextBox x:Name="txtAmplitud" Width="200" IsReadOnly="True"/>
-            </StackPanel>
-            <StackPanel Margin="0,10">
-                <TextBlock Text="Id Medico" Foreground="White" />
-                <TextBox x:Name="txtIdMedico" Width="200" IsReadOnly="True" PreviewTextInput="txtId_PreviewTextInput"/>
-            </StackPanel>
-            <StackPanel Margin="0,10"/>
-            <TextBlock Text="Descripcion" Foreground="White" />
-            <TextBox x:Name="TextArea" 
-                 AcceptsReturn="True" 
-                 AcceptsTab="True" 
-                 TextWrapping="Wrap" 
-                 VerticalScrollBarVisibility="Visible" 
-                 HorizontalScrollBarVisibility="Auto" Height="65" 
-                 Width="204"/>
-            <StackPanel Margin="0,10">
-            </StackPanel>
-            <StackPanel/>
-            <Button x:Name="btnGuardar" Content="Guardar Sesion" Width="150" Click="btnGuardar_Click"/>
+            <TextBlock
+                Foreground="White" Text="Documento" HorizontalAlignment="Center" Margin="0,23,0,49"/>
+            <TextBox
+                x:Name="txtDocumento" PreviewTextInput="txtId_PreviewTextInput" Margin="0,39,0,31"/>
+        </Grid>
+        <StackPanel Margin="224,615,1167,418">
+            <TextBlock Text="Nombre" Foreground="White"/>
+            <TextBox x:Name="txtNombre" Width="200" IsReadOnly="True"/>
         </StackPanel>
+        <StackPanel Margin="224,667,1167,367">
+            <TextBlock
+        Foreground="White" Text="Apellido"/>
+            <TextBox
+        IsReadOnly="True" x:Name="txtApellido" Width="200"/>
+
+        </StackPanel>
+        <StackPanel Margin="438,615,952,418">
+            <TextBlock
+        Foreground="White" Text="Fecha y Hora Inicio"/>
+            <TextBox
+        IsReadOnly="True" x:Name="fechaHora" Width="200"/>
+
+        </StackPanel>
+        <StackPanel Margin="438,667,953,366">
+            <TextBlock
+        Foreground="White" Text="Fecha y Hora Final"/>
+            <TextBox
+        IsReadOnly="True" x:Name="fechaHoraFinal" Width="200"/>
+
+        </StackPanel>
+        <StackPanel Margin="438,713,953,320">
+            <TextBlock
+        Foreground="White" Text="Frecuencia (BPM)"/>
+            <TextBox
+        IsReadOnly="True" x:Name="txtFrecuencia" Width="200"/>
+
+        </StackPanel>
+        <StackPanel Margin="224,713,1167,320">
+            <TextBlock
+        Foreground="White" Text="Id Medico"/>
+            <TextBox
+        Width="200" PreviewTextInput="txtId_PreviewTextInput" x:Name="txtIdMedico" IsReadOnly="True"/>
+
+        </StackPanel>
+        <StackPanel Margin="1281,615,310,32"/>
+        <StackPanel Margin="1343,615,248,32"/>
 
         <!-- Sección derecha: Gráfica -->
-        <StackPanel Margin="340,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <TextBlock Text="Señal en tiempo real" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" Foreground="White" />
-            <Border BorderBrush="White" BorderThickness="1" CornerRadius="5">
-                <Grid>
-                    <graph:GraphView x:Name="graphView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                </Grid>
-            </Border>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
-                <Button Content="Iniciar" Width="100" Margin="10" Click="Button_Click" />
-                <Button Content="Detener" Width="100" Margin="10" Click="Button_Click_1" />
-            </StackPanel>
-            <TextBlock Text="Voltaje actual (mV):" Foreground="White" Margin="0,10" />
-            <TextBox Width="150" />
+        <StackPanel Width="147" Margin="1081,414,363,596">
+            <Button Content="Iniciar" Width="100" Margin="10" Click="Button_Click" />
+            <Button Content="Detener" Width="100" Margin="10" Click="Button_Click_1" />
         </StackPanel>
+        <StackPanel Width="1066" HorizontalAlignment="Left" Margin="10,0,0,575" VerticalAlignment="Center" Background="White">
+            <graph:GraphView x:Name="graphView" HorizontalAlignment="Center" Height="482" Width="1044"/>
+        </StackPanel>
+        <Button x:Name="btnGuardar" Content="Guardar Sesion" Click="btnGuardar_Click" Margin="356,780,1085,266"/>
+        <Grid Margin="653,630,620,328">
+            <TextBlock
+                Foreground="White" Text="Descripcion" Margin="0,0,142,72"/>
+            <TextBox VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" x:Name="TextArea" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" AcceptsTab="True" Margin="0,23,0,0"/>
+        </Grid>
     </Grid>
 
 </UserControl>

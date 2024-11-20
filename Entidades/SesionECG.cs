@@ -9,8 +9,8 @@ namespace Entidades
     public class SesionECG
     {
         public int IdSesion  { get; set; }
-        public DateTime InicioSesionECG { get; set; }
-        public DateTime FinSesionECG { get; set; }
+        public DateTime? InicioSesionECG { get; set; }
+        public DateTime? FinSesionECG { get; set; }
         public string Descripcion { get; set; }
         public string IdPaciente { get; set; }
         public string IdMedico { get; set; }
