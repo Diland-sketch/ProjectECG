@@ -1,8 +1,10 @@
 ﻿using Entidades;
+using Newtonsoft.Json.Converters;
 using Oracle.ManagedDataAccess.Client;
 using Persistencia;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +18,7 @@ namespace Persitencia
         {
             try
             { 
-                OracleCommand Ocmd = new OracleCommand($"insertar_sesion('{entity.InicioSesionECG}','{entity.FinSesionECG}','{entity.IdPaciente}'" +
-                                                       $",'{entity.Descripcion}','{entity.IdMedico}')", conexion);
+                OracleCommand Ocmd = new OracleCommand($"insertar_sesion", conexion);
                 AbrirConexion();
 
                 int confirmacion = Ocmd.ExecuteNonQuery();
@@ -47,9 +48,18 @@ namespace Persitencia
             throw new NotImplementedException();
         }
 
-        public List<SesionECG> ConsultarTodo()
+        public DataTable ConsultarTodo()
         {
-            throw new NotImplementedException();
+            string ssql = $"SELECT * FROM historia_sesiones ";
+            AbrirConexion();
+            OracleCommand cmd = new OracleCommand(ssql, conexion);
+            OracleDataAdapter oracleDataAdapter = new OracleDataAdapter(cmd);
+            DataTable list = new DataTable();
+            oracleDataAdapter.Fill(list);
+           
+            
+            CerrarConexion();
+            return list;
         }
         
         //public string Eliminar(string id)

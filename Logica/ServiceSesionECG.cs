@@ -2,6 +2,7 @@
 using Persitencia;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,11 @@ namespace Logica
         public string Guardar(SesionECG sesion)
         {
             return repositorio.Guardar(sesion);
+        }
+
+        public DataTable ConsultarTodo()
+        {
+            return repositorio.ConsultarTodo();
         }
     }
 }
