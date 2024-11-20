@@ -53,15 +53,50 @@ namespace GUI.View
         {
             RolesDataGrid.ItemsSource = serviceRol.ConsultarTodo();
         }
-        private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
+            var datosActuales = RolesDataGrid.ItemsSource as IEnumerable<Rol>;
 
+            if (datosActuales == null)
+            {
+                MessageBox.Show("No hay datos en el DataGrid para buscar.");
+                return;
+            }
+
+            var listaMedicos = datosActuales.ToList();
+            RolesDataGrid.ItemsSource = null;
+            string idTexto = txtNombre.Text;
+
+            if (!string.IsNullOrEmpty(idTexto))
+            {
+                var medicoEncontrado = listaMedicos.Where(m => m.NombreRol.Equals(idTexto, StringComparison.OrdinalIgnoreCase)).ToList();
+
+                if (medicoEncontrado.Any())
+                {
+                    RolesDataGrid.ItemsSource = medicoEncontrado;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún médico con el ID proporcionado.");
+                    CargarRoles();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID para buscar.");
+                RolesDataGrid.ItemsSource = listaMedicos;
+            }
+            if (txtNombre.Text == null)
+            {
+                RolesDataGrid.ItemsSource = null;
+                CargarRoles();
+            }
         }
+
+        
+
         private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");

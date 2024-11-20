@@ -14,14 +14,14 @@ namespace Persitencia
     public class SesionECGRepositorio : ConexionOracle
     {
         UsuarioRepositorio UsuarioRepositorio = new UsuarioRepositorio();
-        public int Guardar(SesionECG entity)
+        public string Guardar(SesionECG entity)
         {
             try
 
             {
 
                 AbrirConexion();
-                using (OracleCommand cmd = new OracleCommand("f_insertar_sesion", conexion)
+                using (OracleCommand cmd = new OracleCommand("insertar_sesion", conexion)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 })
@@ -32,21 +32,28 @@ namespace Persitencia
                     cmd.Parameters.Add("p_descripcion", OracleDbType.Varchar2).Value = entity.Descripcion;
                     cmd.Parameters.Add("p_medico", OracleDbType.Varchar2).Value = entity.IdMedico;
 
-                    var returnparametro = new OracleParameter("return_value", OracleDbType.Int32);
-                    returnparametro.Direction = System.Data.ParameterDirection.ReturnValue;
-                    cmd.Parameters.Add(returnparametro);
+                    int confirmacion = cmd.ExecuteNonQuery();
+                    //CerrarConexion();
 
-                    cmd.ExecuteNonQuery();
-
-                    int idsesion = Convert.ToInt32(returnparametro.Value);
-                    return idsesion;
+                    if (confirmacion > 0)
+                    {
+                        return "Se guardo satisfactoriamente";
+                    }
+                    else
+                    {
+                        return "Error a la hora de guardar";
+                    }
                 }
-                CerrarConexion();
+               
                 
             }
             catch (Exception ex)
             {
-                return -1;
+                return ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
             }
         }
 
@@ -76,6 +83,26 @@ namespace Persitencia
             }
         }
 
+        public int MostrarId(DateTime fecha)
+        {
+            string ssql = $"SELECT id_sesion FROM usuarios WHERE fechainiciosesion = '{fecha}' ";
+            int iduser = 0;
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        iduser = reader.GetInt32(reader.GetOrdinal("fechainiciosesion"));
+                    }
+                }
+            }
+            CerrarConexion();
+            return iduser;
+
+        }
         public SesionECG ConsultarId(string id)
         {
             throw new NotImplementedException();

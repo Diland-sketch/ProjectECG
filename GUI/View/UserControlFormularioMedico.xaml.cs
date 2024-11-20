@@ -144,6 +144,8 @@ namespace GUI.View
             txtPApellido.Text = "";
             txtSApellido.Text = "";
             fechaNacimientoPicker.Text = "";
+            radioFemenino.IsChecked = false;
+            radioMasculino.IsChecked = false;
             txtNombreUsuario.Text = "";
             txtContraseña.Password = "";
         }

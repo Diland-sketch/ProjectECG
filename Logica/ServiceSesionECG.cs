@@ -12,7 +12,7 @@ namespace Logica
     public class ServiceSesionECG
     {
         SesionECGRepositorio repositorio = new SesionECGRepositorio();
-        public int Guardar(SesionECG sesion)
+        public string Guardar(SesionECG sesion)
         {
             return repositorio.Guardar(sesion);
         }
@@ -24,6 +24,10 @@ namespace Logica
         public DataTable ConsultarTodo()
         {
             return repositorio.ConsultarTodo();
+        }
+        public int Mostrarid(DateTime fecha)
+        {
+            return repositorio.MostrarId(fecha);
         }
     }
 }

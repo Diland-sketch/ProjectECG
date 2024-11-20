@@ -162,6 +162,11 @@ namespace GUI.View
             txtPApellido.Text = "";
             txtSApellido.Text = "";
             fechaNacimientoPicker.Text = "";
+            RbtnFemenino.IsChecked = false;
+            RbtnMasculino.IsChecked = false;
+            txtNombreUsuario.Text = "";
+            txtContraseña.Password = "";
+
         }
 
         public bool ValidarCampos()

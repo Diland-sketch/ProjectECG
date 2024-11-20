@@ -5649,23 +5649,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kerin\\.nuget\\packages\\": {},
+    "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
+      "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
       "projectName": "PRUEBA",
-      "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
-      "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\PRUEBA\\obj\\",
+      "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\PRUEBA\\PRUEBA.csproj",
+      "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\PRUEBA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5674,18 +5674,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
-              "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
+            "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+              "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
             }
           }
         }
