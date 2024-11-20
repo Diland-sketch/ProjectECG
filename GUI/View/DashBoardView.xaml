@@ -145,6 +145,14 @@
                             <TextBlock Text="Historial Seccion" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="0,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.401,0.781"/>
                         </Grid>
                     </Menu:Btn>
+                    <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\shutdown_mo.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
+                            <TextBlock Text="Cerrar Sesion" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="0,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.401,0.781" MouseDown="Label_mouse" Cursor="Hand"/>
+                        </Grid>
                 </StackPanel>
             </Grid>
 
@@ -155,6 +163,5 @@
         </Grid>
 
         <!-- Botón de cerrar aplicación -->
-        <Button x:Name="CloseApp" Style="{StaticResource ExitApp}" Click="CloseApp_Click" Margin="0,10,10,0"/>
     </Grid>
 </Window>

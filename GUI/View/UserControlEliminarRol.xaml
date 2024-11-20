@@ -24,8 +24,8 @@
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" FontSize="24" FontFamily="Berlin Sans FB" PreviewTextInput="txtNombre_PreviewTextInput"/>
-                <Button x:Name="btnEliminar" Content="Eliminar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Margin="0,10" Click="btnEliminar_Click_1" FontFamily="Berlin Sans FB">
+                    Padding="0,0,0,0" FontSize="24" FontFamily="Berlin Sans FB" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtId_KeyDown"/>
+                <Button x:Name="btnEliminar" Content="Eliminar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Margin="0,10" Click="btnEliminar_Click" FontFamily="Berlin Sans FB">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}" 

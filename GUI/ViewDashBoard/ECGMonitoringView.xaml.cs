@@ -151,8 +151,8 @@ namespace GUI.ViewDashBoard
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            //int u= servicePaciente.RetornarIdMedico();
-            //txtIdMedico.Text = serviceMedico.MostrarId(u);
+            int u = servicePaciente.RetornarIdMedico();
+            txtIdMedico.Text = serviceMedico.MostrarId(u);
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -169,8 +169,8 @@ namespace GUI.ViewDashBoard
         }
         private void Grid_Loaded_1(object sender, RoutedEventArgs e)
         {
-            //int u = servicePaciente.RetornarIdMedico();
-            //txtIdMedico.Text = serviceMedico.MostrarId(u);
+            int u = servicePaciente.RetornarIdMedico();
+            txtIdMedico.Text = serviceMedico.MostrarId(u);
 
         }
         private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)

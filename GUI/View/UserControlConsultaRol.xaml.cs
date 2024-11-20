@@ -94,12 +94,16 @@ namespace GUI.View
                 CargarRoles();
             }
         }
-
-        
-
         private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
+        }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnBuscar_Click(sender, e);
+            }
         }
     }
 }
