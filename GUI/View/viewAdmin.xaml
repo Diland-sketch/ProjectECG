@@ -10,14 +10,28 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
-        WindowState="Maximized"
-        >
+        WindowState="Maximized">
+    <Window.Resources>
+        <!-- Animación para mostrar el panel (mover de izquierda a derecha) -->
+        <Storyboard x:Key="SlideInAnimation">
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                             From="-150" To="0" Duration="0:0:0.3" />
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="0" To="1" Duration="0:0:0.3" />
+        </Storyboard>
+
+        <!-- Animación para ocultar el panel (mover de derecha a izquierda) -->
+        <Storyboard x:Key="SlideOutAnimation">
+            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                             From="0" To="-150" Duration="0:0:0.3" />
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="1" To="0" Duration="0:0:0.3" />
+        </Storyboard>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <!-- Menú lateral -->
             <ColumnDefinition/>
-            <!-- Contenido principal -->
         </Grid.ColumnDefinitions>
 
         <!-- Menú lateral -->
@@ -27,49 +41,171 @@
                     <RowDefinition Height="67*"/>
                     <RowDefinition Height="83*"/>
                 </Grid.RowDefinitions>
-                <!-- Logo en la parte superior -->
+
                 <Image Source="/Images/logo-removebg-preview.png" HorizontalAlignment="Center" 
                        Height="140" Margin="0,61,0,0" />
 
-                <!-- Contenedor de botones con imágenes y labels -->
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1">
-                    <!-- Primer elemento: Gestión Médico -->
+                    <!-- Gestión Médico -->
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
-                        <Image Source="C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\Images\enfermero.png" 
+                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\enfermero.png" 
                                Width="70" Height="56" />
                         <Label x:Name="lblMedico" Content="GESTION MEDICO" 
-                               FontSize="20" Cursor="Hand" MouseDown="Label_MouseDown" 
+                               FontSize="20" Cursor="Hand" 
                                Foreground="White" VerticalAlignment="Center" 
-                               Margin="10,0,0,0" FontFamily="Berlin Sans FB" />
+                               Margin="10,0,0,0" FontFamily="Berlin Sans FB"
+                               MouseEnter="lblMedico_MouseEnter"
+                               MouseLeave="lblMedico_MouseLeave"/>
                     </StackPanel>
 
-                    <!-- Segundo elemento: Gestión Rol -->
+                    <!-- Panel de botones (inicialmente oculto) -->
+                    <StackPanel x:Name="btnPanelMedico" Orientation="Vertical" 
+                                Margin="70,10,0,0" Visibility="Collapsed" MouseEnter="btnPanelMedico_MouseEnter"
+                                MouseLeave="btnPanelMedico_MouseLeave">
+                        <Button Content="Agregar Médico" Width="150" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnAgregar_Click" FontFamily="Berlin Sans FB">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+            BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="1" 
+            CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Content="Eliminar Médico" Width="150" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnEliminar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+            BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="1" 
+            CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Content="Modificar Médico" Width="150" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnModificar_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+            BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="1" 
+            CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Content="Consultar Médico" Width="150" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnConsulta_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+            BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="1" 
+            CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+
+                    <!-- Gestión Rol -->
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left" Width="250">
-                        <Image Source="C:\Users\dilan\source\repos\Proyecto_P3-ECG\GUI\Images\rol1.png" 
+                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\rol1.png" 
                                Width="50" Height="50" Margin="10,0,0,0" />
                         <Label x:Name="lblRol" Content="GESTION ROL" 
-                               FontSize="20" Cursor="Hand" MouseDown="Label_mouse" 
+                               FontSize="20" Cursor="Hand"
                                Foreground="White" VerticalAlignment="Center" 
-                               Margin="20,0,0,0" FontFamily="Berlin Sans FB" />
+                               Margin="20,0,0,0" FontFamily="Berlin Sans FB" MouseEnter="lblRol_MouseEnter" MouseLeave="lblRol_MouseLeave"/>
+                    </StackPanel>
+                    
+                    <StackPanel x:Name="btnPanelRol" Orientation="Vertical" 
+                    Margin="50,10,0,0" Visibility="Collapsed" MouseEnter="btnPanelRol_MouseEnter"
+                    MouseLeave="btnPanelRol_MouseLeave">
+                        <Button Content="Agregar Rol" Width="150" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnAgregarRol_Click" FontFamily="Berlin Sans FB">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="1" 
+CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Content="Eliminar Rol" Width="150" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnEliminarRol_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="1" 
+CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Content="Consultar Rol" Width="150" Height="30" Background="#FF333838" Foreground="White" FontSize="18" Click="btnConsultaRol_Click" FontFamily="Berlin Sans FB" HorizontalAlignment="Center">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="1" 
+CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#FF555555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="250" Height="56" Margin="0,10" Cursor="">
+                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\shutdown_mo.png" 
+                            Width="50" Height="50" Margin="10,0,0,0" />
+                        <Label x:Name="lblCSesion" Content="CERRAR SESION"
+                                FontSize="20" Cursor="Hand" MouseDown="Label_mouse1" 
+                                Foreground="White" VerticalAlignment="Center" 
+                                Margin="20,0,0,0" FontFamily="Berlin Sans FB"/>
                     </StackPanel>
                 </StackPanel>
-                <Button Width="49" Height="35" Background="#FF333838" 
-                        Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Back">
-                    <Button.Content>
-                        <Path Data="M 0 0 L 1 1 L 2 0" Stroke="Black" StrokeThickness="2" 
-                              Fill="Transparent" Width="11" Height="9" Stretch="Fill" 
-                              RenderTransformOrigin="0.5,0.5">
-                            <Path.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="90"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Path.RenderTransform>
-                        </Path>
-                    </Button.Content>
-                </Button>
             </Grid>
         </Border>
 

@@ -52,15 +52,16 @@ namespace GUI.View
             Usuario usuario = new Usuario()
             {
                 NombreUsuario = txtUser.Text,
-                contrasenha = txtPassword.Password
+                Contrasenha = txtPassword.Password
             };
+
 
             int loginExitoso = serviceUser.Login(usuario);
 
             if (loginExitoso == 1)
             {
                 MessageBox.Show("Bienvenido de nuevo Admin");
-                viewAdmin viewAdmin = new viewAdmin();
+                DashBoardView viewAdmin = new DashBoardView();
                 viewAdmin.Show();
                 this.Close();
             }
@@ -94,6 +95,32 @@ namespace GUI.View
         private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void btnLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+        
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtUser.Focus();
         }
     }
 }

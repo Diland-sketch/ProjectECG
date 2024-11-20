@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -67,8 +68,6 @@ namespace GUI.View
             if (mainWindow != null)
             {
                 mainWindow.panelMedico.Children.Clear();
-                UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
-                mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
         }
         private void IdentificacionTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -111,7 +110,7 @@ namespace GUI.View
             Usuario usuario = new Usuario();
             usuario = serviceUser.ConsultarId(serviceMedico.MostrarIdu(txtId.Text));
             txtNombreUsuario.Text = usuario.NombreUsuario;
-            txtContraseña.Password = usuario.contrasenha;
+            txtContraseña.Password = usuario.Contrasenha;
         }
 
         private void ActualizarButton_Click(object sender, RoutedEventArgs e)
@@ -147,7 +146,7 @@ namespace GUI.View
                 }
                 Usuario usuario = new Usuario();
                 usuario.NombreUsuario = txtNombreUsuario.Text;
-                usuario.contrasenha = txtContraseña.Password;
+                usuario.Contrasenha = txtContraseña.Password;
                     var message = serviceMedico.Actualizar(medico, usuario);
                     MessageBox.Show(message);
                     LimpiarCampos();
@@ -216,9 +215,14 @@ namespace GUI.View
             }
         }
 
-
-
-
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
+        }
+        private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
+        }
     }
 }
 

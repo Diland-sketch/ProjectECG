@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -46,14 +47,20 @@ namespace GUI.View
             if (mainWindow != null)
             {
                 mainWindow.panelMedico.Children.Clear();
-                UserControlCrudRol userControlCrudMedico = new UserControlCrudRol();
-                mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
         }
         private void IdentificacionTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             bool tieneIdentificacion = !string.IsNullOrWhiteSpace(txtId.Text);
             txtNombre.IsEnabled = tieneIdentificacion;
+        }
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
+        }
+        private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
         }
     }
 }

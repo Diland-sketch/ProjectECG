@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows;
@@ -36,8 +37,6 @@ namespace GUI.View
             if (mainWindow != null)
             {
                 mainWindow.panelMedico.Children.Clear();
-                UserControlCrudMedico userControlCrudMedico = new UserControlCrudMedico();
-                mainWindow.panelMedico.Children.Add(userControlCrudMedico);
             }
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -55,6 +54,10 @@ namespace GUI.View
             var message = serviceMedico.Eliminar(id);
             MessageBox.Show(message);
             txtId.Text = "";    
+        }
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
     }
 }

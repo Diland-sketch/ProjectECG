@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,8 +38,6 @@ namespace GUI.View
             if (mainWindow != null)
             {
                 mainWindow.panelMedico.Children.Clear();
-                UserControlCrudRol userControlCrudRol = new UserControlCrudRol();
-                mainWindow.panelMedico.Children.Add(userControlCrudRol);
             }
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -62,6 +61,10 @@ namespace GUI.View
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
         }
     }
 }

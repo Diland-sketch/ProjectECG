@@ -21,6 +21,7 @@ namespace PRUEBA
     {
         ServiceRol serviceRol = new ServiceRol();
         ServiceUser ServiceUser = new ServiceUser();
+        ServiceIncidente serviceIncidente = new ServiceIncidente();
        
         public MainWindow()
         {
@@ -53,7 +54,7 @@ namespace PRUEBA
             Usuario usuario = new Usuario();
             //usuario.IdUsuario = txt1.Text;
             usuario.NombreUsuario = txt2.Text;
-            usuario.contrasenha = txt3.Text;
+            usuario.Contrasenha = txt3.Text;
             
             var message = ServiceUser.Guardar(usuario);
             MessageBox.Show(message);
@@ -75,7 +76,7 @@ namespace PRUEBA
            
             UsuarioRepositorio userRepository = new UsuarioRepositorio();
             usuario = userRepository.ConsultarId(usuario.IdUsuario);
-            MessageBox.Show(usuario.NombreUsuario +usuario.contrasenha );
+            MessageBox.Show(usuario.NombreUsuario +usuario.Contrasenha );
             
             
             
@@ -85,6 +86,22 @@ namespace PRUEBA
         {
             ServiceMedico serviceMedic = new ServiceMedico();
             datagriv.ItemsSource = serviceMedic.ConsultarTodo();
+        }
+
+        private void btnGuardarIncidente_Click(object sender, RoutedEventArgs e)
+        {
+            Incidentes incidente = new Incidentes();
+            incidente.Descripcion = txtDescripcion.Text;
+            DateTime fecha = fechaHora.SelectedDate.HasValue ? fechaHora.SelectedDate.Value : DateTime.Now.Date;
+            DateTime fechaHoraActual = DateTime.Now;
+            fechaHoraActual = fecha.Add(DateTime.Now.TimeOfDay);
+            incidente.FechaHoraIncidente = fechaHoraActual;
+            incidente.IdSesionECG = int.Parse(txtIdSesion.Text);
+
+
+            var message = serviceIncidente.Guardar(incidente);
+            MessageBox.Show(message);
+
         }
     }
 }

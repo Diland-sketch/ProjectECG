@@ -26,7 +26,10 @@ namespace Logica
             return MedicosRepositorio.MostrarIdU(id);
         }
 
-
+        public string MostrarId(int id)
+        {
+            return MedicosRepositorio.MostrarId(id);
+        }
         public Medico ConsultarId(string id)
         {
             return MedicosRepositorio.ConsultarId(id);

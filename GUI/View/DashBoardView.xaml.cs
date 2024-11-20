@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GUI.View;
+using GUI.ViewDashBoard;
+using GUI.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,12 +40,42 @@ namespace GUI
             }
             Pages.Content = nuevaVista;
         }
+        //private void btnPanelPaciente_MouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    btnPanelPaciente.Visibility = Visibility.Visible;
+        //}
+
+        //private void btnPanelPaciente_MouseLeave(object sender, MouseEventArgs e)
+        //{
+        //    btnPanelPaciente.Visibility = Visibility.Collapsed;
+        //}
         public void VolverVistaAnterior()
         {
             if (vistaAnterior.Count > 0)
             {
                 Pages.Content = vistaAnterior.Pop();
             }
+        }
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Cambia la vista actual a HomeView
+            NavigationVM navigationVM = DataContext as NavigationVM;
+            if (navigationVM != null)
+            {
+                navigationVM.CurrentView = new HomeView();  // Establece HomeView como la vista actual
+            }
+        }
+        private void Button_Back(object sender, RoutedEventArgs e)
+        {
+            LoginView mainWindow = new LoginView();
+            mainWindow.Show();
+            this.Close();
+        }
+        private void Label_mouse(object sender, MouseButtonEventArgs e)
+        {
+            LoginView mainWindow = new LoginView();
+            mainWindow.Show();
+            this.Close();
         }
 
     }
