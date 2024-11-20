@@ -39,7 +39,7 @@
             <!-- Panel de navegación -->
             <Grid HorizontalAlignment="Left" Width="228">
                 <Border Background="#272B2F" CornerRadius="0,0,0,0" />
-                <StackPanel Width="228" Margin="0,75,0,45">
+                <StackPanel Width="228" Margin="0,75,0,10">
                     <!-- Logo de la aplicación -->
                     <Image Source="/Images/logo-removebg-preview.png" Height="140" Width="200" Margin="0,10,0,10" />
 
@@ -55,17 +55,71 @@
                         </Grid>
                     </Menu:Btn>
 
-                    <!-- Botón Registro Paciente -->
-                    <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding NavigationCrudPatientsCommand}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image Source="pack://application:,,,/Images/img_customer.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
-                            <TextBlock Text="Gestion Paciente" Style="{StaticResource Text_Style}" Margin="55,0,0,0" Grid.ColumnSpan="2"/>
-                        </Grid>
-                    </Menu:Btn>
+                    <!-- Botón Gestión Paciente con submenú simplificado -->
+                    <!-- Botón Gestión Paciente con submenú -->
+                    <Grid>
+                        <StackPanel>
+                            <!-- Botón principal -->
+                            <Menu:Btn Style="{StaticResource BtnStyle}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image  Source="pack://application:,,,/Images/img_customer.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
+                                    <TextBlock Text="Gestión Paciente" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="0,8,0,0" VerticalAlignment="Top" />
+                                </Grid>
+                                <Menu:Btn.Triggers>
+                                    <!-- Mostrar submenú al pasar el cursor -->
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SubMenuPanel" Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Menu:Btn.Triggers>
+                            </Menu:Btn>
+
+                            <!-- Submenú -->
+                            <StackPanel x:Name="SubMenuPanel" Visibility="Collapsed" Background="#333333" Margin="0,5,0,0">
+                                <StackPanel.Triggers>
+                                    <!-- Mantener submenú visible cuando el cursor está sobre él -->
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SubMenuPanel" Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <!-- Ocultar submenú cuando el cursor salga -->
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SubMenuPanel" Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </StackPanel.Triggers>
+
+                                <!-- Opciones del submenú -->
+                                <Button Content="Registrar Paciente" Command="{Binding PatientRegistrationsCommand}" Style="{StaticResource SubMenuButtonStyle}" />
+                                <Button Content="Actualizar Paciente" Command="{Binding PatientUpdatesCommand}" Style="{StaticResource SubMenuButtonStyle}" />
+                                <Button Content="Eliminar Paciente" Command="{Binding PatientDeletesCommand}" Style="{StaticResource SubMenuButtonStyle}" />
+                                <Button Content="Buscar Paciente" Command="{Binding PatientSearchCommand}" Style="{StaticResource SubMenuButtonStyle}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+
+
+
 
                     <!-- Botón Monitoreo ECG -->
                     <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding ECGMonitoringsCommand}">
@@ -91,14 +145,6 @@
                             <TextBlock Text="Historial Seccion" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="0,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.401,0.781"/>
                         </Grid>
                     </Menu:Btn>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\shutdown_mo.png" Height="40" VerticalAlignment="Top" Margin="10,4,10,0" />
-                        <TextBlock Text="Cerrar Sesion" Style="{StaticResource Text_Style}" Grid.Column="1" Margin="0,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.401,0.781" MouseDown="Label_mouse" Cursor="Hand" HorizontalAlignment="Center" Width="168"/>
-                    </Grid>
                 </StackPanel>
             </Grid>
 

@@ -29,13 +29,13 @@ namespace GUI.ViewModel
         public ICommand PatientDeletesCommand { get; }
         public ICommand PatientSearchCommand { get; }
         public ICommand NavigationCrudPatientsCommand { get; }
+        
 
         private void Cancel(object obj)
         {
-            CurrentView = new NavigationCrudPatientVM();
+            CurrentView = new HomeVM();
         }
-        
-
+       
 
         private void Home(object obj) => CurrentView = new HomeVM();
         private void ECGMonitoring(object obj) => CurrentView = new ECGMonitoringVM();
@@ -73,7 +73,7 @@ namespace GUI.ViewModel
 
 
             // Startup Page
-           // CurrentView = new HomeVM();
+            //CurrentView = new HomeVM();
         }
 
     }
