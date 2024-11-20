@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:GUI.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450"
-             d:DesignWidth="800"
+             d:DesignHeight="514"
+             d:DesignWidth="905.333"
              Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
@@ -15,7 +15,7 @@
 
     <Grid Margin="0,0,0,0" Height="1100" Width="1100" VerticalAlignment="Center">
         <Border Background="DarkCyan"
-        CornerRadius="20" Margin="0,0,0,0"/>
+        CornerRadius="20" Margin="67,0,0,0" Loaded="Border_Loaded"/>
         <Grid>
             <DataGrid x:Name="dataGridPacientes" HorizontalAlignment="Center" Height="206" Margin="0,339,0,0" VerticalAlignment="Top" Width="668" SelectionChanged="dataGridPacientes_SelectionChanged" ColumnWidth="auto">
                 <DataGrid.Columns>
@@ -45,7 +45,7 @@
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0" Margin="196,4,100,4"/>
-                <Button x:Name="Buscar" Content="Buscar" HorizontalAlignment="Left" Height="24" Margin="344,0,0,0" VerticalAlignment="Center" Width="47" Click="Buscar_Click">
+                <Button x:Name="Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="344,2,0,0" Width="47" Click="Buscar_Click" Height="24" VerticalAlignment="Top">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}"                                

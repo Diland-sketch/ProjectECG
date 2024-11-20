@@ -12,10 +12,12 @@ namespace Persitencia
 {
     public class IncidenteRepositorio : ConexionOracle
     {
+        SesionECGRepositorio SesionECGRepositorio = new SesionECGRepositorio();
         public string Guardar(Incidentes incidente)
         {
             try
             {
+                 
                 AbrirConexion();
                 using (OracleCommand cmd = new OracleCommand("insertar_incidente", conexion)
                 {
