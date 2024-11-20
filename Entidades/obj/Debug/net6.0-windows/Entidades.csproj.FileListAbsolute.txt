@@ -1,3 +1,16 @@
+C:\Users\kerin\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.deps.json
+C:\Users\kerin\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.dll
+C:\Users\kerin\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.pdb
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.csproj.AssemblyReference.cache
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfoInputs.cache
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfo.cs
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.sourcelink.json
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.dll
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\refint\Entidades.dll
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.pdb
+C:\Users\kerin\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\ref\Entidades.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\Entidades\bin\Debug\net6.0-windows\Entidades.deps.json
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\Entidades\bin\Debug\net6.0-windows\Entidades.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\Entidades\bin\Debug\net6.0-windows\Entidades.pdb
@@ -11,16 +24,3 @@ C:\Users\dilan\source\repos\Proyecto_P3-ECG\Entidades\obj\Debug\net6.0-windows\E
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\Entidades\obj\Debug\net6.0-windows\refint\Entidades.dll
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\Entidades\obj\Debug\net6.0-windows\Entidades.pdb
 C:\Users\dilan\source\repos\Proyecto_P3-ECG\Entidades\obj\Debug\net6.0-windows\ref\Entidades.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.deps.json
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\bin\Debug\net6.0-windows\Entidades.pdb
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.csproj.AssemblyReference.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfoInputs.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.AssemblyInfo.cs
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.sourcelink.json
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\refint\Entidades.dll
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\Entidades.pdb
-C:\Users\CAMILO MOSQUERA\source\repos\ProjectECG\Entidades\obj\Debug\net6.0-windows\ref\Entidades.dll
