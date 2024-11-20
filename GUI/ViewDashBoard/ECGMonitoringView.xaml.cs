@@ -97,7 +97,7 @@ namespace GUI.ViewDashBoard
                 var message = serviceSesion.Guardar(sesion);
                 if(message != -1)
                 {
-                    
+                    graphView.returnt(message);
                     MessageBox.Show("sesion inicializada");
                 }
                 else

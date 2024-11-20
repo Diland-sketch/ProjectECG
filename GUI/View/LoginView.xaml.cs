@@ -61,7 +61,7 @@ namespace GUI.View
             if (loginExitoso == 1)
             {
                 MessageBox.Show("Bienvenido de nuevo Admin");
-                DashBoardView viewAdmin = new DashBoardView();
+                viewAdmin viewAdmin = new viewAdmin();
                 viewAdmin.Show();
                 this.Close();
             }
@@ -70,8 +70,8 @@ namespace GUI.View
                 if (loginExitoso == 2)
                 {
                     MessageBox.Show("Bienvenido, Medico");
-                    DashBoardView viewDash = new DashBoardView();
-                    viewDash.Show();
+                    DashBoardView dashBoard = new DashBoardView();
+                    dashBoard.Show();
                     this.Close();
                 }
                 else

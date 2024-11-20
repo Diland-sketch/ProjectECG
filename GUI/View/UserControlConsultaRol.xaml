@@ -32,7 +32,7 @@
                 BorderThickness="0,0,0,1"
                 Foreground="White"
                 Padding="0,0,0,0" Margin="161,0,89,7" FontSize="18" PreviewTextInput="txtNombre_PreviewTextInput"/>
-            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="16" Margin="361,0,0,0" Click="btnBuscar_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Width="59">
+            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="16" Margin="361,4,0,5" Click="btnBuscar_Click" HorizontalAlignment="Left" Width="59">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -49,7 +49,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
+
         </Grid>
         <Button x:Name="btnGuardar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="350,356,350,64" FontFamily="Berlin Sans FB">
             <Button.Template>

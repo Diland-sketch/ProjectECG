@@ -161,7 +161,7 @@ namespace GUI.ViewDashBoard
                 IncidenteRepositorio incidenteRepositorio = new IncidenteRepositorio();
                 Incidentes incidentes = new Incidentes();
                 incidentes.IdSesionECG = global.i;
-                incidentes.Descripcion = "BPM ALTO DETECTADO";
+                incidentes.Descripcion = "BALTO DETECTADO";
                 incidentes.FechaHoraIncidente = DateTime.Now;
                 incidenteRepositorio.Guardar(incidentes);
             }
