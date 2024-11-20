@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\GUI\\GUI.csproj": {}
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -85,20 +86,20 @@
         }
       }
     },
-    "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\GUI\\GUI.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\GUI\\GUI.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\GUI\\GUI.csproj",
-        "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\GUI\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\GUI.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\GUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -107,17 +108,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
-                "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj"
               }
             }
           }
@@ -181,20 +183,20 @@
         }
       }
     },
-    "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
-        "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Logica\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\Logica.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Logica\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -203,17 +205,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
-                "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj"
               }
             }
           }
@@ -269,20 +272,20 @@
         }
       }
     },
-    "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
         "projectName": "Persitencia",
-        "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
-        "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Persitencia\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\Persitencia.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Persitencia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -291,14 +294,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj"
               }
             }
           }

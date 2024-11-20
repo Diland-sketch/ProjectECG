@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\CAMILO MOSQUERA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAMILO MOSQUERA\\source\\repos\\ProjectECG\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\kerin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kerin\\source\\repos\\ProjectECG\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\CAMILO MOSQUERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kerin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
