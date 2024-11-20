@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace GUI.ViewDashBoard
 {
@@ -25,6 +26,7 @@ namespace GUI.ViewDashBoard
     public partial class GraphView : UserControl
     {
         private ServiceECG _serviceEcg;
+        private ServiceIncidente serviceIncidente;
         private ChartValues<double> _ecgValues;
         private List<double> datosGraficados =  new List<double>();
         public SeriesCollection EcgSeries { get; set; }
@@ -33,9 +35,15 @@ namespace GUI.ViewDashBoard
         private const int BufferSize = 5;
         private System.Timers.Timer _graficaTimer;
 
+        private SoundPlayer soundPlayer;
+
         public GraphView()
         {
             InitializeComponent();
+
+            serviceIncidente = new ServiceIncidente();
+
+            soundPlayer = new SoundPlayer("Resources/ekg-6149.wav");
             
             _graficaTimer = new System.Timers.Timer(200);
             _graficaTimer.Elapsed += (s, e) => ActualizarGraficaDesdeBuffer();
@@ -139,9 +147,9 @@ namespace GUI.ViewDashBoard
         {
             double umbralDinamico = _ecgValues.Max() * 0.6;
 
-            if(nuevoValor > umbralDinamico)
+            if (nuevoValor > umbralDinamico)
             {
-                if(tiemposPicos.Count == 0 || (tiempoActual - tiemposPicos.Last()).TotalMilliseconds > 300)
+                if (tiemposPicos.Count == 0 || (tiempoActual - tiemposPicos.Last()).TotalMilliseconds > 300)
                 {
                     tiemposPicos.Add(tiempoActual);
                 }
@@ -150,6 +158,11 @@ namespace GUI.ViewDashBoard
 
             CalcularBpm();
             NotificarBpmActualizado();
+
+            if (bpmActual < 100)
+            {
+                //serviceIncidente.Guardar("BPM alto detectado", DateTime.Now, idSesion);
+            }
         }
 
         public double bpmActual = 0;
