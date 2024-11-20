@@ -1091,7 +1091,10 @@
           "itext7": "8.0.5"
         },
         "runtime": {
-          "Entidades.dll": {}
+          "Entidades.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Logica/1.0.0": {
@@ -1103,7 +1106,10 @@
           "itext7": "8.0.5"
         },
         "runtime": {
-          "Logica.dll": {}
+          "Logica.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Persitencia/1.0.0": {
@@ -1116,7 +1122,10 @@
           "itext7": "8.0.5"
         },
         "runtime": {
-          "Persitencia.dll": {}
+          "Persitencia.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

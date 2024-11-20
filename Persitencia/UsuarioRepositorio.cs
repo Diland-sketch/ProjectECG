@@ -35,8 +35,6 @@ namespace Persistencia
 
                 contra = user.Contrasenha;
 
-                
-
                 if (nom == null && contra == null)
                 {
                     return -1;
@@ -48,10 +46,9 @@ namespace Persistencia
                     return 2;
                 }
 
-
-                
             }
         }
+
         public string Guardar(Usuario entity)
         {
             try
