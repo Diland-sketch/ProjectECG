@@ -31,14 +31,17 @@ namespace PRUEBA
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-           // Rol rol = new Rol();
-            
-           // rol.NombreRol = txt2.Text;
+            // Rol rol = new Rol();
 
-        //    var message = serviceRol.Guardar(rol);
-        //    MessageBox.Show(message);
-           // var message = serviceRol.Guardar(rol);
-           // MessageBox.Show(message);
+            // rol.NombreRol = txt2.Text;
+
+            //    var message = serviceRol.Guardar(rol);
+            //    MessageBox.Show(message);
+            // var message = serviceRol.Guardar(rol);
+            // MessageBox.Show(message);
+            string num = serviceIncidente.MostrarNumeroIncidente(7).ToString();
+            int prueba = int.Parse(num[0].ToString());
+            txt1.Text = prueba.ToString();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

@@ -73,10 +73,7 @@ namespace GUI.ViewDashBoard
                 incidentes.FechaHoraIncidente = DateTime.Now;
                 incidentes.Descripcion = "Pico bajo detectado";
                 ServiceIncidente.Guardar(incidentes);
-                SesionECG sesion = new SesionECG();
-                sesion.Estado = "Frecuencia baja";
-                sesion.IdSesion = global.id;
-                serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+              
             }
             else
             {
@@ -87,18 +84,18 @@ namespace GUI.ViewDashBoard
                     incidentes.FechaHoraIncidente = DateTime.Now;
                     incidentes.Descripcion = "Pico alto detectado";
                     ServiceIncidente.Guardar(incidentes);
-                    SesionECG sesion = new SesionECG();
-                    sesion.Estado = "Frecuencia Alta";
-                    sesion.IdSesion = global.id;
-                    serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+                    //SesionECG sesion = new SesionECG();
+                    //sesion.Estado = "Frecuencia Alta";
+                    //sesion.IdSesion = global.id;
+                    //serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
                 }
-                else
-                {
-                    SesionECG sesion = new SesionECG();
-                    sesion.Estado = "Frecuencia Normalizada";
-                    sesion.IdSesion = global.id;
-                    serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
-                }
+                //else
+                //{
+                //    //SesionECG sesion = new SesionECG();
+                //    //sesion.Estado = "Frecuencia Normalizada";
+                //    //sesion.IdSesion = global.id;
+                //    //serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+                //}
             }
         }
 
@@ -154,6 +151,33 @@ namespace GUI.ViewDashBoard
             fechaHoraFinal.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             fechaHoraTimer2.Stop();
 
+            string num = ServiceIncidente.MostrarNumeroIncidente(global.id);
+            int valor = int.Parse(num[0].ToString());
+
+            if (valor <5)
+            {
+                SesionECG sesion = new SesionECG();
+                sesion.Estado = "frecuencia buena";
+                sesion.IdSesion = global.id;
+                serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+            }
+            else
+            {
+                if (valor <10)
+                {
+                    SesionECG sesion = new SesionECG();
+                    sesion.Estado = "frecuencia regular";
+                    sesion.IdSesion = global.id;
+                    serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+                }
+                else
+                {
+                    SesionECG sesion = new SesionECG();
+                    sesion.Estado = "frecuencia a revision";
+                    sesion.IdSesion = global.id;
+                    serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+                }
+            }
             MessageBox.Show("\"La sesión ha finalizado. Por favor, complete la descripción y guarde.");
         }
 

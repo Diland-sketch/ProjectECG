@@ -38,5 +38,26 @@ namespace Persitencia
                 return "Error al registrar incidente";
             }
         }
+
+        public string MostrarId(int id)
+        {
+            string ssql = $" SELECT  incidente FROM historial_sesiones WHERE codigo = {id}" ;
+            string incidentes = "";
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        incidentes = reader.GetString(reader.GetOrdinal("incidente"));
+                    }
+                }
+            }
+            CerrarConexion();
+            return incidentes;
+
+        }
     }
 }

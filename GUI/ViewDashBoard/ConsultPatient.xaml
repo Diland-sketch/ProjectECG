@@ -26,7 +26,7 @@
                 <StackPanel Orientation="Horizontal" Margin="0,10" Height="57" Width="720">
                     <TextBlock Text="Documento" Foreground="White" FontSize="24" Width="159" TextAlignment="Center" Height="29"/>
                     <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290"/>
-                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Buscar" Width="257" Height="54" FontSize="18" />
+                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Buscar" Width="257" Height="54" FontSize="18" Click="Button_Click" />
                 </StackPanel>
 
                 <!-- DataGrid de resultados -->
@@ -37,6 +37,7 @@
           HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False" 
           Background="#343a40" Foreground="Black" Height="120">
                     <DataGrid.Columns>
+
                         <DataGridTextColumn Header="DOCUMENTO" Binding="{Binding Documento}" Width="*"/>
                         <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
                         <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*" />
@@ -66,7 +67,7 @@
                 <ColumnDefinition Width="254*"/>
                 <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
-            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="-27,-22,-9,-13" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4">
+            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="-27,-12,-9,-23" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4" Loaded="Pages_Loaded">
                 <ContentControl.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
