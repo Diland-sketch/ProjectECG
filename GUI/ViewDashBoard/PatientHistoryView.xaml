@@ -23,7 +23,6 @@
               Height="206" 
               Width="668" 
               VerticalAlignment="Center"
-              SelectionChanged="dataGridPacientes_SelectionChanged" 
               ColumnWidth="Auto" 
               Background="Transparent" 
               BorderBrush="Transparent"
@@ -75,7 +74,7 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
 
-                    
+
 
                 </DataGrid>
             </Border>

@@ -21,13 +21,17 @@ namespace Logica
         {
             return repositorio.Actualizar(sesion.IdPaciente, sesion.IdMedico, sesion.FinSesionECG, sesion.Descripcion);
         }
+        public void ActualizarEstado(string estado, int idSesion)
+        {
+            repositorio.ActualizarEstado(estado, idSesion);
+        }
         public DataTable ConsultarTodo()
         {
             return repositorio.ConsultarTodo();
         }
-        public int Mostrarid(DateTime fecha)
+        public int Mostrarid()
         {
-            return repositorio.MostrarId(fecha);
+            return repositorio.MostrarId();
         }
     }
 }

@@ -99,19 +99,23 @@
 
                     </DataGrid>
                 </Border>
+            </StackPanel>
+        </Border>
+        <!-- DataGrid de resultados -->
+            
 
 
-                <!-- Botones -->
-                <StackPanel Orientation="Horizontal" Width="232" Margin="20,0">
+            <!-- Botones -->
+                <StackPanel Orientation="Horizontal" Width="232" Margin="264,360,264,0">
                     <!-- Botón Cancelar -->
                     <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0" Command="{Binding CancelCommand}" />
                     <!-- Botón Buscar -->
                 </StackPanel>
                 
 
-            </StackPanel>
             
-        </Border>
+            
+        
         <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="221*"/>
@@ -119,7 +123,7 @@
                 <ColumnDefinition Width="254*"/>
                 <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
-            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="-27,-22,-9,-13" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4">
+            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" Margin="-27,-12,-9,-23" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4" Loaded="Pages_Loaded">
                 <ContentControl.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

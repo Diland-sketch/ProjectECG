@@ -12,7 +12,6 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-
         <!-- Botón para iniciar la animación -->
         <Border CornerRadius="10" Background="#F2F2F2" BorderBrush="Transparent" Padding="5" VerticalAlignment="Top" HorizontalAlignment="Center" Height="477" Margin="0,118,0,0" Width="976">
             <DataGrid x:Name="MedicosDataGrid"
@@ -132,6 +131,7 @@
             </DataGrid>
         </Border>
         <Button Visibility="Collapsed" x:Name="btnCancelar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="610,635,610,205" FontFamily="Berlin Sans FB">
+
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" Background="{TemplateBinding Background}" 

@@ -43,6 +43,7 @@ namespace GUI.View
             MedicosDataGrid.ItemsSource = serviceMedico.ConsultarTodo();
         }
 
+        
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,11 @@ namespace GUI.ViewDashBoard
     /// </summary>
     public partial class DeletePatient : UserControl
     {
+        ServicePaciente servicePaciente;
         public DeletePatient()
         {
             InitializeComponent();
+            servicePaciente = new ServicePaciente();
         }
 
         private void txtDocumentoEliminar_KeyDown(object sender, KeyEventArgs e)
@@ -36,7 +39,8 @@ namespace GUI.ViewDashBoard
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-
+            var mesagge = servicePaciente.Eliminar(txtDocumentoEliminar.Text);
+            MessageBox.Show(mesagge);
         }
         private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
