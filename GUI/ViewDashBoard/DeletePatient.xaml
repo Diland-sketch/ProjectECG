@@ -37,7 +37,8 @@
                     <TextBox Style="{StaticResource TextBoxStyle}" 
                              x:Name="txtDocumentoEliminar" 
                              Width="290" 
-                             KeyDown="txtDocumentoEliminar_KeyDown" />
+                             KeyDown="txtDocumentoEliminar_KeyDown"
+                             PreviewTextInput="txtId_PreviewTextInput"/>
                 </StackPanel>
 
                 <!-- Botones -->

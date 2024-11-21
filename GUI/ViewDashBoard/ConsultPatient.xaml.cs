@@ -30,7 +30,7 @@ namespace GUI.ViewDashBoard
             e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
 
-        private void txtDocumentoBuscar_KeyDown(object sender, KeyEventArgs e)
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -41,5 +41,7 @@ namespace GUI.ViewDashBoard
         {
 
         }
+
+        
     }
 }

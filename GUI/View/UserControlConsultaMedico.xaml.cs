@@ -39,8 +39,8 @@ namespace GUI.View
             this.BeginAnimation(UserControl.OpacityProperty, fadeInAnimation);
             CargarMedicos();
         }
-        private void CargarMedicos(){
-            MedicosDataGrid.ItemsSource = serviceMedico.ConsultarTodo(); 
+        private void CargarMedicos() {
+            MedicosDataGrid.ItemsSource = serviceMedico.ConsultarTodo();
         }
 
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -105,7 +105,7 @@ namespace GUI.View
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             cargar();
-            
+
         }
         private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -118,5 +118,6 @@ namespace GUI.View
                 btnBuscar_Click(sender, e);
             }
         }
+
     }
 }

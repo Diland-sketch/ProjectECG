@@ -5,20 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="870" d:DesignWidth="1320"
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="41*"/>
-            <RowDefinition Height="101*"/>
-        </Grid.RowDefinitions>
 
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Label x:Name="__Sin_nombre" Content="ELIMINAR MEDICO" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" FontFamily="Berlin Sans FB" Height="46"/>
+        <Label x:Name="__Sin_nombre" Content="ELIMINAR MEDICO" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Foreground="White" FontFamily="Berlin Sans FB" Height="46" Margin="0,121,0,0" Width="310"/>
 
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="196" Margin="0,15,0,0" Grid.Row="1">
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="310" Height="196">
             <StackPanel Margin="0,0,0,4">
 
                 <Label Content="Identificacion:" FontSize="24" Foreground="White" FontFamily="Berlin Sans FB"/>

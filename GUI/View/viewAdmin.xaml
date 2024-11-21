@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.View"
         mc:Ignorable="d"
-        Title="viewAdmin" Height="450" Width="800" Background="Black"
+        Title="viewAdmin" Height="1080" Width="1920" Background="Black"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -33,20 +33,11 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <!-- Menú lateral -->
         <Border Background="#272B2F">
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="67*"/>
-                    <RowDefinition Height="83*"/>
-                </Grid.RowDefinitions>
-
-                <Image Source="/Images/logo-removebg-preview.png" HorizontalAlignment="Center" 
-                       Height="140" Margin="0,61,0,0" />
-
-                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1">
-                    <!-- Gestión Médico -->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="/Images/logo-removebg-preview.png" 
+                       Height="170" />
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
                         <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\enfermero.png" 
                                Width="70" Height="56" />
@@ -57,8 +48,6 @@
                                MouseEnter="lblMedico_MouseEnter"
                                MouseLeave="lblMedico_MouseLeave"/>
                     </StackPanel>
-
-                    <!-- Panel de botones (inicialmente oculto) -->
                     <StackPanel x:Name="btnPanelMedico" Orientation="Vertical" 
                                 Margin="70,10,0,0" Visibility="Collapsed" MouseEnter="btnPanelMedico_MouseEnter"
                                 MouseLeave="btnPanelMedico_MouseLeave">
@@ -131,8 +120,6 @@
                             </Button.Template>
                         </Button>
                     </StackPanel>
-
-                    <!-- Gestión Rol -->
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Left" Width="250">
                         <Image Source="C:\Users\Usuario\source\repos\ProjectECG\GUI\Images\rol1.png" 
                                Width="50" Height="50" Margin="10,0,0,0" />
@@ -141,7 +128,7 @@
                                Foreground="White" VerticalAlignment="Center" 
                                Margin="20,0,0,0" FontFamily="Berlin Sans FB" MouseEnter="lblRol_MouseEnter" MouseLeave="lblRol_MouseLeave"/>
                     </StackPanel>
-                    
+
                     <StackPanel x:Name="btnPanelRol" Orientation="Vertical" 
                     Margin="50,10,0,0" Visibility="Collapsed" MouseEnter="btnPanelRol_MouseEnter"
                     MouseLeave="btnPanelRol_MouseLeave">

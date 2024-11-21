@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="870" d:DesignWidth="1320"
              Opacity="1" Loaded="UserControl_Loaded">
     <UserControl.Background>
         <ImageBrush/>
@@ -17,17 +17,13 @@
             <ColumnDefinition
         Width="183*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="91*"/>
-            <RowDefinition Height="359*"/>
-        </Grid.RowDefinitions>
 
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
 
-        <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" VerticalAlignment="Center" Width="377" Foreground="White" FontSize="36" FontFamily="Berlin Sans FB" Height="71"/>
-        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="446" Width="546">
+        <Label Content="REGISTRO DE MEDICO" HorizontalAlignment="Center" VerticalAlignment="Top" Width="377" Foreground="White" FontSize="36" FontFamily="Berlin Sans FB" Height="71" Margin="0,80,0,0"/>
+        <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="446" Width="546">
             <Grid HorizontalAlignment="Center" Height="426" VerticalAlignment="Center" Width="526" Grid.Row="1">
                 <Label Content="Sexo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Foreground="White" Margin="0,205,0,0" FontSize="24"/>
                 <Label Content="Fecha nacimiento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="201" Foreground="White" Margin="0,252,0,0" FontSize="24"/>
