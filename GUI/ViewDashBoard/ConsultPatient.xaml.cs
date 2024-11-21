@@ -34,13 +34,7 @@ namespace GUI.ViewDashBoard
             e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
 
-        private void txtDocumentoBuscar_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                Button_Click(sender, e);
-            }
-        }
+        
     
 
         private void cargar()
@@ -53,7 +47,7 @@ namespace GUI.ViewDashBoard
             cargar();   
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnBusar_Click(object sender, RoutedEventArgs e)
         {
             var datosActuales = PacienteDataGrid.ItemsSource as IEnumerable<Paciente>;
 
@@ -91,6 +85,13 @@ namespace GUI.ViewDashBoard
             {
                 PacienteDataGrid.ItemsSource = null;
                 cargar();
+            }
+        }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnBusar_Click(sender, e);
             }
         }
     }

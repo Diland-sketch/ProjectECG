@@ -1012,10 +1012,7 @@
           "itext7": "8.0.5"
         },
         "runtime": {
-          "Entidades.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Entidades.dll": {}
         }
       },
       "Persitencia/1.0.0": {
@@ -1028,10 +1025,7 @@
           "itext7": "8.0.5"
         },
         "runtime": {
-          "Persitencia.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Persitencia.dll": {}
         }
       }
     }

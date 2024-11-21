@@ -25,41 +25,97 @@
                 <!-- Buscar por documento -->
                 <StackPanel Orientation="Horizontal" Margin="0,10" Height="57" Width="720">
                     <TextBlock Text="Documento" Foreground="White" FontSize="24" Width="159" TextAlignment="Center" Height="29"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290"/>
-                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Buscar" Width="257" Height="54" FontSize="18" Click="Button_Click" />
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtId_KeyDown"/>
+                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Buscar" Width="257" Height="54" FontSize="18" Click="btnBusar_Click" />
                 </StackPanel>
 
                 <!-- DataGrid de resultados -->
-                <DataGrid x:Name="PacienteDataGrid"
-          IsReadOnly="True" 
-          ItemsSource="{Binding Pacientes}"
-          Margin="0,10"
-          HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False" 
-          Background="#343a40" Foreground="Black" Height="120">
-                    <DataGrid.Columns>
+                <Border CornerRadius="10" Background="#F2F2F2" BorderBrush="Transparent" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <DataGrid x:Name="PacienteDataGrid"
+              IsReadOnly="True" 
+              ItemsSource="{Binding Pacientes}" 
+              FontSize="18" 
+              AutoGenerateColumns="False" 
+              Background="Transparent" 
+              Foreground="Black" 
+              GridLinesVisibility="None" 
+              RowBackground="#FFFFFF" 
+              AlternatingRowBackground="#EAEAEA" 
+              VerticalGridLinesBrush="Transparent" 
+              HorizontalGridLinesBrush="Transparent" 
+              SelectionMode="Single" 
+              SelectionUnit="FullRow"
+              Height="120">
 
-                        <DataGridTextColumn Header="DOCUMENTO" Binding="{Binding Documento}" Width="*"/>
-                        <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
-                        <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*" />
-                        <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />
-                        <DataGridTextColumn Header="Segundo Apellido" Binding="{Binding SegundoApellido}" Width="*" />
-                        <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
-                        <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento}" Width="*" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                        <!-- Estilo de las filas -->
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Margin" Value="5"/>
+                                <Setter Property="Padding" Value="10"/>
+                                <Setter Property="FontWeight" Value="Normal"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Style.Triggers>
+                                    <!-- Color al pasar el mouse -->
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#D6EAF8"/>
+                                        <!-- Azul claro -->
+                                    </Trigger>
+                                    <!-- Color al seleccionar una fila -->
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="#85C1E9"/>
+                                        <!-- Azul más oscuro -->
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+
+                        <!-- Estilo de los encabezados -->
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="#343a40"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontSize" Value="16"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="Padding" Value="10"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+
+                        <!-- Columnas -->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="DOCUMENTO" Binding="{Binding Documento}" Width="*"/>
+                            <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*"/>
+                            <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*"/>
+                            <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*"/>
+                            <DataGridTextColumn Header="Segundo Apellido" Binding="{Binding SegundoApellido}" Width="*"/>
+                            <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*"/>
+                            <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento, StringFormat='{}{0:dd/MM/yyyy}'}" Width="*"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Border>
+            </StackPanel>
+        </Border>
+        <!-- DataGrid de resultados -->
+            
 
 
-                <!-- Botones -->
-                <StackPanel Orientation="Horizontal" Width="232" Margin="20,0">
+            <!-- Botones -->
+                <StackPanel Orientation="Horizontal" Width="232" Margin="264,360,264,0">
                     <!-- Botón Cancelar -->
                     <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0" Command="{Binding CancelCommand}" />
                     <!-- Botón Buscar -->
                 </StackPanel>
                 
 
-            </StackPanel>
             
-        </Border>
+            
+        
         <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="221*"/>

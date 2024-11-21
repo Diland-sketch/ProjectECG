@@ -190,5 +190,37 @@ namespace GUI.ViewDashBoard
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
         }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtPrimerNombre.Focus();
+            }
+        }
+        private void txtPNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtSegundoNombre.Focus();
+            }
+        }
+        private void txtSNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtPrimerApellido.Focus();
+            }
+        }
+        private void txtPApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtSegundoApellido.Focus();
+            }
+        }
+        private void txtSApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
     }
 }

@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:GUI.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="514"
-             d:DesignWidth="905.333"
+             d:DesignHeight="870"
+             d:DesignWidth="1320"
              Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
@@ -17,25 +17,67 @@
         <Border Background="DarkCyan"
         CornerRadius="20" Margin="67,0,0,0" Loaded="Border_Loaded"/>
         <Grid>
-            <DataGrid x:Name="dataGridPacientes" HorizontalAlignment="Center" Height="206" Margin="0,339,0,0" VerticalAlignment="Top" Width="668"  ColumnWidth="auto" Background="#FF343A40">
-                <DataGrid.Columns>
-                </DataGrid.Columns>
-            </DataGrid>
-            <StackPanel Margin="0,550,0,229" HorizontalAlignment="Center">
-                <TextBlock Text="Detalles de la Seccion" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" Foreground="White" />
-                <TextBlock Text="Id Sesion:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtIdSesion" Margin="0,0,0,10" FontSize="14" />
-                <TextBlock Text="Inicio:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtInicio" Margin="0,0,0,10" FontSize="14" />
-                <TextBlock Text="Fin:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtFin" Margin="0,0,0,10" FontSize="14" />
-                <TextBlock Text="Id Medico:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtIdMedico" FontSize="14" />
-                <TextBlock Text="Id paciente:" FontWeight="Bold" Foreground="White" FontSize="14"/>
-                <TextBlock x:Name="txtIdPaciente" FontSize="14" />
-                <TextBlock Text="Descripcion de la Sesion:" FontWeight="Bold" Foreground="White" FontSize="14"/>
-                <TextBlock x:Name="txtDescripcion" FontSize="14" Height="50" />
-            </StackPanel>
+            <Border CornerRadius="10" Background="#F2F2F2" BorderBrush="Transparent" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,334,0,0">
+                <DataGrid x:Name="dataGridPacientes" 
+              HorizontalAlignment="Left" 
+              Height="206" 
+              Width="668" 
+              VerticalAlignment="Center"
+              ColumnWidth="Auto" 
+              Background="Transparent" 
+              BorderBrush="Transparent"
+              GridLinesVisibility="None" 
+              RowBackground="#FFFFFF" 
+              AlternatingRowBackground="#EAEAEA" 
+              VerticalGridLinesBrush="Transparent" 
+              HorizontalGridLinesBrush="Transparent" 
+              SelectionMode="Single" 
+              SelectionUnit="FullRow"
+              FontSize="16">
+
+                    <!-- Estilo de las filas -->
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="FontWeight" Value="Normal"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <!-- Color al pasar el mouse -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#D6EAF8"/>
+                                    <!-- Azul claro -->
+                                </Trigger>
+                                <!-- Color al seleccionar una fila -->
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#85C1E9"/>
+                                    <!-- Azul más oscuro -->
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+
+                    <!-- Estilo de los encabezados -->
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#333838"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="16"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+
+
+                </DataGrid>
+            </Border>
             <Label Content="Historial de pacientes" Margin="0,224,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
             <Grid HorizontalAlignment="Center" Height="28" VerticalAlignment="Top" Width="432" Margin="0,306,0,0">
                 <Label Content="Buscar por identificacion:" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Center"/>
@@ -44,9 +86,9 @@
                     BorderBrush="Black"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" Margin="196,4,100,4" PreviewTextInput="txtId_PreviewTextInput"/>
+                    Padding="0,0,0,0" Margin="196,4,100,4" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtId_KeyDown"/>
                 <Button x:Name="Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="344,2,0,0" Width="47" Click="Buscar_Click" Height="24" VerticalAlignment="Top">
-                        <Button.Template>
+                    <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}"                                
                                 BorderBrush="{TemplateBinding BorderBrush}" 
