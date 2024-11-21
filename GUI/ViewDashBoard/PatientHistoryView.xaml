@@ -4,27 +4,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:GUI.ViewModel"
-             mc:Ignorable="d" 
-             d:DesignHeight="514"
-             d:DesignWidth="905.333"
-             Style="{StaticResource Page_Style}">
+             mc:Ignorable="d"
+             Style="{StaticResource Page_Style}" Height="787" Width="1071">
 
     <UserControl.DataContext>
         <vm:ECGMonitoringVM />
     </UserControl.DataContext>
 
     <Grid Margin="0,0,0,0" Height="1100" Width="1100" VerticalAlignment="Center">
-        <Border Background="DarkCyan"
-        CornerRadius="20" Margin="67,0,0,0" Loaded="Border_Loaded"/>
+        <Border  Background="#212529"
+        CornerRadius="20" Margin="0,170,0,-136" Loaded="Border_Loaded" HorizontalAlignment="Center" Width="722"/>
         <Grid>
-            <DataGrid x:Name="dataGridPacientes" HorizontalAlignment="Center" Height="206" Margin="0,339,0,0" VerticalAlignment="Top" Width="668" SelectionChanged="dataGridPacientes_SelectionChanged" ColumnWidth="auto">
-                <DataGrid.Columns>
-                </DataGrid.Columns>
-            </DataGrid>
-            <StackPanel Margin="0,550,0,229" HorizontalAlignment="Center">
+            <DataGrid x:Name="dataGridPacientes" HorizontalAlignment="Center" Height="206" 
+             Margin="0,374,0,0" VerticalAlignment="Top" Width="668" 
+             SelectionChanged="dataGridPacientes_SelectionChanged" ColumnWidth="auto" />
+
+            <!--<StackPanel Margin="0,575,0,229" HorizontalAlignment="Center" Width="586">
+                <StackPanel Width="136" Height="75" HorizontalAlignment="Left">
+                    <TextBlock Text="Id Sesion:" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" FontSize="14" Height="23" Width="88" />
+                    <TextBox Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" x:Name="txtIdSesion" FontSize="14" Height="18" Width="100" />
+                </StackPanel>
+
                 <TextBlock Text="Detalles de la Seccion" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" Foreground="White" />
-                <TextBlock Text="Id Sesion:" FontWeight="Bold" Foreground="White" FontSize="14" />
-                <TextBlock x:Name="txtIdSesion" Margin="0,0,0,10" FontSize="14" />
+
                 <TextBlock Text="Inicio:" FontWeight="Bold" Foreground="White" FontSize="14" />
                 <TextBlock x:Name="txtInicio" Margin="0,0,0,10" FontSize="14" />
                 <TextBlock Text="Fin:" FontWeight="Bold" Foreground="White" FontSize="14" />
@@ -35,17 +37,77 @@
                 <TextBlock x:Name="txtIdPaciente" FontSize="14" />
                 <TextBlock Text="Descripcion de la Sesion:" FontWeight="Bold" Foreground="White" FontSize="14"/>
                 <TextBlock x:Name="txtDescripcion" FontSize="14" Height="50" />
-            </StackPanel>
-            <Label Content="Historial de pacientes" Margin="0,224,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <Grid HorizontalAlignment="Center" Height="28" VerticalAlignment="Top" Width="432" Margin="0,306,0,0">
-                <Label Content="Buscar por identificacion:" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Center"/>
-                <TextBox x:Name="txtId1" TextWrapping="Wrap"
+            </StackPanel>-->
+            <Grid Margin="0,585,0,0" HorizontalAlignment="Center" Width="586" VerticalAlignment="Top" Height="354">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <!-- Espacio de margen -->
+                    <ColumnDefinition Width="2*" />
+                    <!-- Contenedor de los campos -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Título Detalles de la Sesión -->
+                <TextBlock Text="Detalles de la Sesión" FontSize="24" FontWeight="Bold" 
+               Margin="144,0,0,320" Foreground="White" HorizontalAlignment="Left" 
+               Grid.ColumnSpan="2" Width="232" />
+
+                <!-- Id Sesión -->
+                <StackPanel Margin="43,45,39,249">
+                    <TextBlock Text="ID Sesión" FontWeight="Bold" Foreground="White" FontSize="14" />
+                    <TextBox x:Name="txtIdSesion" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" FontSize="14" Width="92" />
+                </StackPanel>
+
+                <!-- Inicio -->
+                <StackPanel Margin="43,110,55,177">
+                    <TextBlock Text="Inicio" FontWeight="Bold" Foreground="White" FontSize="14" />
+                    <TextBox x:Name="txtInicio" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" FontSize="14" Width="92" />
+                </StackPanel>
+
+                <!-- Fin -->
+                <StackPanel Margin="43,177,10,127">
+                    <TextBlock Text="Fin" FontWeight="Bold" Foreground="White" FontSize="14" />
+                    <TextBox x:Name="txtFin" Style="{StaticResource TextBoxStyle}"  HorizontalAlignment="Left" FontSize="14" Width="92" />
+                </StackPanel>
+
+                <!-- Id Médico -->
+                <StackPanel Margin="171,110,94,194" Grid.Column="1">
+                    <TextBlock Text="ID Médico" FontWeight="Bold" Foreground="White" FontSize="14" />
+                    <TextBox x:Name="txtIdMedico" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Width="92" FontSize="14" />
+                </StackPanel>
+
+                <!-- Id Paciente -->
+                <StackPanel Grid.Column="1" Margin="171,45,114,244">
+                    <TextBlock Text="ID Paciente" FontWeight="Bold" Foreground="White" FontSize="14" />
+                    <TextBox x:Name="txtIdPaciente" Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left" Width="92" FontSize="14" />
+                </StackPanel>
+
+                <!-- Descripción de la Sesión -->
+                <StackPanel Grid.Column="1" Margin="171,177,56,84">
+                    <TextBlock Text="Descripción de la Sesión" FontWeight="Bold" Foreground="White" FontSize="14" Height="24" Width="178" />
+                    <TextBox x:Name="txtDescripcion" Style="{StaticResource TextBoxStyle}" FontSize="14" Height="26" AcceptsReturn="True" Width="164" HorizontalAlignment="Left" TextWrapping="Wrap" />
+                </StackPanel>
+            </Grid>
+
+
+
+            <Label Content="Historial de pacientes" Margin="0,223,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Height="64" Width="256"/>
+            <Grid HorizontalAlignment="Center" Height="52" VerticalAlignment="Top" Width="668" Margin="0,292,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="41*"/>
+                    <RowDefinition Height="11*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="383*"/>
+                    <ColumnDefinition Width="245*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Buscar por identificacion:" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Top" Margin="0,10,0,0" Grid.RowSpan="2"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtId1" TextWrapping="Wrap"
                     Background="Transparent"
                     BorderBrush="Black"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" Margin="196,4,100,4"/>
-                <Button x:Name="Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="344,2,0,0" Width="47" Click="Buscar_Click" Height="24" VerticalAlignment="Top">
+                    Padding="0,0,0,0" Width="226" HorizontalAlignment="Left" Margin="208,15,0,0" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+                <!--<Button Style="{StaticResource BtnStyleSearch}"  x:Name="Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="428,4,0,0" Width="85" Click="Buscar_Click" Height="24" VerticalAlignment="Top">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border x:Name="border" Background="{TemplateBinding Background}"                                
@@ -61,9 +123,16 @@
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Button.Template>
-                </Button>
-
+                </Button>-->
+                <Button  Foreground="White" Style="{StaticResource BtnStyleSearch}"  
+                 x:Name="Buscar" 
+                 Content="Buscar" 
+                 HorizontalAlignment="Left" 
+                 Margin="32,-5,0,0" 
+                 Width="219" 
+                 Height="62" 
+                 Click="Buscar_Click" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top"/>
             </Grid>
         </Grid>
     </Grid>
-</UserControl>
+</UserControl> 
