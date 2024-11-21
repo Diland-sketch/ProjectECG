@@ -162,6 +162,11 @@ namespace GUI.View
             txtPApellido.Text = "";
             txtSApellido.Text = "";
             fechaNacimientoPicker.Text = "";
+            RbtnFemenino.IsChecked = false;
+            RbtnMasculino.IsChecked = false;
+            txtNombreUsuario.Text = "";
+            txtContraseña.Password = "";
+
         }
 
         public bool ValidarCampos()
@@ -222,6 +227,55 @@ namespace GUI.View
         private void txtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
+        }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                BuscarButton_Click(sender, e );
+            }
+        }
+        private void txtPNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtSNombre.Focus();
+            }
+        }
+        private void txtSNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtPApellido.Focus();
+            }
+        }
+        private void txtPApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtSApellido.Focus();
+            }
+        }
+        private void txtSApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtNombreUsuario.Focus();
+            }
+        }
+        private void txtNombreUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtContraseña.Focus();
+            }
+        }
+        private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ActualizarButton_Click(sender, e);
+            }
         }
     }
 }

@@ -5,34 +5,87 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="870" d:DesignWidth="1320"
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <DataGrid x:Name="RolesDataGrid" 
-                  AutoGenerateColumns="False" 
-                  IsReadOnly="True" 
-                  ItemsSource="{Binding Rol}"
-                  Margin="106,99,106,99"
-                  HorizontalAlignment="Center" FontSize="18"
-                  >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding IdRol}" Width="*" />
-                <DataGridTextColumn Header="Nombre" Binding="{Binding NombreRol}" Width="*" />
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label Content="CONSULTA ROL" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" FontFamily="Berlin Sans FB"/>
-        <Grid HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="445" Margin="106,62,0,0">
+        <Border CornerRadius="10" Background="#F2F2F2" BorderBrush="Transparent" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,214,0,0">
+            <DataGrid x:Name="RolesDataGrid" 
+              AutoGenerateColumns="False" 
+              IsReadOnly="True" 
+              ItemsSource="{Binding Rol}"
+              Margin="5,5,0,220"
+              HorizontalAlignment="Left"
+              FontSize="18"
+              Background="Transparent"
+              BorderBrush="Transparent"
+              GridLinesVisibility="None"
+              RowBackground="#FFFFFF"
+              AlternatingRowBackground="#EAEAEA"
+              VerticalGridLinesBrush="Transparent"
+              HorizontalGridLinesBrush="Transparent"
+              SelectionMode="Single"
+              SelectionUnit="FullRow" Width="608">
+
+                <!-- Estilo de las filas -->
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="FontWeight" Value="Normal"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Style.Triggers>
+                            <!-- Color al pasar el mouse -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D6EAF8"/>
+                                <!-- Azul claro -->
+                            </Trigger>
+                            <!-- Color al seleccionar una fila -->
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#85C1E9"/>
+                                <!-- Azul más oscuro -->
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <!-- Estilo de los encabezados -->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#333838"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <!-- Columnas personalizadas -->
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding IdRol}" Width="*"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding NombreRol}" Width="*"/>
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </Border>
+        <Label Content="CONSULTA ROL" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" FontFamily="Berlin Sans FB"/>
+        <Grid HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="444" Margin="0,147,0,0">
             <Label Content="Buscar por nombre:" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Berlin Sans FB" VerticalAlignment="Top"/>
             <TextBox x:Name="txtNombre" TextWrapping="Wrap"
                 Background="Transparent"
                 BorderBrush="Gray"
                 BorderThickness="0,0,0,1"
                 Foreground="White"
-                Padding="0,0,0,0" Margin="161,0,89,7" FontSize="18" PreviewTextInput="txtNombre_PreviewTextInput"/>
-            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="16" Margin="361,0,0,0" Click="btnBuscar_Click" VerticalAlignment="Center" HorizontalAlignment="Left" Width="59">
+                Padding="0,0,0,0" Margin="161,0,89,7" FontSize="18" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtId_KeyDown"/>
+            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="16" Margin="361,4,0,0" Click="btnBuscar_Click" HorizontalAlignment="Left" Width="59" Height="23" VerticalAlignment="Top">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -49,9 +102,9 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
+
         </Grid>
-        <Button x:Name="btnGuardar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="350,356,350,64" FontFamily="Berlin Sans FB">
+        <Button Visibility="Collapsed" x:Name="btnGuardar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="610,648,610,192" FontFamily="Berlin Sans FB">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" Background="{TemplateBinding Background}" 

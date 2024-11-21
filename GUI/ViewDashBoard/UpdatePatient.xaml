@@ -23,31 +23,30 @@
                 <!-- Documento para buscar -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Documento" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtId_KeyDown"/>
                 </StackPanel>
-                <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Buscar" Width="220" Height="53" FontSize="18"/>
 
                 <!-- Botón Buscar -->
 
                 <!-- Información editable -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Primer Nombre" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtPrimerNombre" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtPrimerNombre" Width="290" PreviewTextInput="txtPrimerNombre_PreviewTextInput" KeyDown="txtPrimerNombre_KeyDown"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Segundo Nombre" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoNombre" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoNombre" Width="290" PreviewTextInput="txtPrimerNombre_PreviewTextInput" KeyDown="txtSegundoNombre_KeyDown"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Primer Apellido" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtPrimerApellido" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtPrimerApellido" Width="290" PreviewTextInput="txtPrimerNombre_PreviewTextInput" KeyDown="txtPrimerApellido_KeyDown"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Segundo Apellido" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoApellido" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoApellido" Width="290" PreviewTextInput="txtPrimerNombre_PreviewTextInput"/>
                 </StackPanel>
 
                 <!-- Fecha de Nacimiento -->
@@ -66,7 +65,7 @@
                 </StackPanel>
 
                 <!-- Botón Guardar Cambios -->
-                <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar Cambios" Width="219" Height="53" FontSize="18" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+                <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar Cambios" Width="219" Height="53" FontSize="18" Margin="0,20,0,0" HorizontalAlignment="Center" Click="Button_Click_1"/>
             </StackPanel>
         </Border>
     </Grid>

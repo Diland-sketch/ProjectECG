@@ -5,29 +5,133 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="870" d:DesignWidth="1320"
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Loaded="Grid_Loaded">
+
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <DataGrid x:Name="MedicosDataGrid"
-                  IsReadOnly="True" 
-                  ItemsSource="{Binding Medicos}"
-                  Margin="152,118,0,107"
-                  HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False">
-            
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="IDENTIFICACION" Binding="{Binding Identificacion}" Width="*" />
-                <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
-                <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*" />
-                <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />
-                <DataGridTextColumn Header="SegundoApellido" Binding="{Binding SegundoApellido}" Width="*" />
-                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
-                <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento}" Width="*" />
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="btnCancelar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="350,371,350,49" FontFamily="Berlin Sans FB">
+        <!-- Botón para iniciar la animación -->
+        <Border CornerRadius="10" Background="#F2F2F2" BorderBrush="Transparent" Padding="5" VerticalAlignment="Top" HorizontalAlignment="Center" Height="477" Margin="0,118,0,0" Width="976">
+            <DataGrid x:Name="MedicosDataGrid"
+          ItemsSource="{Binding Medicos}"
+          Margin="5,5,5,5"
+          FontSize="16"
+          AutoGenerateColumns="False"
+          Background="White"
+          BorderBrush="Transparent"
+          GridLinesVisibility="None"
+          RowBackground="#FFFFFF"
+          AlternatingRowBackground="#EAEAEA"
+          VerticalGridLinesBrush="Transparent"
+          HorizontalGridLinesBrush="Transparent"
+          SelectionMode="Single"
+          SelectionUnit="FullRow"
+          BorderThickness="0" Foreground="White"
+          >
+
+                <!-- Estilo de las filas -->
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="FontWeight" Value="Normal"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Style.Triggers>
+                            <!-- Color al pasar el mouse -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D6EAF8"/>
+                                <!-- Azul claro -->
+                            </Trigger>
+                            <!-- Color al seleccionar una fila -->
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#85C1E9"/>
+                                <!-- Azul más oscuro -->
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <!-- Estilo de los encabezados -->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#FF333838"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <!-- Columnas personalizadas -->
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Identificación">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Identificacion}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Primer Nombre">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PrimerNombre}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Segundo Nombre">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SegundoNombre}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Primer Apellido">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PrimerApellido}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Segundo Apellido">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SegundoApellido}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Sexo">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Sexo}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Fecha de Nacimiento">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding FechaNacimiento, StringFormat='{}{0:dd/MM/yyyy}'}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+        <Button Visibility="Collapsed" x:Name="btnCancelar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="610,635,610,205" FontFamily="Berlin Sans FB">
+
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" Background="{TemplateBinding Background}" 
@@ -56,8 +160,8 @@ CornerRadius="10">
                 BorderBrush="Gray"
                 BorderThickness="0,0,0,1"
                 Foreground="White"
-                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18" PreviewTextInput="txtId_PreviewTextInput"/>
-            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,0" Click="btnBuscar_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Width="60">
+                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtId_KeyDown"/>
+            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,1" Click="btnBuscar_Click" HorizontalAlignment="Left" Grid.Column="1" Width="60">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 

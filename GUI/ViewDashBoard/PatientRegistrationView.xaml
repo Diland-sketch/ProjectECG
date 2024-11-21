@@ -23,32 +23,32 @@
                 <!-- Documento -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Documento" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumento" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumento" Width="290" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtId_KeyDown"/>
                 </StackPanel>
 
 
                 <!-- Primer Nombre -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Primer Nombre" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtPrimerNombre" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtPrimerNombre" Width="290" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtPNombre_KeyDown"/>
                 </StackPanel>
 
                 <!-- Segundo Nombre -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Segundo Nombre" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoNombre" Width="290"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoNombre" Width="290" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtSNombre_KeyDown"/>
                 </StackPanel>
 
                 <!-- Primer Apellido -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Primer Apellido" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}"  x:Name="txtPrimerApellido" Width="290" HorizontalAlignment="Left"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}"  x:Name="txtPrimerApellido" Width="290" HorizontalAlignment="Left" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtPApellido_KeyDown"/>
                 </StackPanel>
 
                 <!-- Segundo Apellido -->
                 <StackPanel Orientation="Horizontal" Margin="0,10">
                     <TextBlock Text="Segundo Apellido" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
-                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoApellido" Width="290" HorizontalAlignment="Left"/>
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtSegundoApellido" Width="290" HorizontalAlignment="Left" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtSApellido_KeyDown"/>
                 </StackPanel>
 
                 <!-- Fecha de Nacimiento -->
@@ -83,9 +83,6 @@
                       Height="53" 
                        FontSize="18" 
                      Margin="10,0" Click="Button_Click_2"/>
-
-                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0"  Command="{Binding CancelCommand}" />
-                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar" Width="219" Height="53" FontSize="18" Margin="10,0"/>
 
                 </StackPanel>
 

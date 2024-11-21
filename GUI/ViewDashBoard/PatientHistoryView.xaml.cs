@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,23 +36,7 @@ namespace GUI.ViewDashBoard
 
         private void cargar()
         {
-            var pacientes = new List<Paciente>{
-
-            };
-            pacientes = pacientes.Where(p => !string.IsNullOrEmpty(p.Identificacion) && !string.IsNullOrEmpty(p.PrimerNombre)).ToList();
-            dataGridPacientes.ItemsSource = pacientes;
-        }
-
-        private void dataGridPacientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (dataGridPacientes.SelectedItem is Paciente pacienteSeleccionado)
-            {
-                CargarDetalles(pacienteSeleccionado);
-            }
-        }
-        public void CargarDetalles(Paciente paciente)
-        {
-
+            dataGridPacientes.ItemsSource = ServiceSesionECG.ConsultarTodo().DefaultView;
         }
 
         private void Buscar_Click(object sender, RoutedEventArgs e)
@@ -96,7 +81,18 @@ namespace GUI.ViewDashBoard
 
         private void Border_Loaded(object sender, RoutedEventArgs e)
         {
-            dataGridPacientes.ItemsSource =  ServiceSesionECG.ConsultarTodo().DefaultView;
+            cargar();
+        }
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
+        }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Buscar_Click(sender, e );
+            }
         }
     }
 }

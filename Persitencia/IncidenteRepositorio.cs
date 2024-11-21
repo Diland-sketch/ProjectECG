@@ -24,9 +24,9 @@ namespace Persitencia
                     CommandType = System.Data.CommandType.StoredProcedure
                 })
                 {
-                    cmd.Parameters.Add("p_FechaHora", OracleDbType.Date).Value = incidente.FechaHoraIncidente;
-                    cmd.Parameters.Add("p_Descripcion", OracleDbType.Varchar2).Value = incidente.Descripcion;
+                    cmd.Parameters.Add("p_FechaHora", OracleDbType.TimeStamp).Value = incidente.FechaHoraIncidente;
                     cmd.Parameters.Add("p_IdSesion", OracleDbType.Int32).Value = incidente.IdSesionECG;
+                    cmd.Parameters.Add("p_Descripcion", OracleDbType.Varchar2).Value = incidente.Descripcion;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -37,6 +37,27 @@ namespace Persitencia
             {
                 return "Error al registrar incidente";
             }
+        }
+
+        public string MostrarId(int id)
+        {
+            string ssql = $" SELECT  incidente FROM historial_sesiones WHERE codigo = {id}" ;
+            string incidentes = "";
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        incidentes = reader.GetString(reader.GetOrdinal("incidente"));
+                    }
+                }
+            }
+            CerrarConexion();
+            return incidentes;
+
         }
     }
 }

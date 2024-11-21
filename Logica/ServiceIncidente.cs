@@ -21,5 +21,10 @@ namespace Logica
         {
             return repositorio.Guardar(incidente);
         }
+
+        public string MostrarNumeroIncidente(int id)
+        {
+            return repositorio.MostrarId(id);
+        }
     }
 }

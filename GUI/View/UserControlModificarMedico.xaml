@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="870" d:DesignWidth="1320"
              Opacity="1" Loaded="UserControl_Loaded">
     <Grid Margin="0,0,0,-85">
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Label Content="MODIFICAR MEDICO" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" HorizontalContentAlignment="Center" Width="342" FontFamily="Berlin Sans FB"/>
+        <Label Content="MODIFICAR MEDICO" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" HorizontalContentAlignment="Center" Width="342" FontFamily="Berlin Sans FB"/>
         <Border CornerRadius="10" BorderBrush="#FF333838" BorderThickness="1" Background="#FF333838" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="734" Width="408">
             <StackPanel>
                 <TextBlock Text="Identificacion:" Margin="5" FontSize="24" Foreground="White" Width="290" FontFamily="Berlin Sans FB"/>
@@ -20,7 +20,7 @@
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White" PreviewTextInput="txtId_PreviewTextInput"
-                    Padding="0,0,0,0" TextChanged="IdentificacionTextBox_TextChanged" FontSize="24"/>
+                    Padding="0,0,0,0" TextChanged="IdentificacionTextBox_TextChanged" FontSize="24" KeyDown="txtId_KeyDown"/>
                 <TextBlock Text="Primer Nombre:" Margin="5" FontSize="24" Foreground="White" Width="290" FontFamily="Berlin Sans FB"/>
                 <TextBox x:Name="txtPNombre" TextWrapping="Wrap" Width="290" Height="25" FontFamily="Berlin Sans FB"
                         Background="Transparent"
@@ -28,7 +28,7 @@
                         BorderThickness="0,0,0,1"
                         Foreground="White"
                         Padding="0,0,0,0"
-                        IsEnabled="False" FontSize="24" PreviewTextInput="txtNombre_PreviewTextInput"/>
+                        IsEnabled="False" FontSize="24" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtPNombre_KeyDown"/>
                 <TextBlock Text="Segundo Nombre:" FontSize="24" Foreground="White" Width="290" FontFamily="Berlin Sans FB"/>
                 <TextBox x:Name="txtSNombre" TextWrapping="Wrap" Width="290" Height="25" FontFamily="Berlin Sans FB"
                         Background="Transparent"
@@ -37,14 +37,14 @@
                         Foreground="White"
                         Padding="0,0,0,0"
                         IsEnabled="False" FontSize="24"
-                         PreviewTextInput="txtNombre_PreviewTextInput"/>
+                         PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtSNombre_KeyDown"/>
                 <TextBlock Text="Primer Apellido:" FontSize="24" Foreground="White" Height="33" Width="290" Margin="0,10,0,0" FontFamily="Berlin Sans FB"/>
                 <TextBox x:Name="txtPApellido" TextWrapping="Wrap" Width="290" Height="25" FontFamily="Berlin Sans FB"
                     Background="Transparent"
                     BorderBrush="Gray"
                     BorderThickness="0,0,0,1"
                     Foreground="White"
-                    Padding="0,0,0,0" IsEnabled="False" FontSize="24" PreviewTextInput="txtNombre_PreviewTextInput"/>
+                    Padding="0,0,0,0" IsEnabled="False" FontSize="24" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtPApellido_KeyDown"/>
                 <TextBlock Text="Segundo Apellido:" FontSize="24" Foreground="White" Height="34" Width="290" FontFamily="Berlin Sans FB"/>
                 <TextBox x:Name="txtSApellido" TextWrapping="Wrap" Width="290" Height="25" FontFamily="Berlin Sans FB"
                     Background="Transparent"
@@ -52,7 +52,7 @@
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0"
-                    IsEnabled="False" FontSize="24" PreviewTextInput="txtNombre_PreviewTextInput"/>
+                    IsEnabled="False" FontSize="24" PreviewTextInput="txtNombre_PreviewTextInput" KeyDown="txtSApellido_KeyDown"/>
                 <TextBlock Text="Fecha de Naciemiento:" FontSize="24" Foreground="White" Height="32" Width="290" Margin="0,10,0,0" FontFamily="Berlin Sans FB"/>
                 <DatePicker x:Name="fechaNacimientoPicker" IsEnabled="False" Width="290" Height="25"/>
                 <TextBlock Text="Sexo:" FontSize="24" Foreground="White" Height="30" Width="290" Margin="0,10" FontFamily="Berlin Sans FB"/>
@@ -65,9 +65,9 @@
                     BorderThickness="0,0,0,1"
                     Foreground="White"
                     Padding="0,0,0,0"
-                    IsEnabled="False" Margin="0,-10,0,0" FontSize="24"/>
+                    IsEnabled="False" Margin="0,-10,0,0" FontSize="24" KeyDown="txtNombreUsuario_KeyDown"/>
                 <TextBlock Text="Contraseña:" FontSize="24" Foreground="White" Height="30" Width="290" Margin="0,10,0,0" FontFamily="Berlin Sans FB"/>
-                <PasswordBox x:Name="txtContraseña" Width="290" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,1" Height="25" FontSize="24"/>
+                <PasswordBox x:Name="txtContraseña" Width="290" Background="Transparent" BorderBrush="Gray" BorderThickness="0,0,0,1" Height="25" FontSize="24" KeyDown="txtContraseña_KeyDown"/>
                 <Button x:Name="btnBuscar" Content="Buscar" Click="BuscarButton_Click" Width="81" Background="#FF333838" Foreground="White" Margin="0,10,0,0" FontSize="24" Height="30" FontFamily="Berlin Sans FB">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
