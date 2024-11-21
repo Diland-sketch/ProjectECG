@@ -17,7 +17,7 @@
         <Border Background="DarkCyan"
         CornerRadius="20" Margin="67,0,0,0" Loaded="Border_Loaded"/>
         <Grid>
-            <DataGrid x:Name="dataGridPacientes" HorizontalAlignment="Center" Height="206" Margin="0,339,0,0" VerticalAlignment="Top" Width="668" SelectionChanged="dataGridPacientes_SelectionChanged" ColumnWidth="auto" Background="#FF343A40">
+            <DataGrid x:Name="dataGridPacientes" HorizontalAlignment="Center" Height="206" Margin="0,339,0,0" VerticalAlignment="Top" Width="668"  ColumnWidth="auto" Background="#FF343A40">
                 <DataGrid.Columns>
                 </DataGrid.Columns>
             </DataGrid>

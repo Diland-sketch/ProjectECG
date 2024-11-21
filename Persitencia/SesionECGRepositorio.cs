@@ -133,7 +133,7 @@ namespace Persitencia
 
         public DataTable ConsultarTodo()
         {
-            string ssql = $"SELECT * FROM historial_sesiones ";
+            string ssql = "SELECT * FROM historial_sesiones";
             AbrirConexion();
             OracleCommand cmd = new OracleCommand(ssql, conexion);
             OracleDataAdapter oracleDataAdapter = new OracleDataAdapter(cmd);
