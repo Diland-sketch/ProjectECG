@@ -14,40 +14,45 @@ namespace Persitencia
     public class SesionECGRepositorio : ConexionOracle
     {
         UsuarioRepositorio UsuarioRepositorio = new UsuarioRepositorio();
-        public int Guardar(SesionECG entity)
+        public string Guardar(SesionECG entity)
         {
             try
 
             {
-
                 AbrirConexion();
-                using (OracleCommand cmd = new OracleCommand("f_insertar_sesion", conexion)
+                using (OracleCommand cmd = new OracleCommand("insertar_sesion", conexion)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 })
                 {
-                    cmd.Parameters.Add("p_fecha_ini", OracleDbType.Date).Value = entity.InicioSesionECG;
-                    cmd.Parameters.Add("p_fecha_fini", OracleDbType.Date).Value = entity.FinSesionECG;
+                    cmd.Parameters.Add("p_fecha_ini", OracleDbType.TimeStamp).Value = entity.InicioSesionECG;
+                    cmd.Parameters.Add("p_fecha_fini", OracleDbType.TimeStamp).Value = entity.FinSesionECG;
                     cmd.Parameters.Add("p_paciente", OracleDbType.Varchar2).Value = entity.IdPaciente;
                     cmd.Parameters.Add("p_descripcion", OracleDbType.Varchar2).Value = entity.Descripcion;
                     cmd.Parameters.Add("p_medico", OracleDbType.Varchar2).Value = entity.IdMedico;
 
-                    var returnparametro = new OracleParameter("return_value", OracleDbType.Int32);
-                    returnparametro.Direction = System.Data.ParameterDirection.ReturnValue;
-                    cmd.Parameters.Add(returnparametro);
+                    int confirmacion = cmd.ExecuteNonQuery();
+                    //CerrarConexion();
 
-                    cmd.ExecuteNonQuery();
-
-                    int idsesion = Convert.ToInt32(returnparametro.Value);
-
-                    CerrarConexion();
-                    return idsesion;
-                    //return 1;
+                    if (confirmacion > 0)
+                    {
+                        return "Se guardo satisfactoriamente";
+                    }
+                    else
+                    {
+                        return "Error a la hora de guardar";
+                    }
                 }
+               
+                
             }
             catch (Exception ex)
             {
-                return -1;
+                return ex.Message;
+            }
+            finally
+            {
+                CerrarConexion();
             }
         }
 
@@ -77,6 +82,50 @@ namespace Persitencia
             }
         }
 
+        public void ActualizarEstado(string estado, int idSesion)
+        {
+            try
+            {
+                string ssql = $"UPDATE sesiones_ecg SET estado_paciente = '{estado}'" +
+                                                   $"WHERE id_sesion = {idSesion}";
+
+
+                OracleCommand Ocmd = new OracleCommand(ssql, conexion);
+                AbrirConexion();
+
+                int confirmacion = Ocmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        public int MostrarId()
+        {
+            string ssql = $"SELECT id_sesion FROM sesiones_ecg WHERE fechainiciosesion = " +
+                          $"(SELECT MAX(fechainiciosesion) FROM sesiones_ecg)";
+            int iduser = 0;
+
+            using (OracleCommand cmd = new OracleCommand(ssql, conexion))
+            {
+                AbrirConexion();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        iduser = reader.GetInt32(reader.GetOrdinal("id_sesion"));
+                    }
+                }
+            }
+            CerrarConexion();
+            return iduser;
+
+        }
         public SesionECG ConsultarId(string id)
         {
             throw new NotImplementedException();

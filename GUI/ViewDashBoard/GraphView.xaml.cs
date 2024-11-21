@@ -156,16 +156,6 @@ namespace GUI.ViewDashBoard
 
             CalcularBpm();
             NotificarBpmActualizado();
-            //if (bpmActual > 40)
-            //{
-            //    MessageBox.Show("Incidente detectado");
-            //    IncidenteRepositorio incidenteRepositorio = new IncidenteRepositorio();
-            //    Incidentes incidentes = new Incidentes();
-            //    incidentes.IdSesionECG = 4;
-            //    incidentes.Descripcion = "BPM ALTO DETECTADO";
-            //    incidentes.FechaHoraIncidente = DateTime.Now;
-            //    incidenteRepositorio.Guardar(incidentes);
-            //}
         }
 
         public double bpmActual = 0;

@@ -14,19 +14,21 @@ namespace Entidades
         public string Descripcion { get; set; }
         public string IdPaciente { get; set; }
         public string IdMedico { get; set; }
+        public string Estado { get; set; }
         public SesionECG()
         {
 
         }
         public List<Incidentes> Incidentes { get; set; } = new List<Incidentes>();
 
-        public SesionECG(int idSesion, DateTime inicioSesionECG, DateTime finSesionECG, string descripcion, string idPaciente, string idMedico, Incidentes incidentes)
+        public SesionECG(int idSesion, DateTime inicioSesionECG, DateTime finSesionECG, string descripcion, string idPaciente, string idMedico, string estado, Incidentes incidentes)
         {
             IdSesion = idSesion;
             InicioSesionECG = inicioSesionECG;
             FinSesionECG = finSesionECG;
             IdPaciente = idPaciente;
             IdMedico = idMedico;
+            Estado = estado;
             Descripcion = descripcion;
         }
     }
