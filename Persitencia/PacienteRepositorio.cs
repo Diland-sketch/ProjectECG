@@ -49,7 +49,7 @@ namespace Persitencia
             {
                 string ssql = $"UPDATE pacientes SET primer_nombre = '{entity.PrimerNombre}'," +
                                                    $"segundo_nombre = '{entity.SegundoNombre}'," +
-                                                   $"primer_apeliido = '{entity.PrimerApellido}'," +
+                                                   $"primer_apellido = '{entity.PrimerApellido}'," +
                                                    $"segundo_apellido = '{entity.SegundoApellido}'," +
                                                    $"sexo = '{entity.Sexo}'," +
                                                    $"fecha_nacimiento = (TO_DATE ('{entity.FechaNacimiento}', 'DD/MM/YYYY'))" +
@@ -100,8 +100,9 @@ namespace Persitencia
                         paciente.SegundoNombre = reader.GetString(reader.GetOrdinal("segundo_nombre"));
                         paciente.PrimerApellido = reader.GetString(reader.GetOrdinal("primer_apellido"));
                         paciente.SegundoApellido = reader.GetString(reader.GetOrdinal("segundo_apellido"));
-                        paciente.Sexo = reader.GetChar(reader.GetOrdinal("sexo"));
-                        string fecha = reader.GetOrdinal("fecha_nacimiento").ToString("dd-mm-yyyy");
+                        string sexo = reader.GetString(reader.GetOrdinal("sexo"));
+                        paciente.Sexo = char.Parse(sexo);
+                        string fecha = reader.GetString(reader.GetOrdinal("fecha_nacimiento"));
                         paciente.FechaNacimiento = DateOnly.Parse(fecha);
                     }
                 }

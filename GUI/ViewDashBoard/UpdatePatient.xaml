@@ -25,7 +25,7 @@
                     <TextBlock Text="Documento" Foreground="White" FontSize="24" VerticalAlignment="Center" Width="222" TextAlignment="Left" Margin="0,0,10,0"/>
                     <TextBox Style="{StaticResource TextBoxStyle}" x:Name="txtDocumentoBuscar" Width="290"/>
                 </StackPanel>
-                <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Buscar" Width="220" Height="53" FontSize="18"/>
+                <Button Style="{StaticResource BtnStyleSearch}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Content="Buscar" Width="220" Height="53" FontSize="18" Click="Button_Click"/>
 
                 <!-- Botón Buscar -->
 
@@ -66,7 +66,7 @@
                 </StackPanel>
 
                 <!-- Botón Guardar Cambios -->
-                <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar Cambios" Width="219" Height="53" FontSize="18" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+                <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar Cambios" Width="219" Height="53" FontSize="18" Margin="0,20,0,0" HorizontalAlignment="Center" Click="Button_Click_1"/>
             </StackPanel>
         </Border>
     </Grid>

@@ -19,15 +19,14 @@ namespace Persitencia
             try
 
             {
-
                 AbrirConexion();
                 using (OracleCommand cmd = new OracleCommand("insertar_sesion", conexion)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 })
                 {
-                    cmd.Parameters.Add("p_fecha_ini", OracleDbType.Date).Value = entity.InicioSesionECG;
-                    cmd.Parameters.Add("p_fecha_fini", OracleDbType.Date).Value = entity.FinSesionECG;
+                    cmd.Parameters.Add("p_fecha_ini", OracleDbType.TimeStamp).Value = entity.InicioSesionECG;
+                    cmd.Parameters.Add("p_fecha_fini", OracleDbType.TimeStamp).Value = entity.FinSesionECG;
                     cmd.Parameters.Add("p_paciente", OracleDbType.Varchar2).Value = entity.IdPaciente;
                     cmd.Parameters.Add("p_descripcion", OracleDbType.Varchar2).Value = entity.Descripcion;
                     cmd.Parameters.Add("p_medico", OracleDbType.Varchar2).Value = entity.IdMedico;
@@ -83,9 +82,33 @@ namespace Persitencia
             }
         }
 
-        public int MostrarId(DateTime fecha)
+        public void ActualizarEstado(string estado, int idSesion)
         {
-            string ssql = $"SELECT id_sesion FROM usuarios WHERE fechainiciosesion = '{fecha}' ";
+            try
+            {
+                string ssql = $"UPDATE sesiones_ecg SET estado_paciente = '{estado}'" +
+                                                   $"WHERE id_sesion = {idSesion}";
+
+
+                OracleCommand Ocmd = new OracleCommand(ssql, conexion);
+                AbrirConexion();
+
+                int confirmacion = Ocmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        public int MostrarId()
+        {
+            string ssql = $"SELECT id_sesion FROM sesiones_ecg WHERE fechainiciosesion = " +
+                          $"(SELECT MAX(fechainiciosesion) FROM sesiones_ecg)";
             int iduser = 0;
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
@@ -95,7 +118,7 @@ namespace Persitencia
                 {
                     while (reader.Read())
                     {
-                        iduser = reader.GetInt32(reader.GetOrdinal("fechainiciosesion"));
+                        iduser = reader.GetInt32(reader.GetOrdinal("id_sesion"));
                     }
                 }
             }
@@ -110,7 +133,7 @@ namespace Persitencia
 
         public DataTable ConsultarTodo()
         {
-            string ssql = $"SELECT * FROM historial_sesiones ";
+            string ssql = "SELECT * FROM historial_sesiones";
             AbrirConexion();
             OracleCommand cmd = new OracleCommand(ssql, conexion);
             OracleDataAdapter oracleDataAdapter = new OracleDataAdapter(cmd);

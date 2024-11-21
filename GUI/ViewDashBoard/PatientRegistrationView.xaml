@@ -84,9 +84,6 @@
                        FontSize="18" 
                      Margin="10,0" Click="Button_Click_2"/>
 
-                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Cancelar" Width="218" Height="51" FontSize="18" Margin="10,0"  Command="{Binding CancelCommand}" />
-                    <Button Style="{StaticResource BtnStyleSearch}" Foreground="White" Content="Guardar" Width="219" Height="53" FontSize="18" Margin="10,0"/>
-
                 </StackPanel>
 
                 <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

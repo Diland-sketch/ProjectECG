@@ -26,6 +26,7 @@ namespace GUI.ViewDashBoard
     public partial class GraphView : UserControl
     {
         private ServiceECG _serviceEcg;
+        private ServiceIncidente serviceIncidente;
         private ChartValues<double> _ecgValues;
         private List<double> datosGraficados =  new List<double>();
         public SeriesCollection EcgSeries { get; set; }
@@ -34,14 +35,13 @@ namespace GUI.ViewDashBoard
         private const int BufferSize = 5;
         private System.Timers.Timer _graficaTimer;
 
-        public static class global
-        {
-            public static int i;
-        }
-
         public GraphView()
         {
             InitializeComponent();
+
+            serviceIncidente = new ServiceIncidente();
+
+            //soundPlayer = new SoundPlayer("Resources/ekg-6149.wav");
             
             _graficaTimer = new System.Timers.Timer(200);
             _graficaTimer.Elapsed += (s, e) => ActualizarGraficaDesdeBuffer();
@@ -109,16 +109,16 @@ namespace GUI.ViewDashBoard
 
         public void Detener_Click(object sender, RoutedEventArgs e)
         {
-            _graficaTimer.Stop();
+           // _graficaTimer.Stop();
             _serviceEcg.DetenerLectura();
-            _serviceEcg.DatoRecibido -= OnDatoRecibido;
+            //_serviceEcg.DatoRecibido -= OnDatoRecibido;
 
-            lock (_datosBuffer)
-            {
-                _datosBuffer.Clear();
-            }
+            //lock (_datosBuffer)
+            //{
+              //  _datosBuffer.Clear();
+            //}
             _ecgValues.Clear();
-            ecgChart.Update();
+            //ecgChart.Update();
         }
 
         private double FiltrarDato(double nuevoDato)
@@ -145,9 +145,9 @@ namespace GUI.ViewDashBoard
         {
             double umbralDinamico = _ecgValues.Max() * 0.6;
 
-            if(nuevoValor > umbralDinamico)
+            if (nuevoValor > umbralDinamico)
             {
-                if(tiemposPicos.Count == 0 || (tiempoActual - tiemposPicos.Last()).TotalMilliseconds > 300)
+                if (tiemposPicos.Count == 0 || (tiempoActual - tiemposPicos.Last()).TotalMilliseconds > 300)
                 {
                     tiemposPicos.Add(tiempoActual);
                 }
@@ -156,21 +156,6 @@ namespace GUI.ViewDashBoard
 
             CalcularBpm();
             NotificarBpmActualizado();
-            if (bpmActual > 100)
-            {
-                IncidenteRepositorio incidenteRepositorio = new IncidenteRepositorio();
-                Incidentes incidentes = new Incidentes();
-                incidentes.IdSesionECG = global.i;
-                incidentes.Descripcion = "BALTO DETECTADO";
-                incidentes.FechaHoraIncidente = DateTime.Now;
-                incidenteRepositorio.Guardar(incidentes);
-            }
-        }
-
-        public void returnt(int id)
-{
-            global.i = id;
-            
         }
 
         public double bpmActual = 0;

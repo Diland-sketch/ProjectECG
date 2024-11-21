@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Logica;
+using Persitencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace GUI.ViewDashBoard
     public partial class ECGMonitoringView : UserControl
     {
         public ServicePaciente servicePaciente;
+        public ServiceIncidente service;
         public ServiceMedico serviceMedico;
         public ServiceIncidente ServiceIncidente;
         public ServiceSesionECG serviceSesion;
@@ -43,6 +45,7 @@ namespace GUI.ViewDashBoard
             InitializeComponent();
             graphView.BpmActualizado += ActualizarFrecuenciaVista;
             servicePaciente = new ServicePaciente();
+            service = new ServiceIncidente();
             serviceMedico = new ServiceMedico();
             serviceSesion = new ServiceSesionECG();
             ServiceIncidente = new ServiceIncidente();
@@ -63,14 +66,39 @@ namespace GUI.ViewDashBoard
                 txtFrecuencia.Text = bpm.ToString("F0");
             });
 
-            if(bpm > 80)
+            if(bpm < 40)
             {
                 Incidentes incidentes = new Incidentes();
                 incidentes.IdSesionECG = global.id;
                 incidentes.FechaHoraIncidente = DateTime.Now;
-                incidentes.Descripcion = "pico alto detectado";
-                var message = ServiceIncidente.Guardar(incidentes);
-                MessageBox.Show(message);
+                incidentes.Descripcion = "Pico bajo detectado";
+                ServiceIncidente.Guardar(incidentes);
+                SesionECG sesion = new SesionECG();
+                sesion.Estado = "Frecuencia baja";
+                sesion.IdSesion = global.id;
+                serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+            }
+            else
+            {
+                if(bpm > 100)
+                {
+                    Incidentes incidentes = new Incidentes();
+                    incidentes.IdSesionECG = global.id;
+                    incidentes.FechaHoraIncidente = DateTime.Now;
+                    incidentes.Descripcion = "Pico alto detectado";
+                    ServiceIncidente.Guardar(incidentes);
+                    SesionECG sesion = new SesionECG();
+                    sesion.Estado = "Frecuencia Alta";
+                    sesion.IdSesion = global.id;
+                    serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+                }
+                else
+                {
+                    SesionECG sesion = new SesionECG();
+                    sesion.Estado = "Frecuencia Normalizada";
+                    sesion.IdSesion = global.id;
+                    serviceSesion.ActualizarEstado(sesion.Estado, sesion.IdSesion);
+                }
             }
         }
 
@@ -113,8 +141,7 @@ namespace GUI.ViewDashBoard
                 };
 
                 var message = serviceSesion.Guardar(sesion);
-                global.id = serviceSesion.Mostrarid(DateTime.Parse(fechaHora.Text));
-                MessageBox.Show(message);                
+                global.id = serviceSesion.Mostrarid();           
             }
             catch (Exception ex)
             {

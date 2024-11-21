@@ -24,9 +24,9 @@ namespace Persitencia
                     CommandType = System.Data.CommandType.StoredProcedure
                 })
                 {
-                    cmd.Parameters.Add("p_FechaHora", OracleDbType.Date).Value = incidente.FechaHoraIncidente;
-                    cmd.Parameters.Add("p_Descripcion", OracleDbType.Varchar2).Value = incidente.Descripcion;
+                    cmd.Parameters.Add("p_FechaHora", OracleDbType.TimeStamp).Value = incidente.FechaHoraIncidente;
                     cmd.Parameters.Add("p_IdSesion", OracleDbType.Int32).Value = incidente.IdSesionECG;
+                    cmd.Parameters.Add("p_Descripcion", OracleDbType.Varchar2).Value = incidente.Descripcion;
 
                     cmd.ExecuteNonQuery();
                 }
