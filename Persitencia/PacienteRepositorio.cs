@@ -135,7 +135,7 @@ namespace Persitencia
 
         public List<Paciente> ConsultarTodo()
         {
-            string ssql = $"SELECT * FROM pacientes ";
+            string ssql = "SELECT * FROM pacientes ";
             List<Paciente> list = new List<Paciente>();
 
             using (OracleCommand cmd = new OracleCommand(ssql, conexion))
@@ -155,18 +155,21 @@ namespace Persitencia
         }
         public Paciente Mapper(OracleDataReader reader)
         {
-            string fecha = reader.GetOrdinal("fecha_nacimiento").ToString("dd-mm-yyyy");
-            return new Paciente
-            {
-                Identificacion = reader.GetString(reader.GetOrdinal("idpaciente")),
-                PrimerNombre = reader.GetString(reader.GetOrdinal("primer_nombre")),
-                SegundoNombre = reader.GetString(reader.GetOrdinal("segundo_nombre")),
-                PrimerApellido = reader.GetString(reader.GetOrdinal("primer_apellido")),
-                SegundoApellido = reader.GetString(reader.GetOrdinal("segundo_apellido")),
-                Sexo = reader.GetChar(reader.GetOrdinal("sexo")),
-                FechaNacimiento = DateOnly.Parse(fecha),
+            
+            Paciente paciente = new Paciente();
 
-            };
+            paciente.Identificacion = reader.GetString(reader.GetOrdinal("idpaciente"));
+            paciente.PrimerNombre = reader.GetString(reader.GetOrdinal("primer_nombre"));
+            paciente.SegundoNombre = reader.GetString(reader.GetOrdinal("segundo_nombre"));
+            paciente.PrimerApellido = reader.GetString(reader.GetOrdinal("primer_apellido"));
+            paciente.SegundoApellido = reader.GetString(reader.GetOrdinal("segundo_apellido"));
+            string sexo = reader.GetString(reader.GetOrdinal("sexo"));
+            paciente.Sexo = char.Parse(sexo);
+                
+            string fecha = reader.GetString(reader.GetOrdinal("fecha_nacimiento"));
+            paciente.FechaNacimiento = DateOnly.Parse(fecha);
+
+            return paciente;
 
         }
 

@@ -43,6 +43,13 @@ namespace GUI.View
             MedicosDataGrid.ItemsSource = serviceMedico.ConsultarTodo(); 
         }
 
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnBuscar_Click(sender, e);
+            }
+        }
         private void MedicosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

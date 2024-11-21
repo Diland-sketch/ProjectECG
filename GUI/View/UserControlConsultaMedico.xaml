@@ -14,17 +14,97 @@
         <DataGrid x:Name="MedicosDataGrid"
                   IsReadOnly="True" 
                   ItemsSource="{Binding Medicos}"
-                  Margin="152,118,0,107"
-                  HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False">
-            
+                  Margin="76,118,76,106" FontSize="18" AutoGenerateColumns="False">
+
             <DataGrid.Columns>
-                <DataGridTextColumn Header="IDENTIFICACION" Binding="{Binding Identificacion}" Width="*" />
-                <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
-                <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*" />
-                <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />
-                <DataGridTextColumn Header="SegundoApellido" Binding="{Binding SegundoApellido}" Width="*" />
-                <DataGridTextColumn Header="Sexo" Binding="{Binding Sexo}" Width="*" />
-                <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento}" Width="*" />
+                <DataGridCheckBoxColumn CanUserResize="False" Width="auto">
+                    <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox/>
+                        </DataTemplate>
+                    </DataGridCheckBoxColumn.HeaderTemplate>
+                </DataGridCheckBoxColumn>
+
+                <DataGridTextColumn Header="#" IsReadOnly="true" CanUserResize="False" Width="auto"/>
+
+                <DataGridTemplateColumn Header="Identificacion" IsReadOnly="True" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Identificacion}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Primer Nombre">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="25" Height="25" CornerRadius="50" Margin="0,0,10,0" Background="Green">
+                                    <TextBlock Text="{Binding Numero}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                                </Border>
+                                <TextBlock Text="{Binding PrimerNombre}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Segundo Nombre">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="{Binding SegundoNombre}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Primer Apellido">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="{Binding PrimerApellido}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Segundo Apellido">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="{Binding SegundoApellido}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Sexo">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="{Binding Sexo}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Fecha de Nacimiento">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="{Binding FechaNacimiento, StringFormat='{}{0:dd/MM/yyyy}'}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnCancelar" Content="Cancelar" Width="100" Height="30" Background="#FF333838" Foreground="White" FontSize="24" Click="btnBack_Click" Margin="350,371,350,49" FontFamily="Berlin Sans FB">
@@ -56,8 +136,8 @@ CornerRadius="10">
                 BorderBrush="Gray"
                 BorderThickness="0,0,0,1"
                 Foreground="White"
-                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18" PreviewTextInput="txtId_PreviewTextInput"/>
-            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,0" Click="btnBuscar_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Width="60">
+                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtId_KeyDown"/>
+            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,1" Click="btnBuscar_Click" HorizontalAlignment="Left" Grid.Column="1" Width="60">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 
