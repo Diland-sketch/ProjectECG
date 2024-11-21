@@ -37,7 +37,8 @@
           HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False" 
           Background="#343a40" Foreground="Black" Height="120">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="DOCUMENTO" Binding="{Binding Identificacion}" Width="*" />
+
+                        <DataGridTextColumn Header="DOCUMENTO" Binding="{Binding Documento}" Width="*"/>
                         <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
                         <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding SegundoNombre}" Width="*" />
                         <DataGridTextColumn Header="Primer Apellido" Binding="{Binding PrimerApellido}" Width="*" />

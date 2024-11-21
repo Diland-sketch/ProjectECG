@@ -118,5 +118,6 @@ namespace GUI.View
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
+        
     }
 }

@@ -65,18 +65,11 @@ namespace GUI
                 navigationVM.CurrentView = new HomeView();  // Establece HomeView como la vista actual
             }
         }
-        private void Button_Back(object sender, RoutedEventArgs e)
-        {
-            LoginView mainWindow = new LoginView();
-            mainWindow.Show();
-            this.Close();
-        }
         private void Label_mouse(object sender, MouseButtonEventArgs e)
         {
             LoginView mainWindow = new LoginView();
             mainWindow.Show();
             this.Close();
         }
-
     }
 }

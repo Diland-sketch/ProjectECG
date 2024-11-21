@@ -21,11 +21,11 @@ namespace GUI.ViewDashBoard
     /// </summary>
     public partial class DeletePatient : UserControl
     {
-        ServicePaciente ServicePaciente;
+        ServicePaciente servicePaciente;
         public DeletePatient()
         {
             InitializeComponent();
-            ServicePaciente = new ServicePaciente();
+            servicePaciente = new ServicePaciente();
         }
 
         private void txtDocumentoEliminar_KeyDown(object sender, KeyEventArgs e)
@@ -38,9 +38,8 @@ namespace GUI.ViewDashBoard
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-
-            var message = ServicePaciente.Eliminar(txtDocumentoEliminar.Text);
-            MessageBox.Show(message);
+            var mesagge = servicePaciente.Eliminar(txtDocumentoEliminar.Text);
+            MessageBox.Show(mesagge);
         }
     }
 }

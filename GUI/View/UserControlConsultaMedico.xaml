@@ -14,6 +14,9 @@
         <DataGrid x:Name="MedicosDataGrid"
                   IsReadOnly="True" 
                   ItemsSource="{Binding Medicos}"
+                  Margin="152,118,0,107"
+                  HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False">
+
                   Margin="76,118,76,106" FontSize="18" AutoGenerateColumns="False">
 
             <DataGrid.Columns>
