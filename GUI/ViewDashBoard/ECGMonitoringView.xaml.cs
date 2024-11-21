@@ -13,6 +13,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -116,7 +117,7 @@ namespace GUI.ViewDashBoard
             fechaHoraTimer.Stop();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -147,7 +148,7 @@ namespace GUI.ViewDashBoard
                 MessageBox.Show("Error al iniciar sesión: " + ex.Message);
             }
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnDetener_Click(object sender, RoutedEventArgs e)
         {
             graphView.Detener_Click(sender, e);
             fechaHoraFinal.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
@@ -160,24 +161,24 @@ namespace GUI.ViewDashBoard
         {
             Paciente paciente = new Paciente();
             paciente = servicePaciente.TraerPaciente(txtDocumento.Text);
-           string nombre = paciente.PrimerNombre;
+            string nombre = paciente.PrimerNombre;
             string apellido = paciente.PrimerApellido;
             if ((nombre != null) && (apellido != null))
             {
                 txtNombre.Text = nombre;
                 txtApellido.Text = apellido;
-                
+
             }
             else
             {
                 MessageBox.Show("paciente no encontrado");
             }
-            
+
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            int u= servicePaciente.RetornarIdMedico();
+            int u = servicePaciente.RetornarIdMedico();
             txtIdMedico.Text = serviceMedico.MostrarId(u);
         }
 
@@ -197,6 +198,7 @@ namespace GUI.ViewDashBoard
         {
             int u = servicePaciente.RetornarIdMedico();
             txtIdMedico.Text = serviceMedico.MostrarId(u);
+
         }
         private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

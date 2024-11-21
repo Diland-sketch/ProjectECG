@@ -234,5 +234,54 @@ namespace GUI.View
         {
             e.Handled = !Regex.IsMatch(e.Text, @"^[a-zA-Z]+$");
         }
+        private void txtId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtPNombre.Focus();
+            }
+        }
+        private void txtPNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtSNombre.Focus();
+            }
+        }
+        private void txtSNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtPApellido.Focus();
+            }
+        }
+        private void txtPApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtSApellido.Focus();
+            }
+        }
+        private void txtSApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtNombreUsuario.Focus();
+            }
+        }
+        private void txtNombreUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                txtContraseña.Focus();
+            }
+        }
+        private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnGuardar_Click(sender, e);
+            }
+        }
     }
 }

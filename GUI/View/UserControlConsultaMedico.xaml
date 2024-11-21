@@ -16,7 +16,7 @@
                   ItemsSource="{Binding Medicos}"
                   Margin="152,118,0,107"
                   HorizontalAlignment="Stretch" FontSize="18" AutoGenerateColumns="False">
-            
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="IDENTIFICACION" Binding="{Binding Identificacion}" Width="*" />
                 <DataGridTextColumn Header="Primer Nombre" Binding="{Binding PrimerNombre}" Width="*" />
@@ -56,8 +56,8 @@ CornerRadius="10">
                 BorderBrush="Gray"
                 BorderThickness="0,0,0,1"
                 Foreground="White"
-                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18" PreviewTextInput="txtId_PreviewTextInput"/>
-            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,0" Click="btnBuscar_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Width="60">
+                Padding="0,0,0,0" Margin="41,4,91,4" Grid.Column="1" FontSize="18" PreviewTextInput="txtId_PreviewTextInput" KeyDown="txtId_KeyDown"/>
+            <Button x:Name="btnBuscar" Content="Buscar" Background="#FF333838" Foreground="White" FontSize="18" Margin="255,1,0,1" Click="btnBuscar_Click" HorizontalAlignment="Left" Grid.Column="1" Width="60">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" 

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -97,6 +98,10 @@ namespace GUI.ViewDashBoard
         private void Border_Loaded(object sender, RoutedEventArgs e)
         {
             dataGridPacientes.ItemsSource =  ServiceSesionECG.ConsultarTodo().DefaultView;
+        }
+        private void txtId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, @"^\d+$");
         }
     }
 }
